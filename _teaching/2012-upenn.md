@@ -1,0 +1,11 @@
+---
+title: "2011-2012 Courses Taught"
+collection: teaching
+type: "Course"
+permalink: /teaching/2012-penn
+venue: "University of Pennsylvania Department of Computer and Information Science (Visiting)"
+date: 2012-01-01
+location: "Philadelphia, PA"
+---
+
+CIT 595: Computer Systems II
