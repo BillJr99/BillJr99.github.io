@@ -26,7 +26,7 @@ Education
   * Pennsylvania Teaching Certification in Grades 7-12 Mathematics
 * Ph.D in Electrical and Computer Engineering, Drexel University, 2018
 
-Faculty Appointments
+Selected Faculty Appointments
 ======
 * Teaching Faculty of Computer Science at Drexel University, 2008-2019
   * Instructor / Auxiliary Professor, 2008-2011
@@ -41,19 +41,19 @@ Faculty Appointments
 * Tenure-Track Faculty of Computer Science at Drexel University, 2019-Present
   * Assistant Professor, 2019-Present
 
-Publications
+Selected Publications
 ======
   <ul>{% for post in site.publications %}
     {% include archive-single-cv.html %}
   {% endfor %}</ul>
   
-Talks
+Selected Talks
 ======
   <ul>{% for post in site.talks %}
     {% include archive-single-talk-cv.html %}
   {% endfor %}</ul>
   
-Teaching
+Selected Teaching
 ======
   <ul>{% for post in site.teaching %}
     {% include archive-single-cv.html %}
