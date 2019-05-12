@@ -19,6 +19,7 @@ Contact Me
 [Orcid]({{ site.author.orcid }}) | 
 [Google Scholar]({{ site.author.googlescholar }}) | 
 [PubMed]({{ site.author.pubmed }}) |
+[PGP Public Key](/files/William_Mongan.asc.txt) |
 
 | Office Location: {{ site.author.office }} |
 Phone: {{site.author.officephone}} |
