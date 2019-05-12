@@ -1,12 +1,13 @@
 ---
 title: "Predictive Analytics on Real-Time Biofeedback for Actionable Classification of Activity State"
 collection: talks
-permalink: /publication/dissertation
+permalink: /talks/dissertation
 date: 2018-08-08
 venue: 'Drexel University'
 type: "Talk"
 ---
-Download the presentation [here](/files/mongan-dissertation-presentation.pdf)
+Download the presentation [here](/files/mongan-dissertation-presentation.pdf)  
+Download the paper [here](/files/mongan-dissertation.pdf)
 
 Continuous biomedical monitoring has the potential to improve quality-of-care for patients as well as working conditions for medical practitioners over the current state-of-the-art. Currently, Emergency Medical Technicians in the field carry monitoring equipment that can weigh over 50 lbs, and manually communicate information back to hospital physicians.  For patients, medical monitoring is carried out using tethered equipment that must remain attached for hours or days, and must be removed when the patient must get up to walk or use the restroom.  Data lapses during these disconnected breaks can be misinterpreted by medical staff as a medical event, and true medical events can be missed as a result of non-monitoring.  Further, being still for extended periods of time can exacerbate the very risks being treated, due to the increased risk of a blood clot while remaining stationary during monitoring.  
 
