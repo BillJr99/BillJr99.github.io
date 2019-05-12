@@ -12,4 +12,4 @@ Bill holds the Ph.D. in Electrical and Computer Engineering from Drexel Universi
 
 Contact Me
 ======
-[GitHub](https://github.com/{{ variables.github }})
+[GitHub](https://github.com/{{ site.github }})
