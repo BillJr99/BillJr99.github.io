@@ -9,7 +9,13 @@ redirect_from:
 
 {% include base_path %}
 
-My Full CV can be found [here](/files/CV.pdf)
+My Full CV can be found [here](/files/CV.pdf)  
+View My Scholarly Activity on:
+* [ResearchGate]({{ site.author.researchgate }})
+* [LinkedIn]({{ site.author.linkedin }})
+* [Orcid]({{ site.author.orcid }})
+* [Google Scholar]({{ site.author.googlescholar }})
+* [PubMed]({{ site.author.pubmed }})
 
 Education
 ======
