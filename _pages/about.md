@@ -12,14 +12,7 @@ Bill holds the Ph.D. in Electrical and Computer Engineering from Drexel Universi
 
 Contact Me
 ======
-| [GitHub](https://github.com/{{ site.author.github }}) | 
-[Email](mailto:{{ site.author.email }}) | 
-[ResearchGate]({{ site.author.researchgate }}) | 
-[LinkedIn]({{ site.author.linkedin }}) | 
-[Orcid]({{ site.author.orcid }}) | 
-[Google Scholar]({{ site.author.googlescholar }}) | 
-[PubMed]({{ site.author.pubmed }}) |
-[PGP Public Key](/files/William_Mongan.asc.txt) |
+Download my [PGP Public Key](/files/William_Mongan.asc.txt)
 
 | Office Location: {{ site.author.office }} |
 Phone: {{site.author.officephone}} |
