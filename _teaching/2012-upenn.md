@@ -8,4 +8,4 @@ date: 2012-01-01
 location: "Philadelphia, PA"
 ---
 
-CIT 595: Computer Systems II
+CIT 595: Computer Systems II (Spring)  
