@@ -11,7 +11,7 @@ redirect_from:
 
 Full CV
 ======
-My Full CV can be found [here](files/CV.pdf)
+My Full CV can be found [here](/files/CV.pdf)
 
 Education
 ======
