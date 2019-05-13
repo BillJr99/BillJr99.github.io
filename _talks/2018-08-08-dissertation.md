@@ -1,7 +1,7 @@
 ---
 title: "Predictive Analytics on Real-Time Biofeedback for Actionable Classification of Activity State"
 collection: talks
-permalink: /talks/dissertation
+permalink: /talk/dissertation
 date: 2018-08-08
 venue: 'Drexel University'
 type: "Talk"
