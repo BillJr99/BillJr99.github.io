@@ -3,7 +3,7 @@ title: 'Using BigData for Learning about a Slice of Parallel Computation in Seve
 collection: talks
 permalink: /talk/edupar2016
 date: '2016-01-01'
-venue: 'NSF/TCPP Workshop on Parallel and Distributed Computing Education (EduPar-16) Poster with Bruce Char and Jeffrey Popyack'
+venue: 'Using BigData for Learning about a Slice of Parallel Computation in Several Courses. NSF/TCPP Workshop on Parallel and Distributed Computing Education (EduPar-16) Poster with Bruce Char and Jeffrey Popyack. Chicago, IL. May, 2016'
 type: talk
 ---
 

@@ -3,7 +3,7 @@ title: 'National Council of Women in Information Technology (NCWIT), Invited Fac
 collection: talks
 permalink: /talk/ncwit2017
 date: '2017-01-01'
-venue: 'Tucscon, AZ'
+venue: 'National Council of Women in Information Technology (NCWIT), Invited Faculty. Tucscon, AZ. May, 2017'
 type: talk
 ---
 
