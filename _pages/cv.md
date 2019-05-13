@@ -10,7 +10,7 @@ redirect_from:
 {% include base_path %}
 
 My Full CV can be found [here](/files/CV.pdf)    
-View My Scholarly Activity using the left-hand navigation menu.
+View My Scholarly Activity using the left-hand or 'Follow' navigation menu.
 
 Education
 ======
