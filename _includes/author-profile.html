@@ -117,7 +117,13 @@
       {% endif %}
       {% if author.wikipedia %}
         <li><a href="https://en.wikipedia.org/wiki/User:{{ author.wikipedia }}"><i class="fab fa-wikipedia-w" aria-hidden="true"></i> Wikipedia</a></li>
-{% endif %}
+      {% endif %}
+      {% if site.author.scopus %}
+      <li><a href="https://www.scopus.com/authid/detail.uri?authorId={{ site.author.scopus }}"><i aria-hidden="true"></i> Scopus</a></li>
+      {% endif %}
+      {% if site.author.webofscience %}
+      <li><a href="https://publons.com/researcher/{{ site.author.webofscience }}/"><i aria-hidden="true"></i> Publons WebOfScience</a></li>
+      {% endif %}
     </ul>
   </div>
 </div>
