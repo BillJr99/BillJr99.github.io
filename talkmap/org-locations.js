@@ -10,11 +10,6 @@ var addressPoints = [
     -78.6390989
   ], 
   [
-    "New Haven, CT", 
-    41.3082138, 
-    -72.9250518
-  ], 
-  [
     "Swarthmore, PA", 
     39.9020565, 
     -75.3499124
@@ -30,9 +25,9 @@ var addressPoints = [
     -94.5781416
   ], 
   [
-    "Vancouver, BC, Canada", 
-    49.2608724, 
-    -123.1139529
+    "King of Prussia, PA", 
+    40.0908111, 
+    -75.3832484
   ], 
   [
     "Washington, DC", 
@@ -60,14 +55,19 @@ var addressPoints = [
     -93.2654692
   ], 
   [
-    "Villanova, PA", 
-    44.985725, 
-    9.2915544
+    "New Haven, CT", 
+    41.3082138, 
+    -72.9250518
   ], 
   [
-    "King of Prussia, PA", 
-    40.0908111, 
-    -75.3832484
+    "Vancouver, BC, Canada", 
+    49.2608724, 
+    -123.1139529
+  ], 
+  [
+    "Radnor, PA", 
+    40.0463001, 
+    -75.3595487
   ], 
   [
     "Indianapolis, IN", 
