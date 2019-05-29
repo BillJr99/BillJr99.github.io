@@ -6,6 +6,6 @@ date: '2014-10-01'
 venue: 'Marconi: The Master of Wireless. Bellyband Demonstration at Drexel University.'
 type: talk
 location: 'Philadelphia, PA'
-comments: True
+comments: true
 ---
 

@@ -6,6 +6,6 @@ date: '2013-07-01'
 venue: 'Internet Protocols and Cryptography. Reboot Renew REThink Workshop at Drexel University.'
 type: talk
 location: 'Philadelphia, PA'
-comments: True
+comments: true
 ---
 
