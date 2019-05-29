@@ -15,6 +15,11 @@ var addressPoints = [
     -75.3499124
   ], 
   [
+    "Lisbon, Portugal", 
+    38.7077507, 
+    -9.1365919
+  ], 
+  [
     "Chicago, IL", 
     41.8755616, 
     -87.6244212
@@ -25,9 +30,24 @@ var addressPoints = [
     -94.5781416
   ], 
   [
+    "Amsterdam, Netherlands", 
+    52.3745403, 
+    4.89797550561798
+  ], 
+  [
+    "Minneapolis, MN", 
+    44.9772995, 
+    -93.2654692
+  ], 
+  [
     "King of Prussia, PA", 
     40.0908111, 
     -75.3832484
+  ], 
+  [
+    "Pittsburgh, PA", 
+    40.4416941, 
+    -79.9900861
   ], 
   [
     "Washington, DC", 
@@ -50,9 +70,9 @@ var addressPoints = [
     -75.5560376
   ], 
   [
-    "Minneapolis, MN", 
-    44.9772995, 
-    -93.2654692
+    "St. Louis, MO", 
+    38.6268039, 
+    -90.1994097
   ], 
   [
     "New Haven, CT", 
