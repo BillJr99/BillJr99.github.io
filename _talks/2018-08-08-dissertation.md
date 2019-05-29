@@ -5,6 +5,7 @@ permalink: /talk/dissertation
 date: 2018-08-08
 venue: 'Drexel University'
 type: "Talk"
+comments: True
 ---
 Download the presentation [here](/files/mongan-dissertation-presentation.pdf)  
 Download the paper [here](/files/mongan-dissertation.pdf)
