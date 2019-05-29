@@ -18,10 +18,10 @@
       <li><a href="http://bitbucket.org/{{ site.author.bitbucket }}"><i class="fab fa-bitbucket" aria-hidden="true"></i> Bitbucket</a></li>
     {% endif %}
     {% if site.author.scopus %}
-      <li><a href="https://www.scopus.com/authid/detail.uri?authorId={{ site.author.scopus }}"><i aria-hidden="true"></i> Scopus</a></li>
+      <li><a href="https://www.scopus.com/authid/detail.uri?authorId={{ site.author.scopus }}"><i class="fas fa-link" aria-hidden="true"></i> Scopus</a></li>
     {% endif %}
     {% if site.author.webofscience %}
-      <li><a href="https://publons.com/researcher/{{ site.author.webofscience }}/"><i aria-hidden="true"></i> Publons WebOfScience</a></li>
+      <li><a href="https://publons.com/researcher/{{ site.author.webofscience }}/"><i class="fas fa-link" aria-hidden="true"></i> Publons WebOfScience</a></li>
     {% endif %}
     <li><a href="{% if site.atom_feed.path %}{{ site.atom_feed.path }}{% else %}{{ base_path }}/feed.xml{% endif %}"><i class="fa fa-fw fa-rss-square" aria-hidden="true"></i> {{ site.data.ui-text[site.locale].feed_label | default: "Feed" }}</a></li>
   </ul>
