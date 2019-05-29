@@ -28,15 +28,37 @@ title = ""
 for file in g:
     with open(file, 'r') as f:
         lines = f.read()
+        
+        doublequote = False
+        singlequote = False
         if lines.find('location: "') > 1:
-            loc_start = lines.find('location: "') + 11
+            doublequote = True
+        elif lines.find('location: \'') > 1:
+            singlequote = True
+            
+        if doublequote == True:
+            searchstring = 'location: "'
+            endstring = '"'
+        elif singlequote == True:
+            searchstring = 'location: \''
+            endstring = '\''
+            
+        if singlequote == True or doublequote == True:
+            loc_start = lines.find(searchstring) + len(searchstring)
             lines_trim = lines[loc_start:]
-            loc_end = lines_trim.find('"')
+            loc_end = lines_trim.find(endstring)
             location = lines_trim[:loc_end]
-                            
-           
-        location_dict[location] = geocoder.geocode(location)
-        print(location, "\n", location_dict[location])
+            
+        if " and " in location:
+            print("Multi-Searching for " + location)
+            for l in location.split(" and "):
+                print("Searching for " + l)        
+                location_dict[l] = geocoder.geocode(l)
+                print(l, "\n", location_dict[l])                
+        else:
+            print("Searching for " + location)        
+            location_dict[location] = geocoder.geocode(location)
+            print(location, "\n", location_dict[location])
 
 
 m = getorg.orgmap.create_map_obj()
