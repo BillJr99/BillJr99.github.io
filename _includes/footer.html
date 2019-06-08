@@ -18,22 +18,25 @@
       <li><a href="http://bitbucket.org/{{ site.author.bitbucket }}"><i class="fab fa-bitbucket" aria-hidden="true"></i> Bitbucket</a></li>
     {% endif %}
     {% if site.author.scopus %}
-      <li><a href="https://www.scopus.com/authid/detail.uri?authorId={{ site.author.scopus }}"><i class="fas fa-link" aria-hidden="true"></i> Scopus</a></li>
+      <!--<li><a href="https://www.scopus.com/authid/detail.uri?authorId={{ site.author.scopus }}"><i class="fas fa-link" aria-hidden="true"></i> Scopus</a></li>-->
     {% endif %}
     {% if site.author.webofscience %}
-      <li><a href="https://publons.com/researcher/{{ site.author.webofscience }}/"><i class="fas fa-link" aria-hidden="true"></i> Publons WebOfScience</a></li>
+      <!--<li><a href="https://publons.com/researcher/{{ site.author.webofscience }}/"><i class="fas fa-link" aria-hidden="true"></i> Publons WebOfScience</a></li>-->
     {% endif %}
     {% if site.author.ieeeauthor %}
-      <li><a href="https://ieeexplore.ieee.org/author/{{ site.author.ieeeauthor }}"><i class="fas fa-link" aria-hidden="true"></i> IEEE Author Profile</a></li>
+      <!--<li><a href="https://ieeexplore.ieee.org/author/{{ site.author.ieeeauthor }}"><i class="fas fa-link" aria-hidden="true"></i> IEEE Author Profile</a></li>-->
     {% endif %}    
     {% if site.author.acmauthor %}
-      <li><a href="https://dl.acm.org/author_page.cfm?id={{ site.author.acmauthor }}"><i class="fas fa-link" aria-hidden="true"></i> ACM Author Profile</a></li>
-    {% endif %}   
+      <!--<li><a href="https://dl.acm.org/author_page.cfm?id={{ site.author.acmauthor }}"><i class="fas fa-link" aria-hidden="true"></i> ACM Author Profile</a></li>-->
+    {% endif %}  
+    {% if site.author.dblp %}
+    <!--<li><a href="https://dblp.uni-trier.de/pers/hb/{{ site.author.dblp }}.html"><i class="fas fa-link" aria-hidden="true"></i> DBLP</a></li>-->
+    {% endif %}     
     {% if site.author.gitlab %}
-    <li><a href="https://gitlab.com/{{ site.author.gitlab }}"><i class="fas fa-link" aria-hidden="true"></i> Gitlab</a></li>
+    <!--<li><a href="https://gitlab.com/{{ site.author.gitlab }}"><i class="fas fa-link" aria-hidden="true"></i> Gitlab</a></li>-->
     {% endif %}  
     {% if site.author.gitlabcci %}
-    <li><a href="https://{{ site.author.gitlabcci }}"><i class="fas fa-link" aria-hidden="true"></i> CCI Gitlab</a></li>
+    <!--<li><a href="https://{{ site.author.gitlabcci }}"><i class="fas fa-link" aria-hidden="true"></i> CCI Gitlab</a></li>-->
     {% endif %}     
     <li><a href="{% if site.atom_feed.path %}{{ site.atom_feed.path }}{% else %}{{ base_path }}/feed.xml{% endif %}"><i class="fa fa-fw fa-rss-square" aria-hidden="true"></i> {{ site.data.ui-text[site.locale].feed_label | default: "Feed" }}</a></li>
   </ul>
