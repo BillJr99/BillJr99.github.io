@@ -7,6 +7,6 @@ venue: 'Post-It Pandemonium: Teaching Image Representation and Compression with 
 type: talk
 location: 'Minneapolis, MN'
 comments: true
-download: https://dl.acm.org/authorize?N685673
+download: 'https://dl.acm.org/authorize?N685673'
 ---
 
