@@ -10,7 +10,7 @@ redirect_from:
 {% include base_path %}
 
 My Full CV can be found [here](/files/CV.pdf)    
-View My Scholarly Activity using the left-hand or 'Follow' navigation menu.
+View My Scholarly Activity using the left-hand or 'Follow' navigation menu.  
 BibTeX Records for most publications can be found [here](https://dblp.uni-trier.de/pers/hb/{{ site.author.dblp }}.html)
 
 Education
