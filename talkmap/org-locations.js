@@ -98,10 +98,5 @@ var addressPoints = [
     "Charlottesville, VA", 
     38.029306, 
     -78.4766781
-  ],
-  [
-    "Milwaukee, WI",
-    43.0389,
-    -87.9065
   ]
 ];
