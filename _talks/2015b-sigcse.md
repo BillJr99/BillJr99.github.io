@@ -7,5 +7,6 @@ venue: 'Raspberry HadooPI: A Low-Cost, Hands-On Laboratory in Big Data and Analy
 type: talk
 location: 'Kansas City, MO and Philadelphia, PA'
 comments: true
+download: 'https://dl.acm.org/citation.cfm?id=2691908'
 ---
 
