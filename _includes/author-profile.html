@@ -132,7 +132,10 @@
       {% endif %}  
       {% if site.author.dblp %}
       <li><a href="https://dblp.uni-trier.de/pers/hd/{{ site.author.dblp }}.html"><i class="fas fa-link" aria-hidden="true"></i> DBLP</a></li>
-      {% endif %}       
+      {% endif %}  
+      {% if site.author.nih %}
+      <li><a href="https://www.ncbi.nlm.nih.gov/myncbi/{{ site.author.nih }}/bibliography/public/"><i class="fas fa-link" aria-hidden="true"></i> NIH Bibliography</a></li>
+      {% endif %}        
       {% if site.author.gitlab %}
       <li><a href="https://gitlab.com/{{ site.author.gitlab }}"><i class="fas fa-link" aria-hidden="true"></i> Gitlab</a></li>
       {% endif %}   
