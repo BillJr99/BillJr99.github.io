@@ -11,4 +11,4 @@ Information about the architecture of this system can be found in my [Ph.D. Diss
 The packages for data collection and data processing, respectively, are hosted on GitHub at the following locations (please feel free to contact me for access if you are unable to view these pages):
 
 | [IoT Data Collection Framework](https://github.com/drexelwireless/iot-sensor-framework) | 
-[IoT Data Processing Framework](https://github.com/drexelwireless/iot-ml-dsp) |
+[IoT Data Processing Framework](https://github.com/drexelwireless/iot-processing-framework) |
