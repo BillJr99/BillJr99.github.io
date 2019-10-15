@@ -82,12 +82,12 @@ analytics:
 author:
   name             : "Bill Mongan"
   avatar           : "profile.png"
-  bio              : "Teaching Professor and Associate Department Head of Undergraduate Affairs in the Computer Science Department"
+  bio              : ""
   location         : "Philadelphia, PA"
-  employer         : "Drexel University"
+  employer         : ""
   pubmed           : "https://www.ncbi.nlm.nih.gov/pubmed/?term=william+mongan"
   googlescholar    : "https://scholar.google.com/citations?user=w4KKUa4AAAAJ&hl=en"
-  email            : "wmm24@cs.drexel.edu"
+  email            : "billmongan@gmail.com"
   researchgate     : "https://www.researchgate.net/profile/William_Mongan2" # example: "https://www.researchgate.net/profile/yourprofile"
   uri              : 
   bitbucket        : "%7Bb9224bee-f1ad-48e8-b84a-5c0437f256cc%7D"
@@ -115,8 +115,8 @@ author:
   xing             :
   youtube          :
   wikipedia        :
-  office           : "3675 Market Street, Suite 1176, Philadelphia, PA 19104"
-  officephone      : "215-895-0286"
+  office           : "Philadelphia, PA"
+  officephone      : "484-442-0821"
   scopus           : "16234159500"
   webofscience     : "F-7544-2018"
   ieeeauthor       : "38093739800"

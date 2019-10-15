@@ -33,12 +33,9 @@ Selected Faculty Appointments
   * Associate Teaching Professor, 2012-2017
   * Teaching Professor (full), 2017-2019
 
-* Associate Department Head of Undergraduate Affairs in the Department of Computer Science at Drexel University, 2014-Present
+* Associate Department Head of Undergraduate Affairs in the Department of Computer Science at Drexel University, 2014-2019
   * Director of Undergraduate Affairs, 2014-2015
   * Associate Department Head, 2015-Present
-
-* Tenure-Track Faculty of Computer Science at Drexel University, 2019-Present
-  * Assistant Professor, 2019-Present
 
 Selected Publications
 ======
