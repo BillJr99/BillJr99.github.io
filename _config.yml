@@ -7,10 +7,10 @@
 
 # Theme https://github.com/academicpages/academicpages.github.io/issues/137
 # Must also add assets to exclude list below, if using this section
-plugins:
-  - jekyll-remote-theme
-remote_theme           : "mmistakes/minimal-mistakes"
-minimal_mistakes_skin    : "dark" # "air", "aqua", "contrast", "dark", "dirt", "neon", "mint", "plum", "sunrise"
+#plugins:
+#  - jekyll-remote-theme
+#remote_theme           : "mmistakes/minimal-mistakes"
+#minimal_mistakes_skin    : "dark" # "air", "aqua", "contrast", "dark", "dirt", "neon", "mint", "plum", "sunrise"
 
 # Site Settings
 locale                   : "en-US"
@@ -161,7 +161,7 @@ exclude:
   - package.json
   - tmp
   - vendor
-  - assets
+  #- assets
 keep_files:
   - .git
   - .svn
