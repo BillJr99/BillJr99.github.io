@@ -2,6 +2,7 @@
 title: "IoT Sensor Framework"
 excerpt: "A secure and modular data collection and processing framework for heterogeneous Internet-of-Things (IoT) sensor networks."
 collection: portfolio
+comments: true
 ---
 
 This software suite contains scripts to collect and store IoT sensor data, such as RFID tag information using an Impinj Speedway RFID reader.  It is modular and generalizable to a variety of sensor systems and processing needs.  
