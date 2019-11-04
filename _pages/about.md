@@ -12,7 +12,7 @@ Bill holds the Ph.D. in Electrical and Computer Engineering from Drexel Universi
 
 Contact Me
 ======
-Download my [GPG RSA Public Key](/files/gpg.pub)
+Download my [GnuPGP RSA Public Key](/files/gpg.pub)
 
 | Office Location: {{ site.author.office }} |
 Phone: {{site.author.officephone}} |
