@@ -14,7 +14,7 @@ View My Scholarly Activity using the left-hand or 'Follow' navigation menu.
 BibTeX Records for most publications can be found [here](https://dblp.uni-trier.de/pers/hb/{{ site.author.dblp }}.html)  
   
 [NSF Biosketch](https://www.ncbi.nlm.nih.gov/myncbi/william.mongan.1/cv/313815/)  
-[NIH Biosketch](https://www.ncbi.nlm.nih.gov/myncbi/william.mongan.1/cv/313798/)
+[NIH Biosketch](https://www.ncbi.nlm.nih.gov/myncbi/william.mongan.1/cv/313798/)  
 [ORCID CV]({{ site.author.orcid }}/print)
 
 Education
