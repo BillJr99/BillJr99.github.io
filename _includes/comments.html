@@ -76,11 +76,14 @@
           <fieldset>
             <!-- reCAPTCHA -->
             <div class="g-recaptcha" data-sitekey="{{ site.staticman.reCaptcha.siteKey }}"></div>
-            <script src='https://www.google.com/recaptcha/api.js'></script>
 
             <button type="submit" id="comment-form-submit" tabindex="5" class="btn btn--large">{{ site.data.ui-text[site.locale].comment_btn_submit | default: "Submit Comment" }}</button>
           </fieldset>
         </form>
+        
+        <!-- reCAPTCHA -->
+        <script src='https://www.google.com/recaptcha/api.js'></script>
+        
         <!-- End new comment form -->
       {% endif %}
     </section>
