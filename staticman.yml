@@ -75,7 +75,7 @@ comments:
   # https://www.google.com/recaptcha/admin, bill@billmongan.com
   # secret is (!) ENCRYPTED; encrypt with https://api.staticman.net/v2/encrypt/YOUR_SECRET_HERE
   reCaptcha:
-    enabled: false
+    enabled: true
     siteKey: "6LfcZcsSAAAAAJ5C5byDKKAUdZGpqi4v_pDVNgsV"
     secret: "jKzsQtmIjfXJhDtomYOZBiWzug6d5iA3TT5w7lBrQ6nkuSa+SWuDTEGMXyWRKgiiMkPvK/ltZ0aa6jSWT7XJvF4MgFJGAP+ZGufmaoaqlMwFBiBiGQt1u3sOkxAxSvHb97KV9zUZKN4mluY6lezP5BfzyV8R+SvAsbqBrBryq4I=" 
 
