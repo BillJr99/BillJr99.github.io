@@ -65,9 +65,11 @@
             <input type="hidden" name="fields[hidden]"/>
             
             <!-- reCAPTCHA -->
-            {% if site.staticman.reCaptcha.enabled == true }
-            <input type="hidden" name="options[reCaptcha][siteKey]" value="{{ site.staticman.reCaptcha.siteKey }}">
-            <input type="hidden" name="options[reCaptcha][secret]" value="{{ site.staticman.reCaptcha.secret }}">
+            {% if site.staticman.reCaptcha.enabled }
+              {% if site.staticman.reCaptcha.enabled == true }
+              <input type="hidden" name="options[reCaptcha][siteKey]" value="{{ site.staticman.reCaptcha.siteKey }}">
+              <input type="hidden" name="options[reCaptcha][secret]" value="{{ site.staticman.reCaptcha.secret }}">
+              {% endif }
             {% endif }
           </fieldset>
           <!-- Start comment form alert messaging -->
@@ -77,8 +79,10 @@
           <!-- End comment form alert messaging -->
           <fieldset>
             <!-- reCAPTCHA -->
-            {% if site.staticman.reCaptcha.enabled == true }
-            <div class="g-recaptcha" data-sitekey="{{ site.staticman.reCaptcha.siteKey }}"></div>
+            {% if site.staticman.reCaptcha.enabled }
+              {% if site.staticman.reCaptcha.enabled == true }
+              <div class="g-recaptcha" data-sitekey="{{ site.staticman.reCaptcha.siteKey }}"></div>
+              {% endif }
             {% endif }
             
             <button type="submit" id="comment-form-submit" tabindex="5" class="btn btn--large">{{ site.data.ui-text[site.locale].comment_btn_submit | default: "Submit Comment" }}</button>
@@ -86,8 +90,10 @@
         </form>
         
         <!-- reCAPTCHA -->
-        {% if site.staticman.reCaptcha.enabled == true }
-        <script src='https://www.google.com/recaptcha/api.js'></script>
+        {% if site.staticman.reCaptcha.enabled }
+          {% if site.staticman.reCaptcha.enabled == true }
+          <script src='https://www.google.com/recaptcha/api.js'></script>
+          {% endif }
         {% endif }
         
         <!-- End new comment form -->
