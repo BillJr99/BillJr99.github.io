@@ -132,7 +132,7 @@ author:
   acmauthor        : "81375612574"
   gitlab           : "BillJr99"
   dblp             : "m/Mongan:William_M="
-  nih              : "william.mongan.1"
+  nih              : #"william.mongan.1"
 
 # Reading Files
 include:
