@@ -22,7 +22,7 @@ For an overview of git as a version control system, see [my article on using Git
 
 # Using GitHub Classroom
 
-## Creating an Organization
+## Step 1: Creating an Organization
 
 GitHub Classroom uses Organizations to manage your classrooms, assignments, and student repositories.  You and your students, TA's, and instructors will be members of your organization (they'll be added throughout the process, so you don't have to do this all yourself).  In addition, student repositories will be incorporated into your organization when they accept assignments.
 
@@ -30,23 +30,23 @@ If you are within an academic institution, you can petition GitHub to make your 
 
 ![Creating a GitHub Organization](/media/2020-02-24-githubclassroom/classroom-new-org.gif)
 
-## Creating a new Classroom
+## Step 2: Creating a new Classroom
 
 ![Creating a New Classroom](/media/2020-02-24-githubclassroom/classroom-new-classroom.gif)
 
-## Setting Up Your Roster and TA Access
+## Step 3: Setting Up Your Roster and TA Access
 
 ![Setting Up the Class Roster Including TA Access](/media/2020-02-24-githubclassroom/classroom-roster-and-tas.gif)
 
-## Creating an Assignment
+## Step 4: Creating Assignments
 
-If you specify a starter code repository, that repository will be copied into each student's repository when they accept the assignment.  This is useful for instructions, boilerplate materials, FAQ materials, and rubrics.  You can even push to the student repositories as a grading mechanism.  I tend not to do this, so as to avoid posting grading information to a potentially public forum, but it's useful for private repositories.
+If you specify a starter code repository, that repository will be copied into each student's repository when they accept the assignment.  You can specify a deadline as well.  If you do this, the Classroom Assistant tool will download the repository as it was at that time.  No commits after the deadline will be seen.  You can even push to the student repositories as a grading mechanism.  I tend not to do this, so as to avoid posting grading information to a potentially public forum, but it's useful for private repositories.  In addition to creating an individual assignment, you can create a group assignment.  When students accept an assignment, they will be able to organize into a team of up to N students (a number you can specify).  You can also re-use existing groupings to keep teams together.
 
-I suggest that you do **not** make students administrators on these accounts, so that they can not modify their sharing settings on the repository.  This helps ensure that they do not accidentally make their repository public.
+**Pro Tip**: I like to create boilerplate “starter” assignments to house my instructions and starter work.  This way, I can focus instead on evolving the assignments!  This is useful for instructions, boilerplate materials, FAQ materials, and rubrics.
 
-You can specify a deadline as well.  If you do this, the Classroom Assistant tool will download the repository as it was at that time.  No commits after the deadline will be seen.
+**Pro Tip**: I suggest that you do **not** make students administrators on these accounts, so that they can not modify their sharing settings on the repository.  This helps ensure that they do not accidentally make their repository public.
 
-In addition to creating an individual assignment, you can create a group assignment.  When students accept an assignment, they will be able to organize into a team of up to N students (a number you can specify).  You can also re-use existing groupings to keep teams together.
+**Pro Tip**: The repository names will start off with the name of the assignment (i.e., ``assignment1-ABC123``).  I like to set my assignment names/classroom names/assignment prefixes with the current semester/year (``csta-spring-2020-assignment1``).
 
 ![Creating a New Assignment](/media/2020-02-24-githubclassroom/classroom-new-assignment.gif)
 
@@ -60,40 +60,44 @@ I tend not to link my GitHub Classrooms with a school roster or LMS, so that I d
 
 ![Accepting an Assignment](/media/2020-02-24-githubclassroom/classroom-accept-assignment.gif)
 
-## Student View: Creating a Pull Request on a Branch to Request Help from the Instructor
+Once the student has accepted the assignment, they can work with it like a normal git repository.  GitHub Classroom saves you the effort of asking students to configure their own repositories, share it with their team members, make the repository private, share it with instructors, etc.
+
+## Downloading Assignments for Grading with the GitHub Classroom Assistant
+
+When it's time to pull all the repositories, you can use the [GitHub Classroom Assistant](https://classroom.github.com/assistant) to identify and clone all the repositories associated with your assignment.  You can also access their repositories directly and push grading information or feedback once they are cloned (or via the GitHub web interface).
+
+![Downloading Assignments with GitHub Classroom Assistant](/media/2020-02-24-githubclassroom/assistant-download-assignment.gif)
+
+**Pro Tip**: I have Two Factor Authentication enabled on my github account, so I can’t check in files that GitHub Classroom Assistant downloads.  As you’ve seen, that could be OK, but I wrote scripts to download the SSH links for the class.  I am happy to share these if you are interested!
+
+## Optional: Using Branches to Create Pull Requests to Request Help from the Instructor
+
+### Student View: Creating a Pull Request on a Branch
 
 If students work in a branch, they can make ***Pull Requests*** on that branch to request reviews and comments from the instructor along the way.  This is a great way to ask questions and seek help.
 
 ![Creating a Pull Request on a Branch](/media/2020-02-24-githubclassroom/classroom-pull-request.gif)
 
-## Instructor View: Managing the Pull Request
+### Instructor View: Managing the Pull Request
 
-### Opening the Pull Request
+#### Opening the Pull Request
 
 ![Accessing a Pull Request](/media/2020-02-24-githubclassroom/classroom-open-pull-request.gif)
 
-### Pull Request Review: Commenting on the Pull Request
+#### Pull Request Review: Commenting on the Pull Request
 
 ![Reviewing a Pull Request](/media/2020-02-24-githubclassroom/classroom-review-pull-request.gif)
 
-## Student View: Merging the Pull Request / Branch
+### Student View: Merging the Pull Request / Branch
 
 Ensure that students remember to merge their pull request (and, ultimately, their branch) into the master branch.  This will make it easier for you to find their work when you download their assignments.  By default, you'll see the master branch, and that will be empty if they only worked in an unmerged branch.  So, although branches are really useful in practice and to generate Pull Requests to get help, it's also helpful to merge them back into ``master`` before submitting.  My students sometimes forget to do this, and I see an empty directory at first when I clone!
 
 ![Merging a Pull Request](/media/2020-02-24-githubclassroom/classroom-merge-pull-request.gif)
-
-## Downloading Assignments for Grading with the GitHub Classroom Assistant
-
-![Downloading Assignments with GitHub Classroom Assistant](/media/2020-02-24-githubclassroom/assistant-download-assignment.gif)
 
 # Closing Thoughts
 
 GitHub Classroom is a useful tool to teach git in the classroom, and to manage student work among instructional staff and among peer student groups.  I've found a few tips and tricks in my workflow along the way, as you've seen above, but I've found this to help me manage student work in a meaningful industry platform.  I like when students develop best practices while doing their work: often, we're rushed to teach something and we forget to emphasize good habits along the way.
 
 Finally, a few closing tips:
-
-1. The repository names will start off with the name of the assignment (i.e., ``assignment1-ABC123``).  I like to set my assignment names/classroom names/assignment prefixes with the current semester/year (``csta-spring-2020-assignment1``).
-2. I have Two Factor Authentication enabled on my github account, so I can’t check in files that GitHub Classroom Assistant downloads.  As you’ve seen, that could be OK, but I wrote scripts to download the SSH links for the class.  I am happy to share these if you are interested!
-3. I like to create boilerplate “starter” assignments to house my instructions and starter work – although there are many steps here, most of them are “one-time” prep items that you do not have to repeat from year to year.  This way, I can focus instead on evolving the assignments!
 
 ------
