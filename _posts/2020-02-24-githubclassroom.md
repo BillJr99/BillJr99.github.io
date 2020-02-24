@@ -84,6 +84,8 @@ Sometimes, team members make changes to the same parts of the same files in diff
 
 ## Creating an Organization
 
+If you are within an academic institution, you can petition GitHub to make your organization a "Pro" organization free of charge.  This enables you to create assignments for which student repositories will be private.  This is really important to me, because I don't want independent student classwork to be made public!  In this example, I'm just creating a personal organization, but this means that the repositories will be public.
+
 ![Creating a GitHub Organization](/media/2020-02-24-githubclassroom/classroom-new-org.gif)
 
 ## Creating a new Classroom
@@ -96,9 +98,23 @@ Sometimes, team members make changes to the same parts of the same files in diff
 
 ## Creating an Assignment
 
+If you specify a starter code repository, that repository will be copied into each student's repository when they accept the assignment.  This is useful for instructions, boilerplate materials, FAQ materials, and rubrics.  You can even push to the student repositories as a grading mechanism.  I tend not to do this, so as to avoid posting grading information to a potentially public forum, but it's useful for private repositories.
+
+I suggest that you do **not** make students administrators on these accounts, so that they can not modify their sharing settings on the repository.  This helps ensure that they do not accidentally make their repository public.
+
+You can specify a deadline as well.  If you do this, the Classroom Assistant tool will download the repository as it was at that time.  No commits after the deadline will be seen.
+
+In addition to creating an individual assignment, you can create a group assignment.  When students accept an assignment, they will be able to organize into a team of up to N students (a number you can specify).  You can also re-use existing groupings to keep teams together.
+
 ![Creating a New Assignment](/media/2020-02-24-githubclassroom/classroom-new-assignment.gif)
 
 ## Student View: Accepting an Assignment
+
+When students accept an assignment, you'll have a record of it, and they will get a repository that is shared with you and the TA's (and any students in their group, if you created a group assignment).  
+
+The first time a student accepts an assignment, they'll be able to assign themselves to a student in your roster.  This allows you to associate a student's GitHub account name to their actual student identifier.
+
+I tend not to link my GitHub Classrooms with a school roster or LMS, so that I do not risk compromising sensitive student data.  I allow them to self-associate.  There is a risk here that a student will mistakenly identify with another account.  If this happens, that student will not be able to associate with their account.  In practice, I have not had a problem with this, but you'll want to ensure that students are representing themselves properly if you're allowing them to self-assign their account to a student on the roster.
 
 ![Accepting an Assignment](/media/2020-02-24-githubclassroom/classroom-accept-assignment.gif)
 
