@@ -34,21 +34,43 @@ Once the key is created, you can copy the public key text and paste it on the Gi
 
 ### Clone
 
+Cloning the repository downloads it to your local computer.  You can do this as many times as you wish, and synchronize across them.  You can even share the repository with other users, and they can operate on the repository locally as well.
+
 ![Cloning a GitHub Repository](/media/2020-02-24-githubclassroom/git-clone.gif)
 
 ### Basic Repository Operations: Add, Commit, and Push
+
+Sometimes, you'll have private files in your repository directory that are important, but too senstive (or just custom to each local computer) to save to the remote repository in the cloud.  For this reason, you'll explicitly ***add*** each file that you want to upload to the cloud.  Note that you also add files that you've modified even if they already exist.  
+
+Once you've added your file(s), you can ***commit*** your changes to the repository.  This creates a log timestamp that you can see in the repository to track who did what and when.  You can even roll back your repository to any point in time marked by one of these commits.  It's a good idea to commit relatively often, whenever a major milestone is reached that you might like to revert to or review someday.  It's also a good idea to specify a commit log message so that these commits make sense beyond simply what files were modified and how.  This is specified with the ``-m`` flag to ``git commit``.
+
+Before git came along, repositories would often automatically sync to the remote in the cloud as soon as a commit was made.  This might even seem reasonable at first glance.  But not all computers are connected to the Internet at all times, and so it is helpful to separate these operations so that you can make commits while offline.  After you have made one or more commits, you can ***push*** them to the remote in the cloud.
 
 ![Add, Commit, and Push to a GitHub Repository](/media/2020-02-24-githubclassroom/git-commit-push.gif)
 
 #### Other Operations: Removing files, Pulling
 
+In addition to adding files, you can also remove files from the repository with ``git rm``.  You'll commit and push these changes just like with add operations.  
+
+One final note: it's a good practice to ***pull*** the repository from the remote cloud before performing a push operation.  In fact, it's required if anyone else has pushed commits that you have not yet downloaded.  You can use the ``git pull`` command to do this, and should plan on doing this at least any time you push.  
+
 ![Removing Files, and Pulling to Update Remote Changes](/media/2020-02-24-githubclassroom/git-commit-push.gif)
 
 ### Branching
 
+Things can get messy if there are many people working on many different parts of a repository with different objectives in mind.  It is nice to have a "sandbox" to work in that is separate from the rest of the team, and then to merge that sandbox back into the ***master*** repository when you are finished.  These "sandboxes" are called ***branches***.  You can create a branch using the ``git branch <branch name>`` command, and switch between branches using the ``git checkout <branch name>`` command.  Git provides a shortcut when creating a new branch that executes both operations: ``git checkout -b <branch name>``.
+
+Initially, the branch will be identical to the current branch, but it will be on its own independent commit timeline.
+
 ![Creating a Branch](/media/2020-02-24-githubclassroom/git-branch.gif)
 
+With GitHub, it's possible that a single user or subset of users are in charge of the ***master*** branch, into which these branches would often be merged.  To request a code review and merge of a branch, you can create a ***Pull Request*** that seeks a review, comments, and ultimately a merge of the branch.
+
+With GitHub classroom, branches and Pull Requests are useful because they allow students to communicate with instructors about their repository.  Students can seek assistance on their code by creating a Pull Request on a branch, and instructors can use the review feature to comment on the student's attempt down to the line level.  However, this is also a good practice for using git and GitHub, and GitHub classroom provides a convenient opportunity to practice these operations in ways that will help the student get assistance on their coursework.  More on this later.
+
 ### Merging a Branch
+
+You can merge a branch into your existing branch using the ``git merge <branch name>`` operation.  You can ***checkout*** the target branch first, and then merge the other branch in.
 
 ![Merging another Branch into the Current Branch](/media/2020-02-24-githubclassroom/git-merge-no-commit-just-push.gif)
 
