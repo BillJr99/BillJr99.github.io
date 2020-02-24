@@ -13,13 +13,16 @@ In this article, we'll explore GitHub classroom as a tool to manage classroom as
 # What You Will Need
 Because GitHub classroom is built on GitHub and git infrastructure, it is important to understand some git and GitHub basics before using GitHub classroom.  You and your students can get started with a working knowledge of just a few features, and we'll summarize them here.  Before starting, you should have the following:
 
-1. **A GitHub Account**: You and your students will each need a GitHub account
-2. **A git installation**: Most Linux distributions have a package manager through which you can install a git client.  There is a Git Bash utility for Windows that you can download and install as well.  In these examples, I'll be using Cygwin, a POSIX layer for Windows that provides a Linux-like shell terminal along with common GNU and Open Source tools like git.  The commands used here will work in other environments, too.
+1. **A GitHub Account**: You and your students will each need a GitHub account.
+2. **A git installation**: Most Linux distributions have a package manager through which you can install a git client.  There is a Git Bash utility for Windows that you can download and install as well.  In these examples, I'll be using Cygwin, a POSIX layer for Windows that provides a Linux-like shell terminal along with common GNU and Open Source tools like git.  The commands used here will work in other environments, too.  You can also use [TortoiseGit](https://tortoisegit.org/) on Windows for a graphical tool that integrates with Windows Explorer.
 3. **Basic Experience with git**: For an overview of git as a version control system, see [my article on using Git with GitHub](/posts/2020/02/github/).
 
 # Using GitHub Classroom
 
-## Step 1: Creating an Organization
+## Step 1: Creating a new Classroom under your Organization
+
+### Creating a GitHub Organization
+If you already have a GitHub Organization, you can skip this part and go directly to creating a new classroom under that organization.  You only have to create an organization once.
 
 GitHub Classroom uses Organizations to manage your classrooms, assignments, and student repositories.  You and your students, TA's, and instructors will be members of your organization (they'll be added throughout the process, so you don't have to do this all yourself).  In addition, student repositories will be incorporated into your organization when they accept assignments.
 
@@ -29,11 +32,10 @@ If you are within an academic institution, you can petition GitHub to make your 
 
 Your TA and instructional team will be administrator members of your organization, so they will have access across your classrooms.  Because of this, I tend to prune the list of instructional staff each semester.
 
-## Step 2: Creating a new Classroom
-
+### Creating a GitHub Classroom
 ![Creating a New Classroom](/media/2020-02-24-githubclassroom/classroom-new-classroom.gif)
 
-## Step 3: Setting Up Your Roster and TA Access
+## Step 2: Setting Up Your Roster and TA Access
 
 You will be given invite links for students and for TAs to add themselves to your organization and classroom.  
 
@@ -41,7 +43,7 @@ You will be given invite links for students and for TAs to add themselves to you
 
 ![Setting Up the Class Roster Including TA Access](/media/2020-02-24-githubclassroom/classroom-roster-and-tas.gif)
 
-## Step 4: Creating Assignments
+## Step 3: Creating Assignments
 
 If you specify a starter code repository, that repository will be copied into each student's repository when they accept the assignment.  You can specify a deadline as well.  If you do this, the Classroom Assistant tool will download the repository as it was at that time.  No commits after the deadline will be seen.  You can even push to the student repositories as a grading mechanism.  I tend not to do this, so as to avoid posting grading information to a potentially public forum, but it's useful for private repositories.  In addition to creating an individual assignment, you can create a group assignment.  When students accept an assignment, they will be able to organize into a team of up to N students (a number you can specify).  You can also re-use existing groupings to keep teams together.
 
@@ -69,7 +71,7 @@ I tend not to link my GitHub Classrooms with a school roster or LMS, so that I d
 
 Once the student has accepted the assignment, they can work with it like a normal git repository.  GitHub Classroom saves you the effort of asking students to configure their own repositories, share it with their team members, make the repository private, share it with instructors, etc.
 
-## Step 5: Downloading Assignments for Grading with the GitHub Classroom Assistant
+## Step 4: Downloading Assignments for Grading with the GitHub Classroom Assistant
 
 When it's time to pull all the repositories, you can use the [GitHub Classroom Assistant](https://classroom.github.com/assistant) to identify and clone all the repositories associated with your assignment.  You can also access their repositories directly and push grading information or feedback once they are cloned (or via the GitHub web interface).
 
