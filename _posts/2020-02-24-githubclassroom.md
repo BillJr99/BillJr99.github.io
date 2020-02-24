@@ -13,12 +13,9 @@ In this article, we'll explore GitHub classroom as a tool to manage classroom as
 # What You Will Need
 Because GitHub classroom is built on GitHub and git infrastructure, it is important to understand some git and GitHub basics before using GitHub classroom.  You and your students can get started with a working knowledge of just a few features, and we'll summarize them here.  Before starting, you should have the following:
 
-1. A GitHub Account
-You and your students will each need a GitHub account
-2. A git installation
-Most Linux distributions have a package manager through which you can install a git client.  There is a Git Bash utility for Windows that you can download and install as well.  In these examples, I'll be using Cygwin, a POSIX layer for Windows that provides a Linux-like shell terminal along with common GNU and Open Source tools like git.  The commands used here will work in other environments, too.
-3. Experience with git
-For an overview of git as a version control system, see [my article on using Git with GitHub](/posts/2020/02/github/).
+1. **A GitHub Account**: You and your students will each need a GitHub account
+2. **A git installation**: Most Linux distributions have a package manager through which you can install a git client.  There is a Git Bash utility for Windows that you can download and install as well.  In these examples, I'll be using Cygwin, a POSIX layer for Windows that provides a Linux-like shell terminal along with common GNU and Open Source tools like git.  The commands used here will work in other environments, too.
+3. **Basic Experience with git**: For an overview of git as a version control system, see [my article on using Git with GitHub](/posts/2020/02/github/).
 
 # Using GitHub Classroom
 
@@ -124,7 +121,5 @@ Ensure that students remember to merge their pull request (and, ultimately, thei
 # Closing Thoughts
 
 GitHub Classroom is a useful tool to teach git in the classroom, and to manage student work among instructional staff and among peer student groups.  I've found a few tips and tricks in my workflow along the way, as you've seen above, but I've found this to help me manage student work in a meaningful industry platform.  I like when students develop best practices while doing their work: often, we're rushed to teach something and we forget to emphasize good habits along the way.
-
-Finally, a few closing tips:
 
 ------
