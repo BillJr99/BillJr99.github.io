@@ -8,8 +8,12 @@ redirect_from:
   - /about.html
 ---
 
+Short Bio
+======
 Bill holds the Ph.D. in Electrical and Computer Engineering from Drexel University since 2018, the M.Sc. in Science of Instruction at the Drexel School of Education since 2008, the M.Sc. in Computer Science since 2008, and the B.Sc. in Computer Science since 2005. His research interests include machine learning of passive RF wearable systems for biomedical classification, service-oriented architectures, and program comprehension through software engineering. Bill is enthusiastically active in computer science education and engineering education outreach: he holds a secondary mathematics teaching certification in Pennsylvania, has taught, volunteered, developed experiential curriculum connected to STEM research projects, and served as mentor and judge at hackathon events with students in grades 5 through 12. He has served on school board and county STEM, educational technology, and grant-writing committees. Bill was appointed as Teaching Professor and Associate Department Head for Undergraduate Affairs of Computer Science in the College of Computing and Informatics through 2019, teaching the systems track and the new architecture track courses for the Department of Computer Science, including Operating Systems, Concurrent Programming, and Systems Architecture. Here, he blended his research and experiential education interests by fusing undergraduate as well as graduate education with classroom and extracurricular research initiatives. In these roles, he was a recipient of the 2014 College of Computing and Informatics Award for Teaching Excellence and the 2019 College of Computing and Informatics Award for Faculty Leadership. He is a Senior Member of the Association for Computing Machinery (ACM) and of the Institute of Electrical and Electronics Engineers (IEEE).
 
+Aviation
+======
 I am an instrument rated private pilot, having trained at Cross Keys Airport (17N) in Williamstown, NJ and at Flying W Airport (N14) in Medford, NJ. I have flown a Cessna 152 (N94294), some Cessna 172’s (N172MG, N64608, N739UG, N226CA, N54812, N805FW, N10DJ, N329SP, and N738YT), a Piper Arrow PA-28 (N2954R), and a twin Piper Seneca PA-38 (N1380T).
 
 Contact Me
