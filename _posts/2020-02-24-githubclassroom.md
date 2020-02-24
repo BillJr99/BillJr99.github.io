@@ -83,8 +83,6 @@ You can push directly to the student's repository for them, or you can create a 
 
 ![Create a File on a GitHub Repository through the Web Interface](/media/2020-02-24-githubclassroom/create-new-file.png)
 
----
-
 ## Optional: Using Branches to Create Pull Requests to Request Help from the Instructor
 
 ### Student View: Creating a Pull Request on a Branch
@@ -118,8 +116,6 @@ You and the student can continue commenting on the Pull Request until the issue 
 Ensure that students remember to merge their pull request (and, ultimately, their branch) into the master branch.  This will make it easier for you to find their work when you download their assignments.  By default, you'll see the master branch, and that will be empty if they only worked in an unmerged branch.  So, although branches are really useful in practice and to generate Pull Requests to get help, it's also helpful to merge them back into ``master`` before submitting.  My students sometimes forget to do this, and I see an empty directory at first when I clone!
 
 ![Merging a Pull Request](/media/2020-02-24-githubclassroom/classroom-merge-pull-request.gif)
-
----
 
 # Closing Thoughts
 
