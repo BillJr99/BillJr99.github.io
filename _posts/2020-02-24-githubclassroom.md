@@ -7,7 +7,6 @@ tags:
   - educational
   - technical
 ---
-William M. Mongan
 
 In this article, we'll explore GitHub classroom as a tool to manage classroom assignments.  GitHub classroom creates assignments that students "accept" as git repositories.  They can work with their repository on any computer and synchronize or backup their work to the GitHub cloud.  Using GitHub practices like Pull Requests, students can request help from the instructor and receive line-by-line feedback right in the repository, all while developing good habits in the use of git repositories.  Instructors can automate downloading and grading through scripting or through the GitHub Classroom Assistant tool.  In addition, assignments can be specified as group assignments, which create shared repositories as you organize students (or as they self-organize) into teams.  GitHub classroom also allows you to tie your assignments to a "starter repository" in which you can post boilerplate materials or code, instructions, rubrics, and FAQs that you can evolve over time.
 
