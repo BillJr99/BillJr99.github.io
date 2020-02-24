@@ -64,6 +64,8 @@ Initially, the branch will be identical to the current branch, but it will be on
 
 ![Creating a Branch](/media/2020-02-24-githubclassroom/git-branch.gif)
 
+You can commit and push to your branch like before.  When pushing to (or pulling from) a particular branch, you can specify the branch to git via ``git push <remote> <branch name>``.  By default, the GitHub remote is called ``origin``, so you would enter ``git push origin <branch name>``.  You can have more than one remote, which would allow you to sync with multiple remote servers or to create custom actions to occur when you push commits.  This is beyond the scope of this article as we won't need it for GitHub classroom, but if you're interested, you can find out more [here](https://help.github.com/en/github/using-git/adding-a-remote).
+
 With GitHub, it's possible that a single user or subset of users are in charge of the ***master*** branch, into which these branches would often be merged.  To request a code review and merge of a branch, you can create a ***Pull Request*** that seeks a review, comments, and ultimately a merge of the branch.
 
 With GitHub classroom, branches and Pull Requests are useful because they allow students to communicate with instructors about their repository.  Students can seek assistance on their code by creating a Pull Request on a branch, and instructors can use the review feature to comment on the student's attempt down to the line level.  However, this is also a good practice for using git and GitHub, and GitHub classroom provides a convenient opportunity to practice these operations in ways that will help the student get assistance on their coursework.  More on this later.
