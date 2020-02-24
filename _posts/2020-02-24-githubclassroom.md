@@ -69,7 +69,7 @@ I tend not to link my GitHub Classrooms with a school roster or LMS, so that I d
 
 Once the student has accepted the assignment, they can work with it like a normal git repository.  GitHub Classroom saves you the effort of asking students to configure their own repositories, share it with their team members, make the repository private, share it with instructors, etc.
 
-## Downloading Assignments for Grading with the GitHub Classroom Assistant
+## Step 5: Downloading Assignments for Grading with the GitHub Classroom Assistant
 
 When it's time to pull all the repositories, you can use the [GitHub Classroom Assistant](https://classroom.github.com/assistant) to identify and clone all the repositories associated with your assignment.  You can also access their repositories directly and push grading information or feedback once they are cloned (or via the GitHub web interface).
 
@@ -79,10 +79,11 @@ Note that the link you give to GitHub Classroom Assistant is the web link of you
 
 **Pro Tip**: I have Two Factor Authentication enabled on my github account, so I can’t check in files that GitHub Classroom Assistant downloads.  As you’ve seen, that could be OK, but I wrote scripts to download the SSH links for the class.  I am happy to share these if you are interested!
 
-### Optional: Submitting Feedback through GitHub
 You can push directly to the student's repository for them, or you can create a file on-the-fly through the repository webpage.  You can click "Create New File" to create a text file, which you can save, commit, and push from the web interface.
 
 ![Create a File on a GitHub Repository through the Web Interface](/media/2020-02-24-githubclassroom/create-new-file.png)
+
+---
 
 ## Optional: Using Branches to Create Pull Requests to Request Help from the Instructor
 
@@ -117,6 +118,8 @@ You and the student can continue commenting on the Pull Request until the issue 
 Ensure that students remember to merge their pull request (and, ultimately, their branch) into the master branch.  This will make it easier for you to find their work when you download their assignments.  By default, you'll see the master branch, and that will be empty if they only worked in an unmerged branch.  So, although branches are really useful in practice and to generate Pull Requests to get help, it's also helpful to merge them back into ``master`` before submitting.  My students sometimes forget to do this, and I see an empty directory at first when I clone!
 
 ![Merging a Pull Request](/media/2020-02-24-githubclassroom/classroom-merge-pull-request.gif)
+
+---
 
 # Closing Thoughts
 
