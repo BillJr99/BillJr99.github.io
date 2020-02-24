@@ -19,7 +19,7 @@ Because GitHub classroom is built on GitHub and git infrastructure, it is import
 
 # Using GitHub Classroom
 
-## Step 1: Creating a new Classroom under your Organization
+## Step 1: Creating a new Classroom under Your Organization
 
 ### Creating a GitHub Organization
 If you already have a GitHub Organization, you can skip this part and go directly to creating a new classroom under that organization.  You only have to create an organization once.
