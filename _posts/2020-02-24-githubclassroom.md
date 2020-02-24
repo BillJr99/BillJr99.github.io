@@ -120,6 +120,8 @@ I tend not to link my GitHub Classrooms with a school roster or LMS, so that I d
 
 ## Student View: Creating a Pull Request on a Branch to Request Help from the Instructor
 
+If students work in a branch, they can make ***Pull Requests*** on that branch to request reviews and comments from the instructor along the way.  This is a great way to ask questions and seek help.
+
 ![Creating a Pull Request on a Branch](/media/2020-02-24-githubclassroom/classroom-pull-request.gif)
 
 ## Instructor View: Managing the Pull Request
@@ -134,10 +136,22 @@ I tend not to link my GitHub Classrooms with a school roster or LMS, so that I d
 
 ## Student View: Merging the Pull Request / Branch
 
+Ensure that students remember to merge their pull request (and, ultimately, their branch) into the master branch.  This will make it easier for you to find their work when you download their assignments.  By default, you'll see the master branch, and that will be empty if they only worked in an unmerged branch.  So, although branches are really useful in practice and to generate Pull Requests to get help, it's also helpful to merge them back into ``master`` before submitting.  My students sometimes forget to do this, and I see an empty directory at first when I clone!
+
 ![Merging a Pull Request](/media/2020-02-24-githubclassroom/classroom-merge-pull-request.gif)
 
 ## Downloading Assignments for Grading with the GitHub Classroom Assistant
 
 ![Downloading Assignments with GitHub Classroom Assistant](/media/2020-02-24-githubclassroom/assistant-download-assignment.gif)
+
+# Closing Thoughts
+
+GitHub Classroom is a useful tool to teach git in the classroom, and to manage student work among instructional staff and among peer student groups.  I've found a few tips and tricks in my workflow along the way, as you've seen above, but I've found this to help me manage student work in a meaningful industry platform.  I like when students develop best practices while doing their work: often, we're rushed to teach something and we forget to emphasize good habits along the way.
+
+Finally, a few closing tips:
+
+1. The repository names will start off with the name of the assignment (i.e., ``assignment1-ABC123``).  I like to set my assignment names/classroom names/assignment prefixes with the current semester/year (``csta-spring-2020-assignment1``).
+2. I have Two Factor Authentication enabled on my github account, so I can’t check in files that GitHub Classroom Assistant downloads.  As you’ve seen, that could be OK, but I wrote scripts to download the SSH links for the class.  I am happy to share these if you are interested!
+3. I like to create boilerplate “starter” assignments to house my instructions and starter work – although there are many steps here, most of them are “one-time” prep items that you do not have to repeat from year to year.  This way, I can focus instead on evolving the assignments!
 
 ------
