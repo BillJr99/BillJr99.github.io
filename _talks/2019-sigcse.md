@@ -3,7 +3,7 @@ title: 'Post-It Pandemonium: Teaching Image Representation and Compression with 
 collection: talks
 permalink: /talk/sigcse2019
 date: '2019-02-01'
-venue: 'Post-It Pandemonium: Teaching Image Representation and Compression with an Unplugged Activity. ACM SIGCSE 2019 Nifty Assignment with Jeffrey L. Popyack.'
+venue: 'Post-It Pandemonium: Teaching Image Representation and Compression with an Unplugged Activity. ACM SIGCSE Nifty Assignment with Jeffrey L. Popyack.'
 type: talk
 location: 'Minneapolis, MN'
 comments: true
