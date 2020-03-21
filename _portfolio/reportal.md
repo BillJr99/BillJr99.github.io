@@ -16,13 +16,13 @@ I developed auxiliary tools for visualization of software architecture, includin
 # Publications
 {% for post in site.publications reversed %}
   {% if post.tags contains "reportal" %}
-    {% include archive-single.html %}
+    {% include archive-single-cv.html %}
   {% endif %}
 {% endfor %}
 
 # Talks
 {% for post in site.talks reversed %}
   {% if post.tags contains "reportal" %}
-    {% include archive-single-talk.html %}
+    {% include archive-single-talk-cv.html %}
   {% endif %}
 {% endfor %}

@@ -16,14 +16,14 @@ Under this project, I developed and open-sourced the [IoT Sensor Framework](/por
 # Publications
 {% for post in site.publications reversed %}
   {% if post.tags contains "smartfabrics" %}
-    {% include archive-single.html %}
+    {% include archive-single-cv.html %}
   {% endif %}
 {% endfor %}
 
 # Talks
 {% for post in site.talks reversed %}
   {% if post.tags contains "smartfabrics" %}
-    {% include archive-single-talk.html %}
+    {% include archive-single-talk-cv.html %}
   {% endif %}
 {% endfor %}
 

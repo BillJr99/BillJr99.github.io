@@ -18,13 +18,13 @@ Download the ASRM [here](http://www.fipa.org/docs/ACIN-reference_model-v1a.pdf).
 # Publications
 {% for post in site.publications reversed %}
   {% if post.tags contains "asrm" %}
-    {% include archive-single.html %}
+    {% include archive-single-cv.html %}
   {% endif %}
 {% endfor %}
 
 # Talks
 {% for post in site.talks reversed %}
   {% if post.tags contains "asrm" %}
-    {% include archive-single-talk.html %}
+    {% include archive-single-talk-cv.html %}
   {% endif %}
 {% endfor %}

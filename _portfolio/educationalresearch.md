@@ -14,13 +14,13 @@ As a graduate student, I was as an [NSF GK-12 Fellow](http://www.drexelgk12.com/
 # Publications
 {% for post in site.publications reversed %}
   {% if post.tags contains "education" %}
-    {% include archive-single.html %}
+    {% include archive-single-cv.html %}
   {% endif %}
 {% endfor %}
 
 # Talks
 {% for post in site.talks reversed %}
   {% if post.tags contains "education" %}
-    {% include archive-single-talk.html %}
+    {% include archive-single-talk-cv.html %}
   {% endif %}
 {% endfor %}
