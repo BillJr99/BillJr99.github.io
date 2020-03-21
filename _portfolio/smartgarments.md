@@ -11,6 +11,8 @@ Using the [IOT Sensor Framework](/portfolio/iotframework/) for signal processing
 
 I have been fortunate to work with this multidisciplinary team, synthesizing my interests in machine learning and signal processing with electrical engineers, sociologists, neonatologists, pediatricians, and other areas of expertise that span the university.  
 
+Under this project, I developed and open-sourced the [IoT Sensor Framework](/portfolio/iotframework/) for interfacing with heterogeneous IoT sensor suites for ongoing and real-time monitoring.
+
 # Publications
 {% for post in site.publications reversed %}
   {% if post.tags contains "smartfabrics" %}
