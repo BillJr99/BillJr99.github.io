@@ -11,7 +11,7 @@ I have been fortunate to work with this multidisciplinary team, synthesizing my 
 
 # Publications
 {% for post in site.publications reversed %}
-  {% if post.tags == "smartfabrics" %}
+  {% if post.tags contains "smartfabrics" %}
     {% include archive-single.html %}
   {% endif %}
 {% endfor %}
