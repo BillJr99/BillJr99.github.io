@@ -138,7 +138,10 @@
       {% endif %}        
       {% if site.author.gitlab %}
       <li><a href="https://gitlab.com/{{ site.author.gitlab }}"><i class="fas fa-link" aria-hidden="true"></i> Gitlab</a></li>
-      {% endif %}   
+      {% endif %}  
+      {% if site.author.csauthors %}
+      <li><a href="https://www.csauthors.net/{{ site.author.csauthors }}/"><i class="fas fa-link" aria-hidden="true"></i> CSAuthors Profile</a></li>
+      {% endif %}
     </ul>
   </div>
 </div>
