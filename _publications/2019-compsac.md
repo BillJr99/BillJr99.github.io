@@ -9,6 +9,8 @@ paperurl: 'https://ieeexplore.ieee.org/document/8754449/'
 citation: 'Austin Gentry, William M. Mongan, Brent Lee, Owen Montgomery, and Kapil Dandekar. Activity Segmentation Using Wearable Sensors for DVT/PE Risk Detection.  The First IEEE International Workshop on Integrated Smart Healthcare (WISH 2019) at IEEE COMPSAC, July, 2019.'
 ---
 
+Download the paper [here](https://par.nsf.gov/biblio/10118762)
+
 bibtex:
 ```bibtex
 @INPROCEEDINGS{8754449, 
