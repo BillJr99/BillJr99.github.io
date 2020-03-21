@@ -16,15 +16,15 @@ Additionally, we have developed an [Agent Systems Reference Architecture (ASRA)]
 Download the ASRM [here](http://www.fipa.org/docs/ACIN-reference_model-v1a.pdf).
 
 # Publications
-{% for post in site.publications reversed %}
+<ul>{% for post in site.publications reversed %}
   {% if post.tags contains "asrm" %}
     {% include archive-single-cv.html %}
   {% endif %}
-{% endfor %}
+{% endfor %}</ul>
 
 # Talks
-{% for post in site.talks reversed %}
+<ul>{% for post in site.talks reversed %}
   {% if post.tags contains "asrm" %}
     {% include archive-single-talk-cv.html %}
   {% endif %}
-{% endfor %}
+{% endfor %}</ul>

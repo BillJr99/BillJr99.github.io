@@ -14,15 +14,15 @@ Information about the development of the portal can be found in my [Masters Thes
 I developed auxiliary tools for visualization of software architecture, including [ClusterNav](/portfolio/clusternav/) for visualization of [Bunch](https://www.cs.drexel.edu/~spiros/bunch/) clustered Module Dependency Graphs (MDG), and [xml2dot](/portfolio/xml2dot/) for visualization of xml graph structures.  
 
 # Publications
-{% for post in site.publications reversed %}
+<ul>{% for post in site.publications reversed %}
   {% if post.tags contains "reportal" %}
     {% include archive-single-cv.html %}
   {% endif %}
-{% endfor %}
+{% endfor %}</ul>
 
 # Talks
-{% for post in site.talks reversed %}
+<ul>{% for post in site.talks reversed %}
   {% if post.tags contains "reportal" %}
     {% include archive-single-talk-cv.html %}
   {% endif %}
-{% endfor %}
+{% endfor %}</ul>
