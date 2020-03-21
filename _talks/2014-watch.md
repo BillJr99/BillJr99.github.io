@@ -7,5 +7,7 @@ venue: 'Maternity Smart Fabric Bellyband to Monitor Uterine Activity and Assess 
 type: talk
 location: 'Indianapolis, IN'
 comments: true
+tags:
+  - smartfabrics
 ---
 

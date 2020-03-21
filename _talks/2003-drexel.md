@@ -7,5 +7,7 @@ venue: 'REportal: A Web-Based Reverse Engineering Portal. Drexel University Rese
 type: talk
 location: 'Philadelphia, PA'
 comments: true
+tags:
+  - reportal
 ---
 

@@ -7,5 +7,8 @@ venue: 'Internet Protocols and Cryptography. Reboot Renew REThink Workshop at Dr
 type: talk
 location: 'Philadelphia, PA'
 comments: true
+tags:
+  - education
+  - technical
 ---
 

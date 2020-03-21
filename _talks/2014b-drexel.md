@@ -7,5 +7,8 @@ venue: 'Marconi: The Master of Wireless. Bellyband Demonstration at Drexel Unive
 type: talk
 location: 'Philadelphia, PA'
 comments: true
+tags:
+  - smartfabrics
+  - technical
 ---
 

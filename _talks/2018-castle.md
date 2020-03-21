@@ -7,5 +7,7 @@ venue: 'Contextualizing Principles of Computer Science. CASTLE Pedagogical Happy
 type: talk
 location: 'Philadelphia, PA'
 comments: true
+tags:
+  - education
 ---
 

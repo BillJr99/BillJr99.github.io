@@ -7,5 +7,7 @@ venue: 'National Council of Women in Information Technology (NCWIT), Invited Fac
 type: talk
 location: 'Tuscon, AZ'
 comments: true
+tags:
+  - education
 ---
 

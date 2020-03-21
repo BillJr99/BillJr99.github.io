@@ -7,5 +7,7 @@ venue: 'ACM/IEEE International Conference on Internet-of-Things Design and Imple
 type: talk
 location: 'Pittsburgh, PA'
 comments: true
+tags:
+  - smartfabrics
 ---
 

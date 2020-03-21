@@ -7,5 +7,8 @@ venue: 'MapReduce Parallelism across the Curriculum: an Interim Report. 8th NSF/
 type: talk
 location: 'Vancouver, BC, Canada'
 comments: true
+tags:
+  - education
+  - technical
 ---
 

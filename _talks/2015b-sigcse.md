@@ -8,5 +8,8 @@ type: talk
 location: 'Kansas City, MO and Philadelphia, PA'
 comments: true
 download: 'https://dl.acm.org/citation.cfm?id=2691908'
+tags:
+  - education
+  - technical
 ---
 

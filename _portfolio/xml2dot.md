@@ -3,6 +3,8 @@ title: "xml2dot"
 excerpt: "XML Document Visualizer"
 collection: portfolio
 comments: true
+tags: 
+  - technical
 ---
 
 [This tool](/files/xml2dot.jar) enables visualization of the structure of XML documents using [GraphViz](http://www.graphviz.org/).  

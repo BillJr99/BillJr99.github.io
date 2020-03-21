@@ -7,6 +7,9 @@ venue: 'Big Data is Everywhere: Bridging Computing Disciplines and Society. Webi
 type: talk
 location: 'Philadelphia, PA'
 comments: true
+tags:
+  - education
+  - technical
 ---
 
 Presented in June, 2014 and January, 2015

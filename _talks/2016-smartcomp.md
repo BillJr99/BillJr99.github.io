@@ -7,4 +7,6 @@ venue: 'Proceedings of the IEEE Smart Systems Workshop'
 type: talk
 location: 'St. Louis, MO'
 comments: true
+tags:
+  - smartfabrics
 ---

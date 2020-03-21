@@ -7,5 +7,7 @@ venue: 'Integrating Active Learning in the STEM Classroom (Inaugural Event). Ped
 type: talk
 location: 'Philadelphia, PA'
 comments: true
+tags:
+  - education
 ---
 

@@ -7,5 +7,8 @@ venue: 'Using BigData for Learning about a Slice of Parallel Computation in Seve
 type: talk
 location: 'Chicago, IL'
 comments: true
+tags:
+  - education
+  - technical
 ---
 

@@ -3,7 +3,7 @@ title: 'Pop, The Question Podcast (S3-E19)'
 date: 2019-06-06
 permalink: /posts/2019/06/popthequestion
 tags:
-  - educational
+  - education
   - entertainment
 ---
 

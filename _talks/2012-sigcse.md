@@ -8,5 +8,8 @@ type: talk
 location: 'Raleigh, NC'
 comments: true
 download: 'https://dl.acm.org/citation.cfm?id=2157364'
+tags:
+  - education
+  - technical
 ---
 

@@ -7,4 +7,6 @@ venue: 'IADIS Proceedings of the International Conference Intelligent Systems an
 type: talk
 location: 'Lisbon, Portugal'
 comments: true
+tags:
+  - asrm
 ---

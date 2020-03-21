@@ -7,5 +7,7 @@ venue: 'Post-It Pandemonium: Teaching Image Representation and Compression with 
 type: talk
 location: 'Philadelphia, PA'
 comments: true
+tags:
+  - education
 ---
 
