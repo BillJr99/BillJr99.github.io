@@ -14,3 +14,10 @@ We motivate the need for a reference model for agent systems in [this paper](/pu
 Additionally, we have developed an [Agent Systems Reference Architecture (ASRA)](/publication/aose2010) which [further specifies patterns and relationships](/publication/thms2013) among the entities defined by the ASRM.
 
 Download the ASRM [here](http://www.fipa.org/docs/ACIN-reference_model-v1a.pdf).
+
+# Publications
+{% for post in site.publications reversed %}
+  {% if post.tags contains "asrm" %}
+    {% include archive-single.html %}
+  {% endif %}
+{% endfor %}
