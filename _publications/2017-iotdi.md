@@ -10,8 +10,6 @@ citation: William Mongan, Ilhaan Rasheed, Khyati Ved, Shrenik Vora, Kapil Dandek
 ---
 Download the paper [here](https://dl.acm.org/doi/pdf/10.1145/3054977.3055002?download=true)
 
-Radio Frequency Identification (RFID) technology is often deployed for inventory management scenarios. In inventory applications, a known or unknown number of RFID tags are queried in a discrete manner and for a single, short period of time, until each tag is recognized by the interrogator device. Passive RFID provides several benefits conducive to ubiquitous deployment, including RFID tags that are energized from the wireless RF interrogation signal itself that obviates the need for a battery or wired power, and antenna assemblies that can be integrated with the chip with only a small footprint. We have utilized these bene?ts to enable continuous biomedical sensing devices with minimal footprint and batteryless deployment. These devices are fabric-based smart garments with an embedded RFID tag and antenna assembly. However, traditional inventory-based RFID interrogation presents several challenges due to the RFID protocols and regulations that govern their use. In this paper, we discuss the considerations necessary to utilize RFID interrogation to enabling passive, continuous sensor monitoring, and the techniques we employed in developing software to do so.
-
 bibtex:
 ```bibtex
 @inproceedings{05f61b82daef4ab9bd75be5eb250f232,
