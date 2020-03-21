@@ -19,3 +19,10 @@ I developed auxiliary tools for visualization of software architecture, includin
     {% include archive-single.html %}
   {% endif %}
 {% endfor %}
+
+# Talks
+{% for post in site.talks reversed %}
+  {% if post.tags contains "reportal" %}
+    {% include archive-single-talk.html %}
+  {% endif %}
+{% endfor %}

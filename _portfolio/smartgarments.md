@@ -20,5 +20,12 @@ Under this project, I developed and open-sourced the [IoT Sensor Framework](/por
   {% endif %}
 {% endfor %}
 
+# Talks
+{% for post in site.talks reversed %}
+  {% if post.tags contains "smartfabrics" %}
+    {% include archive-single-talk.html %}
+  {% endif %}
+{% endfor %}
+
 # In the Media
 * [These Smart Threads Could Save Lives](/posts/2016/09/sciencenation).  The National Science Foundation (NSF) Science Nation.  September, 2016.
