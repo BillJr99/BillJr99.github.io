@@ -1,5 +1,5 @@
 ---
-title: "asrm"
+title: "ASRM"
 excerpt: "The Agent Systems Reference Model (ASRM)"
 collection: portfolio
 comments: true
