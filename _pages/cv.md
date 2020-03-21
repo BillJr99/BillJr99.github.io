@@ -17,28 +17,29 @@ BibTeX Records for most publications can be found [here](https://dblp.uni-trier.
 
 Education
 ======
-* B.S. in Computer Science, Drexel University, 2005
-  * Minor in Mathematics
+* Ph.D in Electrical and Computer Engineering, Drexel University, 2018
 * M.S. in Computer Science, Drexel University, 2008
 * M.S. in Science of Instruction, Drexel University, 2008
   * Pennsylvania Teaching Certification in Grades 7-12 Mathematics
-* Ph.D in Electrical and Computer Engineering, Drexel University, 2018
+* B.S. in Computer Science, Drexel University, 2005
+  * Minor in Mathematics
+  * Magna Cum Laude
 
 Selected Faculty Appointments
 ======
-* Teaching Faculty of Computer Science at Drexel University, 2008-2019
-  * Instructor / Auxiliary Professor, 2008-2011
-  * Assistant Teaching Professor, 2011-2012
-  * Associate Teaching Professor, 2012-2017
-  * Teaching Professor (full), 2017-2019
+* Instructor (Part-Time) of Computer Science and Engineering at Syracuse University, 2020-Present
+
+* Associate Department Head of Undergraduate Affairs in the Department of Computer Science at Drexel University, 2014-2019
+  * Associate Department Head, 2015-2019
+  * Director of Undergraduate Affairs, 2014-2015
 
 * Lecturer (Visiting) of Computer and Information Science at the University of Pennsylvania, 2011-2013
 
-* Associate Department Head of Undergraduate Affairs in the Department of Computer Science at Drexel University, 2014-2019
-  * Director of Undergraduate Affairs, 2014-2015
-  * Associate Department Head, 2015-2019
-
-* Instructor (Part-Time) of Computer Science and Engineering at Syracuse University, 2020-Present
+* Teaching Faculty of Computer Science at Drexel University, 2008-2019
+  * Teaching Professor (full), 2017-2019
+  * Associate Teaching Professor, 2012-2017
+  * Assistant Teaching Professor, 2011-2012
+  * Instructor / Auxiliary Professor, 2008-2011
 
 Selected Publications
 ======
