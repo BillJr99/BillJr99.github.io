@@ -38,7 +38,7 @@ Selected Faculty Appointments
   * Director of Undergraduate Affairs, 2014-2015
   * Associate Department Head, 2015-2019
 
-* Instructor (Adjunct) of Computer Science and Engineering at Syracuse University, 2020-Present
+* Instructor (Part-Time) of Computer Science and Engineering at Syracuse University, 2020-Present
 
 Selected Publications
 ======
