@@ -11,7 +11,7 @@ citation: 'Mongan, William M. (2018). Predictive Analytics on Real-Time Biofeedb
 Download the presentation [here](/files/mongan-dissertation-presentation.pdf)  
 Download the paper [here](/files/mongan-dissertation.pdf)
 
-##bibtex
+## bibtex
 ```bibtex
 @phdthesis{WMonganPhD,
 author    = {Mongan, William M.},

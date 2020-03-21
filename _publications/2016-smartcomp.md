@@ -12,7 +12,7 @@ Download the paper [here](http://shrenikvora.com/Shrenik_Vora_Smartsys.pdf)
 
 The Smart-Fabric Bellyband was featured in the [Science Nation video series from the National Science Foundation](https://www.nsf.gov/news/special_reports/science_nation/biomedtextiles.jsp?WT.mc_id=USNSF_51).
 
-##bibtex
+## bibtex
 ```bibtex
 @INPROCEEDINGS{7501674,
 author={W. {Mongan} and E. {Anday} and G. {Dion} and A. {Fontecchio} and K. {Joyce} and T. {Kurzweg} and Y. {Liu} and O. {Montgomery} and I. {Rasheed} and C. {Sahin} and S. {Vora} and K. {Dandekar}},

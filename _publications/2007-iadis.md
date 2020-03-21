@@ -11,7 +11,7 @@ citation: William M. Mongan, Christopher J. Dugan, Robert N. Lass, Andrew K. Hig
 
 Download the paper [here](http://www.iadisportal.org/digital-library/mdownload/dynamic-analysis-of-agent-frameworks-insupport-of-a-multiagent-systems-reference-model)
 
-##bibtex
+## bibtex
 ```bibtex
 @article{MonganIADIS, 
 place={Lisbon, Portugal}, 

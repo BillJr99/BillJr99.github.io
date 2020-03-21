@@ -11,7 +11,7 @@ citation: Pragnesh Jay Modi, Spiros Mancoridis, William M. Mongan, William Regli
 
 Download the paper [here](https://dl.acm.org/doi/pdf/10.1145/1160633.1160922?download=true)
 
-##bibtex
+## bibtex
 ```bibtex
 @article{ModiAAMAS2006, 
 place={Hakodate, Japan}, 

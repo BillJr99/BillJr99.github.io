@@ -11,7 +11,7 @@ citation: 'Austin Gentry, William M. Mongan, Brent Lee, Owen Montgomery, and Kap
 
 Download the paper [here](https://par.nsf.gov/biblio/10118762)
 
-##bibtex
+## bibtex
 ```bibtex
 @INPROCEEDINGS{8754449, 
 author={Austin Gentry and William Mongan and Brent Lee and Owen Montgomery and Kapil R. Dandekar}, 
