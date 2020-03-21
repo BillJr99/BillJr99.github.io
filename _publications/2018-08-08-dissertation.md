@@ -7,6 +7,10 @@ date: '2018-08-08'
 venue: 'Drexel University'
 paperurl: '/files/mongan-dissertation.pdf'
 citation: 'Mongan, William M. (2018). Predictive Analytics on Real-Time Biofeedback for Actionable Classification of Activity State.  PhD Dissertation, Drexel University.'
+tags:
+  - technical
+  - thesis
+  - smartfabrics
 ---
 Download the presentation [here](/files/mongan-dissertation-presentation.pdf)  
 Download the paper [here](/files/mongan-dissertation.pdf)
