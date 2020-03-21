@@ -10,7 +10,7 @@ citation: William Mongan, Ilhaan Rasheed, Khyati Ved, Shrenik Vora, Kapil Dandek
 ---
 Download the paper [here](https://dl.acm.org/doi/pdf/10.1145/3054977.3055002?download=true)
 
-bibtex:
+##bibtex
 ```bibtex
 @inproceedings{05f61b82daef4ab9bd75be5eb250f232,
 title = "On the use of radio frequency identification for continuous biomedical monitoring",
