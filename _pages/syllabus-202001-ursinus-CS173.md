@@ -1,6 +1,6 @@
 ---
 layout: syllabus
-permalink: /syllabi/ursinus/2020/01/CS173
+permalink: /syllabus/2020/CS173-Fa20
 title: "CS173: Intro to Computer Science"
 excerpt: "CS173: Intro to Computer Science"
 
