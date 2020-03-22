@@ -313,6 +313,84 @@ layout: default
         </tr>
         {% endfor %}
         </table>
+        
+        <h2>Course Schedule</h2>
+        <table  id="index" class="table table-condensed" cellspacing="10">
+        <thead>
+        <tr>
+        <th><span></span></th>
+        <th><span></span></th>
+        <th><span></span></th>
+        <th><span></span></th>
+        <th><span></span></th>
+        </tr>
+        </thead>
+
+        <tbody>
+        {% for item in page.schedule %}
+        <tr align="left">
+
+        <td align="left">
+        Week {{ item.week }}
+        </td>
+
+        <td align="left">
+        {{ item.date }}
+        </td>
+
+        <td align="left">
+        {% if item.link %}<a href="{{item.link}}">{% endif %}
+        {{ item.title }}
+        {% if item.link %}</a>{% endif %}
+        </td>
+
+        <td align="left">
+        {% if item.readings %}
+        <ul>
+        {% endif %}
+
+        {% for reading in item.readings %}
+        <li>
+        {% if reading.rlink %}
+        <a href="{{reading.rlink}}">
+        {% endif %}
+        {{reading.rtitle}}
+        {% if reading.rlink %}
+        </a>
+        {% endif %}
+        </li>
+        {% endfor %}
+
+        {% if item.readings %}
+        </ul>
+        {% endif %}
+        </td>
+
+        <td align="left">
+        {% if item.deliverables %}
+        <ul>
+        {% endif %}
+        {% for deliverable in item.deliverables %}
+        <li>
+        {% if deliverable.dlink %}
+        <a href="{{deliverable.dlink}}">
+        {% endif %}
+        {{deliverable.dtitle}}
+        {% if deliverable.dlink %}
+        </a>
+        {% endif %}
+        </li>
+        {% endfor %}
+
+        {% if item.deliverables %}
+        </ul>
+        {% endif %}
+        </td>
+
+        </tr>
+        {% endfor %}
+
+        </table>        
     
     
     {{ content }}
