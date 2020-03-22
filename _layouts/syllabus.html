@@ -34,7 +34,9 @@ layout: default
 
 
 
-
+{% if page.info.course_description %}
+{{ page.info.course_description }}
+{% endif %}
 
 
 <h2>Course Info</h2> 
@@ -158,7 +160,7 @@ layout: default
 
 
 <h2>Textbooks</h2>
-Bold Textbooks are Required, Italicized are Recommended or Supplemental
+Bold Textbooks are Required, Italicized Textbooks are Recommended or Supplemental
 
 <table  id="index" class="table table-condensed" cellspacing="10">
 <thead>
