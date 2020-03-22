@@ -17,7 +17,7 @@ instructors:
   title: Professor
   email: billmongan@gmail.com
   phone: TBD
-  webpage_url: www.billmongan.com
+  webpage_url: http://www.billmongan.com
   office_hours_times: TBD
   office_hours_location: TBD
   picture: /images/profile.png
