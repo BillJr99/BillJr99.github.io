@@ -6,6 +6,7 @@ comments: true
 tags:
   - smartfabrics
   - technical
+  - software  
 ---
 
 This software suite contains scripts to collect and store IoT sensor data, such as RFID tag information using an Impinj Speedway RFID reader.  It is modular and generalizable to a variety of sensor systems and processing needs.  
