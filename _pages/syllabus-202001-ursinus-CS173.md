@@ -8,7 +8,7 @@ info:
   course_number: CS173
   course_title: "Intro to Computer Science"
   course_prerequisites: "None"
-  course_start_date: "2020/01/01"
+  course_start_date: "2020/01/06"
   course_end_date: "2020/05/01"
   course_description: "Course description"
   class_meets_when: "Meeting Days and Times"
