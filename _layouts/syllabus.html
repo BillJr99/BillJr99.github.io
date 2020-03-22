@@ -61,7 +61,7 @@ layout: default
 {% if page.permalink %}
 <tr>
 <td>Course Webpage</td>
-<td><b> <a href="http://www.billmongan.com{{page.permalink}}">http://www.billmongan.com{{page.permalink}}</a> </b></td>
+<td><b> <a href="{{page.permalink}}">{{page.instructors[0].webpage_url}}{{page.permalink}}</a> </b></td>
 </tr>
 {% endif %}
 
