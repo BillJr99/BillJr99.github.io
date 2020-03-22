@@ -30,6 +30,8 @@ textbooks:
   link: http://www.amazon.com
   isrequired: true
 
+course_description: "Course description"
+
 ---
 
 Welcome!
