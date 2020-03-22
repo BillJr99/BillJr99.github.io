@@ -30,6 +30,10 @@ textbooks:
   isbn: "Book ISBN"
   link: http://www.amazon.com
   isrequired: true  
+
+objectives:
+- objective: "First objective"
+- objective: "Second objective"
     
 ---
 
