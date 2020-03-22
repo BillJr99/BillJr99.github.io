@@ -27,7 +27,7 @@ textbooks:
   authors: TBD
   edition: TBD
   link: http://www.amazon.com
-  required: True
+  required: true
 
 ---
 
