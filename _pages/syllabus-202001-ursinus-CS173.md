@@ -74,7 +74,7 @@ letter_grades:
   range: "63-66.9"
 - letter: "D-"
   range: "59.5-62.9"
-- lletter "F"
+- letter: "F"
   range: "59.49 and below" 
   
 ---
