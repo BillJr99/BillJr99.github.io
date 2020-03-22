@@ -278,6 +278,29 @@ Bold Textbooks are Required, Italicized Textbooks are Recommended or Supplementa
 
 
 
+<h2>Grade Breakdown</h2>
+<table  id="index" class="table table-condensed" cellspacing="10">
+<thead>
+<tr>
+<th><span></span></th>
+<th><span></span></th>
+</tr>
+</thead>
+
+<tbody>
+{% for item in page.grade_breakdown %}
+<tr align="left">
+<td align="left">
+{{ item.category }}
+</td>
+<td align="left">
+{{ item.weight }}
+</td>
+</tr>
+{% endfor %}
+</table>
+
+
 
 
 <hr>

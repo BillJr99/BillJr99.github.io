@@ -34,7 +34,21 @@ textbooks:
 objectives:
 - objective: "First objective"
 - objective: "Second objective"
-    
+
+grade_breakdown:
+- category: "Programming Assignments"
+  weight: "50%"
+- category: "Labs"
+  weight: "25%"
+- category: "Final Project"
+  weight: "15%"
+- category: "Class Participation"
+  weight: "5%"
+- category: "Reading Surveys"
+  weight: "2.5%"
+- category: "Debugging Table"
+  weight: "2.5%"
+  
 ---
 
 Welcome!
