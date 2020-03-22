@@ -8,11 +8,19 @@ info:
   course_number: CS173
   course_title: "Intro to Computer Science"
   course_prerequisites: None
-  class_meets_when: "Meeting Time"
-  class_meets_where: "Meeting Place"
   course_start_date: "Term Start"
   course_end_date: "Term End"
   course_description: "Course description"
+  class_meets_when: "Meeting Days and Times"
+  class_meets_where: "Meeting Place"
+  class_meets_days:
+  - M: true
+    T: false
+	W: true
+	R: false
+	F: false
+	S: false
+	U: false
   
 instructors:
 - name: William Mongan
@@ -79,7 +87,7 @@ letter_grades:
   range: "59.49 and below" 
 
 schedule:
-- week: "0"
+- week: 0
   date: "Monday"
   title: "Lecture Title"
   link: "http://www.billmongan.com"
@@ -89,7 +97,7 @@ schedule:
   deliverables:
   - dtitle: "Assignment 1 Handed Out"
     dlink: "http://www.billmongan.com"
-- week: "0"
+- week: 0
   date: "Wednesday"
   title: "Lecture Title"
   link: "http://www.billmongan.com"
@@ -99,7 +107,7 @@ schedule:
   deliverables:
   - dtitle: "Lab 1 Handed Out"
     dlink: "http://www.billmongan.com" 
-- week: "1"
+- week: 1
   date: "Monday"
   title: "Lecture Title"
   link: "http://www.billmongan.com"
@@ -109,7 +117,7 @@ schedule:
   deliverables:
   - dtitle: "Assignment 1 Due"
     dlink: "http://www.billmongan.com"
-- week: "1"
+- week: 1
   date: "Wednesday"
   title: "Lecture Title"
   link: "http://www.billmongan.com"
