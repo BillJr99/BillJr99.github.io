@@ -71,7 +71,7 @@ layout: default
         {% if page.info.course_start_date and page.info.course_end_date %}
         <tr>
         <td> Course Start-End </td>
-        <td><b> <script language="JavaScript">document.write(getDateString(strtodate({{page.info.course_start_date}}));</script> through <script language="JavaScript">getDateString(strtodate({{page.info.course_end_date}}));</script> </b></td>
+        <td><b> <script language="JavaScript">document.write(getDateString(strtodate("{{page.info.course_start_date}}"));</script> through <script language="JavaScript">getDateString(strtodate("{{page.info.course_end_date}}"));</script> </b></td>
         </tr>
         {% endif %}
 
