@@ -81,7 +81,7 @@ letter_grades:
 
 schedule:
 - week: "0"
-  day: "0"
+  date: "0"
   title: "Lecture Title"
   link: "http://www.billmongan.com"
   readings:
@@ -91,7 +91,7 @@ schedule:
   - dtitle: "Assignment 1 Handed Out"
     dlink: "http://www.billmongan.com"
 - week: "0"
-  day: "1"
+  date: "1"
   title: "Lecture Title"
   link: "http://www.billmongan.com"
   readings:
@@ -101,7 +101,7 @@ schedule:
   - dtitle: "Lab 1 Handed Out"
     dlink: "http://www.billmongan.com" 
 - week: "1"
-  day: "0"
+  date: "0"
   title: "Lecture Title"
   link: "http://www.billmongan.com"
   readings:
@@ -111,7 +111,7 @@ schedule:
   - dtitle: "Assignment 1 Due"
     dlink: "http://www.billmongan.com"
 - week: "1"
-  day: "1"
+  date: "1"
   title: "Lecture Title"
   link: "http://www.billmongan.com"
   readings:
