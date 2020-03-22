@@ -14,7 +14,7 @@ info:
   class_meets_when: "Meeting Days and Times"
   class_meets_where: "Meeting Place"
   class_meets_days: 
-    - isM: true
+  - isM: true
     isT: false
 	isW: true
 	isR: false
