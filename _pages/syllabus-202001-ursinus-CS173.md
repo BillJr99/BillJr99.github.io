@@ -18,7 +18,7 @@ instructors:
   title: Professor
   email: billmongan@gmail.com
   phone: "Phone"
-  webpage_url: http://www.billmongan.com
+  webpage_url: "http://www.billmongan.com"
   office_hours_times: "Office Hours Times"
   office_hours_location: "Office"
   picture: /images/profile.png

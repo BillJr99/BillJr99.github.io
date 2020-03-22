@@ -60,9 +60,10 @@ layout: default
         <td>Course Webpage</td>
         <td><b> <a href="{{page.permalink}}">
         {% if page.instructors and page.instructors[0].webpage_url %}
-          {{page.instructors[0].webpage_url}}
+          {{page.instructors[0].webpage_url}}{{page.permalink}}
+		{% else %}
+		  {{page.permalink}}
         {% endif %}
-        {{page.permalink}}
         </a> </b></td>
         </tr>
         {% endif %}
