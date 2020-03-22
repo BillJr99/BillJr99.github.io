@@ -68,10 +68,10 @@ layout: default
         </tr>
         {% endif %}
 
-        {% if page.info.course_start_end_dates %}
+        {% if page.info.course_start_date and page.info.course_end_date %}
         <tr>
         <td> Course Start-End </td>
-        <td><b> {{page.info.course_start_end_dates }} </b></td>
+        <td><b> {{page.info.course_start_date }} through {{page.info.course_end_date }} </b></td>
         </tr>
         {% endif %}
 

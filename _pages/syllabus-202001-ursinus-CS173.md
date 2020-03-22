@@ -10,7 +10,8 @@ info:
   course_prerequisites: None
   class_meets_when: "Meeting Time"
   class_meets_where: "Meeting Place"
-  course_start_end_dates: "Term Start and End Dates"
+  course_start_date: "Term Start"
+  course_end_date: "Term End"
   course_description: "Course description"
   
 instructors:
