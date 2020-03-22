@@ -79,7 +79,7 @@ Note that the link you give to GitHub Classroom Assistant is the web link of you
 
 ![Downloading Assignments with GitHub Classroom Assistant](/media/2020-02-24-githubclassroom/assistant-download-assignment.gif)
 
-**Pro Tip**: I have Two Factor Authentication enabled on my github account, so I can’t check in files that GitHub Classroom Assistant downloads.  As you’ve seen, that could be OK, but I wrote scripts to download the SSH links for the class.  I am happy to share these if you are interested!
+**Pro Tip**: I have Two Factor Authentication enabled on my github account, so I can’t check in files that GitHub Classroom Assistant downloads.  Below, I'll share links to scripts that will automate checking out classroom repositories using your SSH public key, which will enable pushing to the repositories without authenticating with a password.
 
 You can push directly to the student's repository for them, or you can create a file on-the-fly through the repository webpage.  You can click "Create New File" to create a text file, which you can save, commit, and push from the web interface.
 
