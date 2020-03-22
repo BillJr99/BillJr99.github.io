@@ -1,6 +1,6 @@
 ---
 layout: syllabus
-permalink: /syllabus/2020/CS173-Fa20
+permalink: /CS173-Fa20
 title: "CS173: Intro to Computer Science"
 excerpt: "CS173: Intro to Computer Science"
 
@@ -27,7 +27,7 @@ textbooks:
   authors: TBD
   edition: TBD
   link: http://www.amazon.com
-  isrequired: true 
+  isrequired: true
 
 ---
 

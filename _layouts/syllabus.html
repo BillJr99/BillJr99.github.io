@@ -156,7 +156,7 @@ Bold Textbooks are Required, Italicized are Recommended or Supplemental
     <a onclick="location.href='{{ item.link }}'"> <i id="general" class="fa fa-book fa-2x"></i></button><a href="{{ item.link }}">
   {% endif %}
 
-  {% if item.isrequired and item.isrequired == "true" %}
+  {% if item.isrequired %}
     <b>
   {% else %}
     <i>
@@ -164,7 +164,7 @@ Bold Textbooks are Required, Italicized are Recommended or Supplemental
   
   {{item.title}}
   
-  {% if item.isrequired and item.isrequired == "true" %}
+  {% if item.isrequired %}
     </b>
   {% else %}
     </i>
@@ -178,7 +178,7 @@ Bold Textbooks are Required, Italicized are Recommended or Supplemental
   
 <td>
 {% if item.authors %}
-  {% if item.isrequired and item.isrequired == "true" %}
+  {% if item.isrequired %}
     <b>
   {% else %}
     <i>
@@ -186,7 +186,7 @@ Bold Textbooks are Required, Italicized are Recommended or Supplemental
   
   {{item.authors}}
   
-  {% if item.isrequired and item.isrequired == "true" %}
+  {% if item.isrequired %}
     </b>
   {% else %}
     </i>
@@ -196,7 +196,7 @@ Bold Textbooks are Required, Italicized are Recommended or Supplemental
 
 <td>
 {% if item.edition %}
-  {% if item.isrequired and item.isrequired == "true" %}
+  {% if item.isrequired %}
     <b>
   {% else %}
     <i>
@@ -204,7 +204,7 @@ Bold Textbooks are Required, Italicized are Recommended or Supplemental
   
   {{item.edition}}
   
-  {% if item.isrequired and item.isrequired == "true" %}
+  {% if item.isrequired %}
     </b>
   {% else %}
     </i>
