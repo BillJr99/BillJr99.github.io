@@ -77,7 +77,48 @@ letter_grades:
   range: "59.5-62.9"
 - letter "F"
   range: "59.49 and below"
-  
+
+schedule:
+- week: 0
+  date: "Monday"
+  title: "Lecture Title"
+  link: "http://www.billmongan.com"
+  readings:
+  - title: "Reading 1"
+    link: "http://www.billmongan.com"
+  deliverables:
+  - title: "Assignment 1 Handed Out"
+    link: "http://www.billmongan.com"
+- week: 0
+  date: "Wednesday"
+  title: "Lecture Title"
+  link: "http://www.billmongan.com"
+  readings:
+  - title: "Reading 2"
+    link: "http://www.billmongan.com"
+  deliverables:
+  - title: "Lab 1 Handed Out"
+    link: "http://www.billmongan.com" 
+- week: 1
+  date: "Monday"
+  title: "Lecture Title"
+  link: "http://www.billmongan.com"
+  readings:
+  - title: "Reading 3"
+    link: "http://www.billmongan.com"
+  deliverables:
+  - title: "Assignment 1 Due"
+    link: "http://www.billmongan.com"
+- week: 1
+  date: "Wednesday"
+  title: "Lecture Title"
+  link: "http://www.billmongan.com"
+  readings:
+  - title: "Reading 4"
+    link: "http://www.billmongan.com"
+  deliverables:
+  - title: "Lab 1 Due"
+    link: "http://www.billmongan.com"     
 ---
 
 Welcome!
