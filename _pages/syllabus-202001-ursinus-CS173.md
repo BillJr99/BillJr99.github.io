@@ -118,7 +118,8 @@ schedule:
     link: "http://www.billmongan.com"
   deliverables:
   - title: "Lab 1 Due"
-    link: "http://www.billmongan.com"     
+    link: "http://www.billmongan.com"    
+    
 ---
 
 Welcome!
