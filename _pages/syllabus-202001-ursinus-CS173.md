@@ -15,12 +15,12 @@ info:
   class_meets_where: "Meeting Place"
   class_meets_days: 
   - isM: true
-    isT: false
-	isW: true
-	isR: false
-	isF: false
-	isS: false
-	isU: false
+  - isT: false
+  - isW: true
+  - isR: false
+  - isF: false 
+  - isS: false
+  - isU: false
   
 instructors:
 - name: William Mongan
