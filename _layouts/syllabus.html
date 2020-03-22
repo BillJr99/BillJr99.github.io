@@ -1,0 +1,209 @@
+---
+layout: default
+---
+
+<!-- Adapted from https://raw.githubusercontent.com/DS4PS/course-template/master/_layouts/index.html -->
+
+<!DOCTYPE html>
+
+<head>
+  <style> 
+    td {
+      padding-left: 8px;
+    }
+    .fa{
+      /* Adjust these values accordingly */
+      height: 27px;
+      padding-right: 8px;
+    }
+    .button{
+        padding-right: 8px;
+    }
+  </style>
+</head>
+
+
+<body>
+
+<div>
+        <h2>{{ page.title }}</h2>
+</div>
+
+<br>
+<br>
+
+<h2>Course Info</h2> 
+
+  
+<table id="index" class="table table-condensed" cellspacing="10">
+<thead>
+<tr>
+<th><span></span></th>
+<th><span></span></th>
+</tr>
+</thead>
+
+<tbody>
+
+{% if page.info.course_title %}
+<tr>
+<td>Course Title</td>
+<td><b> {{page.info.course_title}} </b></td>
+</tr>
+{% endif %}
+
+{% if page.info.course_number %}
+<tr>
+<td>Course Number</td>
+<td><b> {{page.info.course_number}} </b></td>
+</tr>
+{% endif %}
+
+{% if page.permalink %}
+<tr>
+<td>Course Webpage</td>
+<td><b> {{page.permalink}} </b></td>
+</tr>
+{% endif %}
+
+{% if page.info.course_start_end_dates %}
+<tr>
+<td> Course Start-End </td>
+<td><b> {{page.info.course_start_end_dates }} </b></td>
+</tr>
+{% endif %}
+
+{% if page.info.course_prerequipages %}
+<tr>
+<td>Course Prerequipages</td>
+<td><b> {{page.info.course_prerequipages }} </b></td>
+</tr>
+{% endif %}
+
+{% if page.info.class_meets_when %}
+<tr>
+<td>Class Timings</td>
+<td><b> {{page.info.class_meets_when }} </b></td>
+</tr>
+{% endif %}
+
+{% if page.info.class_meets_where %}
+<tr>
+<td>Class Location</td>
+<td><b> {{page.info.class_meets_where }} </b></td>
+</tr>
+{% endif %}
+
+</tbody>
+</table>
+
+<br>
+
+
+
+
+<h2> Course Instructors </h2>
+
+<table id="index" class="table table-condensed" cellspacing="10">
+<thead>
+<tr>
+<th><span></span></th>
+<th><span></span></th>
+</tr>
+</thead>
+
+<tbody>
+
+
+{% for item in page.instructor %}
+
+<tr>
+<td><a href="{{item.webpage_url}}">{{item.name}}</a></td>
+<td>{{item.title}}</td>
+<td>{{item.phone}}</td>
+<td> <a href="mailto:{{item.email}}" title="email"><i id="general" class="fa fa-envelope fa-2x" ></i></a> </td>
+
+{% endfor %}
+
+</tbody>
+</table>
+
+<br>
+
+
+
+
+<h2> Office Hours </h2>
+
+<table id="index" class="table table-condensed" cellspacing="10">
+<thead>
+<tr>
+<th><span></span></th>
+<th><span></span></th>
+</tr>
+</thead>
+
+<tbody>
+{% for item in page.instructor %}
+<tr>
+<td>{{item.name}}</td>
+<td>{{item.office_hours_times}}</td>
+<td>{{item.office_hours_location}}</td>
+<td>
+</td>
+<td>
+</td>
+</tr>
+{% endfor %}
+</tbody>
+</table>
+
+<br>
+
+
+
+
+<h2> Textbooks </h2>
+
+<table  id="index" class="table table-condensed" cellspacing="10">
+<thead>
+<tr>
+<th><span></span></th>
+<th><span></span></th>
+</tr>
+</thead>
+
+<tbody>
+{% for item in page.textbooks %}
+<tr align="left">
+<td align="left"><a onclick="location.href='{{ item.link }}'"> <i id="general" class="fa fa-book fa-2x"></i></button></td>
+<td align="left"><button class="uk-button uk-button-small" onclick="location.href='{{ item.link }}'">{{ item.title }}</button></td>
+{% if item.authors %}
+<td>{{item.authors}}</td>
+{% endif %}
+{% if item.edition %}
+<td>{{item.edition}}</td>
+{% endif %}
+{% if item.required %}
+<td>Required: </td>
+<td>{{item.required}}</td>
+{% endif %}
+</tr>
+{% endfor %}
+</tbody>
+</table>
+
+<br>
+
+
+
+
+{{content}}
+
+<br>
+<br>
+
+
+
+</body>
+</html>
