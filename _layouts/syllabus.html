@@ -99,7 +99,9 @@ layout: default
 
 
 
-<h2>Course Instructors</h2>
+
+
+<h2>Course Instructors and Office Hours</h2>
 
 <table id="index" class="table table-condensed" cellspacing="10">
 <thead>
@@ -108,11 +110,12 @@ layout: default
 <th><span></span></th>
 <th><span></span></th>
 <th><span></span></th>
+<th><span></span></th>
+<th><span></span></th>
 </tr>
 </thead>
 
 <tbody>
-
 
 {% for item in page.instructors %}
 
@@ -122,44 +125,25 @@ layout: default
 <td>{{item.title}}</td>
 <td>{{item.phone}}</td>
 <td> <a href="mailto:{{item.email}}" title="email"><i id="general" class="fa fa-envelope fa-2x" ></i></a> </td>
-
-{% endfor %}
-
-</tbody>
-</table>
-
-
-
-<h2>Office Hours</h2>
-
-<table id="index" class="table table-condensed" cellspacing="10">
-<thead>
-<tr>
-<th><span></span></th>
-<th><span></span></th>
-<th><span></span></th>
-</tr>
-</thead>
-
-<tbody>
-{% for item in page.instructors %}
-<tr>
-<td>{{item.name}}</td>
 <td>{{item.office_hours_times}}</td>
 <td>{{item.office_hours_location}}</td>
 </tr>
+
 {% endfor %}
+
 </tbody>
 </table>
+
+
 
 
 
 <h2>Textbooks</h2>
+<h3>Bold Textbooks are Required, Italicized are Recommended or Supplemental</h3>
 
 <table  id="index" class="table table-condensed" cellspacing="10">
 <thead>
 <tr>
-<th><span></span></th>
 <th><span></span></th>
 <th><span></span></th>
 <th><span></span></th>
@@ -169,16 +153,16 @@ layout: default
 <tbody>
 {% for item in page.textbooks %}
 <tr align="left">
-<td align="left"><a onclick="location.href='{{ item.link }}'"> <i id="general" class="fa fa-book fa-2x"></i></button><a href="{{ item.title }}">{{item.title}}</a></td>
-<td>{% if item.authors %}{{item.authors}}{% endif %}</td>
-<td>{% if item.edition %}{{item.edition}}{% endif %}</td>
-<td>{% if item.required %}{{item.required}}{% endif %}</td>
+<td align="left"><a onclick="location.href='{{ item.link }}'"> <i id="general" class="fa fa-book fa-2x"></i></button><a href="{{ item.link }}">{{item.title}}</a></td>
+<td>{% if item.authors %}{% if item.required and item.required == "True" %}<b>{% else %}<i>{% endif %}{{item.authors}}{% if item.required and item.required == "True" %}</b>{% else %}</i>{% endif %}{% endif %}</td>
+<td>{% if item.edition %}{% if item.required and item.required == "True" %}<b>{% else %}<i>{% endif %}{{item.edition}}{% if item.required and item.required == "True" %}</b>{% else %}</i>{% endif %}{% endif %}</td>
 </tr>
 {% endfor %}
 </tbody>
 </table>
 
 <hr>
+
 
 
 {{content}}
