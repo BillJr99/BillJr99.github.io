@@ -6,7 +6,7 @@ excerpt: "CS173: Intro to Computer Science"
 
 info:
   course_number: CS173
-  coursename: "Intro to Computer Science"
+  course_title: "Intro to Computer Science"
   course_prerequipages: None
   class_meets_when: TBD
   class_meets_where: TBD
