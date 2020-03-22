@@ -136,7 +136,7 @@ layout: default
 
 
 <h2>Textbooks</h2>
-<h3>Bold Textbooks are Required, Italicized are Recommended or Supplemental</h3>
+Bold Textbooks are Required, Italicized are Recommended or Supplemental
 
 <table  id="index" class="table table-condensed" cellspacing="10">
 <thead>
@@ -150,7 +150,7 @@ layout: default
 <tbody>
 {% for item in page.textbooks %}
 <tr align="left">
-<td align="left"><a onclick="location.href='{{ item.link }}'"> <i id="general" class="fa fa-book fa-2x"></i></button><a href="{{ item.link }}">{{item.title}}</a></td>
+<td align="left"><a onclick="location.href='{{ item.link }}'"> <i id="general" class="fa fa-book fa-2x"></i></button><a href="{{ item.link }}">{% if item.authors %}{% if item.required and item.required == "True" %}<b>{% else %}<i>{% endif %}{{item.title}}{% if item.required and item.required == "True" %}</b>{% else %}</i>{% endif %}</a></td>
 <td>{% if item.authors %}{% if item.required and item.required == "True" %}<b>{% else %}<i>{% endif %}{{item.authors}}{% if item.required and item.required == "True" %}</b>{% else %}</i>{% endif %}{% endif %}</td>
 <td>{% if item.edition %}{% if item.required and item.required == "True" %}<b>{% else %}<i>{% endif %}{{item.edition}}{% if item.required and item.required == "True" %}</b>{% else %}</i>{% endif %}{% endif %}</td>
 </tr>
