@@ -1,8 +1,18 @@
 ---
-layout: default
+layout: compress
 ---
 
 {% include base_path %}
+
+{% if page.header.overlay_color or page.header.overlay_image or page.header.image %}
+  {% include page__hero.html %}
+{% endif %}
+
+{% if page.url != "/" and site.breadcrumbs %}
+  {% unless paginator %}
+    {% include breadcrumbs.html %}
+  {% endunless %}
+{% endif %}
 
 <!-- Adapted from https://raw.githubusercontent.com/DS4PS/course-template/master/_layouts/index.html -->
 
@@ -29,7 +39,8 @@ layout: default
       background-color: #f2f2f2;
     }
     table { 
-      max-width: 80%
+      max-width: 80%;
+      margin-left:10px;
     }
   </style>
 </head>
@@ -38,6 +49,9 @@ layout: default
 <body>
     {% include browser-upgrade.html %}
     {% include masthead.html %}
+    
+<div id="main" role="main">
+  {% include sidebar.html %}    
     
 <div>
         <h2>{{ page.title }}</h2>
@@ -348,6 +362,7 @@ Bold Textbooks are Required, Italicized Textbooks are Recommended or Supplementa
 {{content}}
 
 
+</div>
 
 
     <div class="page__footer">
