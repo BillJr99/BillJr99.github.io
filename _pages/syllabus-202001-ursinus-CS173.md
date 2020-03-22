@@ -7,20 +7,13 @@ excerpt: "CS173: Intro to Computer Science"
 info:
   course_number: CS173
   course_title: "Intro to Computer Science"
-  course_prerequisites: None
+  course_prerequisites: "None"
   course_start_date: "1/1/2020"
   course_end_date: "5/1/2020"
   course_description: "Course description"
   class_meets_when: "Meeting Days and Times"
   class_meets_where: "Meeting Place"
-  class_meets_days:
-  - isM: true
-    isT: false
-	isW: true
-	isR: false
-	isF: false
-	isS: false
-	isU: false
+  class_meets_days: "MW"
   
 instructors:
 - name: William Mongan
