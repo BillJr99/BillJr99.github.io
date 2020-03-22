@@ -79,7 +79,7 @@ letter_grades:
   range: "59.49 and below"
 
 schedule:
-- week: 0
+- week: "0"
   date: "Monday"
   title: "Lecture Title"
   link: "http://www.billmongan.com"
@@ -89,7 +89,7 @@ schedule:
   deliverables:
   - title: "Assignment 1 Handed Out"
     link: "http://www.billmongan.com"
-- week: 0
+- week: "0"
   date: "Wednesday"
   title: "Lecture Title"
   link: "http://www.billmongan.com"
@@ -99,7 +99,7 @@ schedule:
   deliverables:
   - title: "Lab 1 Handed Out"
     link: "http://www.billmongan.com" 
-- week: 1
+- week: "1"
   date: "Monday"
   title: "Lecture Title"
   link: "http://www.billmongan.com"
@@ -109,7 +109,7 @@ schedule:
   deliverables:
   - title: "Assignment 1 Due"
     link: "http://www.billmongan.com"
-- week: 1
+- week: "1"
   date: "Wednesday"
   title: "Lecture Title"
   link: "http://www.billmongan.com"
