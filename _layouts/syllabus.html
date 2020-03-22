@@ -170,15 +170,13 @@ layout: default
 <th><span></span></th>
 <th><span></span></th>
 <th><span></span></th>
-<th><span></span></th>
 </tr>
 </thead>
 
 <tbody>
 {% for item in page.textbooks %}
 <tr align="left">
-<td align="left"><a onclick="location.href='{{ item.link }}'"> <i id="general" class="fa fa-book fa-2x"></i></button></td>
-<td align="left"><button class="uk-button uk-button-small" onclick="location.href='{{ item.link }}'">{{ item.title }}</button></td>
+<td align="left"><a onclick="location.href='{{ item.link }}'"> <i id="general" class="fa fa-book fa-2x"></i></button><a href="{{ item.title }}">{{item.title}}</a></td>
 {% if item.authors %}
 <td>{{item.authors}}</td>
 {% endif %}

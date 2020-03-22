@@ -26,7 +26,7 @@ textbooks:
   authors: TBD
   edition: TBD
   link: http://www.amazon.com
-  required (y/n): y
+  required: Required
 
 ---
 
