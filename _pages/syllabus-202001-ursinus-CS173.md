@@ -8,8 +8,8 @@ info:
   course_number: CS173
   course_title: "Intro to Computer Science"
   course_prerequisites: None
-  course_start_date: "Term Start"
-  course_end_date: "Term End"
+  course_start_date: "1/1/2020"
+  course_end_date: "5/1/2020"
   course_description: "Course description"
   class_meets_when: "Meeting Days and Times"
   class_meets_where: "Meeting Place"
@@ -88,7 +88,7 @@ letter_grades:
 
 schedule:
 - week: 0
-  date: "Monday"
+  day: 0
   title: "Lecture Title"
   link: "http://www.billmongan.com"
   readings:
@@ -98,7 +98,7 @@ schedule:
   - dtitle: "Assignment 1 Handed Out"
     dlink: "http://www.billmongan.com"
 - week: 0
-  date: "Wednesday"
+  day: 1
   title: "Lecture Title"
   link: "http://www.billmongan.com"
   readings:
@@ -108,7 +108,7 @@ schedule:
   - dtitle: "Lab 1 Handed Out"
     dlink: "http://www.billmongan.com" 
 - week: 1
-  date: "Monday"
+  day: 0
   title: "Lecture Title"
   link: "http://www.billmongan.com"
   readings:
@@ -118,7 +118,7 @@ schedule:
   - dtitle: "Assignment 1 Due"
     dlink: "http://www.billmongan.com"
 - week: 1
-  date: "Wednesday"
+  day: 1
   title: "Lecture Title"
   link: "http://www.billmongan.com"
   readings:
