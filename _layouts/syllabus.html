@@ -113,6 +113,8 @@ layout: default
         <th><span></span></th>
         <th><span></span></th>
         <th><span></span></th>
+        <th><span></span></th>
+        <th><span></span></th>
         </tr>
         </thead>
 
@@ -122,16 +124,26 @@ layout: default
 
         <tr>
         <td>
+        {% if item.title %}
+        {{ item.title }}
+        {% endif %}
+        </td>
+        <td>
+        {% if item.webpage_url %}
+          <a href="{{item.webpage_url}}">
+        {% endif %}
+        {{item.name}}
+        {% if item.webpage_url %}
+          </a>
+        {% endif %}
+        </td>
+        <td>
         {% if item.webpage_url %}
           <a href="{{item.webpage_url}}">
         {% endif %}
         {%if item.picture %}
-          <img src="{{ item.picture }}"></img><br>
+          <img src="{{ item.picture }}"></img>
         {% endif %}
-
-        {{item.name}}
-        </a><br>
-        {{item.title}}
         </td>
         <td>{% if item.phone %}{{item.phone}}{% endif %}</td>
         <td> {% if item.email %}<a href="mailto:{{item.email}}" title="email"><i id="general" class="fa fa-envelope fa-2x" ></i>{{item.email}}</a> {% endif %}</td>
