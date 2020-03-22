@@ -11,6 +11,7 @@ info:
   class_meets_when: "Meeting Time"
   class_meets_where: "Meeting Place"
   course_start_end_dates: "Term Start and End Dates"
+  course_description: "Course description"
   
 instructors:
 - name: William Mongan
@@ -29,8 +30,6 @@ textbooks:
   isbn: "Book ISBN"
   link: http://www.amazon.com
   isrequired: true
-
-course_description: "Course description"
 
 objectives:
 - objective: "First objective"
