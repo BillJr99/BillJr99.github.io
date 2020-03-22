@@ -71,28 +71,28 @@ layout: default
         {% if page.info.course_start_date and page.info.course_end_date %}
         <tr>
         <td> Course Start-End </td>
-        <td><b> {{page.info.course_start_date }} through {{page.info.course_end_date }} </b></td>
+        <td><b> {{page.info.course_start_date}} through {{page.info.course_end_date}} </b></td>
         </tr>
         {% endif %}
 
         {% if page.info.course_prerequisites %}
         <tr>
         <td>Course Prerequisites</td>
-        <td><b> {{page.info.course_prerequisites }} </b></td>
+        <td><b> {{page.info.course_prerequisites}} </b></td>
         </tr>
         {% endif %}
 
         {% if page.info.class_meets_when %}
         <tr>
         <td>Class Timings</td>
-        <td><b> {{page.info.class_meets_when }} </b></td>
+        <td><b> {{page.info.class_meets_when}} </b></td>
         </tr>
         {% endif %}
 
         {% if page.info.class_meets_where %}
         <tr>
         <td>Class Location</td>
-        <td><b> {{page.info.class_meets_where }} </b></td>
+        <td><b> {{page.info.class_meets_where}} </b></td>
         </tr>
         {% endif %}
 
@@ -374,6 +374,81 @@ layout: default
 				var prnDt =  getdayofweek(dt) + " " + getmonthofyear(dt) + " " + now.getDate() + ", " + dt.getFullYear();
 				return prnDt;
 			}
+			
+			function getDayNum(dayidx, M, T, W, R, F, S, U) {
+				var daynum = 0;
+				
+				if(M == true) {
+					dayidx--;
+					
+					if(dayidx == -1) {
+						daynum = 0;
+					}
+				}
+				
+				if(T == true) {
+					dayidx--;
+					
+					if(dayidx == -1) {
+						daynum = 1;
+					}				
+				}
+
+				if(W == true) {
+					dayidx--;
+					
+					if(dayidx == -1) {
+						daynum = 2;
+					}				
+				}	
+
+				if(R == true) {
+					dayidx--;
+					
+					if(dayidx == -1) {
+						daynum = 3;
+					}				
+				}				
+				
+				if(F == true) {
+					dayidx--;
+					
+					if(dayidx == -1) {
+						daynum = 4;
+					}				
+				}
+				
+				if(S == true) {
+					dayidx--;
+					
+					if(dayidx == -1) {
+						daynum = 5;
+					}				
+				}
+				
+				if(U == true) {
+					dayidx--;
+					
+					if(dayidx == -1) {
+						daynum = 6;
+					}				
+				}
+				
+				return daynum;
+			}
+			
+			function getCourseDate(startdate, weeknum, dayidx, M, T, W, R, F, S, U)
+			{
+				var dt = strtodate(startdate);
+				
+				dt = addweeks(dt, weeknum);
+				
+				daynum = getDayNum(dayidx, M, T, W, R, F, S, U);
+				
+				dt = adddays(dt, daynum);
+				
+				return getDateString(dt);
+			}
 		</script>
 		
         <h2>Course Schedule</h2>
@@ -397,7 +472,8 @@ layout: default
         </td>
 
         <td align="left">
-        <b>{{ item.day }}</b>
+        <!--<b>{{ item.day }}</b>-->
+		
         </td>
 
         <td align="left">
