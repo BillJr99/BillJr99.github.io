@@ -14,7 +14,7 @@ In this article, we'll explore GitHub classroom as a tool to manage classroom as
 Because GitHub classroom is built on GitHub and git infrastructure, it is important to understand some git and GitHub basics before using GitHub classroom.  You and your students can get started with a working knowledge of just a few features, and we'll summarize them here.  Before starting, you should have the following:
 
 1. **A GitHub Account**: You and your students will each need a GitHub account.
-2. **A git installation**: Most Linux distributions have a package manager through which you can install a git client.  There is a Git Bash utility for Windows that you can download and install as well.  In these examples, I'll be using Cygwin, a POSIX layer for Windows that provides a Linux-like shell terminal along with common GNU and Open Source tools like git.  The commands used here will work in other environments, too.  You can also use [TortoiseGit](https://tortoisegit.org/) on Windows for a graphical tool that integrates with Windows Explorer.
+2. **A git installation**: Most Linux distributions have a package manager through which you can install a git client.  There is a Git Bash utility for Windows that you can download and install as well.  In these examples, I'll be using [Cygwin](https://www.cygwin.com/), a POSIX layer for Windows that provides a Linux-like shell terminal along with common GNU and Open Source tools like git.  The commands used here will work in other environments, too.  You can also use [TortoiseGit](https://tortoisegit.org/) on Windows for a graphical tool that integrates with Windows Explorer.
 3. **Basic Experience with git**: For an overview of git as a version control system, see [my article on using Git with GitHub](/posts/2020/02/github/).
 
 # Using GitHub Classroom
@@ -55,7 +55,7 @@ Any repository can be a "starter repository" since you'll select it when you cre
 
 **Pro Tip**: I suggest that you do **not** make students administrators on these accounts, so that they can not modify their sharing settings on the repository.  This helps ensure that they do not accidentally make their repository public.
 
-**Pro Tip**: The repository names will start off with the name of the assignment (i.e., ``assignment1-ABC123``).  I like to set my assignment names/classroom names/assignment prefixes with the current semester/year (``csta-spring-2020-assignment1``).
+**Pro Tip**: The repository names will start off with the name of the assignment (i.e., ``assignment1-ABC123``).  I like to set my assignment names/classroom names/assignment prefixes with the current semester/year (``csta-spring-2020-assignment1``).  This makes it easier for me to quickly filter by class, section, and year.  Since GitHub Classroom names the repositories, this is much more convenient than asking students to name their repositories according to a schema (which some may forget to do!).
 
 ![Creating a New Assignment](/media/2020-02-24-githubclassroom/classroom-new-assignment.gif)
 
@@ -119,8 +119,27 @@ Ensure that students remember to merge their pull request (and, ultimately, thei
 
 ![Merging a Pull Request](/media/2020-02-24-githubclassroom/classroom-merge-pull-request.gif)
 
+## Optional: Using a Script to Pull Repositories
+One drawback to using the GitHub Classroom Assistant to clone repositories is that, as far as I have seen, the Assistant uses HTTPS to clone the repositories.  This makes it more difficult to push to the repository since password rather than public-key access was used.  To authenticate with your SSH public key, you'll want to use SSH to clone the repositories.  These clone URLs begin with "git@github" as opposed to "https" and can be chosen from the GitHub repository homepage when cloning the repository, but GitHub Classroom Assistant does not appear to allow us to make this choice.  You can use a shell script to download your repositories instead.  This requires a Unix/Linux installation, a Mac with a shell terminal, or the Ubuntu Subsystem or a POSIX layer on Windows.  I use [Cygwin](https://www.cygwin.com/), personally, but these other environments should be equivalent.  
+
+GitHub user [jfiksel](https://github.com/jfiksel) created a [mass_clone](https://github.com/jfiksel/mass_clone) github clone script.  Cloning this repository provides a `clone_all.sh` script that will identify all your assignments and clone them over SSH using your public key (so you don't have to enter a password!).  It is run as follows, from the directory in which you'd like your cloned repositories to appear:
+
+`./clone_all.sh <Name of your GitHub Organization> <The Assignment Identifier> <Your GitHub Username> ssh`
+
+The script will prompt you at the terminal for your password.  Your GitHub organization is the name of the organization you used when you created your GitHub Classroom, and the Assignment Identifier is the portion of the URL that appears when you click on an assignment from the GitHub Classroom web page.
+
+The ssh specifies that ssh links should be used; the scripts do allow for `https` to be specified as the argument instead, and will clone using that protocol instead.
+
+The `push_all.sh` script is another useful one to upload your grading comments to all repositories with a single command.  It will add all files you've created in the repository and commit/push them to the students' repositories.
+
+jfiksel also created some nice guides to using GitHub Classroom in a similar spirit to this guide here.  There is an article [for teachers](https://github.com/jfiksel/github-classroom-for-teachers) and one [for students](https://github.com/jfiksel/github-classroom-for-students).
+
+### Using a Script with GitHub Two-Factor Authentication
+If you are using two-factor authentication, you won't be able to enter your usual password to the command line script.  This is because there is no mechanism to execute the second factor, as you would with a web browser.  GitHub allows you to create an app-specific password for this purpose: you'll use it with your script, and no two-factor authentication is used.  The disadvantage is that this bypasses two-factor authentication, but the passwords generated are often (hopefully!) stronger than a typical user password.  [Here is a tutorial](https://help.github.com/en/github/authenticating-to-github/creating-a-personal-access-token-for-the-command-line) to create an app-specific password on your GitHub account.  You can assign repository permissions if you are only cloning/pushing to repositories, when it asks you for permissions on the app-specific password.  It is a best practice to select only those permissions that are actually required of your app when using this password.
+
 # Closing Thoughts
 
 GitHub Classroom is a useful tool to teach git in the classroom, and to manage student work among instructional staff and among peer student groups.  I've found a few tips and tricks in my workflow along the way, as you've seen above, but I've found this to help me manage student work in a meaningful industry platform.  I like when students develop best practices while doing their work: often, we're rushed to teach something and we forget to emphasize good habits along the way.
 
+[Here](https://classroom.github.com/videos) are some videos from the GitHub Classroom team that walk through many of the steps described in this guide, for your reference.
 ------

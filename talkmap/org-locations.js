@@ -103,7 +103,7 @@ var addressPoints = [
     "Milwaukee, WI",
     43.0389,
     -87.9065
-  ]
+  ],
   [
     "Newark, DE",
     39.6780,
