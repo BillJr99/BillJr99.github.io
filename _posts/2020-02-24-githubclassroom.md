@@ -124,7 +124,7 @@ One drawback to using the GitHub Classroom Assistant to clone repositories is th
 
 GitHub user [jfiksel](https://github.com/jfiksel) created a [mass_clone](https://github.com/jfiksel/mass_clone) github clone script.  Cloning this repository provides a `clone_all.sh` script that will identify all your assignments and clone them over SSH using your public key (so you don't have to enter a password!).  It is run as follows, from the directory in which you'd like your cloned repositories to appear:
 
-`./clone_all.sh <Name of your GitHub Organization> <The Assignment Identifier> <Your GitHub Username> ssh`
+`./clone_all.sh <Your GitHub Organization Name> <Assignment Identifier> <Your GitHub Username> ssh`
 
 The script will prompt you at the terminal for your password.  Your GitHub organization is the name of the organization you used when you created your GitHub Classroom, and the Assignment Identifier is the portion of the URL that appears when you click on an assignment from the GitHub Classroom web page.
 
@@ -142,4 +142,5 @@ If you are using two-factor authentication, you won't be able to enter your usua
 GitHub Classroom is a useful tool to teach git in the classroom, and to manage student work among instructional staff and among peer student groups.  I've found a few tips and tricks in my workflow along the way, as you've seen above, but I've found this to help me manage student work in a meaningful industry platform.  I like when students develop best practices while doing their work: often, we're rushed to teach something and we forget to emphasize good habits along the way.
 
 [Here](https://classroom.github.com/videos) are some videos from the GitHub Classroom team that walk through many of the steps described in this guide, for your reference.
+
 ------
