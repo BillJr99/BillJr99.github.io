@@ -150,9 +150,9 @@ Bold Textbooks are Required, Italicized are Recommended or Supplemental
 <tbody>
 {% for item in page.textbooks %}
 <tr align="left">
-<td align="left"><a onclick="location.href='{{ item.link }}'"> <i id="general" class="fa fa-book fa-2x"></i></button><a href="{{ item.link }}">{% if item.authors %}{% if item.required and item.required == true %}<b>{% else %}<i>{% endif %}{{item.title}}{% if item.required and item.required == true %}</b>{% else %}</i>{% endif %}</a></td>
-<td>{% if item.authors %}{% if item.required and item.required == true %}<b>{% else %}<i>{% endif %}{{item.authors}}{% if item.required and item.required == true %}</b>{% else %}</i>{% endif %}{% endif %}</td>
-<td>{% if item.edition %}{% if item.required and item.required == true %}<b>{% else %}<i>{% endif %}{{item.edition}}{% if item.required and item.required == true %}</b>{% else %}</i>{% endif %}{% endif %}</td>
+<td align="left"><a onclick="location.href='{{ item.link }}'"> <i id="general" class="fa fa-book fa-2x"></i></button><a href="{{ item.link }}">{% if item.authors %}{% if item.required == "true" %}<b>{% else %}<i>{% endif %}{{item.title}}{% if item.required == "true" %}</b>{% else %}</i>{% endif %}</a></td>
+<td>{% if item.authors %}{% if item.required == "true" %}<b>{% else %}<i>{% endif %}{{item.authors}}{% if item.required == "true" %}</b>{% else %}</i>{% endif %}{% endif %}</td>
+<td>{% if item.edition %}{% if item.required == "true" %}<b>{% else %}<i>{% endif %}{{item.edition}}{% if item.required == "true" %}</b>{% else %}</i>{% endif %}{% endif %}</td>
 </tr>
 {% endfor %}
 </tbody>
