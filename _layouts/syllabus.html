@@ -329,6 +329,132 @@ layout: default
         
 		
 
+
+		<script language="JavaScript">
+			function strtodate(x) {
+				// https://stackoverflow.com/questions/5619202/converting-a-string-to-a-date-in-javascript
+				var parts = x.split('/');
+				// Please pay attention to the month (parts[1]); JavaScript counts months from 0:
+				// January - 0, February - 1, etc.
+				var mydate = new Date(parts[0], parts[1] - 1, parts[2]); 
+				return mydate
+			}
+			
+			function addweeks(dt, n) 
+			{
+				// https://www.w3resource.com/javascript-exercises/javascript-date-exercise-42.php
+				return new Date(dt.setDate(dt.getDate() + (n * 7)));      
+			}
+			
+			function adddays(dt, n)
+			{
+				return new Date(dt.setDate(dt.getDate() + (n))); 
+			}
+			
+			function getdayofweek(dt)
+			{
+				// https://stackoverflow.com/questions/4822852/how-to-get-the-day-of-week-and-the-month-of-the-year
+				var days = ['Sunday','Monday','Tuesday','Wednesday','Thursday','Friday','Saturday'];
+
+				var day = days[ dt.getDay() ];
+				
+				return day;
+			}
+			
+			function getmonthofyear(dt)
+			{
+				// https://stackoverflow.com/questions/4822852/how-to-get-the-day-of-week-and-the-month-of-the-year
+				var months = ['January','February','March','April','May','June','July','August','September','October','November','December'];
+
+				var month = months[ dt.getMonth() ];
+				
+				return month;
+			}
+			
+			function getDateString(dt)
+			{
+				var prnDt =  getdayofweek(dt) + " " + getmonthofyear(dt) + " " + now.getDate() + ", " + dt.getFullYear();
+				return prnDt;
+			}
+			
+			function getDayNum(dayidx, M, T, W, R, F, S, U) {
+				var daynum = 0;
+				
+				if(M == true) {
+					dayidx--;
+					
+					if(dayidx == -1) {
+						daynum = 0;
+					}
+				}
+				
+				if(T == true) {
+					dayidx--;
+					
+					if(dayidx == -1) {
+						daynum = 1;
+					}				
+				}
+
+				if(W == true) {
+					dayidx--;
+					
+					if(dayidx == -1) {
+						daynum = 2;
+					}				
+				}	
+
+				if(R == true) {
+					dayidx--;
+					
+					if(dayidx == -1) {
+						daynum = 3;
+					}				
+				}				
+				
+				if(F == true) {
+					dayidx--;
+					
+					if(dayidx == -1) {
+						daynum = 4;
+					}				
+				}
+				
+				if(S == true) {
+					dayidx--;
+					
+					if(dayidx == -1) {
+						daynum = 5;
+					}				
+				}
+				
+				if(U == true) {
+					dayidx--;
+					
+					if(dayidx == -1) {
+						daynum = 6;
+					}				
+				}
+				
+				return daynum;
+			}
+			
+			function getCourseDate(startdate, weeknum, dayidx, M, T, W, R, F, S, U)
+			{
+				var dt = strtodate(startdate);
+				
+				weeknum = parseInt(weeknum);
+				dayidx = parseInt(dayidx);
+
+				dt = addweeks(dt, weeknum);
+				
+				daynum = getDayNum(dayidx, M, T, W, R, F, S, U);
+				
+				dt = adddays(dt, daynum);
+				
+				return getDateString(dt);
+			}
+		</script>
 		
         <h2>Course Schedule</h2>
         <table  id="index" class="table table-condensed" cellspacing="10">
@@ -351,8 +477,8 @@ layout: default
         </td>
 
         <td align="left">
-        <b>{{ item.date }}</b>
-		
+        <!--<b>{{ item.date }}</b>-->
+		<b><script language="JavaScript">getCourseDate({{page.info.course_start_date}}, {{item.week}}, {{item.day}}, {{page.info.class_meets_days.isM}}, {{page.info.class_meets_days.isT}}, {{page.info.class_meets_days.isW}}, {{page.info.class_meets_days.isR}}, {{page.info.class_meets_days.isF}}, {{page.info.class_meets_days.isS}}, {{page.info.class_meets_days.isU}});</script></b>
         </td>
 
         <td align="left">
