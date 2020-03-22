@@ -160,6 +160,7 @@ Bold Textbooks are Required, Italicized are Recommended or Supplemental
 <th><span></span></th>
 <th><span></span></th>
 <th><span></span></th>
+<th><span></span></th>
 </tr>
 </thead>
 
@@ -219,6 +220,24 @@ Bold Textbooks are Required, Italicized are Recommended or Supplemental
   {% endif %}
   
   {{item.edition}}
+  
+  {% if item.isrequired %}
+    </b>
+  {% else %}
+    </i>
+  {% endif %}
+{% endif %}
+</td>
+
+<td>
+{% if item.isbn %}
+  {% if item.isrequired %}
+    <b>
+  {% else %}
+    <i>
+  {% endif %}
+  
+  {{item.isbn}}
   
   {% if item.isrequired %}
     </b>

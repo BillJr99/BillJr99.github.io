@@ -26,6 +26,7 @@ textbooks:
 - title: TBD
   authors: TBD
   edition: TBD
+  isbn: TBD
   link: http://www.amazon.com
   isrequired: true
 
