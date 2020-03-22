@@ -5,15 +5,14 @@ title: "CS173: Intro to Computer Science"
 excerpt: "CS173: Intro to Computer Science"
 
 info:
-  university: Ursinus
   course_number: CS173
   coursename: "Intro to Computer Science"
-  course_prerequipages:
+  course_prerequipages: None
   class_meets_when: TBD
   class_meets_where: TBD
   course_start_end_dates: TBD
   
-instructor:
+instructors:
 - name: William Mongan
   title: Professor
   email: billmongan@gmail.com
@@ -22,11 +21,11 @@ instructor:
   office_hours_times: TBD
   office_hours_location: TBD
   
-textbook:
+textbooks:
 - title: TBD
   authors: TBD
   edition: TBD
-  link: 
+  link: http://www.amazon.com
   required (y/n): y
 
 ---
