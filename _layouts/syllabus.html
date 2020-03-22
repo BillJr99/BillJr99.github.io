@@ -145,7 +145,7 @@ layout: default
 {{item.title}}
 </td>
 <td>{% if item.phone %}{{item.phone}}{% endif %}</td>
-<td> {% if item.email %}<a href="mailto:{{item.email}}" title="email"><i id="general" class="fa fa-envelope fa-2x" ></i></a> {% endif %}</td>
+<td> {% if item.email %}<a href="mailto:{{item.email}}" title="email"><i id="general" class="fa fa-envelope fa-2x" ></i>{{item.email}}</a> {% endif %}</td>
 <td>{% if item.office_hours_times %}{{item.office_hours_times}}{% endif %}</td>
 <td>{% if item.office_hours_location %}{{item.office_hours_location}}{% endif %}</td>
 </tr>
