@@ -1,7 +1,7 @@
 ---
 title: "REportal 2.0"
 excerpt: "A Service-Based Reverse Engineering Portal"
-collection: portfolio
+collection: software
 comments: true
 tags:
   - reportal

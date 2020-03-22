@@ -1,7 +1,7 @@
 ---
 title: "xml2dot"
 excerpt: "XML Document Visualizer"
-collection: portfolio
+collection: software
 comments: true
 tags: 
   - technical

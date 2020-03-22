@@ -1,7 +1,7 @@
 ---
 title: "IoT Sensor Framework"
 excerpt: "A secure and modular data collection and processing framework for heterogeneous Internet-of-Things (IoT) sensor networks."
-collection: portfolio
+collection: software
 comments: true
 tags:
   - smartfabrics

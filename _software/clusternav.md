@@ -1,7 +1,7 @@
 ---
 title: "ClusterNav"
 excerpt: "Visualiztion of Bunch Clustered Software Module Dependency Graphs"
-collection: portfolio
+collection: software
 comments: true
 tags:
   - reportal
