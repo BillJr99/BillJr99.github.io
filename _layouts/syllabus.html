@@ -233,6 +233,25 @@ layout: default
 
 
 
+        <h2>Course Objectives</h2>
+        {% if page.objectives %}
+        <ol>
+        {% endif%}
+
+        {% for item in page.objectives %}
+        <li>{{ item.objective }}</li>
+        {% endfor %}
+
+        {% if page.objectives %}
+        </ol>
+        {% endif%}
+
+
+
+
+
+
+
         <h2>Course Instructors and Office Hours</h2>
 
         <table id="index" class="table table-condensed" cellspacing="10">
@@ -285,6 +304,13 @@ layout: default
 
         </tbody>
         </table>
+
+
+
+
+
+
+
 
 
 
@@ -393,73 +419,9 @@ layout: default
 
 
 
-        <h2>Course Objectives</h2>
-        {% if page.objectives %}
-        <ol>
-        {% endif%}
-
-        {% for item in page.objectives %}
-        <li>{{ item.objective }}</li>
-        {% endfor %}
-
-        {% if page.objectives %}
-        </ol>
-        {% endif%}
 
 
 
-
-        <h2>Grade Breakdown</h2>
-        <table  id="index" class="table table-condensed" cellspacing="10">
-        <thead>
-        <tr>
-        <th><span></span></th>
-        <th><span></span></th>
-        </tr>
-        </thead>
-
-        <tbody>
-        {% for item in page.grade_breakdown %}
-        <tr align="left">
-        <td align="left">
-        {{ item.category }}
-        </td>
-        <td align="left">
-        {{ item.weight }}
-        </td>
-        </tr>
-        {% endfor %}
-        </table>
-
-
-
-
-        <h2>Letter Grades</h2>
-        <table  id="index" class="table table-condensed" cellspacing="10">
-        <thead>
-        <tr>
-        <th><span></span></th>
-        <th><span></span></th>
-        </tr>
-        </thead>
-
-        <tbody>
-        {% for item in page.letter_grades %}
-        <tr align="left">
-        <td align="left">
-        {{ item.letter }}
-        </td>
-        <td align="left">
-        {{ item.range }}
-        </td>
-        </tr>
-        {% endfor %}
-        </table>
-        
-		
-		
-		
-		
         <h2>Course Schedule</h2>
         <table  id="index" class="table table-condensed" cellspacing="10">
         <thead>
@@ -537,7 +499,62 @@ layout: default
         </tr>
         {% endfor %}
 
-        </table>        
+        </table>  
+
+
+
+
+
+
+        <h2>Grade Breakdown</h2>
+        <table  id="index" class="table table-condensed" cellspacing="10">
+        <thead>
+        <tr>
+        <th><span></span></th>
+        <th><span></span></th>
+        </tr>
+        </thead>
+
+        <tbody>
+        {% for item in page.grade_breakdown %}
+        <tr align="left">
+        <td align="left">
+        {{ item.category }}
+        </td>
+        <td align="left">
+        {{ item.weight }}
+        </td>
+        </tr>
+        {% endfor %}
+        </table>
+
+
+
+
+        <h2>Letter Grades</h2>
+        <table  id="index" class="table table-condensed" cellspacing="10">
+        <thead>
+        <tr>
+        <th><span></span></th>
+        <th><span></span></th>
+        </tr>
+        </thead>
+
+        <tbody>
+        {% for item in page.letter_grades %}
+        <tr align="left">
+        <td align="left">
+        {{ item.letter }}
+        </td>
+        <td align="left">
+        {{ item.range }}
+        </td>
+        </tr>
+        {% endfor %}
+        </table>
+        
+		
+		      
     
     
     {{ content }}
