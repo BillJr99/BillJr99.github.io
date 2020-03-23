@@ -189,6 +189,37 @@ for item in postdict['schedule']:
         
     # Write the lecture as an all-day event:
     outf.write("BEGIN:VEVENT\r\nUID:" + str(uuid.uuid4()) + "\r\nDTSTAMP:" + startd + "T000000Z" + "\r\nDTSTART;VALUE=DATE:" + startd + "\r\nSUMMARY:" + coursenum + " " + coursename + ": Class Meeting\r\nLOCATION:\r\nDESCRIPTION:" + description.strip() + "\r\nPRIORITY:3\r\nEND:VEVENT\r\n")
+    
+# Write Office Hours as a Recurring Event
+for instructor in postdict['instructors']:
+    instructorname = instructor['name']
+    
+    for officehour in instructor['officehours']:        
+        dtstart = getDateString(parseDate(startdate))
+        dtstart = dtstart + "T"
+        dtstart = dtstart + getTimeStringAsZulu(parseTime(officehour['starttime']))
+        dtstart = dtstart + "Z"
+        
+        dtend = getDateString(parseDate(startdate)) # assume no event overlaps a day boundary, ends on start date
+        dtend = dtend + "T"
+        dtend = dtend + getTimeStringAsZulu(parseTime(officehour['endtime']))
+        dtend = dtend + "Z"    
+        
+        dtuntil = getDateString(parseDate(enddate)) # for recurrence rule
+        dtuntil = dtuntil + "T"
+        dtuntil = dtuntil + "235959"
+        dtuntil = dtuntil + "Z" 
+
+        location = officehour['location']
+        
+        repeatday = geticalday(officehour['day'])
+        
+        rrule = "RRULE:FREQ=WEEKLY;BYDAY=" + repeatday + ";INTERVAL=1;UNTIL=" + dtuntil
+        for holiday in postdict['info']['holidays']:
+            dtholiday = getDateString(parseDate(holiday['date']))       
+            rrule = rrule + "\r\nEXDATE:" + dtholiday
+
+        outf.write("BEGIN:VEVENT\r\nUID:" + str(uuid.uuid4()) + "\r\nDTSTAMP:" + dtstart + "\r\nDTSTART:" + dtstart + "\r\nDTEND:" + dtend + "\r\n" + rrule + "\r\nSUMMARY:" + coursenum + " " + coursename + " Office Hours with " + instructorname + "\r\nLOCATION:" + location + "\r\nDESCRIPTION:\r\nPRIORITY:3\r\nEND:VEVENT\r\n")
 
 outf.write("END:VCALENDAR\r\n")
 
