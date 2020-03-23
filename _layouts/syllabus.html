@@ -314,7 +314,7 @@ layout: default
         <td>
         {% if item.officehours %}<ul>{% endif %}
         {% for officehour in item.officehours %}
-        <li>{{officehour.hours}} in {{officehour.location}}</li>
+        <li>{{officehour.day}} from {{officehour.starttime}} to {{officehour.endtime}} in {{officehour.location}}</li>
         {% endfor %}
         {% if item.officehours %}</ul>{% endif %}
         </td>

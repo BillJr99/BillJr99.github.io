@@ -39,12 +39,16 @@ instructors:
   email: billmongan@gmail.com
   phone: "Phone"
   webpage_url: "http://www.billmongan.com"
-  officehours:
-  - hours: "First office hours"
-    location: "Office"
-  - hours: "Second office hours"
-    location: "Lab"
   picture: /images/profile.png
+  officehours:
+  - day: "M"
+    starttime: "3:30 PM"
+    endtime: "4:30 PM"
+    location: "Office"
+  - day: "W"
+    starttime: "4:30 PM"
+    endtime: "5:30 PM"
+    location: "Office"
   
 textbooks:
 - title: "Book Title"
