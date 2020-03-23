@@ -139,6 +139,17 @@ layout: default
 		
 		return getDateString(dt);
 	}
+    
+    function getFullDay(d) {
+        if(d == "M") return "Monday";
+        if(d == "T") return "Tuesday";
+        if(d == "W") return "Wednesday";
+        if(d == "R") return "Thursday";
+        if(d == "F") return "Friday";
+        if(d == "S") return "Saturday";
+        if(d == "U") return "Sunday";
+        return "Day";
+    }
 </script>
 
 
@@ -202,7 +213,7 @@ layout: default
 
         {% if page.info.course_start_date and page.info.course_end_date %}
         <tr>
-        <td> Course Start-End </td>
+        <td> Term Start and End </td>
         <td><b> <script language="JavaScript">document.write(getDateString(strtodate("{{page.info.course_start_date}}")));</script> through <script language="JavaScript">document.write(getDateString(strtodate("{{page.info.course_end_date}}")));</script> </b></td>
         </tr>
         {% endif %}
@@ -216,12 +227,12 @@ layout: default
 
         {% if page.info.class_meets_locations %}
         <tr>
-        <td>Class Timings</td>
+        <td>Class Meetings</td>
         <td>
         <ul>
         {% for meeting in page.info.class_meets_locations %}
-        <li>{{meeting.day}} from {{meeting.starttime}} to {{meeting.endtime}} in {{meeting.place}}</li>
-        {% end for %}
+        <li><script language="JavaScript">document.write(getFullDay("{{meeting.day}}"));</script>s from {{meeting.starttime}} to {{meeting.endtime}} in {{meeting.place}}</li>
+        {% endfor %}
         </ul>
         </td>
         </tr>
