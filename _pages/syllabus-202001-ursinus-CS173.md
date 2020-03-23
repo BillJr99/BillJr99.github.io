@@ -9,7 +9,7 @@ info:
   course_title: "Intro to Computer Science"
   course_prerequisites: "None"
   course_start_date: "2020/01/06"
-  course_end_date: "2020/05/01"
+  course_end_date: "2020/06/01"
   course_description: "Course description"
   class_meets_when: "Meeting Days and Times"
   class_meets_where: "Meeting Place"
@@ -21,6 +21,9 @@ info:
     isF: false 
     isS: false
     isU: false
+  holidays:
+    -holiday: "2020/01/20"
+    -holiday: "2020/05/25"
   
 instructors:
 - name: William Mongan

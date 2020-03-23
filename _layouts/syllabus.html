@@ -504,7 +504,15 @@ layout: default
         {% endfor %}
 
         </table>  
-
+        
+        Please note the following holidays this term:
+        {% if page.info.holidays %}
+        <ul>
+        {% for holiday in page.info.holidays %}
+        <li>{{holiday.holiday}}</li>
+        {% endfor %}
+        </ul>
+        {% endif %}
 
 
 
