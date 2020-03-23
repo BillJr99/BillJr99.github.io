@@ -149,7 +149,7 @@ for meeting in postdict['info']['class_meets_locations']:
     
     dtuntil = getDateString(parseDate(enddate)) # for recurrence rule
     dtuntil = dtuntil + "T"
-    dtuntil = dtuntil + "000000"
+    dtuntil = dtuntil + "235959"
     dtuntil = dtuntil + "Z" 
 
     location = meeting['place']
@@ -176,19 +176,19 @@ for item in postdict['schedule']:
         rtitle = reading['rtitle']
         rlink = reading['rlink']
         
-        description = description.strip() + "\r\nReading: " + rtitle.strip() + " (" + rlink.strip() + ")"
+        description = description.strip() + "\\nReading: " + rtitle.strip() + " (" + rlink.strip() + ")"
         
     for deliverable in item['deliverables']:        
         dtitle = deliverable['dtitle']
         dlink = deliverable['dlink']
         
-        description = description.strip() + "\r\nDeliverable: " + dtitle.strip() + " (" + dlink.strip() + ")"
+        description = description.strip() + "\\nDeliverable: " + dtitle.strip() + " (" + dlink.strip() + ")"
         
         # Write the Assignment as an all-day event
-        outf.write("BEGIN:VEVENT\r\nUID:" + str(uuid.uuid4()) + "\r\nDTSTAMP:" + startd + "T000000Z" + "\r\nDTSTART;VALUE=DATE:" + startd + "\r\nSUMMARY:Class " + coursenum.strip() + " " + dtitle.strip() + "\r\nLOCATION:\r\nDESCRIPTION:\r\nPRIORITY:3\r\nEND:VEVENT\r\n")        
+        outf.write("BEGIN:VEVENT\r\nUID:" + str(uuid.uuid4()) + "\r\nDTSTAMP:" + startd + "T000000Z" + "\r\nDTSTART;VALUE=DATE:" + startd + "\r\nSUMMARY:" + coursenum + " " + coursename + ": " + dtitle.strip() + "\r\nLOCATION:\r\nDESCRIPTION:\r\nPRIORITY:3\r\nEND:VEVENT\r\n")        
         
     # Write the lecture as an all-day event:
-    outf.write("BEGIN:VEVENT\r\nUID:" + str(uuid.uuid4()) + "\r\nDTSTAMP:" + startd + "T000000Z" + "\r\nDTSTART;VALUE=DATE:" + startd + "\r\nSUMMARY:" + coursenum + " " + coursename + " Class Meeting\r\nLOCATION:\r\nDESCRIPTION:" + description.strip() + "\r\nPRIORITY:3\r\nEND:VEVENT\r\n")
+    outf.write("BEGIN:VEVENT\r\nUID:" + str(uuid.uuid4()) + "\r\nDTSTAMP:" + startd + "T000000Z" + "\r\nDTSTART;VALUE=DATE:" + startd + "\r\nSUMMARY:" + coursenum + " " + coursename + ": Class Meeting\r\nLOCATION:\r\nDESCRIPTION:" + description.strip() + "\r\nPRIORITY:3\r\nEND:VEVENT\r\n")
 
 outf.write("END:VCALENDAR\r\n")
 
