@@ -58,7 +58,7 @@ layout: default
 	
 	function getDateString(dt)
 	{
-		var prnDt =  getdayofweek(dt) + " " + getmonthofyear(dt) + " " + dt.getDate() + ", " + dt.getFullYear();
+		var prnDt =  getdayofweek(dt) + ", " + getmonthofyear(dt) + " " + dt.getDate() + ", " + dt.getFullYear();
 		return prnDt;
 	}
 	
@@ -504,8 +504,8 @@ layout: default
 
         </table>  
         
-        Please note the following holidays this term:
         {% if page.info.holidays %}
+        Please note the following holidays this term:
         <ul>
         {% for holiday in page.info.holidays %}
         <li><script language="JavaScript">document.write(getDateString(strtodate("{{holiday.date}}")));</script></li>
