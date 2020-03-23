@@ -151,12 +151,15 @@ layout: default
       <h1 class="page__title">{{ page.title }}</h1>
     {% endunless %}
     
+        [ <a href="courseinfo">Course Info</a> | <a href="objectives">Course Objectives</a> | <a href="instructors">Instructors</a> | <a href="textbooks">Textbooks</a> | <a href="schedule">Schedule</a> | <a href="grading">Grading</a> | <a href="lettergrades">Letter Grades</a> | <a href="mainbody">Main Body</a> ]
+        <br><br>
 
         {% if page.info.course_description %}
         {{ page.info.course_description }}
         {% endif %}
 
 
+        <a name="courseinfo"></a>
         <h2>Course Info</h2> 
 
           
@@ -232,7 +235,7 @@ layout: default
 
 
 
-
+        <a name="objectives"></a>
         <h2>Course Objectives</h2>
         {% if page.objectives %}
         <ol>
@@ -251,7 +254,7 @@ layout: default
 
 
 
-
+        <a name="instructors"></a>
         <h2>Course Instructors and Office Hours</h2>
 
         <table id="index" class="table table-condensed" cellspacing="10">
@@ -319,7 +322,7 @@ layout: default
 
 
 
-
+        <a name="textbooks"></a>
         <h2>Textbooks</h2>
         Bold Textbooks are Required, Italicized Textbooks are Recommended or Supplemental
 
@@ -425,7 +428,7 @@ layout: default
 
 
 
-
+        <a name="schedule"></a>
         <h2>Course Schedule</h2>
         <table  id="index" class="table table-condensed" cellspacing="10">
         <thead>
@@ -516,7 +519,7 @@ layout: default
 
 
 
-
+        <a name="grading"></a>
         <h2>Grade Breakdown</h2>
         <table  id="index" class="table table-condensed" cellspacing="10">
         <thead>
@@ -541,7 +544,7 @@ layout: default
 
 
 
-
+        <a name="lettergrades"></a>
         <h2>Letter Grades</h2>
         <table  id="index" class="table table-condensed" cellspacing="10">
         <thead>
@@ -567,7 +570,7 @@ layout: default
 		
 		      
     
-    
+    <a name="mainbody"></a>
     {{ content }}
   </div>
 </div>
