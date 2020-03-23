@@ -22,8 +22,8 @@ info:
     isS: false
     isU: false
   holidays:
-    -holiday: "2020/01/20"
-    -holiday: "2020/05/25"
+    -date: "2020/01/20"
+    -date: "2020/05/25"
   
 instructors:
 - name: William Mongan

@@ -447,7 +447,6 @@ layout: default
         </td>
 
         <td align="left">
-        <!--<b>{{ item.date }}</b>-->
 		<b><script language="JavaScript">document.write(getCourseDate("{{page.info.course_start_date}}", "{{item.week}}", "{{item.date}}", {{page.info.class_meets_days.isM}}, {{page.info.class_meets_days.isT}}, {{page.info.class_meets_days.isW}}, {{page.info.class_meets_days.isR}}, {{page.info.class_meets_days.isF}}, {{page.info.class_meets_days.isS}}, {{page.info.class_meets_days.isU}}));</script></b>
         </td>
 
@@ -509,7 +508,7 @@ layout: default
         {% if page.info.holidays %}
         <ul>
         {% for holiday in page.info.holidays %}
-        <li>{{holiday.holiday}}</li>
+        <li><script language="JavaScript">document.write(getDateString(strtodate("{{holiday.date}}")));</script></li>
         {% endfor %}
         </ul>
         {% endif %}
