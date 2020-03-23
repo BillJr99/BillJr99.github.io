@@ -42,6 +42,12 @@ textbooks:
   isbn: "Book ISBN"
   link: http://www.amazon.com
   isrequired: true  
+- title: "Recommended Book Title"
+  authors: "Book Authors"
+  edition: "Book Edition"
+  isbn: "Book ISBN"
+  link: http://www.amazon.com
+  isrequired: false    
 
 objectives:
 - objective: "First objective"
