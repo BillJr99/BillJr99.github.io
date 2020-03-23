@@ -9,8 +9,8 @@ info:
   course_section: "001"
   course_title: "Intro to Computer Science"
   course_prerequisites: "None"
-  course_start_date: "2020/01/06"
-  course_end_date: "2020/06/01"
+  course_start_date: "2020/08/24"
+  course_end_date: "2020/12/04"
   course_description: "Course description"
   class_meets_days:
     isM: true
@@ -30,8 +30,10 @@ info:
     endtime: "2:00 PM"
     place: "Room 100"
   holidays:
-  - date: "2020/01/20"
-  - date: "2020/05/25"
+  - date: "2020/10/19"
+  - date: "2020/11/25"
+  - date: "2020/11/26"
+  - date: "2020/11/27"
   
 instructors:
 - name: William Mongan

@@ -54,17 +54,29 @@ def getDayNum(dayidx, M, T, W, R, F, S, U):
 def getDateString(dt):
     return dt.strftime('%Y%m%d')
     
-def getTimeStringAsZulu(t):
+def getTimeStringAsZulu(t, timedate=None):
     # Convert from Eastern Time/Local Time Zone to Zulu Time
     # https://stackoverflow.com/questions/4770297/convert-utc-datetime-string-to-local-datetime
     
     from_zone = tz.tzlocal() # tz.gettz('America/New_York')
     to_zone = tz.tzutc() # tz.gettz('UTC')
     
+    # Check for dst
+    dstoffset = None
+    if timedate:
+        timedate = timedate.replace(tzinfo=from_zone)
+        dstoffset = timedate.dst()
+    
     t = t.replace(tzinfo=from_zone)
     t = t.astimezone(to_zone)
     
+    if dstoffset:
+        t = t + timedelta(dstoffset)
+    
     return t.strftime('%H%M%S')
+    
+def getTimeString(t):   
+    return t.strftime('%H%M%S')    
     
 def parseDate(dt):
     return datetime.strptime(dt, '%Y/%m/%d')
@@ -135,17 +147,18 @@ isU = postdict['info']['class_meets_days']['isU']
 
 outf.write("BEGIN:VCALENDAR\r\nVERSION:2.0\r\n")
 
+# DST Timezone Information for Recurring Times under current time zone rules
+outf.write("BEGIN:VTIMEZONE\r\nTZID:US-Eastern\r\nLAST-MODIFIED:20070101T000000Z\r\nTZURL:http://zones.stds_r_us.net/tz/US-Eastern\r\nBEGIN:STANDARD\r\nDTSTART:19671029T020000\r\nRRULE:FREQ=YEARLY;BYDAY=1SU;BYMONTH=11\r\nTZOFFSETFROM:-0400\r\nTZOFFSETTO:-0500\r\nTZNAME:EST\r\nEND:STANDARD\r\nBEGIN:DAYLIGHT\r\nDTSTART:19870405T020000\r\nRRULE:FREQ=YEARLY;BYDAY=2SU;BYMONTH=3\r\nTZOFFSETFROM:-0500\r\nTZOFFSETTO:-0400\r\nTZNAME:EDT\r\nEND:DAYLIGHT\r\nEND:VTIMEZONE\r\n")
+
 # Write the lecture schedule as a recurring event
 for meeting in postdict['info']['class_meets_locations']:
     dtstart = getDateString(parseDate(startdate))
     dtstart = dtstart + "T"
-    dtstart = dtstart + getTimeStringAsZulu(parseTime(meeting['starttime']))
-    dtstart = dtstart + "Z"
+    dtstart = dtstart + getTimeString(parseTime(meeting['starttime'])) # leave in local time, timezone info given above assuming Eastern Time
     
     dtend = getDateString(parseDate(startdate)) # assume no event overlaps a day boundary, ends on start date
     dtend = dtend + "T"
-    dtend = dtend + getTimeStringAsZulu(parseTime(meeting['endtime']))
-    dtend = dtend + "Z"    
+    dtend = dtend + getTimeString(parseTime(meeting['endtime'])) # leave in local time, timezone info given above assuming Eastern Time
     
     dtuntil = getDateString(parseDate(enddate)) # for recurrence rule
     dtuntil = dtuntil + "T"
@@ -161,7 +174,7 @@ for meeting in postdict['info']['class_meets_locations']:
         dtholiday = getDateString(parseDate(holiday['date']))       
         rrule = rrule + "\r\nEXDATE:" + dtholiday
 
-    outf.write("BEGIN:VEVENT\r\nUID:" + str(uuid.uuid4()) + "\r\nDTSTAMP:" + dtstart + "\r\nDTSTART:" + dtstart + "\r\nDTEND:" + dtend + "\r\n" + rrule + "\r\nSUMMARY:" + coursenum + " " + coursename + " Class Meeting\r\nLOCATION:" + location + "\r\nDESCRIPTION:\r\nPRIORITY:3\r\nEND:VEVENT\r\n")
+    outf.write("BEGIN:VEVENT\r\nUID:" + str(uuid.uuid4()) + "\r\nDTSTAMP:" + dtstart + "\r\nDTSTART;TZID=US-Eastern:" + dtstart + "\r\nDTEND;TZID=US-Eastern:" + dtend + "\r\n" + rrule + "\r\nSUMMARY:" + coursenum + " " + coursename + " Class Meeting\r\nLOCATION:" + location + "\r\nDESCRIPTION:\r\nPRIORITY:3\r\nEND:VEVENT\r\n")
 
 for item in postdict['schedule']:   
     weekidx = item['week']
@@ -197,14 +210,12 @@ for instructor in postdict['instructors']:
     for officehour in instructor['officehours']:        
         dtstart = getDateString(parseDate(startdate))
         dtstart = dtstart + "T"
-        dtstart = dtstart + getTimeStringAsZulu(parseTime(officehour['starttime']))
-        dtstart = dtstart + "Z"
-        
+        dtstart = dtstart + getTimeString(parseTime(officehour['starttime'])) # leave in local time, timezone info given above assuming Eastern Time
+
         dtend = getDateString(parseDate(startdate)) # assume no event overlaps a day boundary, ends on start date
         dtend = dtend + "T"
-        dtend = dtend + getTimeStringAsZulu(parseTime(officehour['endtime']))
-        dtend = dtend + "Z"    
-        
+        dtend = dtend + getTimeString(parseTime(officehour['endtime'])) # leave in local time, timezone info given above assuming Eastern Time
+
         dtuntil = getDateString(parseDate(enddate)) # for recurrence rule
         dtuntil = dtuntil + "T"
         dtuntil = dtuntil + "235959"
@@ -219,7 +230,7 @@ for instructor in postdict['instructors']:
             dtholiday = getDateString(parseDate(holiday['date']))       
             rrule = rrule + "\r\nEXDATE:" + dtholiday
 
-        outf.write("BEGIN:VEVENT\r\nUID:" + str(uuid.uuid4()) + "\r\nDTSTAMP:" + dtstart + "\r\nDTSTART:" + dtstart + "\r\nDTEND:" + dtend + "\r\n" + rrule + "\r\nSUMMARY:" + coursenum + " " + coursename + " Office Hours with " + instructorname + "\r\nLOCATION:" + location + "\r\nDESCRIPTION:\r\nPRIORITY:3\r\nEND:VEVENT\r\n")
+        outf.write("BEGIN:VEVENT\r\nUID:" + str(uuid.uuid4()) + "\r\nDTSTAMP:" + dtstart + "\r\nDTSTART;TZID=US-Eastern:" + dtstart + "\r\nDTEND;TZID=US-Eastern:" + dtend + "\r\n" + rrule + "\r\nSUMMARY:" + coursenum + " " + coursename + " Office Hours with " + instructorname + "\r\nLOCATION:" + location + "\r\nDESCRIPTION:\r\nPRIORITY:3\r\nEND:VEVENT\r\n")
 
 outf.write("END:VCALENDAR\r\n")
 
