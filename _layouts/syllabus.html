@@ -214,20 +214,18 @@ layout: default
         </tr>
         {% endif %}
 
-        {% if page.info.class_meets_when %}
+        {% if page.info.class_meets_locations %}
         <tr>
         <td>Class Timings</td>
-        <td><b> {{page.info.class_meets_when}} </b></td>
+        <td>
+        <ul>
+        {% for meeting in page.info.class_meets_locations %}
+        <li>{{meeting.day}} from {{meeting.starttime}} to {{meeting.endtime}} in {{meeting.place}}</li>
+        {% end for %}
+        </ul>
+        </td>
         </tr>
-        {% endif %}
-
-        {% if page.info.class_meets_where %}
-        <tr>
-        <td>Class Location</td>
-        <td><b> {{page.info.class_meets_where}} </b></td>
-        </tr>
-        {% endif %}
-
+        {% end if %}
         </tbody>
         </table>
 
