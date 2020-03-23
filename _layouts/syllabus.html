@@ -263,7 +263,6 @@ layout: default
         <th><span></span></th>
         <th><span></span></th>
         <th><span></span></th>
-        <th><span></span></th>
         </tr>
         </thead>
 
@@ -296,8 +295,13 @@ layout: default
         </td>
         <td>{% if item.phone %}{{item.phone}}{% endif %}</td>
         <td> {% if item.email %}<a href="mailto:{{item.email}}" title="email"><i id="general" class="fa fa-envelope fa-2x" ></i>{{item.email}}</a> {% endif %}</td>
-        <td>{% if item.office_hours_times %}{{item.office_hours_times}}{% endif %}</td>
-        <td>{% if item.office_hours_location %}{{item.office_hours_location}}{% endif %}</td>
+        <td>
+        {% if item.officehours %}<ul>{% endif %}
+        {% for officehour in item.officehours %}
+        <li>{{officehour.hours}} in {{officehour.location}}</li>
+        {% endfor %}
+        {% if item.officehours %}</ul>{% endif %}
+        </td>
         </tr>
 
         {% endfor %}

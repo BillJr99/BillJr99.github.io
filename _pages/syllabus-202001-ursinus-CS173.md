@@ -28,8 +28,11 @@ instructors:
   email: billmongan@gmail.com
   phone: "Phone"
   webpage_url: "http://www.billmongan.com"
-  office_hours_times: "Office Hours Times"
-  office_hours_location: "Office"
+  officehours:
+  - hours: "First office hours"
+    location: "Office"
+  - hours: "Second office hours"
+    location: "Lab"
   picture: /images/profile.png
   
 textbooks:
