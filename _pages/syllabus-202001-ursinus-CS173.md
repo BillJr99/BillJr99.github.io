@@ -21,6 +21,15 @@ info:
     isF: false 
     isS: false
     isU: false
+  class_meets_locations:
+  - day: "M"
+    starttime: "09:30 AM"
+    endtime: "11:00 AM"
+    place: "Room 101"
+  - day: "W"
+    starttime: "12:30 PM"
+    endtime: "2:00 PM"
+    place: "Room 100"
   holidays:
   - date: "2020/01/20"
   - date: "2020/05/25"
