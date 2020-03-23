@@ -187,14 +187,18 @@ layout: default
         {% if page.info.course_title %}
         <tr>
         <td>Course Title</td>
-        <td><b> {{page.info.course_title}} </b></td>
+        <td><b>{{page.info.course_title}}</b></td>
         </tr>
         {% endif %}
 
         {% if page.info.course_number %}
         <tr>
         <td>Course Number</td>
-        <td><b> {{page.info.course_number}} </b></td>
+        <td><b> {{page.info.course_number}} </b>
+        {% if page.info.course_section %}
+         Section {{page.info.course_section}}
+        {% endif %}
+        </td>
         </tr>
         {% endif %}
 
@@ -236,7 +240,7 @@ layout: default
         </ul>
         </td>
         </tr>
-        {% end if %}
+        {% endif %}
         </tbody>
         </table>
 
@@ -248,7 +252,7 @@ layout: default
         <h2>Course Objectives</h2>
         {% if page.objectives %}
         <ol>
-        {% endif%}
+        {% endif %}
 
         {% for item in page.objectives %}
         <li>{{ item.objective }}</li>
@@ -256,7 +260,7 @@ layout: default
 
         {% if page.objectives %}
         </ol>
-        {% endif%}
+        {% endif %}
 
 
 

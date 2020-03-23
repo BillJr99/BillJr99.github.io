@@ -6,6 +6,7 @@ excerpt: "CS173: Intro to Computer Science"
 
 info:
   course_number: CS173
+  course_section: "001"
   course_title: "Intro to Computer Science"
   course_prerequisites: "None"
   course_start_date: "2020/01/06"
