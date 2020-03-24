@@ -108,5 +108,10 @@ var addressPoints = [
     "Newark, DE",
     39.6780,
     -75.7506
+  ],
+  [
+    "Harrisburg, PA",
+    40.2732,
+    -76.8867
   ]
 ];
