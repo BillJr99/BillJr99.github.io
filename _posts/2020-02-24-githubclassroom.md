@@ -28,12 +28,12 @@ GitHub Classroom uses Organizations to manage your classrooms, assignments, and 
 
 If you are within an academic institution, you can petition GitHub to make your organization a "Pro" organization free of charge.  This enables you to create assignments for which student repositories will be private.  This is really important to me, because I don't want independent student classwork to be made public!  In this example, I'm just creating a personal organization, but this means that the repositories will be public.
 
-![Creating a GitHub Organization](/media/2020-02-24-githubclassroom/classroom-new-org.gif)
+![Creating a GitHub Organization](/files/media/2020-02-24-githubclassroom/classroom-new-org.gif)
 
 Your TA and instructional team will be administrator members of your organization, so they will have access across your classrooms.  Because of this, I tend to prune the list of instructional staff each semester.
 
 ### Creating a GitHub Classroom
-![Creating a New Classroom](/media/2020-02-24-githubclassroom/classroom-new-classroom.gif)
+![Creating a New Classroom](/files/media/2020-02-24-githubclassroom/classroom-new-classroom.gif)
 
 ## Step 2: Setting Up Your Roster and TA Access
 
@@ -41,7 +41,7 @@ You will be given invite links for students and for TAs to add themselves to you
 
 **Pro Tip**: I suggest creating your roster first before sending these out, so that students can associate themselves with student ID's (assuming you haven't automatically populated these from your LMS).  
 
-![Setting Up the Class Roster Including TA Access](/media/2020-02-24-githubclassroom/classroom-roster-and-tas.gif)
+![Setting Up the Class Roster Including TA Access](/files/media/2020-02-24-githubclassroom/classroom-roster-and-tas.gif)
 
 ## Step 3: Creating Assignments
 
@@ -51,13 +51,13 @@ If you specify a starter code repository, that repository will be copied into ea
 
 Any repository can be a "starter repository" since you'll select it when you create the assignment.  Just be sure to set the starter repository to a "Template Repository" which GitHub uses to copy the repository to the student.  You can do this retroactively under the repository "Settings" menu, under the main "Options" pane.
 
-![Creating a Starter Template Repository](/media/2020-02-24-githubclassroom/template-starter-repository.png)
+![Creating a Starter Template Repository](/files/media/2020-02-24-githubclassroom/template-starter-repository.png)
 
 **Pro Tip**: I suggest that you do **not** make students administrators on these accounts, so that they can not modify their sharing settings on the repository.  This helps ensure that they do not accidentally make their repository public.
 
 **Pro Tip**: The repository names will start off with the name of the assignment (i.e., ``assignment1-ABC123``).  I like to set my assignment names/classroom names/assignment prefixes with the current semester/year (``csta-spring-2020-assignment1``).  This makes it easier for me to quickly filter by class, section, and year.  Since GitHub Classroom names the repositories, this is much more convenient than asking students to name their repositories according to a schema (which some may forget to do!).
 
-![Creating a New Assignment](/media/2020-02-24-githubclassroom/classroom-new-assignment.gif)
+![Creating a New Assignment](/files/media/2020-02-24-githubclassroom/classroom-new-assignment.gif)
 
 ## Student View: Accepting an Assignment
 
@@ -67,7 +67,7 @@ The first time a student accepts an assignment, they'll be able to assign themse
 
 I tend not to link my GitHub Classrooms with a school roster or LMS, so that I do not risk compromising sensitive student data.  I allow them to self-associate.  There is a risk here that a student will mistakenly identify with another account.  If this happens, that student will not be able to associate with their account.  In practice, I have not had a problem with this, but you'll want to ensure that students are representing themselves properly if you're allowing them to self-assign their account to a student on the roster.
 
-![Accepting an Assignment](/media/2020-02-24-githubclassroom/classroom-accept-assignment.gif)
+![Accepting an Assignment](/files/media/2020-02-24-githubclassroom/classroom-accept-assignment.gif)
 
 Once the student has accepted the assignment, they can work with it like a normal git repository.  GitHub Classroom saves you the effort of asking students to configure their own repositories, share it with their team members, make the repository private, share it with instructors, etc.
 
@@ -77,13 +77,13 @@ When it's time to pull all the repositories, you can use the [GitHub Classroom A
 
 Note that the link you give to GitHub Classroom Assistant is the web link of your GitHub Classroom Assignment page - it's not the git link itself nor the invite link.
 
-![Downloading Assignments with GitHub Classroom Assistant](/media/2020-02-24-githubclassroom/assistant-download-assignment.gif)
+![Downloading Assignments with GitHub Classroom Assistant](/files/media/2020-02-24-githubclassroom/assistant-download-assignment.gif)
 
 **Pro Tip**: I have Two Factor Authentication enabled on my github account, so I can’t check in files that GitHub Classroom Assistant downloads.  Below, I'll share links to scripts that will automate checking out classroom repositories using your SSH public key, which will enable pushing to the repositories without authenticating with a password.
 
 You can push directly to the student's repository for them, or you can create a file on-the-fly through the repository webpage.  You can click "Create New File" to create a text file, which you can save, commit, and push from the web interface.
 
-![Create a File on a GitHub Repository through the Web Interface](/media/2020-02-24-githubclassroom/create-new-file.png)
+![Create a File on a GitHub Repository through the Web Interface](/files/media/2020-02-24-githubclassroom/create-new-file.png)
 
 ## Optional: Using Branches to Create Pull Requests to Request Help from the Instructor
 
@@ -91,11 +91,11 @@ You can push directly to the student's repository for them, or you can create a 
 
 If students work in a branch, they can make ***Pull Requests*** on that branch to request reviews and comments from the instructor along the way.  This is a great way to ask questions and seek help.
 
-![Creating a Pull Request on a Branch](/media/2020-02-24-githubclassroom/classroom-pull-request.gif)
+![Creating a Pull Request on a Branch](/files/media/2020-02-24-githubclassroom/classroom-pull-request.gif)
 
 Students can specify which instructor(s) (or team members) to specify as reviewers; they'll get a notification to view the Pull Request.
 
-![Specifying Reviewers for the Pull Request](/media/2020-02-24-githubclassroom/open-pull-request.png)
+![Specifying Reviewers for the Pull Request](/files/media/2020-02-24-githubclassroom/open-pull-request.png)
 
 ### Instructor View: Managing the Pull Request
 
@@ -103,21 +103,21 @@ Students can specify which instructor(s) (or team members) to specify as reviewe
 
 Pull Requests can be found under the "Pull Requests" menu of the repository page.
 
-![Accessing a Pull Request](/media/2020-02-24-githubclassroom/classroom-open-pull-request.gif)
+![Accessing a Pull Request](/files/media/2020-02-24-githubclassroom/classroom-open-pull-request.gif)
 
 #### Pull Request Review: Commenting on the Pull Request
 
-![Reviewing a Pull Request](/media/2020-02-24-githubclassroom/classroom-review-pull-request.gif)
+![Reviewing a Pull Request](/files/media/2020-02-24-githubclassroom/classroom-review-pull-request.gif)
 
 You and the student can continue commenting on the Pull Request until the issue is resolved.  Meanwhile, the student can continue committing to the branch, so that any "broken code" does not corrupt their master branch while they collaborate with you.
 
-![Continue Commenting on a Pull Request with Your Student](/media/2020-02-24-githubclassroom/review-pull-request.png)
+![Continue Commenting on a Pull Request with Your Student](/files/media/2020-02-24-githubclassroom/review-pull-request.png)
 
 ### Student View: Merging the Pull Request / Branch
 
 Ensure that students remember to merge their pull request (and, ultimately, their branch) into the master branch.  This will make it easier for you to find their work when you download their assignments.  By default, you'll see the master branch, and that will be empty if they only worked in an unmerged branch.  So, although branches are really useful in practice and to generate Pull Requests to get help, it's also helpful to merge them back into ``master`` before submitting.  My students sometimes forget to do this, and I see an empty directory at first when I clone!
 
-![Merging a Pull Request](/media/2020-02-24-githubclassroom/classroom-merge-pull-request.gif)
+![Merging a Pull Request](/files/media/2020-02-24-githubclassroom/classroom-merge-pull-request.gif)
 
 ## Optional: Using a Script to Pull Repositories
 One drawback to using the GitHub Classroom Assistant to clone repositories is that, as far as I have seen, the Assistant uses HTTPS to clone the repositories.  This makes it more difficult to push to the repository since password rather than public-key access was used.  To authenticate with your SSH public key, you'll want to use SSH to clone the repositories.  These clone URLs begin with "git@github" as opposed to "https" and can be chosen from the GitHub repository homepage when cloning the repository, but GitHub Classroom Assistant does not appear to allow us to make this choice.  You can use a shell script to download your repositories instead.  This requires a Unix/Linux installation, a Mac with a shell terminal, or the Ubuntu Subsystem or a POSIX layer on Windows.  I use [Cygwin](https://www.cygwin.com/), personally, but these other environments should be equivalent.  

@@ -14,11 +14,11 @@ REportal was [re-architected](https://www.cs.drexel.edu/~spiros/teaching/CS675/s
 
 REportal works by exposing platform-specific tools as a web service interface, that then wraps the underlying API or command line interface of the tool itself.  These tools are then integrated in a contextual way through the web portal: for example, a visualization of a software system's class architecture can be linked to a source browser, or to source code metrics; these tools are configured to operate on the user's project automatically, providing a consistent interface to the user.  REportal featured the following services:
 
-![REportal Services](/media/software-reportal/reportal-services.png "REportal Services")
+![REportal Services](/files/media/software-reportal/reportal-services.png "REportal Services")
 
 Many of these tools provide static anslysis services; however, dynamic analysis was also provided through the automatic generation of Aspects.  Aspects were chosen by the user and then automatically compiled into the user's software system.  The user could then execute the software and provide REportal with the Aspect report output for visualization.
 
-![Dynamic Analysis through Automatic Aspect Instrumentation](/media/software-reportal/DynamicAnalysis.png "REportal Dynamic Analysis Service")
+![Dynamic Analysis through Automatic Aspect Instrumentation](/files/media/software-reportal/DynamicAnalysis.png "REportal Dynamic Analysis Service")
 
 Information about the development of the portal can be found in my [Masters Thesis](/publication/msthesis) and in [this paper](/publication/icpc2008) describing the architecture. 
 
@@ -26,17 +26,17 @@ I also developed auxiliary tools for visualization of software architecture, inc
 
 ClusterNav was integrated into REportal, enabling automatic expansion and collapse of the computed software architecture clusters.  Clusters (octagons) can be expanded into their rectangular groups of artifacts, and are color-coded according to their relative weight.  
 
-![Sample MDG viewed in ClusterNav](/media/software-reportal/TAPexpanded-mdg.png "Sample MDG viewed in ClusterNav")
+![Sample MDG viewed in ClusterNav](/files/media/software-reportal/TAPexpanded-mdg.png "Sample MDG viewed in ClusterNav")
 
 These MDG visualizations can be filtered in interesting ways; for example, by generating a reachability query that shows the transitive "reach" of a particular software module, including function invocations or variable usage.
 
-![Reachability Query](/media/software-reportal/ReachGraphical.png "Reachability Query")
+![Reachability Query](/files/media/software-reportal/ReachGraphical.png "Reachability Query")
 
 Static reports such as code quality metrics and a hyperlinked source browser are also available.
 
-![Source Metrics](/media/software-reportal/Metrics.png "Source Code Metrics")
+![Source Metrics](/files/media/software-reportal/Metrics.png "Source Code Metrics")
 
-![Source Code Browser](/media/software-reportal/SourceBrowser.png "Source Code Browser")
+![Source Code Browser](/files/media/software-reportal/SourceBrowser.png "Source Code Browser")
 
 [^1]: The REportal hosted instance at Drexel ([http://reportal.cs.drexel.edu](http://reportal.cs.drexel.edu)) may be reachable only to the Drexel community, or may be in a retired state, as I am no longer maintaining this deployment following my departure from the university.  Please feel free to contact me to request access or for the code base.
 
