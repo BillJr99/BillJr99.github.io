@@ -8,7 +8,7 @@ tags:
   - software  
 ---
 
-[https://reportal.cs.drexel.edu](https://reportal.cs.drexel.edu) is a central repository for reverse engineering tools.	REportal contains a compresensive set of reverse engineering tools to profile and data mine source code and software systems.
+[https://reportal.cs.drexel.edu](https://reportal.cs.drexel.edu)[^1] is a central repository for reverse engineering tools.	REportal contains a compresensive set of reverse engineering tools to profile and data mine source code and software systems.
 
 REportal was [re-architected](https://www.cs.drexel.edu/~spiros/teaching/CS675/slides/reportalTechReport.pdf) to provide a Service-Oriented Architecture (SOA) above useful reverse engineering and software source/architecture visualization tools such as [Chava](https://www.cs.drexel.edu/~spiros/teaching/CS675/slides/chava.pdf), [Ciao](https://www.program-transformation.org/Transform/CIAO), and [Bunch](https://www.cs.drexel.edu/~spiros/bunch/).
 
@@ -37,6 +37,8 @@ Static reports such as code quality metrics and a hyperlinked source browser are
 ![Source Metrics](/media/software-reportal/Metrics.png "Source Code Metrics")
 
 ![Source Code Browser](/media/software-reportal/SourceBrowser.png "Source Code Browser")
+
+[^1] REportal may be available only to the Drexel community, or may be in a retired state, as I am no longer maintaining this deployment following my departure from the university.
 
 # Publications
 <ul>{% for post in site.publications reversed %}
