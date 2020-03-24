@@ -38,7 +38,7 @@ Static reports such as code quality metrics and a hyperlinked source browser are
 
 ![Source Code Browser](/media/software-reportal/SourceBrowser.png "Source Code Browser")
 
-[^1]: REportal is served at https://reportal.cs.drexel.edu, but may be in a retired state.
+[^1]: REportal is served at [https://reportal.cs.drexel.edu](https://reportal.cs.drexel.edu), but may be in a retired state.
 
 # Publications
 <ul>{% for post in site.publications reversed %}
