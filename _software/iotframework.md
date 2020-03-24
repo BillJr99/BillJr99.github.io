@@ -13,7 +13,7 @@ This software suite contains scripts to collect and store IoT sensor data, such 
 
 Information about the architecture of this system can be found in my [Ph.D. Dissertation](/publication/dissertation) and on [this paper](/publication/iotdi2017) detailing the use of the framework on RFID-based sensor systems.
 
-The packages for data collection and data processing, respectively, are hosted on GitHub at the following locations (please feel free to contact me for access if you are unable to view these pages):
+The packages for data collection and data processing, respectively, are hosted on GitHub at the following locations:
 
 | [IoT Data Collection Framework](https://github.com/drexelwireless/iot-sensor-framework) | 
 [IoT Data Processing Framework](https://github.com/drexelwireless/iot-processing-framework) |
