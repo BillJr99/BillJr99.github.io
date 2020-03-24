@@ -38,7 +38,7 @@ Static reports such as code quality metrics and a hyperlinked source browser are
 
 ![Source Code Browser](/media/software-reportal/SourceBrowser.png "Source Code Browser")
 
-[^1] REportal may be available only to the Drexel community, or may be in a retired state, as I am no longer maintaining this deployment following my departure from the university.
+[^1]: REportal may be available only to the Drexel community, or may be in a retired state, as I am no longer maintaining this deployment following my departure from the university.
 
 # Publications
 <ul>{% for post in site.publications reversed %}
