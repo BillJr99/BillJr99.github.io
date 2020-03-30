@@ -33,7 +33,7 @@ ClusterNav was integrated into REportal, enabling automatic expansion and collap
 
 These MDG visualizations can be filtered in interesting ways; for example, by generating a reachability query that shows the transitive "reach" of a particular software module, including function invocations or variable usage.
 
-![Reachability Query](/files/media/software-reportal/ReachGraphical.png "Reachability Query")
+![Reachability Query Visualization](/files/media/software-reportal/ReachGraphical.png "Reachability Query Visualization")
 
 Static reports such as code quality metrics and a hyperlinked source browser are also available.
 
