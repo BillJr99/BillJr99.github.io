@@ -8,7 +8,7 @@ tags:
   - software  
 ---
 
-![REportal Logo](/files/media/software-reportal/REportalLogo.jpg "REportal Logo")
+![REportal Logo](/files/media/software-reportal/REportalLogo.jpg "REportal Logo"){:style="float: right;margin-right: 7px;margin-top: 7px;"}
 REportal[^1] is a central repository for reverse engineering tools.	REportal contains a compresensive set of reverse engineering tools to profile and data mine source code and software systems.
 
 REportal was [re-architected](https://www.cs.drexel.edu/~spiros/teaching/CS675/slides/reportalTechReport.pdf) to provide a Service-Oriented Architecture (SOA) above useful reverse engineering and software source/architecture visualization tools such as [Chava](https://www.cs.drexel.edu/~spiros/teaching/CS675/slides/chava.pdf), [Ciao](https://www.program-transformation.org/Transform/CIAO), and [Bunch](https://www.cs.drexel.edu/~spiros/bunch/).
