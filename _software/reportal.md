@@ -18,6 +18,8 @@ REportal works by exposing platform-specific tools as a web service interface, t
 
 Many of these tools provide static anslysis services; however, dynamic analysis was also provided through the automatic generation of Aspects.  Aspects were chosen by the user and then automatically compiled into the user's software system.  The user could then execute the software and provide REportal with the Aspect report output for visualization.
 
+A summary of the major features enabled by REportal is given below.  [Click here](/files/media/software-reportal/REportalHelp.html) for a description of each of the features of REportal.
+
 ![Dynamic Analysis through Automatic Aspect Instrumentation](/files/media/software-reportal/DynamicAnalysis.png "REportal Dynamic Analysis Service")
 
 Information about the development of the portal can be found in my [Masters Thesis](/publication/msthesis) and in [this paper](/publication/icpc2008) describing the architecture. 
@@ -37,8 +39,6 @@ Static reports such as code quality metrics and a hyperlinked source browser are
 ![Source Metrics](/files/media/software-reportal/Metrics.png "Source Code Metrics")
 
 ![Source Code Browser](/files/media/software-reportal/SourceBrowser.png "Source Code Browser")
-
-[Click here](/files/media/software-reportal/REportalHelp.html) for a description of each of the features of REportal.
 
 [^1]: The REportal hosted instance at Drexel ([http://reportal.cs.drexel.edu](http://reportal.cs.drexel.edu)) may be reachable only to the Drexel community, or may be in a retired state, as I am no longer maintaining this deployment following my departure from the university.  Please feel free to contact me to request access or for the code base.
 

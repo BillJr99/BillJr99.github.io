@@ -9,11 +9,11 @@ tags:
   - software  
 ---
 
+This software suite contains scripts to collect and store IoT sensor data, such as RFID tag information using an Impinj Speedway RFID reader.  The collection framework interfaces with a heterogeneous suite of devices in real-time, and stores the data in a database or streaming service as defined by the driver configuration.  A corresponding processing suite visualizes the real-time or archived data collected by the collection framework, enabling rapid experimentation and testing of machine learning algorithms on existing and new datasets.  Sensor fusion, ground truth, and data perturbation modules allow for automated and controlled manipulation of the data sets and comparison to ground truth.  It is modular and generalizable to a variety of sensor systems and processing needs.  
+
 ![IoT Framework Software Driving an Impinj R420 Interrogator to Visualize Respiratory Patterns on a SimBaby Mannequin Wearing the Passive Bellyband Smart Garment Device](/files/media/software-iotframework/simbaby.jpg "IoT Framework Software Driving an Impinj R420 Interrogator to Visualize Respiratory Patterns on a SimBaby Mannequin Wearing the Passive Bellyband Smart Garment Device")
 
 ![IoT Framework Software Driving an Impinj R420 Interrogator to Visualize Respiratory Patterns on a SimBaby Mannequin Wearing the Passive Bellyband Smart Garment Device, with a Pregnant Mannequin Wearing the Bellyband](/files/media/software-iotframework/simbabyandpregnancy.jpg "IoT Framework Software Driving an Impinj R420 Interrogator to Visualize Respiratory Patterns on a SimBaby Mannequin, with a Pregnant Mannequin Wearing the Bellyband")
-
-This software suite contains scripts to collect and store IoT sensor data, such as RFID tag information using an Impinj Speedway RFID reader.  It is modular and generalizable to a variety of sensor systems and processing needs.  
 
 Information about the architecture of this system can be found in my [Ph.D. Dissertation](/publication/dissertation) and on [this paper](/publication/iotdi2017) detailing the use of the framework on RFID-based sensor systems.
 
