@@ -41,7 +41,7 @@ Static reports such as code quality metrics and a hyperlinked source browser are
 
 ![Source Code Browser](/files/media/software-reportal/SourceBrowser.png "Source Code Browser")
 
-[^1]: The REportal hosted instance at Drexel ([http://reportal.cs.drexel.edu](http://reportal.cs.drexel.edu)) may be reachable only to the Drexel community, or may be in a retired state, as I am no longer maintaining this deployment following my departure from the university.  Please feel free to contact me to request access or for the code base.
+[^1]: The REportal hosted instance at Drexel ([http://reportal.cs.drexel.edu](http://reportal.cs.drexel.edu)) may be reachable only by the Drexel community, or may be in a retired state, as I am no longer maintaining this deployment following my departure from the university.  Please feel free to contact me to request access or for the code base.
 
 # Publications
 <ul>{% for post in site.publications reversed %}
