@@ -9,6 +9,10 @@ tags:
   - software  
 ---
 
+![IoT Framework Software Driving an Impinj R420 Interrogator to Visualize Respiratory Patterns on a SimBaby Mannequin Wearing the Passive Bellyband Smart Garment Device](/files/media/software-iotframework/simbaby.jpg "IoT Framework Software Driving an Impinj R420 Interrogator to Visualize Respiratory Patterns on a SimBaby Mannequin Wearing the Passive Bellyband Smart Garment Device")
+
+![IoT Framework Software Driving an Impinj R420 Interrogator to Visualize Respiratory Patterns on a SimBaby Mannequin Wearing the Passive Bellyband Smart Garment Device, with a Pregnant Mannequin Wearing the Bellyband](/files/media/software-iotframework/simbabyandpregnancy.jpg "IoT Framework Software Driving an Impinj R420 Interrogator to Visualize Respiratory Patterns on a SimBaby Mannequin, with a Pregnant Mannequin Wearing the Bellyband")
+
 This software suite contains scripts to collect and store IoT sensor data, such as RFID tag information using an Impinj Speedway RFID reader.  It is modular and generalizable to a variety of sensor systems and processing needs.  
 
 Information about the architecture of this system can be found in my [Ph.D. Dissertation](/publication/dissertation) and on [this paper](/publication/iotdi2017) detailing the use of the framework on RFID-based sensor systems.

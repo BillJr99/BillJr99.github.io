@@ -7,7 +7,7 @@ tags:
   - smartfabrics
 ---
 
-Using the [IOT Sensor Framework](/software/iotframework/) for signal processing and machine learning, the [Drexel Wireless Systems Lab](https://wireless.ece.drexel.edu) and collaborators across Drexel University have developed [wearable textile smart garment devices](https://research.coe.drexel.edu/ece/dwsl/research/biomedical-smart-textiles/) for biomedical monitoring (among other) applications.  
+Using the [IOT Sensor Framework](/software/iotframework/) for signal processing and machine learning, the [Drexel Wireless Systems Lab (DWSL)](https://wireless.ece.drexel.edu) and collaborators across Drexel University have developed [wearable textile smart garment devices](https://research.coe.drexel.edu/ece/dwsl/research/biomedical-smart-textiles/) for biomedical monitoring (among other) applications.  
 
 I have been fortunate to work with this multidisciplinary team, synthesizing my interests in machine learning and signal processing with electrical engineers, sociologists, neonatologists, pediatricians, and other areas of expertise that span the university.  
 
