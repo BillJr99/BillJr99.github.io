@@ -122,13 +122,13 @@ Ensure that students remember to merge their pull request (and, ultimately, thei
 ## Optional: Using a Script to Pull Repositories
 One drawback to using the GitHub Classroom Assistant to clone repositories is that, as far as I have seen, the Assistant uses HTTPS to clone the repositories.  This makes it more difficult to push to the repository since password rather than public-key access was used.  To authenticate with your SSH public key, you'll want to use SSH to clone the repositories.  These clone URLs begin with "git@github" as opposed to "https" and can be chosen from the GitHub repository homepage when cloning the repository, but GitHub Classroom Assistant does not appear to allow us to make this choice.  You can use a shell script to download your repositories instead.  This requires a Unix/Linux installation, a Mac with a shell terminal, or the Ubuntu Subsystem or a POSIX layer on Windows.  I use [Cygwin](https://www.cygwin.com/), personally, but these other environments should be equivalent.  
 
-GitHub user [konzy](https://github.com/konzy) created, and [jfiskel](https://github.com/jfiksel) forked, a [mass_clone](https://github.com/jfiksel/mass_clone) github clone script.  Cloning this repository provides a `clone_all.sh` script that will identify all your assignments and clone them over SSH using your public key (so you don't have to enter a password!).  It is run as follows, from the directory in which you'd like your cloned repositories to appear:
+GitHub user [konzy](https://github.com/konzy) created, and [jfiksel](https://github.com/jfiksel) forked, a [mass_clone](https://github.com/jfiksel/mass_clone) github clone script.  Cloning this repository provides a `clone_all.sh` script that will identify all your assignments and clone them over SSH using your public key (so you don't have to enter a password!).  It is run as follows, from the directory in which you'd like your cloned repositories to appear:
 
 `./clone_all.sh <Your GitHub Organization Name> <Assignment Identifier> <Your GitHub Username> ssh`
 
 The script will prompt you at the terminal for your password.  Your GitHub organization is the name of the organization you used when you created your GitHub Classroom, and the Assignment Identifier is the portion of the URL that appears when you click on an assignment from the GitHub Classroom web page.
 
-The ssh specifies that ssh links should be used; the scripts do allow for `https` to be specified as the argument instead, and will clone using that protocol instead.
+The `ssh` parameter specifies that ssh links should be used; the scripts do allow for `https` to be specified as the argument instead, and will clone using that protocol instead.
 
 The `push_all.sh` script is another useful one to upload your grading comments to all repositories with a single command.  It will add all files you've created in the repository and commit/push them to the students' repositories.
 
