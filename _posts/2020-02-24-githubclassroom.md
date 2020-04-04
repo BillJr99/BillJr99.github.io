@@ -26,7 +26,7 @@ If you already have a GitHub Organization, you can skip this part and go directl
 
 GitHub Classroom uses Organizations to manage your classrooms, assignments, and student repositories.  You and your students, TA's, and instructors will be members of your organization (they'll be added throughout the process, so you don't have to do this all yourself).  In addition, student repositories will be incorporated into your organization when they accept assignments.
 
-If you are within an academic institution, you can petition GitHub to make your organization a "Pro" organization free of charge.  This enables you to create assignments for which student repositories will be private.  This is really important to me, because I don't want independent student classwork to be made public!  In this example, I'm just creating a personal organization, but this means that the repositories will be public.
+If you are within an academic institution, you can petition GitHub to make your organization a "Pro" organization free of charge.  This enables you to create assignments for which student repositories will be private.  This is really important to me, because I don't want independent student classwork to be made public!  In this example, I'm just creating a personal organization, but this means that the repositories will be public.  As an educator, you can apply for GitHub Education benefits [here](https://education.github.com/) by clicking "Get Benefits" at the top right.
 
 ![Creating a GitHub Organization](/files/media/2020-02-24-githubclassroom/classroom-new-org.gif)
 
