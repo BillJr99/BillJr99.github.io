@@ -18,6 +18,18 @@ Because GitHub classroom is built on GitHub and git infrastructure, it is import
 3. **Basic Experience with git**: For an overview of git as a version control system, see [my article on using Git with GitHub](/posts/2020/02/github/).
 
 # Using GitHub Classroom
+The basic workflow of GitHub classroom allows you to create a boilerplate repository that contains your assignment starter code and instructions, and to associate that boilerplate repository with an assignment.  The assignment is then cloned as individual student repositories by your class, without requiring you to coordinate all the repositories and which students have which repositories.  The workflow looks like this:
+
+![GitHub Classroom Workflow](/files/media/2020-02-24-githubclassroom/workflow.png)
+
+GitHub in the classroom provides a number of benefits with minimal setup requirements that you can re-use from class to class.  These benefits include:
+
+1. It's backed up, less worry about losing files
+2. Files can be cloned on other devices - this is nice for working at home or outside the classroom/lab
+3. Version history allows for rolling back and experimentation (can use branching in more advanced environments)
+4. Collaboration is facilitated with shared repositories, and you can track contributions to ensure mutual collaboration
+5. Students can ask for and receive help through Pull Requests
+6. Students can practice with industry standard tools and workflows
 
 ## Step 1: Creating a new Classroom under Your Organization
 
