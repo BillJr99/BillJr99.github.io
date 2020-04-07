@@ -11,7 +11,7 @@ tags:
   - asrm
 ---
 
-Download the paper [here](http://www.iadisportal.org/digital-library/mdownload/dynamic-analysis-of-agent-frameworks-insupport-of-a-multiagent-systems-reference-model)
+Download the paper [here](http://www.iadisportal.org/digital-library/dynamic-analysis-of-agent-frameworks-insupport-of-a-multiagent-systems-reference-model)
 
 ## bibtex
 ```bibtex
