@@ -22,7 +22,7 @@ I am an instrument rated private pilot, having trained at Cross Keys Airport (17
 
 Amateur Radio
 ======
-I am an Amateur Extra radio operator, licensed since 2017, with callsign [{{ site.author.fcccallsign }}](https://www.hamqth.com/{{ site.author.fcccallsign }})
+I am an Amateur Extra radio operator, licensed since 2017, with callsign [{{ site.author.fcccallsign }}](https://www.hamqth.com/{{ site.author.fcccallsign }}).
 
 Contact Me
 ======
