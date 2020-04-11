@@ -20,6 +20,10 @@ Aviation
 ======
 I am an instrument rated private pilot, having trained at Cross Keys Airport (17N) in Williamstown, NJ and at Flying W Airport (N14) in Medford, NJ. I have flown a Cessna 152 (N94294), some Cessna 172’s (N172MG, N64608, N739UG, N226CA, N54812, N805FW, N10DJ, N329SP, and N738YT), a Piper Arrow PA-28 (N2954R), and a twin Piper Seneca PA-38 (N1380T).
 
+Amateur Radio
+======
+I am an Amateur Extra radio operator with callsign [{{ site.author.fcccallsign }}](https://www.hamqth.com/{{ site.author.fcccallsign }})
+
 Contact Me
 ======
 Download my [GnuPGP RSA Public Key](/files/gpg.pub)
