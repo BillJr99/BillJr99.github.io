@@ -144,7 +144,11 @@
       {% endif %}
       {% if site.author.wikidata %}
       <li><a href="https://www.wikidata.org/wiki/{{ site.author.wikidata }}"><i class="fas fa-link" aria-hidden="true"></i> Wikidata Profile</a></li>
-      {% endif %}      
+      {% endif %}    
+      {% if site.author.fcccallsign %}
+      <li><a href="http://www.hamqth.com/{{ site.author.fcccallsign }}"><i class="fas fa-link" aria-hidden="true"></i> HamQTH Profile</a></li>
+      {% endif %}
+      
     </ul>
   </div>
 </div>
