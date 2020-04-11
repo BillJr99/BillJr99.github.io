@@ -11,10 +11,8 @@ redirect_from:
 
 My Full CV can be found [here](/files/CV.pdf)    
 View My Scholarly Activity using the left-hand or 'Follow' navigation menu.  
-  
-[ORCID CV]({{ site.author.orcid }}/print)
-
-[NCBI SciEnv](https://www.ncbi.nlm.nih.gov/sciencv/) Biosketches:
+View my [ORCID CV]({{ site.author.orcid }}/print)
+View my [NCBI SciEnv](https://www.ncbi.nlm.nih.gov/sciencv/) Biosketches:
 * [NIH Biosketch](https://www.ncbi.nlm.nih.gov/myncbi/william.mongan.1/cv/313798/)
 * [NSF Biosketch](https://www.ncbi.nlm.nih.gov/myncbi/william.mongan.1/cv/313815/)
 
