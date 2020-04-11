@@ -11,7 +11,6 @@ redirect_from:
 
 My Full CV can be found [here](/files/CV.pdf)    
 View My Scholarly Activity using the left-hand or 'Follow' navigation menu.  
-BibTeX Records for most publications can be found on the [DBLP](https://dblp.uni-trier.de/pers/tb1/{{ site.author.dblp }}.bib) and on [CSAuthors](https://www.csauthors.net/{{ site.author.csauthors }}/{{ site.author.csauthors }}.bib)
   
 [ORCID CV]({{ site.author.orcid }}/print)
 
@@ -49,6 +48,8 @@ Selected Faculty Appointments
 
 Selected Publications
 ======
+BibTeX Records for most publications can be found on the [DBLP](https://dblp.uni-trier.de/pers/tb1/{{ site.author.dblp }}.bib) and on [CSAuthors](https://www.csauthors.net/{{ site.author.csauthors }}/{{ site.author.csauthors }}.bib)
+
   <ul>{% for post in site.publications reversed %}
     {% include archive-single-cv.html %}
   {% endfor %}</ul>
