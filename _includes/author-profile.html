@@ -148,7 +148,9 @@
       {% if site.author.fcccallsign %}
       <li><a href="http://www.hamqth.com/{{ site.author.fcccallsign }}"><i class="fas fa-link" aria-hidden="true"></i> HamQTH Profile</a></li>
       {% endif %}
-      
+      {% if site.author.fcccallsign %}
+      <li><a href="http://qrzcq.com/call/{{ site.author.fcccallsign }}"><i class="fas fa-link" aria-hidden="true"></i> QRZCQ Profile</a></li>
+      {% endif %}
     </ul>
   </div>
 </div>
