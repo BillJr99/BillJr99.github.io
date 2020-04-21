@@ -6,7 +6,7 @@ author_profile: true
 ---
 
 {% if site.author.googlescholar %}
-  You can also find my articles on <u><a href="https://scholar.google.com/citations?user={{author.googlescholar}}">my Google Scholar profile</a>.</u>
+  You can also find my articles on <u><a href="https://scholar.google.com/citations?user={{site.author.googlescholar}}">my Google Scholar profile</a>.</u>
 {% endif %}
 
 BibTeX Records for most publications can be found on: {% if site.author.dblp %}the 
