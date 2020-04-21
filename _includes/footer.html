@@ -49,6 +49,9 @@
     {% endif %}
     {% if site.author.fcccallsign %}
     <!--<li><a href="http://qrzcq.com/call/{{ site.author.fcccallsign }}"><i class="fas fa-link" aria-hidden="true"></i> QRZCQ Profile</a></li>-->
+    {% endif %}  
+    {% if site.author.fcccallsign %}
+    <!--<li><a href="http://qrz.com/db/{{ site.author.fcccallsign }}"><i class="fas fa-link" aria-hidden="true"></i> QRZ Profile</a></li>-->
     {% endif %}    
     <li><a href="{% if site.atom_feed.path %}{{ site.atom_feed.path }}{% else %}{{ base_path }}/feed.xml{% endif %}"><i class="fa fa-fw fa-rss-square" aria-hidden="true"></i> {{ site.data.ui-text[site.locale].feed_label | default: "Feed" }}</a></li>
   </ul>
