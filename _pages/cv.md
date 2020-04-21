@@ -44,7 +44,8 @@ Selected Faculty Appointments
 
 Selected Publications
 ======
-BibTeX Records for most publications can be found on the [DBLP](https://dblp.uni-trier.de/pers/tb1/{{ site.author.dblp }}.bib), on [CSAuthors](https://www.csauthors.net/{{ site.author.csauthors }}/{{ site.author.csauthors }}.bib), and on [Google Scholar](https://scholar.googleusercontent.com/citations?view_op=export_citations&user={{ site.author.googlescholar }}&citsig=AMD79ooAAAAAXqDB9Md9_ju11m0O46ZMg6g9CJVYej73&hl=en).
+BibTeX Records for most publications can be found {% if site.author.dblp %}on the 
+[DBLP](https://dblp.uni-trier.de/pers/tb1/{{ site.author.dblp }}.bib), {% endif %}{% if site.author.csauthors %}on [CSAuthors](https://www.csauthors.net/{{ site.author.csauthors }}/{{ site.author.csauthors }}.bib), {% endif %}{% if site.author.googlescholar %}on [Google Scholar](https://scholar.googleusercontent.com/citations?view_op=export_citations&user={{ site.author.googlescholar }}&citsig=AMD79ooAAAAAXqDB9Md9_ju11m0O46ZMg6g9CJVYej73){% endif %}.
 
   <ul>{% for post in site.publications reversed %}
     {% include archive-single-cv.html %}
