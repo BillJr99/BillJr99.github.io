@@ -26,7 +26,7 @@ The packages for data collection and data processing, respectively, are hosted o
 ## IoT Data Collection Framework bibtex
 ```bibtex
 @misc{githubiotsensorframework,
-    author       = {William M. Mongan and Ilhaan Rasheed and Enioluwa Segun and Henry Dang and Charlie R. Chiccarine},
+    author       = {William M. Mongan and Ilhaan Rasheed and Enioluwa Segun and Henry Dang and Victor S. Cushman and Charlie R. Chiccarine},
     title        = {iot-sensor-framework: A Software Framework for Collecting and Processing Heterogeneous Sensor Network Data in the Internet-of-Things},
     month        = may,
     year         = 2020,
