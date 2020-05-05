@@ -17,6 +17,8 @@ This software suite contains scripts to collect and store IoT sensor data, such 
 
 Information about the architecture of this system can be found in my [Ph.D. Dissertation](/publication/dissertation) and on [this paper](/publication/iotdi2017) detailing the use of the framework on RFID-based sensor systems.
 
+This effort was supported in part by the National Science Foundation, the National Institutes of Health, and the Commonwealth of Pennsylvania.
+
 The packages for data collection and data processing, respectively, are hosted on GitHub at the following locations:
 
 | [![v1.0 Release DOI, 5/5/2020](https://zenodo.org/badge/DOI/10.5281/zenodo.3786933.svg)](https://doi.org/10.5281/zenodo.3786933) [IoT Data Collection Framework](https://github.com/drexelwireless/iot-sensor-framework) | 
@@ -26,7 +28,7 @@ The packages for data collection and data processing, respectively, are hosted o
 ## IoT Data Collection Framework bibtex
 ```bibtex
 @misc{githubiotsensorframework,
-    author       = {William M. Mongan and Ilhaan Rasheed and Enioluwa Segun and Henry Dang and Victor S. Cushman and Charlie R. Chiccarine},
+    author       = {William M. Mongan and Ilhaan Rasheed and Enioluwa Segun and Henry Dang and Victor S. Cushman and Charlie R. Chiccarine and Adam K. Fontecchio},
     title        = {iot-sensor-framework: A Software Framework for Collecting and Processing Heterogeneous Sensor Network Data in the Internet-of-Things},
     month        = may,
     year         = 2020,
@@ -40,7 +42,7 @@ The packages for data collection and data processing, respectively, are hosted o
 ## IoT Data Processing Framework bibtex
 ```bibtex
 @misc{githubiotprocessingframework,
-    author       = {William M. Mongan},
+    author       = {William M. Mongan and Adam K. Fontecchio},
     title        = {iot-processing-framework: A Software Framework for Fusing, Classifying, and Experimenting with Heterogeneous Sensor Data},
     month        = may,
     year         = 2020,
