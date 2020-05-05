@@ -19,14 +19,11 @@ Information about the architecture of this system can be found in my [Ph.D. Diss
 
 The packages for data collection and data processing, respectively, are hosted on GitHub at the following locations:
 
-| [IoT Data Collection Framework](https://github.com/drexelwireless/iot-sensor-framework) | 
-[IoT Data Processing Framework](https://github.com/drexelwireless/iot-processing-framework) |
-
-## IoT Data Collection Framework
-[![v1.0 Release DOI, 5/5/2020](https://zenodo.org/badge/DOI/10.5281/zenodo.3786933.svg)](https://doi.org/10.5281/zenodo.3786933)
+| [IoT Data Collection Framework](https://github.com/drexelwireless/iot-sensor-framework) [![v1.0 Release DOI, 5/5/2020](https://zenodo.org/badge/DOI/10.5281/zenodo.3786933.svg)](https://doi.org/10.5281/zenodo.3786933) | 
+[IoT Data Processing Framework](https://github.com/drexelwireless/iot-processing-framework) [![v1.0 Release DOI, 5/5/2020](https://zenodo.org/badge/DOI/10.5281/zenodo.3786931.svg)](https://doi.org/10.5281/zenodo.3786931) |
 
 
-### bibtex
+## IoT Data Collection Framework bibtex
 ```bibtex
 @misc{githubiotsensorframework,
     author       = {William M. Mongan and Ilhaan Rasheed and Enioluwa Segun and Henry Dang and Charlie R. Chiccarine},
@@ -40,10 +37,7 @@ The packages for data collection and data processing, respectively, are hosted o
 }
 ```
 
-## IoT Data Processing Framework
-[![v1.0 Release DOI, 5/5/2020](https://zenodo.org/badge/DOI/10.5281/zenodo.3786931.svg)](https://doi.org/10.5281/zenodo.3786931)
-
-### bibtex
+## IoT Data Processing Framework bibtex
 ```bibtex
 @misc{githubiotprocessingframework,
     author       = {William M. Mongan},
