@@ -21,3 +21,38 @@ The packages for data collection and data processing, respectively, are hosted o
 
 | [IoT Data Collection Framework](https://github.com/drexelwireless/iot-sensor-framework) | 
 [IoT Data Processing Framework](https://github.com/drexelwireless/iot-processing-framework) |
+
+## IoT Data Collection Framework
+[![v1.0 Release DOI, 5/5/2020](https://zenodo.org/badge/DOI/10.5281/zenodo.3786933.svg)](https://doi.org/10.5281/zenodo.3786933)
+
+
+### bibtex
+```bibtex
+@misc{githubiotsensorframework,
+    author       = {William M. Mongan and Ilhaan Rasheed and Enioluwa Segun and Henry Dang and Charlie R. Chiccarine},
+    title        = {{iot-sensor-framework: A Software Framework for Collecting and Processing Heterogeneous Sensor Network Data in the Internet-of-Things}},
+    month        = may,
+    year         = 2020,
+    doi          = {10.5281/zenodo.3786933},
+    version      = {v1.0},
+    publisher    = {Zenodo},
+    url          = {https://doi.org/10.5281/zenodo.3786933}
+}
+```
+
+## IoT Data Processing Framework
+[![v1.0 Release DOI, 5/5/2020](https://zenodo.org/badge/DOI/10.5281/zenodo.3786931.svg)](https://doi.org/10.5281/zenodo.3786931)
+
+### bibtex
+```bibtex
+@misc{githubiotprocessingframework,
+    author       = {William M. Mongan},
+    title        = {{iot-processing-framework: A Software Framework for Fusing, Classifying, and Experimenting with Heterogeneous Sensor Data}},
+    month        = may,
+    year         = 2020,
+    doi          = {10.5281/zenodo.3786931},
+    version      = {v1.0},
+    publisher    = {Zenodo},
+    url          = {https://doi.org/10.5281/zenodo.3786931}
+}
+```
