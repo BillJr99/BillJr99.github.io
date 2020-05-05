@@ -27,7 +27,7 @@ The packages for data collection and data processing, respectively, are hosted o
 ```bibtex
 @misc{githubiotsensorframework,
     author       = {William M. Mongan and Ilhaan Rasheed and Enioluwa Segun and Henry Dang and Charlie R. Chiccarine},
-    title        = {{iot-sensor-framework: A Software Framework for Collecting and Processing Heterogeneous Sensor Network Data in the Internet-of-Things}},
+    title        = {iot-sensor-framework: A Software Framework for Collecting and Processing Heterogeneous Sensor Network Data in the Internet-of-Things},
     month        = may,
     year         = 2020,
     doi          = {10.5281/zenodo.3786933},
@@ -41,7 +41,7 @@ The packages for data collection and data processing, respectively, are hosted o
 ```bibtex
 @misc{githubiotprocessingframework,
     author       = {William M. Mongan},
-    title        = {{iot-processing-framework: A Software Framework for Fusing, Classifying, and Experimenting with Heterogeneous Sensor Data}},
+    title        = {iot-processing-framework: A Software Framework for Fusing, Classifying, and Experimenting with Heterogeneous Sensor Data},
     month        = may,
     year         = 2020,
     doi          = {10.5281/zenodo.3786931},
