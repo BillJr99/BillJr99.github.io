@@ -29,7 +29,7 @@ The packages for data collection and data processing, respectively, are hosted o
 ```bibtex
 @misc{githubiotsensorframework,
     author       = {William M. Mongan and Ilhaan Rasheed and Enioluwa Segun and Henry Dang and Victor S. Cushman and Charlie R. Chiccarine and Kapil R. Dandekar and Adam K. Fontecchio},
-    title        = {iot-sensor-framework: A Software Framework for Collecting and Processing Heterogeneous Sensor Network Data in the Internet-of-Things},
+    title        = {drexelwireless/iot-sensor-framework: Public Release 1.0},
     month        = may,
     year         = 2020,
     doi          = {10.5281/zenodo.3786933},
@@ -43,11 +43,11 @@ The packages for data collection and data processing, respectively, are hosted o
 ```bibtex
 @misc{githubiotprocessingframework,
     author       = {William M. Mongan and Kapil R. Dandekar and Adam K. Fontecchio},
-    title        = {iot-processing-framework: A Software Framework for Fusing, Classifying, and Experimenting with Heterogeneous Sensor Data},
+    title        = {drexelwireless/iot-processing-framework: Public Release 1.1},
     month        = may,
     year         = 2020,
     doi          = {10.5281/zenodo.3786931},
-    version      = {v1.0},
+    version      = {v1.1},
     publisher    = {Zenodo},
     url          = {https://doi.org/10.5281/zenodo.3786931}
 }
