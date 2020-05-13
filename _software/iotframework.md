@@ -21,8 +21,8 @@ This effort was supported in part by the National Science Foundation, the Nation
 
 The packages for data collection and data processing, respectively, are hosted on GitHub at the following locations:
 
-| [![v1.0 Release DOI, 5/5/2020](https://zenodo.org/badge/DOI/10.5281/zenodo.3786933.svg)](https://doi.org/10.5281/zenodo.3786933) [IoT Data Collection Framework](https://github.com/drexelwireless/iot-sensor-framework) | 
-[![v1.0 Release DOI, 5/5/2020](https://zenodo.org/badge/DOI/10.5281/zenodo.3786931.svg)](https://doi.org/10.5281/zenodo.3786931) [IoT Data Processing Framework](https://github.com/drexelwireless/iot-processing-framework) |
+| [![v1.0 Release DOI, 5/5/2020](https://zenodo.org/badge/DOI/10.5281/zenodo.3786932.svg)](https://doi.org/10.5281/zenodo.3786932) [IoT Data Collection Framework](https://github.com/drexelwireless/iot-sensor-framework) | 
+[![v1.0 Release DOI, 5/5/2020](https://zenodo.org/badge/DOI/10.5281/zenodo.3786930.svg)](https://doi.org/10.5281/zenodo.3786930) [IoT Data Processing Framework](https://github.com/drexelwireless/iot-processing-framework) |
 
 
 ## IoT Data Collection Framework bibtex
@@ -32,10 +32,10 @@ The packages for data collection and data processing, respectively, are hosted o
     title        = {drexelwireless/iot-sensor-framework: Public Release 1.0},
     month        = may,
     year         = 2020,
-    doi          = {10.5281/zenodo.3786933},
+    doi          = {10.5281/zenodo.3786932},
     version      = {v1.0},
     publisher    = {Zenodo},
-    url          = {https://doi.org/10.5281/zenodo.3786933}
+    url          = {https://doi.org/10.5281/zenodo.3786932}
 }
 ```
 
@@ -46,9 +46,9 @@ The packages for data collection and data processing, respectively, are hosted o
     title        = {drexelwireless/iot-processing-framework: Public Release 1.1},
     month        = may,
     year         = 2020,
-    doi          = {10.5281/zenodo.3786931},
+    doi          = {10.5281/zenodo.3786930},
     version      = {v1.1},
     publisher    = {Zenodo},
-    url          = {https://doi.org/10.5281/zenodo.3786931}
+    url          = {https://doi.org/10.5281/zenodo.3786930}
 }
 ```
