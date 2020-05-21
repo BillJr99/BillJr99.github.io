@@ -14,18 +14,15 @@ Download the paper [here](https://dl.acm.org/doi/pdf/10.1145/3054977.3055002?dow
 
 ## bibtex
 ```bibtex
-@inproceedings{05f61b82daef4ab9bd75be5eb250f232,
-title = "On the use of radio frequency identification for continuous biomedical monitoring",
-author = "Mongan, {William M.} and Ilhaan Rasheed and Khyati Ved and Shrenik Vora and Kapil Dandekar and Genevieve Dion and Timothy Kurzweg and Adam Fontecchio",
-year = "2017",
-month = "4",
-day = "18",
-doi = "10.1145/3054977.3055002",
-language = "English (US)",
-series = "Proceedings - 2017 IEEE/ACM 2nd International Conference on Internet-of-Things Design and Implementation, IoTDI 2017 (part of CPS Week)",
-publisher = "Association for Computing Machinery, Inc",
-pages = "197--202",
-booktitle = "Proceedings - 2017 IEEE/ACM 2nd International Conference on Internet-of-Things Design and Implementation, IoTDI 2017 (part of CPS Week)",
-note = "2nd IEEE/ACM International Conference on Internet-of-Things Design and Implementation, IoTDI 2017 ; Conference date: 18-04-2017 Through 20-04-2017",
-}
+@INPROCEEDINGS{7946876,
+  author={Mongan, {William M.} and Ilhaan Rasheed and Khyati Ved and Shrenik Vora and Kapil Dandekar and Genevieve Dion and Timothy Kurzweg and Adam Fontecchio},
+  booktitle={2017 IEEE/ACM Second International Conference on Internet-of-Things Design and Implementation (IoTDI)}, 
+  title={On the Use of Radio Frequency Identification for Continuous Biomedical Monitoring}, 
+  year={2017},
+  month = "4",
+  day = "18",
+  doi = "10.1145/3054977.3055002",
+  volume={},
+  number={},
+  pages={197-202},}
 ```
