@@ -25,14 +25,8 @@ Amateur Radio
 I am an Amateur Extra radio operator, licensed since 2017, with callsign [{{ site.author.fcccallsign }}](https://www.hamqth.com/{{ site.author.fcccallsign }}).
 
 <center>
-<table border=0>
-<tr>
-<td>
 <a href="http://www.hamqsl.com/solar.html" title="Click to add Solar-Terrestrial Data to your website!"><img src="http://www.hamqsl.com/solargraph.php"></a> 
-</td>
-<td>
 <a href="http://www.hamqsl.com/solar.html" title="Click to add Solar-Terrestrial Data to your website!"><img src="http://www.hamqsl.com/solar2.php"></a> 
-</td>
 </center>
 
 Contact Me
