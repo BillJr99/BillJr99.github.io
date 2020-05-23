@@ -29,10 +29,6 @@ I am an Amateur Extra radio operator, licensed since 2017, with callsign [{{ sit
 <a href="https://rigreference.com/solar" target="_blank"><img src="https://rigreference.com/solar/img/wide" border="0"></a>
 <center>
 
-
-
-</center>
-
 Contact Me
 ======
 Download my [GnuPGP RSA Public Key](/files/gpg.pub)
