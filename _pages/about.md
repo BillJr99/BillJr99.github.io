@@ -27,7 +27,7 @@ I am an Amateur Extra radio operator, licensed since 2017, with callsign [{{ sit
 <center>
 <a href="http://www.hamqsl.com/solar.html" title="Click to add Solar-Terrestrial Data to your website!"><img src="http://www.hamqsl.com/solargraph.php"></a> 
 <a href="https://rigreference.com/solar" target="_blank"><img src="https://rigreference.com/solar/img/wide" border="0"></a>
-<center>
+</center>
 
 Contact Me
 ======
