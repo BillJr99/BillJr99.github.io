@@ -27,15 +27,15 @@ The packages for data collection and data processing, respectively, are hosted o
 ## Installation Videos
 
 ### iot-software-framework
-<iframe width="640" height="480" src="https://www.youtube.com/embed/NOFdUsx6Fuk">
+<iframe width="560" height="315" src="https://www.youtube.com/embed/NOFdUsx6Fuk" frameborder="0" allow="accelerometer; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
 </iframe>
 
 ### iot-processing-framework
-<iframe width="640" height="480" src="https://www.youtube.com/embed/KdaFo_KRPlE">
+<iframe width="560" height="315" src="https://www.youtube.com/embed/KdaFo_KRPlE" frameborder="0" allow="accelerometer; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
 </iframe>
 
 ### Running the Software
-<iframe width="640" height="480" src="https://www.youtube.com/embed/wwc1o67mbcw">
+<iframe width="560" height="315" src="https://www.youtube.com/embed/wwc1o67mbcw" frameborder="0" allow="accelerometer; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
 </iframe>
 
 ## IoT Data Collection Framework bibtex
