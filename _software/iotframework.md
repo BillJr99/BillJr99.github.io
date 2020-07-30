@@ -24,6 +24,19 @@ The packages for data collection and data processing, respectively, are hosted o
 | [![v1.0 Release DOI, 5/5/2020](https://zenodo.org/badge/DOI/10.5281/zenodo.3786932.svg)](https://doi.org/10.5281/zenodo.3786932) [IoT Data Collection Framework](https://github.com/drexelwireless/iot-sensor-framework) | 
 [![v1.1 Release DOI, 5/13/2020](https://zenodo.org/badge/DOI/10.5281/zenodo.3786930.svg)](https://doi.org/10.5281/zenodo.3786930) [IoT Data Processing Framework](https://github.com/drexelwireless/iot-processing-framework) |
 
+## Installation Videos
+
+### iot-software-framework
+<iframe width="640" height="480" src="https://www.youtube.com/watch?v=NOFdUsx6Fuk&list=PLM-MEGowMWmQa1SF-a9Xhoz0yrDuEZ1B9">
+</iframe>
+
+### iot-processing-framework
+<iframe width="640" height="480" src="https://www.youtube.com/watch?v=KdaFo_KRPlE&list=PLM-MEGowMWmQa1SF-a9Xhoz0yrDuEZ1B9">
+</iframe>
+
+### Running the Software
+<iframe width="640" height="480" src="https://www.youtube.com/watch?v=wwc1o67mbcw&list=PLM-MEGowMWmQa1SF-a9Xhoz0yrDuEZ1B9">
+</iframe>
 
 ## IoT Data Collection Framework bibtex
 ```bibtex
