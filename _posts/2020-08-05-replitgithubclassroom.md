@@ -1,6 +1,6 @@
 ---
 title: 'Using Repl.it with GitHub Classroom'
-date: 2020-02-24
+date: 2020-08-05
 permalink: /posts/2020/08/replitgithubclassroom/
 tags:
   - csta
