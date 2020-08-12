@@ -24,6 +24,8 @@ The packages for data collection and data processing, respectively, are hosted o
 | [![v1.0 Release DOI, 5/5/2020](https://zenodo.org/badge/DOI/10.5281/zenodo.3786932.svg)](https://doi.org/10.5281/zenodo.3786932) [IoT Data Collection Framework](https://github.com/drexelwireless/iot-sensor-framework) | 
 [![v1.1 Release DOI, 5/13/2020](https://zenodo.org/badge/DOI/10.5281/zenodo.3786930.svg)](https://doi.org/10.5281/zenodo.3786930) [IoT Data Processing Framework](https://github.com/drexelwireless/iot-processing-framework) |
 
+We have made datasets public from simulated mannequins and emulated environments on [GitHub](https://github.com/drexelwireless/bellyband-datasets).  
+
 ## Installation Videos
 
 ### iot-software-framework
