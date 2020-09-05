@@ -18,5 +18,6 @@ title={Passive RFID-based Diaper Moisture Sensor},
 journal={2020 IEEE Sensors Journal}, 
 author={Tajin, Md Abu Saleh and Mongan, William M. and Dandekar, Kapil R.}, 
 year={2020}, 
-month={Oct}}
+month={Oct},
+doi={10.1109/JSEN.2020.3021395}}
 ```
