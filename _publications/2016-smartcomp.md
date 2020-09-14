@@ -10,7 +10,7 @@ citation: William Mongan, Endla Anday, Genevieve Dion, Adam Fontecchio, Tim Kurz
 tags: 
   - smartfabrics
 ---
-Download the paper [here](http://shrenikvora.com/Shrenik_Vora_Smartsys.pdf)
+Download the paper [here](https://web.archive.org/web/20190719054014/http://shrenikvora.com/Shrenik_Vora_Smartsys.pdf)
 
 The Smart-Fabric Bellyband was featured in the [Science Nation video series from the National Science Foundation](/posts/2016/09/sciencenation).
 
