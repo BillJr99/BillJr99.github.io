@@ -6,7 +6,7 @@ excerpt: 'IEEE Sensors Journal'
 date: '2020-10-31'
 venue: 'IEEE Sensors Journal'
 paperurl: 'https://ieeexplore.ieee.org/document/9186098'
-citation: "Tajin, Md Abu Saleh, William M. Mongan, and Kapil R. Dandekar.  Passive RFID-based Diaper Moisture Sensor.  IEEE Sensors Journal, October 2020."
+citation: "Md Abu Saleh Tajin, William M. Mongan, and Kapil R. Dandekar.  Passive RFID-based Diaper Moisture Sensor.  IEEE Sensors Journal, October 2020."
 tags: 
   - smartfabrics
 ---
