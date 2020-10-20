@@ -10,7 +10,7 @@
     {% if author.avatar contains "://" %}
     	<img src="{{ author.avatar }}" alt="{{ author.name }}">
     {% else %}
-    	<img src="{{ author.avatar | prepend: "/images/" | prepend: site.url }}" class="author__avatar" alt="{{ author.name }}">
+    	<img src="{{ author.avatar | prepend: "/images/" | prepend: base_path }}" class="author__avatar" alt="{{ author.name }}">
     {% endif %}
   </div>
 
@@ -41,14 +41,11 @@
         <li><a href="{{ author.researchgate }}"><i class="fab fa-fw fa-researchgate" aria-hidden="true"></i> ResearchGate</a></li>
       {% endif %}
       {% if author.twitter %}
-        <li><a href="https://twitter.com/{{ author.twitter }}"><i class="fab fa-fw fa-twitter-square" aria-hidden="true"></i> Twitter/X</a></li>
+        <li><a href="https://twitter.com/{{ author.twitter }}"><i class="fab fa-fw fa-twitter-square" aria-hidden="true"></i> Twitter</a></li>
       {% endif %}
       {% if author.facebook %}
         <li><a href="https://www.facebook.com/{{ author.facebook }}"><i class="fab fa-fw fa-facebook-square" aria-hidden="true"></i> Facebook</a></li>
       {% endif %}
-      {% if author.bluesky %}
-        <li><a href="https://bsky.app/profile/{{ author.bluesky }}"><i class="fas fa-link" aria-hidden="true"></i> Bluesky</a></li>
-      {% endif %}       
       {% if author.google_plus %}
         <li><a href="https://plus.google.com/+{{ author.google_plus }}"><i class="fab fa-fw fa-google-plus" aria-hidden="true"></i> Google+</a></li>
       {% endif %}
@@ -65,7 +62,7 @@
         <li><a href="https://{{ author.tumblr }}.tumblr.com"><i class="fab fa-fw fa-tumblr-square" aria-hidden="true"></i> Tumblr</a></li>
       {% endif %}
       {% if author.bitbucket %}
-        <li><a href="https://bitbucket.org/{{ author.bitbucket }}/"><i class="fab fa-fw fa-bitbucket" aria-hidden="true"></i> Bitbucket</a></li>
+        <li><a href="https://bitbucket.org/{{ author.bitbucket }}"><i class="fab fa-fw fa-bitbucket" aria-hidden="true"></i> Bitbucket</a></li>
       {% endif %}
       {% if author.github %}
         <li><a href="https://github.com/{{ author.github }}"><i class="fab fa-fw fa-github" aria-hidden="true"></i> Github</a></li>
@@ -89,11 +86,8 @@
         <li><a href="https://steamcommunity.com/id/{{ author.steam }}"><i class="fab fa-fw fa-steam-square" aria-hidden="true"></i> Steam</a></li>
       {% endif %}
       {% if author.youtube %}
-        <li><a href="https://www.youtube.com/channel/{{ author.youtube }}"><i class="fab fa-fw fa-youtube" aria-hidden="true"></i> YouTube</a></li> <!-- link was user instead of channel -->
+        <li><a href="https://www.youtube.com/user/{{ author.youtube }}"><i class="fab fa-fw fa-youtube" aria-hidden="true"></i> YouTube</a></li>
       {% endif %}
-      {% if author.digsigyoutube %}
-        <li><a href="https://www.youtube.com/channel/{{ author.digsigyoutube }}"><i class="fab fa-fw fa-youtube" aria-hidden="true"></i> Digital Signature Podcast</a></li> <!-- link was user instead of channel -->
-      {% endif %}      
       {% if author.soundcloud %}
         <li><a href="https://soundcloud.com/{{ author.soundcloud }}"><i class="fab fa-fw fa-soundcloud" aria-hidden="true"></i> Soundcloud</a></li>
       {% endif %}
@@ -110,7 +104,7 @@
         <li><a href="https://vine.co/u/{{ author.vine }}"><i class="fab fa-fw fa-vine" aria-hidden="true"></i> Vine</a></li>
       {% endif %}
       {% if author.googlescholar %}
-        <li><a href="https://scholar.google.com/citations?user={{author.googlescholar}}"><i class="fas fa-fw fa-graduation-cap"></i> Google Scholar</a></li>
+        <li><a href="{{ author.googlescholar }}"><i class="fas fa-fw fa-graduation-cap"></i> Google Scholar</a></li>
       {% endif %}
       {% if author.pubmed %}
         <li><a href="{{ author.pubmed }}"><i class="ai ai-pubmed-square ai-fw"></i> PubMed</a></li>
@@ -123,43 +117,10 @@
       {% endif %}
       {% if author.wikipedia %}
         <li><a href="https://en.wikipedia.org/wiki/User:{{ author.wikipedia }}"><i class="fab fa-fw fa-wikipedia-w" aria-hidden="true"></i> Wikipedia</a></li>
+{% endif %}
+      {% if author.goodreads %}
+        <li><a href="https://www.goodreads.com/{{ author.goodreads }}"><i class="fab fa-fw fa-goodreads" aria-hidden="true"></i> Goodreads</a></li>
       {% endif %}
-      {% if site.author.scopus %}
-      <li><a href="https://www.scopus.com/authid/detail.uri?authorId={{ site.author.scopus }}"><i class="fas fa-link" aria-hidden="true"></i> Scopus</a></li>
-      {% endif %}
-      {% if site.author.webofscience %}
-      <li><a href="https://publons.com/researcher/{{ site.author.webofscience }}/"><i class="fas fa-link" aria-hidden="true"></i> Publons WebOfScience</a></li>
-      {% endif %}
-      {% if site.author.ieeeauthor %}
-      <li><a href="https://ieeexplore.ieee.org/author/{{ site.author.ieeeauthor }}"><i class="fas fa-link" aria-hidden="true"></i> IEEE Author Profile</a></li>
-      {% endif %}    
-      {% if site.author.acmauthor %}
-      <li><a href="https://dl.acm.org/author_page.cfm?id={{ site.author.acmauthor }}"><i class="fas fa-link" aria-hidden="true"></i> ACM Author Profile</a></li>
-      {% endif %}  
-      {% if site.author.dblp %}
-      <li><a href="https://dblp.uni-trier.de/pers/hd/{{ site.author.dblp }}.html"><i class="fas fa-link" aria-hidden="true"></i> DBLP</a></li>
-      {% endif %}  
-      {% if site.author.nih %}
-      <li><a href="https://www.ncbi.nlm.nih.gov/myncbi/{{ site.author.nih }}/bibliography/public/"><i class="fas fa-link" aria-hidden="true"></i> NIH Bibliography</a></li>
-      {% endif %}        
-      {% if site.author.gitlab %}
-      <li><a href="https://gitlab.com/{{ site.author.gitlab }}"><i class="fas fa-link" aria-hidden="true"></i> Gitlab</a></li>
-      {% endif %}  
-      {% if site.author.csauthors %}
-      <li><a href="https://www.csauthors.net/{{ site.author.csauthors }}/"><i class="fas fa-link" aria-hidden="true"></i> CSAuthors Profile</a></li>
-      {% endif %}
-      {% if site.author.wikidata %}
-      <li><a href="https://www.wikidata.org/wiki/{{ site.author.wikidata }}"><i class="fas fa-link" aria-hidden="true"></i> Wikidata Profile</a></li>
-      {% endif %}    
-      {% if site.author.fcccallsign %}
-      <li><a href="http://www.hamqth.com/{{ site.author.fcccallsign }}"><i class="fas fa-link" aria-hidden="true"></i> HamQTH Profile</a></li>
-      {% endif %}
-      {% if site.author.fcccallsign %}
-      <li><a href="http://qrzcq.com/call/{{ site.author.fcccallsign }}"><i class="fas fa-link" aria-hidden="true"></i> QRZCQ Profile</a></li>
-      {% endif %}
-      {% if site.author.fcccallsign %}
-      <li><a href="http://qrz.com/db/{{ site.author.fcccallsign }}"><i class="fas fa-link" aria-hidden="true"></i> QRZ Profile</a></li>
-      {% endif %}          
     </ul>
   </div>
 </div>
