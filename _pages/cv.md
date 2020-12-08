@@ -28,7 +28,7 @@ Selected Faculty Appointments
 ======
 * Assistant Professor (Visiting) of Math and Computer Science at Ursinus College, 2020-Present
 
-* Instructor (Part-Time) of Computer Science and Engineering at Syracuse University, 2020-Present
+* Instructor (Part-Time) of Computer Science and Engineering at Syracuse University, 2020-2020
 
 * Associate Department Head of Undergraduate Affairs in the Department of Computer Science at Drexel University, 2014-2019
   * Associate Department Head, 2015-2019
