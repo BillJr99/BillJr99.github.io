@@ -12,7 +12,7 @@ Bill holds the Ph.D. in Electrical and Computer Engineering from Drexel Universi
 
 Bill was appointed as Teaching Professor (2008-2019) and Associate Department Head for Undergraduate Affairs (2014-15 through 2019) of Computer Science in the College of Computing and Informatics, teaching the systems track and the new architecture track courses for the Department of Computer Science, including Operating Systems, Concurrent Programming, and Systems Architecture. Here, he blended his research and experiential education interests by fusing undergraduate as well as graduate education with classroom and extracurricular research initiatives. In these roles, he was a recipient of the 2014 College of Computing and Informatics Award for Teaching Excellence and the 2019 College of Computing and Informatics Award for Faculty Leadership. 
 
-Bill joined the faculty of the Math and Computer Science Department at Ursinus College in Fall, 2020.
+Bill joined the faculty of the Math and Computer Science Department at Ursinus College in Fall, 2020, where he is the Founder and Principal Investigator of the [Human-Machine Intelligent Systems Lab](http://www.hmislab.org).
 
 He is a Senior Member of the Association for Computing Machinery (ACM) and of the Institute of Electrical and Electronics Engineers (IEEE).
 
