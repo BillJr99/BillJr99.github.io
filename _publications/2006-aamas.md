@@ -22,5 +22,6 @@ url={https://dl.acm.org/authorize?N685685},
 journal={International Conference of Autonomous Agents and Multiagent Systems (AAMAS)}, 
 author={Modi, Pragnesh Jay and Mancoridis, Spiros and Mongan, William M. and Regli, William and Mayk, Israel}, 
 year={2006}, 
-month={May}}
+month={May},
+doi={https://doi.org/10.1145/1160633.1160922}}
 ```
