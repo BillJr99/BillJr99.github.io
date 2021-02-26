@@ -11,6 +11,8 @@ tags:
   - smartfabrics
 ---
 
+Download the paper [here](https://par.nsf.gov/servlets/purl/10195509)
+
 ## bibtex
 ```bibtex
 @article{tajin2020, 
