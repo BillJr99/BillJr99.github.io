@@ -10,8 +10,6 @@ tags:
   - smartfabrics
 ---
 
-Download the paper [here](https://www.researchgate.net/profile/Md-Abu-Saleh-Tajin/publication/349536591_Channel_Emulation_for_the_Characterization_of_Wearable_RFID_Systems/links/6035598e92851c4ed5910826/Channel-Emulation-for-the-Characterization-of-Wearable-RFID-Systems.pdf)
-
 ## bibtex
 ```bibtex
 @article{tajin2020b, 
