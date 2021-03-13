@@ -121,7 +121,7 @@ In my classes, I use a [POGIL](https://cspogil.org/Home) style method to facilit
 <iframe height="600px" width="100%" src="https://repl.it/@BillJr99/MiniCrypto?lite=true" scrolling="no" frameborder="no" allowtransparency="true" allowfullscreen="true" sandbox="allow-forms allow-pointer-lock allow-popups allow-same-origin allow-scripts allow-modals"></iframe> 
 ```
 
-There is a button at the top right of the frame to open the example in a new browser tab.
+There is a button at the top right of the frame to open the example in a new browser tab.  Here is an [example lesson](https://www.billmongan.com/Ursinus-CS173-Spring2021/Activities/Conditionals3).
 
 ## Integrating Replit with GitHub Classroom
 
