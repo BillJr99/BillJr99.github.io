@@ -67,6 +67,12 @@ Here is an example project demonstrating this \[[^5]\].
 
 <iframe height="600px" width="100%" src="https://repl.it/@BillJr99/StdDrawPrincetonExample?lite=true" scrolling="no" frameborder="no" allowtransparency="true" allowfullscreen="true" sandbox="allow-forms allow-pointer-lock allow-popups allow-same-origin allow-scripts allow-modals"></iframe> 
 
+### Animations
+
+You can use animations with this library as well!  It's a little slow through the browser, but you can clear the screen and draw lines iteratively to create fun animations.  Here's an example:
+
+<iframe height="600px" width="100%" src="https://repl.it/@BillJr99/GraphDemo?lite=true" scrolling="no" frameborder="no" allowtransparency="true" allowfullscreen="true" sandbox="allow-forms allow-pointer-lock allow-popups allow-same-origin allow-scripts allow-modals"></iframe> 
+
 ## Unit Testing
 
 We will see later that you can add your own unit tests and input/output tests in order to autograde a Replit project, but you can encourage students to create their own unit tests, too.
