@@ -102,6 +102,8 @@ Here is a quick example project demonstrating how to create and run a unit test:
 
 <iframe height="600px" width="100%" src="https://repl.it/@BillJr99/JUnitExample?lite=true" scrolling="no" frameborder="no" allowtransparency="true" allowfullscreen="true" sandbox="allow-forms allow-pointer-lock allow-popups allow-same-origin allow-scripts allow-modals"></iframe> 
 
+If you are using a custom `.replit` file with external libraries, you can add this jar to your `CLASSPATH` in your `.replit` project: `/run_dir/junit-4.12.jar`.
+
 ## Code Formatting
 
 My students often miss the "auto-format" button on their Replit projects.  This is a nice way to clean up things like indentation, and to demonstrate best practices.  The button is located on the top right of the code window for the project.
