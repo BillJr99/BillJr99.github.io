@@ -36,7 +36,7 @@ GitHub in the classroom provides a number of benefits with minimal setup require
 ### Creating a GitHub Organization
 If you already have a GitHub Organization, you can skip this part and go directly to creating a new classroom under that organization.  You only have to create an organization once.
 
-GitHub Classroom uses Organizations to manage your classrooms, assignments, and student repositories.  You and your students, TA's, and instructors will be members of your organization (they'll be added throughout the process, so you don't have to do this all yourself).  In addition, student repositories will be incorporated into your organization when they accept assignments.
+GitHub Classroom uses Organizations to manage your classrooms, assignments, and student repositories.  You and your TA's (and co-instructors) will be members of your organization (they'll be added throughout the process, so you don't have to do this all yourself).  In addition, student repositories will be incorporated into your organization when they accept assignments, and you can provide roster information whereby students can associate themselves with their GitHub account.  When I use the student roster, I like to use aliases that I share with my students (or that they share with me) so that no personal information is actually divulged.
 
 If you are within an academic institution, you can petition GitHub to make your organization a "Pro" organization free of charge.  This enables you to create assignments for which student repositories will be private.  This is really important to me, because I don't want independent student classwork to be made public!  In this example, I'm just creating a personal organization, but this means that the repositories will be public.  As an educator, you can apply for GitHub Education benefits [here](https://education.github.com/) by clicking "Get Benefits" at the top right.
 
@@ -154,5 +154,9 @@ If you are using two-factor authentication, you won't be able to enter your usua
 GitHub Classroom is a useful tool to teach git in the classroom, and to manage student work among instructional staff and among peer student groups.  I've found a few tips and tricks in my workflow along the way, as you've seen above, but I've found this to help me manage student work in a meaningful industry platform.  I like when students develop best practices while doing their work: often, we're rushed to teach something and we forget to emphasize good habits along the way.
 
 [Here](https://classroom.github.com/videos) are some videos from the GitHub Classroom team that walk through many of the steps described in this guide, for your reference.
+
+# Errata
+
+* A prior version of this article indicated that students are added to your GitHub organization along with TA's and co-instructors.  Although students can be added to a classroom via the roster (or by linking to a Learning Management System), they are not actually added as organization members.  Rather, they are collaborators on the repositories that are created when they accept an assignment.
 
 ------
