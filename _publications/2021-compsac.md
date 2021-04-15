@@ -10,6 +10,8 @@ tags:
   - smartfabrics
 ---
 
+Acceptance Rate 27%
+
 ## bibtex
 ```bibtex
 @article{ross2021, 
