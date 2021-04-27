@@ -10,6 +10,10 @@ tags:
   - smartfabrics
 ---
 
+## Presentation by Md Abu Saleh Tajin 
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/ONmSvTm2JKM" frameborder="0" allow="encrypted-media" allowfullscreen></iframe>
+
 ## bibtex
 ```bibtex
 @article{tajin2020b, 
