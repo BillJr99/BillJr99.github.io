@@ -1,7 +1,7 @@
 ---
 title: "UHF RFID Channel Emulation Testbed for Wireless IoT Systems"
 collection: publications
-permalink: /publication/sensors2020
+permalink: /publication/access2020
 excerpt: 'IEEE Access Journal'
 date: '2021-05-03'
 venue: 'IEEE Access Journal'
