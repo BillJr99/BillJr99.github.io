@@ -12,6 +12,10 @@ tags:
 
 Acceptance Rate 27%
 
+## Presentation by Robert Ross
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/jjSIriwcy74" frameborder="0" allow="encrypted-media" allowfullscreen></iframe>
+
 ## bibtex
 ```bibtex
 @article{ross2021, 
