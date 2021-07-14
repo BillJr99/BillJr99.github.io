@@ -19,7 +19,8 @@ Education
 * Ph.D in Electrical and Computer Engineering, Drexel University, 2018
 * M.S. in Computer Science, Drexel University, 2008
 * M.S. in Science of Instruction, Drexel University, 2008
-  * Pennsylvania Teaching Certification in Grades 7-12 Mathematics
+  * Pennsylvania Teaching Certification in Grades 7-12 Mathematics earned January, 2007
+  * Grades 7-12 Computer Science subject area added July, 2021
 * B.S. in Computer Science, Drexel University, 2005
   * Minor in Mathematics
   * Magna Cum Laude
