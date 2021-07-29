@@ -30,6 +30,7 @@ comments:
     appid                :
     num_posts            : # 5 (default)
     colorscheme          : # "light" (default), "dark"
+    
 staticman:
   allowedFields          : ['name', 'email', 'url', 'message']
   branch                 : "master" # "master", "gh-pages"
@@ -40,6 +41,15 @@ staticman:
   path                   : "_data/comments/{options.slug}"
   requiredFields         : ['name', 'email', 'message']
   
+  akismet:
+    enabled: true
+    site: "billmongan.com"
+    apiKey: "7dc45587bd49"
+    author: "name"
+    authorEmail: "email"
+    authorUrl: "website"
+    content: "message"
+    
   # Must comment out all sub-keys i.e. siteKey, secret if enabled is false
   # https://www.google.com/recaptcha/admin, bill@billmongan.com
   # secret is (!) ENCRYPTED; encrypt with https://api.staticman.net/v2/encrypt/YOUR_SECRET_HERE
