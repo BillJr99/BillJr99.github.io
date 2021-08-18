@@ -12,6 +12,8 @@ tags:
 
 Acceptance Rate 27%
 
+Download the paper[^1] [here](https://www.cs.drexel.edu/~wmm24/papers/compsac2021.pdf)
+
 ## Presentation by Robert Ross
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/jjSIriwcy74" frameborder="0" allow="encrypted-media" allowfullscreen></iframe>
@@ -26,3 +28,5 @@ year={2021},
 month={Jul}
 }
 ```
+
+[^1]: A pre-print or accepted version of this paper is being hosted on an author's personal or institution website in accordance with the [Author Posting Policy](https://www.ieee.org/publications/rights/index.html) of the IEEE, the [Copyright Policy](https://www.acm.org/publications/policies/copyright-policy) of the ACM, and/or the relevant authorship hosting policy of the publisher.
