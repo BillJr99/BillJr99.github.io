@@ -17,7 +17,9 @@ View my [NCBI SciEnv](https://www.ncbi.nlm.nih.gov/sciencv/) Biosketches for the
 Education
 ======
 * Ph.D in Electrical and Computer Engineering, Drexel University, 2018
+  * Dissertation: [Predictive Analytics on Real-Time Biofeedback for Actionable Classification of Activity State](publication/dissertation)
 * M.S. in Computer Science, Drexel University, 2008
+  * Thesis: [A Service-Based Web Portal for Integrated Reverse Engineering and Program Comprehension](publication/msthesis)
 * M.S. in Science of Instruction, Drexel University, 2008
   * Pennsylvania Teaching Certification in Grades 7-12 Mathematics earned January, 2007
   * Grades 7-12 Computer Science subject area added July, 2021
