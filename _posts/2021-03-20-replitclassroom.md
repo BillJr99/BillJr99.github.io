@@ -97,7 +97,7 @@ We will create the following test:
 ```java 
 Main tester = new Main();
 int result = tester.squareIt(-2);
- assertEquals(4, result);
+assertEquals(4, result);
 ```
 
 ![]({{ site.baseurl }}/files/media/2021-03-20-replitclassroom/unittestsquare.png)
