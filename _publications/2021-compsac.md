@@ -13,7 +13,7 @@ tags:
 
 Acceptance Rate 27%
 
-Download the paper[^1] [here](https://www.cs.drexel.edu/~wmm24/papers/compsac2021.pdf)
+Download the paper [here](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC8463037/pdf/nihms-1701078.pdf)
 
 ## Presentation by Robert Ross
 
@@ -32,5 +32,3 @@ pages = {774-784},
 doi = {10.1109/COMPSAC51774.2021.00110}
 }
 ```
-
-[^1]: A pre-print or accepted version of this paper is being hosted on an author's personal or institution website in accordance with the [Author Posting Policy](https://www.ieee.org/publications/rights/index.html) of the IEEE, the [Copyright Policy](https://www.acm.org/publications/policies/copyright-policy) of the ACM, and/or the relevant authorship hosting policy of the publisher.  Copyright may have been transferred to the publisher, and is usually indicated within the document itself.
