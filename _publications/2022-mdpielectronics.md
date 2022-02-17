@@ -16,7 +16,7 @@ tags:
 ## bibtex
 ```bibtex
 @article{paul2022,
-  author       = {Paul, Ankita and Tajin, Md Abu Saleh and Das, Anup and Mongan, William M. and Dandekar, Kapil R.}, 
+  author={Paul, Ankita and Tajin, Md Abu Saleh and Das, Anup and Mongan, William M. and Dandekar, Kapil R.}, 
   journal={MDPI Electronics Journal}, 
   year={2022}, 
   month={Feb}
