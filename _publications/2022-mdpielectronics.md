@@ -5,6 +5,7 @@ permalink: /publication/electronics2022
 excerpt: 'MDPI Electronics Journal'
 date: '2022-02-17'
 venue: 'MDPI Electronics Journal'
+paperurl: 'https://www.mdpi.com/2079-9292/11/5/682/pdf'
 citation: "Ankita Paul, Md Abu Saleh Tajin, Anup Das, William M. Mongan, and Kapil R. Dandekar.
 Energy-Effcient Respiratory Anomaly Detection in Premature Newborn Infants.
 MDPI Electronics Journal, 2022."
