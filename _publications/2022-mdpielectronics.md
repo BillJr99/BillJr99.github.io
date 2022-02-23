@@ -6,7 +6,7 @@ excerpt: 'MDPI Electronics Journal'
 date: '2022-02-17'
 venue: 'MDPI Electronics Journal'
 paperurl: 'https://www.mdpi.com/2079-9292/11/5/682'
-citation: "Paul, Ankita, Md. A.S. Tajin, Anup Das, William M. Mongan, and Kapil R. Dandekar. 2022. "Energy-Efficient Respiratory Anomaly Detection in Premature Newborn Infants" Electronics 11, no. 5: 682."
+citation: "Paul, Ankita, Md. A.S. Tajin, Anup Das, William M. Mongan, and Kapil R. Dandekar. 2022. Energy-Efficient Respiratory Anomaly Detection in Premature Newborn Infants Electronics 11, no. 5: 682."
 tags: 
   - smartfabrics
   
