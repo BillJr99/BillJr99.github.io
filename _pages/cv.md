@@ -39,11 +39,23 @@ Selected Faculty Appointments
 
 * Lecturer (Visiting) of Computer and Information Science at the University of Pennsylvania, 2011-2013
 
-* Teaching Faculty of Computer Science at Drexel University, 2008-2019
+* Teaching Faculty of Computer Science at Drexel University College of Engineering and College of Computing and Informatics, 2008-2019
   * Teaching Professor (full), 2017-2019
   * Associate Teaching Professor, 2012-2017
   * Assistant Teaching Professor, 2011-2012
   * Instructor / Auxiliary Professor, 2008-2011
+
+Selected Non-Faculty Professional Appointments
+======
+* Educational Consultant, 2020
+  * Pennsylvania Training and TEchnical Assistance Network (PATTAN), in collaboration with the Lancaster-Lebanon Intermediate Unit, Delaware County Intermediate Unit, and Chester County Intermediate Unit
+  * Delaware Department of Education
+  
+* Visiting Research Scientist at Drexel University College of Engineering, 2019-Present
+
+* Technical Writer and Research Assistant, Drexel University ACIN Program and Drexel University, 2001-2008
+
+* IT Consultant and Software Developer, 1998-2005
 
 Selected Publications
 ======
