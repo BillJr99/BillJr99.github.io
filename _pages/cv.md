@@ -57,6 +57,23 @@ Selected Non-Faculty Professional Appointments
 
 * IT Consultant and Software Developer, 1998-2005
 
+Selected Awards
+======
+* Faculty Leadership Award, Drexel University College of Computing and Informatics, 2019
+* Instructor of the Week, Drexel Center for the Advancement of STEM Teaching and Learning Excellence (CASTLE), February, 2018
+* Teaching Excellence Award, Drexel University College of Computing and Informatics, 2014
+* Service Award, Upper Darby School District, 2000
+
+Selected Professional Certifications and Membership
+======
+* Pennsylvania Instructional I Teaching Certificate in Grades 7-12 Mathematics (2007) and Grades 7-12 Computer Science (2021)
+* Upsilon Pi Epsilon International Honor Society for the Computing Sciences, 2004
+* Security clearance at the level of SECRET, 2006
+* FCC Amateur Radio License, Amateur Extra (2019) callsign W1CLK, 2017
+* FAA Private Pilot (2005) with Instrument Rating (2006), Airplane Single Engine Land
+* Senior Member (2018) of the Institute for Electrical and Electronics Engineers (IEEE), 2005
+* Senior Member (2012) of the Association for Computing Machinery (ACM), 2004
+
 Selected Publications
 ======
 {% if site.author.dblp or site.author.csauthors %}
