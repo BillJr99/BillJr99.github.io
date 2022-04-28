@@ -47,8 +47,8 @@ Selected Faculty Appointments
 
 Selected Non-Faculty Professional Appointments
 ======
-* Educational Consultant, 2020
-  * Pennsylvania Training and TEchnical Assistance Network (PATTAN), in collaboration with the Lancaster-Lebanon Intermediate Unit, Delaware County Intermediate Unit, and Chester County Intermediate Unit
+* Educational Consultant, 2020-Present
+  * Pennsylvania Training and Technical Assistance Network (PATTAN), in collaboration with the Lancaster-Lebanon Intermediate Unit, Delaware County Intermediate Unit, and Chester County Intermediate Unit
   * Delaware Department of Education
   
 * Visiting Research Scientist at Drexel University College of Engineering, 2019-Present
