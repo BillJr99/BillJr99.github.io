@@ -24,9 +24,13 @@ This approach enables collaboration across different classroom environments - no
 
 ## Platforms and Activities
 
-### BBC Microbit 
+### Lost-and-Found with the BBC Microbit 
 
-\[[^4]\]
+If you've ever lost your backpack, glasses, or other items, you might be aware of [tools](https://www.thetileapp.com/) designed to help find those items by playing a sound and letting you see how close you are to the missing item.  By listening to the sound, you can track down where the missing item is.  As you get closer to the source, the sound becomes louder.  Sometimes, devices like these emit a radio signal - not an audible sound, but an invisible wave of light, that computers can sense with a radio antenna.  As you get closer to the source of the signal, the intensity of the signal increases, just like the sound did.  Using the [BBC Microbit](https://microbit.org/) no-code platform, we will develop a system to communicate a radio signal between two devices to play a game of "hide and seek" where the goal is to locate the source of the invisible signal \[[^4]\].
+
+First, students should plan a solution together: what steps are required to play a game of [Marco Polo](https://en.wikipedia.org/wiki/Marco_Polo_(game))?  Without requiring a technical background, some insights can emerge: every so often, the "source" generates a signal that the players can hear (but can't see); this sound has a direction and intensity that helps the players move closer to the source.  As this repeats, if the sound becomes louder, we can infer that we are getting closer.  
+
+Let's make a flow-chart of this idea and lay out the building blocks in the software environment \[[^4]\].  
 
 ### R in the Browser
 
@@ -36,8 +40,7 @@ This approach enables collaboration across different classroom environments - no
 
 \[[^5]\]
 
-### Democratizing Medical IoT: The VarIOT Platform at Drexel University
-
+### The Internet-of-Things (IoT): Analyzing Live Medical and Environmental Sensors with the VarIOT Platform at Drexel University
 
 ## Careers and Skills
 
