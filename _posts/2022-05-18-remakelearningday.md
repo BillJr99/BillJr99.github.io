@@ -8,9 +8,9 @@ tags:
   - technical
 ---
 
-In this article, we will explore tools that enable students to leverage technology in informal contexts that facilitate problem solving in preparation for diverse workforce pathways.  Technical solutions and automation aren't just for Computer Science majors, and there exists a variety of platforms that support exploration and learning as well as productive applications of computing.  Our goal is to democratize computing skillsets across all disciplines, and to give students the tools they need to bring computing and technology to their favorite subjects.  This has the potential to enhance teaching and learning broadly, and to facilitate participation in computing with inexpensive (or free!) no-code platforms.
+In this article, we will explore tools that enable students to leverage technology in informal contexts that facilitate problem solving in preparation for diverse workforce pathways.  Technical solutions and automation aren't just for Computer Science majors, and there exists a variety of platforms that support exploration and learning as well as productive applications of computing.  Our goal is to democratize computing skillsets across all disciplines, and to give students the tools they need to bring computing and technology to their favorite subjects.  This has the potential to enhance teaching and learning broadly, and to facilitate participation in computing with inexpensive (or free!) no-code or ubiquitous-code platforms.
 
-We will sample some tools that have been developed and used in Southeastern Pennsylvania to enable students to explore computing concepts and discover solutions to authentic problems, with an aim toward building their confidence in creatively applying technology to workforce-relevant application domains.  We will connect these tools to potential careers and career pathways, and conclude with a survey of industry-grade no-code platforms for further exploration.
+We will sample some tools that have been developed and used in Southeastern Pennsylvania to enable students to explore computing concepts and discover solutions to authentic problems, with an aim toward building their confidence in creatively applying technology to workforce-relevant application domains.  We will connect these tools to potential careers and career pathways, and conclude with a survey of industry-grade no-code (or ubiquitous-code) platforms for further exploration.
 
 ### Bridging the Classroom and the Workforce through Design Thinking
 
@@ -22,23 +22,22 @@ Design Thinking seeks to understand the problem domain, which requires discussio
 
 This approach enables collaboration across different classroom environments - not just between the STEM students and the context disciplines, but between entire environments.  For example, a rural school district familiar with regional challenges (for example, an agricultural or healthcare need) could engage with suburban and urban school districts with their own regional challenges (for example, traffic or environmental needs) to exchange broader perspectives and diversity of thought.  Often, the technology and platforms required to approach these challenges is similar across these problem spaces, and exchanging common ideas creates new pathways to collaboration as well as a diversification of perspectives.
 
-## Tools and Systems
+## Platforms and Activities
 
-### Democratizing Medical IoT: The VarIOT Platform at Drexel University
+### BBC Microbit 
 
-### Replit in the Classroom
-
-\[[^5]\]
+\[[^4]\]
 
 ### R in the Browser
 
 \[[^1], [^2], [^3]\]
 
-### BBC Microbit
+### Replit in the Classroom
 
-#### Hide and Seek
+\[[^5]\]
 
-\[[^4]\]
+### Democratizing Medical IoT: The VarIOT Platform at Drexel University
+
 
 ## Careers and Skills
 
@@ -51,6 +50,8 @@ This approach enables collaboration across different classroom environments - no
 ### Quality Assurance and Testing
 
 ## Career Pathways
+
+### Exchanging Authentic Problems between Industry Stakeholders and K-20
 
 ------
 
