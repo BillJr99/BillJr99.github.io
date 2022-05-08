@@ -1,5 +1,5 @@
 ---
-title: 'Remake Learning Day: Equitable CS education for Broader Workforce Preparation through Informal Engagement'
+title: 'Remake Learning Day: Equitable CS education for Broader Workforce Preparation through Inquiry and Discovery'
 date: 2022-05-18
 permalink: /posts/2022/05/remakelearningday/
 tags:
@@ -9,6 +9,8 @@ tags:
 ---
 
 In this workshop, we will explore tools that enable students to leverage technology in informal contexts that facilitate problem solving in preparation for diverse workforce pathways.  Technical solutions and automation aren't just for Computer Science majors, and there exists a variety of platforms that support exploration and learning as well as productive applications of computing.  Our goal is to democratize computing skillsets across all disciplines, and to give students the tools they need to bring computing and technology to their favorite subjects.  This has the potential to enhance teaching and learning broadly, and to facilitate participation in computing with inexpensive (or free!) no-code platforms.
+
+Today, we will sample some tools that have been developed and used in Southeastern Pennsylvania to enable students to explore computing concepts and discover solutions to authentic problems, with an aim toward building their confidence in creatively applying technology to workforce-relevant application domains.  We will connect these tools to potential careers and career pathways, and conclude with a survey of industry-grade no-code platforms for further exploration.
 
 ## Tools and Systems
 
