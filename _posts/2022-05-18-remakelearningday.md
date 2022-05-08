@@ -1,5 +1,5 @@
 ---
-title: 'Remake Learning Day: Equitable CS education for Broader Workforce Preparation through Inquiry and Discovery'
+title: 'Remake Learning Day: Equitable CS education for Broader Workforce Preparation through Design Thinking'
 date: 2022-05-18
 permalink: /posts/2022/05/remakelearningday/
 tags:
@@ -18,7 +18,7 @@ Some problems are hard to approach because we lack the complete worldview requir
 
 ![Design Thinking Process Stages from interaction-design.org](https://public-images.interaction-design.org/literature/articles/heros/5808b55608af6.jpg?tr=w-1024)
 
-Design Thinking seeks to understand the problem domain, which requires discussion with a variety of stakeholders \[[^6], [^7]\].  We're not likely to know all the right stakeholder groups until we "live and learn," and so this is an iterative and perhaps never-ending process.  One way to approach this is to experiment and prototype with potential solutions, and then "shop them" to your stakeholder groups for feedback.  Learning a new concept, whether it is a lesson on the Federalist Papers, the Pythagorean Theorem, or computer programming, can be considered an opportunity to learn and explore in-context through the Design Thinking process.  No-code platforms provide a mechanism to express those designs in an automated and collaborative environment.
+Design Thinking seeks to understand the problem domain, which requires discussion with a variety of stakeholders \[[^6], [^7]\].  We're not likely to know all the right stakeholder groups until we "live and learn," and so this is an iterative and perhaps never-ending process.  One way to approach this is to experiment and prototype with potential solutions, and then "shop them" to your stakeholder groups for feedback.  Learning a new concept, whether it is a lesson on the Federalist Papers, the Pythagorean Theorem, or computer programming, can be considered an opportunity to learn and explore in-context through the Design Thinking process.  No-code platforms provide a mechanism to express those designs in an automated and collaborative environment.  In essence, we are applying inquiry and discovery learning through the use of technology platforms that are accessible to students across any discipline (in other words, not just the computer class). By viewing problems through the lense of the stakeholder, we bring empathy into the problem space, incorporate a "backwards design" by approaching problems from an outcomes perspective, and facilitate creative innovation in the classroom setting.
 
 ## Tools and Systems
 
