@@ -85,6 +85,13 @@ Here's my finished product:
 <img alt="The finished hide and seek project in the Microbit Makecode" src="https://github.com/billjr99/hide-and-seek/raw/master/.github/makecode/blocks.png">
 </p>
 
+#### Extension: How Far Away?
+The signal strength will vary based on the distance between the two devices, although walls and other items in the room will also cause the signal strength to change.  Roughly speaking, though, the signal strength can be thought of as a proxy to the distance, just like the number of "bars" of signal strength is a rough estimate of how far you are from the cell phone tower or wireless access point (although other artifacts, such as being indoors, will also lower the signal strength and make it appear that you are even farther away).
+
+Older or more experienced students could display the RSSI at a few known distances from their partner, and fit a linear function to those points to get a rough estimate of how changes in the signal strength correspond to distance.  Admittedly, the relationship is not truly linear and there are other variables involved, but it is a reasonable estimate using things we can measure.  
+
+Add a variable to the "on radio received" function that calculates the distance using the linear equation on the signal strength.  Change the "on button pressed" function to display this value instead!
+
 ### R in the Browser
 
 \[[^1], [^2], [^3]\]
