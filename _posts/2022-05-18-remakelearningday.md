@@ -64,11 +64,22 @@ Finally, after the if block, I added a "set `lastRSSI` to" behavior.  We want to
 
 And that's it!  If you run this, you should see arrows on the two devices showing if they are getting "warmer" or "colder."  With physical devices, you can walk around to see this in action.  On the simulator, there is a square "wave" in the top right simulating the radio activity.  You can click and drag left or right to increase or decrease the signal strength, and you should see the arrows update accordingly.
 
-#### Setting Multiple Radio Groups
+#### Optional: What if the Signal Strength Hasn't Changed?
+The if behavior has a cousin called the "if - else if - else" block.  This allows us to ask multiple questions in the same if statement.  Previously, we asked if the signal was stronger than the previous one, and showed a "North" arrow if it was, and a "South" arrow if it was not.  But what if the signals are equal?  This if statement can ask if the new signal strength is stronger, and otherwise ("else") ask if the new signal strength is weaker.  In the final "else," we now know that the signal is neither stronger nor weaker, and must be the same.  I displayed a heart icon on the LED display if this was the case, indicating that we're not getting closer or farther from the target right now.
 
-#### Seeing the Signal Strength
+#### Optional: Seeing the Signal Strength
+You may have seen the concept of RSSI when you choose a wireless network on your phone or computer.  Often, you'll see the classic "bars" of signal strength, which is really just a visualization of the signal strength number that we've been comparing in this program.  To a computer, everything is a number, and sometimes, you might see the actual number on your computer or on your phone.  It's measured in [decibels](https://en.wikipedia.org/wiki/Decibel), and these radio signals are often pretty weak (likely a numeric value between -40 and -100).  It's still amazing to me that these faint invisible signals allow us to carry data over the internet, send music to our radios, and even communicate wirelessly around the world.  Even right now, there could be dozens or hundreds (or more!) waves of invisible light energy bouncing around you carrying wireless data by radio signal.  
+
+Let's add a variable to store this value each time we receive a signal.  Based on what we've done already, where should we create this variable, and when should we update it?  
+
+Once you've added this variable to the "on start" function and set its value each time the "on radio received" function executes, you can drag another function to the canvas called "on button pressed" that we will use to show the current signal strength value whenever the A button is pressed.  Its behavior is just a single step: show the `currentRSSI` variable value.
+
+#### Optional: Setting Multiple Radio Groups
+Finally, if you'd like a whole class to use this at once, it is helpful to put each pair of radios into a unique radio group, so that two people can play together without "hearing" and displaying the signals from everyone else's device.  To do this, you can change the number in the "radio set group" behavior to a unique value for each pair of devices.  Although that change alone is sufficient, I created a variable called `radioNumber` to do this, just for fun.  I had my radio send the radio group number in the "forever" loop, and added an if statement in the "on radio received" function to check that the `receivedNumber` parameter was equal to the `radioNumber` variable before checking the signal strength - almost like a little passcode to help ensure that the radio is hearing the correct partner.
 
 #### The Finished Project
+
+Here's my finished product:
 
 <p align="center">
 <img alt="The finished hide and seek project in the Microbit Makecode" src="https://github.com/billjr99/hide-and-seek/raw/master/.github/makecode/blocks.png">
