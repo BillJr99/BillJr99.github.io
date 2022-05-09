@@ -17,7 +17,7 @@ We will sample some tools that have been developed and used in Southeastern Penn
 Some problems are hard to approach because we lack the complete worldview required to solve them entirely.  These are problems that are larger than any one of us, and require collaborative and often multidisciplinary teams.  There is no "perfect" textbook solution, and so an iterative cycle of planning, trial, evaluation, and feedback is needed.  These authentic problems provide opportunities to develop and apply design thinking skills.
 
 <p align="center">
-![Design Thinking Process Stages from interaction-design.org](https://public-images.interaction-design.org/literature/articles/heros/5808b55608af6.jpg?tr=w-1024)
+<img alt="Design Thinking Process Stages from interaction-design.org" src="https://public-images.interaction-design.org/literature/articles/heros/5808b55608af6.jpg?tr=w-1024">
 </p>
 
 Design Thinking seeks to understand the problem domain, which requires discussion with a variety of stakeholders \[[^6], [^7]\].  We're not likely to know all the right stakeholder groups until we "live and learn," and so this is an iterative and perhaps never-ending process.  One way to approach this is to experiment and prototype with potential solutions, and then "shop them" to your stakeholder groups for feedback.  Learning a new concept, whether it is a lesson on the Federalist Papers, the Pythagorean Theorem, or computer programming, can be considered an opportunity to learn and explore in-context through the Design Thinking process.  No-code platforms provide a mechanism to express those designs in an automated and collaborative environment.  In essence, we are applying inquiry and discovery learning through the use of technology platforms that are accessible to students across any discipline (in other words, not just the computer class). By viewing problems through the lense of the stakeholder, we bring empathy into the problem space, incorporate a "backwards design" by approaching problems from an outcomes perspective, and facilitate creative innovation in the classroom setting through role playing activities.
@@ -35,7 +35,7 @@ First, students should plan a solution together: what steps are required to play
 Let's make a flow-chart of this idea and lay out the building blocks in the software environment \[[^4]\].  
 
 <p align="center">
-![Hide and Seek Flowchart](/hide-and-seek/files/hideandseek.drawio.png)
+<img alt="Hide and Seek Flowchart" src="/hide-and-seek/files/hideandseek.drawio.png">
 </p>
 
 ### R in the Browser
