@@ -32,6 +32,8 @@ First, students should plan a solution together: what steps are required to play
 
 Let's make a flow-chart of this idea and lay out the building blocks in the software environment \[[^4]\].  
 
+![Hide and Seek Flowchart](/hide-and-seek/files/hideandseek.drawio.png)
+
 ### R in the Browser
 
 \[[^1], [^2], [^3]\]
