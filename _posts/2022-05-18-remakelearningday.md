@@ -92,9 +92,13 @@ Older or more experienced students could display the RSSI at a few known distanc
 
 Add a variable to the "on radio received" function that calculates the distance using the linear equation on the signal strength.  Change the "on button pressed" function to display this value instead!
 
-### R in the Browser
+### R and SQL in the Browser
 
-\[[^1], [^2], [^3]\]
+During the pandemic, my colleague [Chris Tralie](https://www.ursinus.edu/live/profiles/4502-christopher-tralie) developed a Javascript system that allows students to write code in their web browser, which is transpiled to JavaScript from their language of choice (for example, Java and Python) or compiles to WebAssembly and executes in the browser (for example, C++).  We connected these modules to our Learning Management System to assign [class warmup exercises](https://www.billmongan.com/Ursinus-CS173-Spring2022/Modules/Functions/Exercise) that are autograded, and that provide "hints" through automated feedback about incorrect answers.  
+
+Using Dr. Tralie's framework, I added support for the [R statistical processing language](https://www.billmongan.com/Ursinus-CS173-Spring2022/assets/js/R/TutorialExercise) \[[^2]\] and the [SQL database language](https://www.billmongan.com/Ursinus-CS377-Fall2021/Modules/SQL/Aggregation/Exercise).  
+
+The addition of R and SQL allows students to experiment with database management and data analysis without requiring software installations on their local computer.  We will explore the classic [Iris flower dataset](https://en.wikipedia.org/wiki/Iris_flower_data_set) from R.A. Fisher in 1936 using R \[[^1], [^3]\].
 
 ### Replit in the Classroom
 
