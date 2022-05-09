@@ -98,11 +98,33 @@ During the pandemic, my colleague [Chris Tralie](https://www.ursinus.edu/live/pr
 
 Using Dr. Tralie's framework, I added support for the [R statistical processing language](https://www.billmongan.com/Ursinus-CS173-Spring2022/assets/js/R/TutorialExercise) \[[^2]\] and the [SQL database language](https://www.billmongan.com/Ursinus-CS377-Fall2021/Modules/SQL/Aggregation/Exercise).  
 
-The addition of R and SQL allows students to experiment with database management and data analysis without requiring software installations on their local computer.  We will explore the classic [Iris flower dataset](https://en.wikipedia.org/wiki/Iris_flower_data_set) from R.A. Fisher in 1936 using R \[[^1], [^3]\].
+The addition of R and SQL allows students to experiment with database management and data analysis without requiring software installations on their local computer.  We will explore the classic [Iris flower dataset](https://en.wikipedia.org/wiki/Iris_flower_data_set) from R.A. Fisher in 1936 using R \[[^1]\].
+
+#### Classifying Data from Features
+Imagine holding some coins in your hand.  Can you tell what they are without looking at them?  How can you tell?  You might look for some common "features" like the thickness or the diameter of the coin, or the weight, or even the ridges along the outside of the coin.  If the coin is in rough shape, there might be some variance in the data that causes you to guess incorrectly from time to time, but the idea is that we can predict a classification of data by evaluating some known features against examples we've seen in the past.  
+
+We will use the Iris flower dataset to predict the species of a flower using a few features such as the length and width of the petal.  To try this out, navigate to this [flower classifier page](https://www.billmongan.com/Ursinus-CS173-Spring2022/Activities/FlowerClassifier) which is embedded below\[[^3]\]:
+
+<iframe src="https://www.billmongan.com/Ursinus-CS173-Spring2022/Activities/FlowerClassifier" height="900px" width="100%"></iframe>
+
+Fill in some numbers for the petal length, petal width, and sepal length for some imaginary flowers.  You can select the species for each flower click "Add" each time to plot the flowers by species on the 3D plot (which you can click to rotate and zoom).  Take a look at the plot: do your flowers group in a way that makes sense?  If the species data points are far away from each other when the species is different, but close together with those of the same species, there's a good chance you can classify a "mystery flower" between these species choices.  Enter numbers for a "mystery flower," select the species that you think it is, and click "Guess" to see if you can correctly predict them!  If not, try refreshing the page, and adding new example flowers whose measurements "group together" by species a bit more closely.  Do you have an easier time classifying between them now?
+
+#### Exploring the Iris Dataset Using R in the Browser
+R.A. Fisher's Iris flower data is built into the R platform, and we have embedded an [R webassembly compiler](https://github.com/georgestagg/webR) \[[^8]\] into a [webpage](https://www.billmongan.com/Ursinus-CS173-Spring2022/assets/js/R/TutorialExercise) \[[^2]\] for exploration in our courses that use the R language (embedded below).  
+
+<iframe src="https://www.billmongan.com/Ursinus-CS173-Spring2022/assets/js/R/TutorialExercise" height="900px" width="100%"></iframe>
+
+We will begin by viewing the the Iris dataset for analysis, which is described in detail in [this article](https://gexijin.github.io/learnR/step-into-r-programmingthe-iris-flower-dataset.html) \[[^1]\].  To do this, you can type this command into the R console: `head(iris)`, which displays the first few rows of the dataset.  It contains columns for the sepal length and width, and the petal length and width, as well as the species of that flower.  There are 50 Setosa flowers, 50 Versicolor flowers, and 50 Virginica flowers in the example dataset.  
+
+The species column is not numeric, so we can't plot that.  However, we will use the species later to color code our plots.  For now, let's extract the first four columns (the numeric features) into a "dataframe" variable, by typing: `df <- iris[, 1:4]`.
+
+You can graph the columns of this dataset against each other.  We'll use two features at a time so we can more easily view the data on a 2D plot.  You can do this by typing: `plot(iris$Petal.Length, iris$Petal.Width, col=iris$Species)`, which plots the petal length against the petal width, and color codes them by species.  To see which color represents which species, you can add a legend to the plot by typing: `legend("topleft", levels(iris$Species), fill=1:3)`.  How well do you think the Petal Length and Petal Width can help you predict the species of a flower, and why?
+
+Run these commands to see 2D plots of all of the columns against each other (this is called a "pairs plot").  Type this command to generate it: `pairs(df, col = rainbow(3)[speciesID], labels=c("PetalLength", "PetalWidth", "SepalLength", "SepalWidth"))`.  Which features do the best job separating the flowers by species?
 
 ### Replit in the Classroom
 
-\[[^5]\]
+Another free platform that I have come to like for web-based pair programming in a variety of languages is [replit](https://replit.com).  I wrote [an article](https://www.billmongan.com/posts/2021/03/replitclassroom/) describing some helpful tools built into replit, including external library support, unit testing, version control, basic graphics, and a data store \[[^5]\].
 
 ### The Internet-of-Things (IoT): Analyzing Live Medical and Environmental Sensors with the VarIOT Platform at Drexel University
 
@@ -131,3 +153,4 @@ The addition of R and SQL allows students to experiment with database management
 [^5]: https://www.billmongan.com/posts/2021/03/replitclassroom/
 [^6]: https://www.billmongan.com/Ursinus-CS474-Spring2022/Activities/DesignThinking
 [^7]: https://public-images.interaction-design.org/literature/articles/heros/5808b55608af6.jpg?tr=w-1024
+[^8]: https://github.com/georgestagg/webR
