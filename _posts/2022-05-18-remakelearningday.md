@@ -127,20 +127,18 @@ Run these commands to see 2D plots of all of the columns against each other (thi
 Another free platform that I have come to like for web-based pair programming in a variety of languages is [replit](https://replit.com).  I wrote [an article](https://www.billmongan.com/posts/2021/03/replitclassroom/) describing some helpful tools built into replit, including external library support, unit testing, version control, basic graphics, and a data store \[[^5]\].
 
 ### The Internet-of-Things (IoT): Analyzing Live Medical and Environmental Sensors with the VarIOT Platform at Drexel University
+I work with a broadly multidisciplinary team on developing [textile-based wearable computing systems](https://www.billmongan.com/portfolio/smartgarments/).  Imagine if the "radio" you experimented with earlier using the Microbit could be embedded into your shirt, or into a baby's onesie, and it was so small that you didn't know you were wearing it!  These ubiquitous computing systems are generally known as the "Internet of Things" (IoT), and are interconnected smart devices that we can use to measure physiological functions like heart or respiratory rate, environmental measurements like air quality, or highway sensors for traffic management.  Here, computer scientists team up with physicians, sociologists, designers, engineers, and more, to create solutions that no one group could do on their own.  My colleagues at Drexel University run a program using the [Vertically Integrated Projects model](https://drexel.edu/engineering/news-events/news/archive/2021/December/vip-project-helps-student-make-connections/) to provide opportunities for students across majors to blend their classroom experience with authentic problem solving and research skills.  In my faculty role at Ursinus College, my students and Drexel's students collaborate virtually, develop solutions, conduct experiments, and present results, by bringing their own unique classroom and major experiences to the team.
 
-## Careers and Skills
+The National Science Foundation (NSF) Science Nation series [featured](https://nsf.gov/news/mmg/mmg_disp.jsp?med_id=132437&from=) Drexel's smart fabric Bellyband and the team.  The video can be found by clicking below:
 
-### Computer Programming
+[![https://www.youtube.com/watch?v=aBUmWD0B8z0](https://img.youtube.com/vi/aBUmWD0B8z0/0.jpg)](https://www.youtube.com/watch?v=aBUmWD0B8z0) 
 
-### Software Design
+## Authentic Problems between Industry and K-20 for Broad Careers and Skills
+By approaching computing education from a Design Thinking perspective, we can reinforce the "human in the loop" and promote empathetic design choices early in the educational journey.  However, this approach also enables viewing problems through a broader lens in which technology is a means rather than an end.  Authentic problems can be shared from industry partners, who can participate in a low-committment way by serving as project stakeholders, providing user perspectives to students who can work in multidisciplinary teams to develop solutions.  
 
-### User Experience (UX)
+Another benefit to this approach is that it celebrates the variety of skills inherent in computing; we often think of "programming" as the fundamental skill of computing.  And although computer programming is a ubiquitious tool that should be universally understood to facilitate communication about how the computer solves problems, it is not necessary to write code as part of a computing career.  One could imagine **software design** as a core aspect of problem solving with technology, by designing user-centric workflows and determining the basic steps and modules required within a software system, or **user experience (UX)** design, which centers on interfacing with humans to develop systems that are optimally usable within the constraints of our physiology and psychology, or **quality assurance and software testing** which plans how to validate that software works correctly, and identifies deficiencies in the software.  **Information Technology (IT)** specialists and **systems administrators** (and **database administrators**) ensure that the operational aspects of managing and maintaining the development environment, and **front end developers** create graphical user interfaces and web-based designs that allow one to engage with the software.  **Project Managers** coordinate the team and ensure that these groups are collaborating efficiently.  On top of this, each of these experts must also coordinate with domain experts who understand the target applications of computing systems.  All of these people work together to solve problems collaboratively, and each brings a unique and essential skillset to the team.  Just as the Vertically Integrated Projects model allows for the integration of and collaboration among a diverse set of technological and domain skillsets, computing and design thinking allow and encourage people to consider problems that are "bigger than themselves."
 
-### Quality Assurance and Testing
-
-## Career Pathways
-
-### Exchanging Authentic Problems between Industry Stakeholders and K-20
+You can find out more about these career paths and more [here](https://www.computerscience.org/careers/)!
 
 ------
 
