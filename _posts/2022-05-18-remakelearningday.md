@@ -12,7 +12,16 @@ In this article, we will explore tools that enable students to leverage technolo
 
 We will sample some tools that have been developed and used in Southeastern Pennsylvania to enable students to explore computing concepts and discover solutions to authentic problems, with an aim toward building their confidence in creatively applying technology to workforce-relevant application domains.  We will connect these tools to potential careers and career pathways, and conclude with a survey of industry-grade no-code (or ubiquitous-code) platforms for further exploration.
 
-### Bridging the Classroom and the Workforce through Design Thinking
+## Sections
+1. [Bridging the Classroom and Workforce through Design Thinking](#designthinking)
+2. [Platforms and Activities](#platforms)
+    1. [Lost-and-Found with the BBC Microbit](#lostandfound)
+    2. [R and SQL in the Browser](#rbrowser)
+    3. [Replit in the Classroom](#replit)
+    4. [The Internet-of-Things (IoT): Analyzing Live Medical and Environmental Sensors with the VarIOT Platform at Drexel University](#variot)
+3. [Authentic Problems between Industry and K-20 for Broad Careers and Skills](#)
+
+## Bridging the Classroom and the Workforce through Design Thinking <a name="designthinking"></a>
 
 Some problems are hard to approach because we lack the complete worldview required to solve them entirely.  These are problems that are larger than any one of us, and require collaborative and often multidisciplinary teams.  There is no "perfect" textbook solution, and so an iterative cycle of planning, trial, evaluation, and feedback is needed.  These authentic problems provide opportunities to develop and apply design thinking skills.
 
@@ -24,9 +33,9 @@ Design Thinking seeks to understand the problem domain, which requires discussio
 
 This approach enables collaboration across different classroom environments - not just between the STEM students and the context disciplines, but between entire environments.  For example, a rural school district familiar with regional challenges (for example, an agricultural or healthcare need) could engage with suburban and urban school districts with their own regional challenges (for example, traffic or environmental needs) to exchange broader perspectives and diversity of thought.  Often, the technology and platforms required to approach these challenges is similar across these problem spaces, and exchanging common ideas creates new pathways to collaboration as well as a diversification of perspectives.
 
-## Platforms and Activities
+## Platforms and Activities <a name="platforms"></a>
 
-### Lost-and-Found with the BBC Microbit 
+### Lost-and-Found with the BBC Microbit <a name="lostandfound"></a>
 
 If you've ever lost your backpack, glasses, or other items, you might be aware of [tools](https://www.thetileapp.com/) designed to help find those items by playing a sound and letting you see how close you are to the missing item.  By listening to the sound, you can track down where the missing item is.  As you get closer to the source, the sound becomes louder.  Sometimes, devices like these emit a radio signal - not an audible sound, but an invisible wave of light, that computers can sense with a radio antenna.  As you get closer to the source of the signal, the intensity of the signal increases, just like the sound did.  Using the [BBC Microbit](https://microbit.org/) no-code platform, we will develop a system to communicate a radio signal between two devices to play a game of "hide and seek" where the goal is to locate the source of the invisible signal \[[^4]\].
 
@@ -92,7 +101,7 @@ Older or more experienced students could display the RSSI at a few known distanc
 
 Add a variable to the "on radio received" function that calculates the distance using the linear equation on the signal strength.  Change the "on button pressed" function to display this value instead!
 
-### R and SQL in the Browser
+### R and SQL in the Browser <a name="rbrowser"></a>
 
 During the pandemic, my colleague [Chris Tralie](https://www.ursinus.edu/live/profiles/4502-christopher-tralie) developed a Javascript system that allows students to write code in their web browser, which is transpiled to JavaScript from their language of choice (for example, Java and Python) or compiles to WebAssembly and executes in the browser (for example, C++).  We connected these modules to our Learning Management System to assign [class warmup exercises](https://www.billmongan.com/Ursinus-CS173-Spring2022/Modules/Functions/Exercise) that are autograded, and that provide "hints" through automated feedback about incorrect answers.  
 
@@ -122,18 +131,18 @@ You can graph the columns of this dataset against each other.  We'll use two fea
 
 Run these commands to see 2D plots of all of the columns against each other (this is called a "pairs plot").  Type this command to generate it: `pairs(df, col = rainbow(3)[speciesID], labels=c("PetalLength", "PetalWidth", "SepalLength", "SepalWidth"))`.  Which features do the best job separating the flowers by species?
 
-### Replit in the Classroom
+### Replit in the Classroom <a name="replit"></a>
 
 Another free platform that I have come to like for web-based pair programming in a variety of languages is [replit](https://replit.com).  I wrote [an article](https://www.billmongan.com/posts/2021/03/replitclassroom/) describing some helpful tools built into replit, including external library support, unit testing, version control, basic graphics, and a data store \[[^5]\].
 
-### The Internet-of-Things (IoT): Analyzing Live Medical and Environmental Sensors with the VarIOT Platform at Drexel University
+### The Internet-of-Things (IoT): Analyzing Live Medical and Environmental Sensors with the VarIOT Platform at Drexel University <a name="variot"></a>
 I work with a broadly multidisciplinary team on developing [textile-based wearable computing systems](https://www.billmongan.com/portfolio/smartgarments/).  Imagine if the "radio" you experimented with earlier using the Microbit could be embedded into your shirt, or into a baby's onesie, and it was so small that you didn't know you were wearing it!  These ubiquitous computing systems are generally known as the "Internet of Things" (IoT), and are interconnected smart devices that we can use to measure physiological functions like heart or respiratory rate, environmental measurements like air quality, or highway sensors for traffic management.  Here, computer scientists team up with physicians, sociologists, designers, engineers, and more, to create solutions that no one group could do on their own.  My colleagues at Drexel University run a program using the [Vertically Integrated Projects model](https://drexel.edu/engineering/news-events/news/archive/2021/December/vip-project-helps-student-make-connections/) to provide opportunities for students across majors to blend their classroom experience with authentic problem solving and research skills.  In my faculty role at Ursinus College, my students and Drexel's students collaborate virtually, develop solutions, conduct experiments, and present results, by bringing their own unique classroom and major experiences to the team.
 
 The National Science Foundation (NSF) Science Nation series [featured](https://nsf.gov/news/mmg/mmg_disp.jsp?med_id=132437&from=) Drexel's smart fabric Bellyband and the team.  The video can be found by clicking below:
 
 [![https://www.youtube.com/watch?v=aBUmWD0B8z0](https://img.youtube.com/vi/aBUmWD0B8z0/0.jpg)](https://www.youtube.com/watch?v=aBUmWD0B8z0) 
 
-## Authentic Problems between Industry and K-20 for Broad Careers and Skills
+## Authentic Problems between Industry and K-20 for Broad Careers and Skills <a name="authentic"></a>
 By approaching computing education from a Design Thinking perspective, we can reinforce the "human in the loop" and promote empathetic design choices early in the educational journey.  However, this approach also enables viewing problems through a broader lens in which technology is a means rather than an end.  Authentic problems can be shared from industry partners, who can participate in a low-committment way by serving as project stakeholders, providing user perspectives to students who can work in multidisciplinary teams to develop solutions.  
 
 Another benefit to this approach is that it celebrates the variety of skills inherent in computing; we often think of "programming" as the fundamental skill of computing.  And although computer programming is a ubiquitious tool that should be universally understood to facilitate communication about how the computer solves problems, it is not necessary to write code as part of a computing career.  One could imagine **software design** as a core aspect of problem solving with technology, by designing user-centric workflows and determining the basic steps and modules required within a software system, or **user experience (UX)** design, which centers on interfacing with humans to develop systems that are optimally usable within the constraints of our physiology and psychology, or **quality assurance and software testing** which plans how to validate that software works correctly, and identifies deficiencies in the software.  **Information Technology (IT)** specialists and **systems administrators** (and **database administrators**) ensure that the operational aspects of managing and maintaining the development environment, and **front end developers** create graphical user interfaces and web-based designs that allow one to engage with the software.  **Project Managers** coordinate the team and ensure that these groups are collaborating efficiently.  On top of this, each of these experts must also coordinate with domain experts who understand the target applications of computing systems.  All of these people work together to solve problems collaboratively, and each brings a unique and essential skillset to the team.  Just as the Vertically Integrated Projects model allows for the integration of and collaboration among a diverse set of technological and domain skillsets, computing and design thinking allow and encourage people to consider problems that are "bigger than themselves."
