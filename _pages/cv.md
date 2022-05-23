@@ -14,19 +14,6 @@ View My Scholarly Activity using the left-hand or 'Follow' navigation menu.
 View my [ORCID CV]({{ site.author.orcid }}/print)  
 View my [NCBI SciEnv](https://www.ncbi.nlm.nih.gov/sciencv/) Biosketches for the [NIH](https://www.ncbi.nlm.nih.gov/myncbi/william.mongan.1/cv/548372/) and the [NSF](https://www.ncbi.nlm.nih.gov/myncbi/william.mongan.1/cv/313815/)
 
-Education
-======
-* Ph.D in Electrical and Computer Engineering, Drexel University, 2018
-  * Dissertation: [Predictive Analytics on Real-Time Biofeedback for Actionable Classification of Activity State](/publication/dissertation)
-* M.S. in Computer Science, Drexel University, 2008
-  * Thesis: [A Service-Based Web Portal for Integrated Reverse Engineering and Program Comprehension](/publication/msthesis)
-* M.S. in Science of Instruction, Drexel University, 2008
-  * Pennsylvania Teaching Certification in Grades 7-12 Mathematics earned January, 2007
-  * Grades 7-12 Computer Science subject area added July, 2021
-* B.S. in Computer Science, Drexel University, 2005
-  * Minor in Mathematics
-  * Magna Cum Laude
-
 Selected Faculty Appointments
 ======
 * Associate Professor of Math and Computer Science at Ursinus College, 2022-Present
@@ -47,6 +34,19 @@ Selected Faculty Appointments
   * Assistant Teaching Professor, 2011-2012
   * Instructor / Auxiliary Professor, 2008-2011
 
+Education
+======
+* Ph.D in Electrical and Computer Engineering, Drexel University, 2018
+  * Dissertation: [Predictive Analytics on Real-Time Biofeedback for Actionable Classification of Activity State](/publication/dissertation)
+* M.S. in Computer Science, Drexel University, 2008
+  * Thesis: [A Service-Based Web Portal for Integrated Reverse Engineering and Program Comprehension](/publication/msthesis)
+* M.S. in Science of Instruction, Drexel University, 2008
+  * Pennsylvania Teaching Certification in Grades 7-12 Mathematics earned January, 2007
+  * Grades 7-12 Computer Science subject area added July, 2021
+* B.S. in Computer Science, Drexel University, 2005
+  * Minor in Mathematics
+  * Magna Cum Laude
+  
 Selected Non-Faculty Professional Appointments
 ======
 * Educational Consultant, 2020-Present
