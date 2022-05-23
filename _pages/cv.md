@@ -29,7 +29,9 @@ Education
 
 Selected Faculty Appointments
 ======
-* Assistant Professor (Visiting) of Math and Computer Science at Ursinus College, 2020-Present
+* Associate Professor of Math and Computer Science at Ursinus College, 2022-Present
+
+* Assistant Professor (Visiting) of Math and Computer Science at Ursinus College, 2020-2022
 
 * Instructor (Part-Time) of Computer Science and Engineering at Syracuse University, 2020-2020
 
