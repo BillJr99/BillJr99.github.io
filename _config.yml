@@ -51,7 +51,7 @@ staticman:
     content: "message"
     
   # Must comment out all sub-keys i.e. siteKey, secret if enabled is false
-  # https://www.google.com/recaptcha/admin, bill@billmongan.com
+  # https://www.google.com/recaptcha/admin
   # secret is (!) ENCRYPTED; encrypt with https://api.staticman.net/v2/encrypt/YOUR_SECRET_HERE
   reCaptcha:
     enabled: true
