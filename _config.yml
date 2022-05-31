@@ -55,8 +55,8 @@ staticman:
   # secret is (!) ENCRYPTED; encrypt with https://api.staticman.net/v2/encrypt/YOUR_SECRET_HERE
   reCaptcha:
     enabled: true
-    siteKey: "6LeNfMUUAAAAAAtn6wzFnUvsBlGKP8D3__bdzKsu"
-    secret: "gflNDHP7AZCjHbTD2z0ysX2qVHT/OEsVxb4zI1yldk9e6rXpxA/jCn6bDufVjle0SIsflXp4HHHaVG2Pt7tYgTpyXPQdsQIKCRJa8wRFbwtli7O4d3TgEgC66v5dbfWcEp6QCx6ct+vITpdnewZHrCTE9MmSqD3BQzwgJcQedP4="   
+    siteKey: "6LdWZjMgAAAAAF0U6NCN6qN6xmYlTfIqUcl5ttG7"
+    secret: "k5F/ZrKV2fsNuaMSKJ4kaUghxjX/0J9CNSt3HCrxQbh1OHIn9dT3SGsxsYRBZ5Bfq8Yy5y6qgs3N9rOEvGNG32bfsyS+Un2hWwePAMz0gQIBV86lz9w24ZuzUiKfYSTgY/xsLsdBqwOrC2s6VdVd4epVVySM7pmbl+t8JXCyISw="   
   
   transforms:
     email                : "md5"
