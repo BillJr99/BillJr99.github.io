@@ -12,3 +12,5 @@ tags:
 ---
 
 [PATTAN](https://www.pattan.net/) Computer Science for All Summit
+
+with Jeffrey L. Popyack
