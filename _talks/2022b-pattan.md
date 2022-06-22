@@ -12,3 +12,5 @@ tags:
 ---
 
 [PATTAN](https://www.pattan.net/) Computer Science for All Summit
+
+With John Dougherty, Jamie Payton, Tammy Pirmann, and Jeffrey L. Popyack
