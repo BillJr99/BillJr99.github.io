@@ -16,9 +16,9 @@ View my [NCBI SciEnv](https://www.ncbi.nlm.nih.gov/sciencv/) Biosketches for the
 
 Selected Faculty Appointments
 ======
-* Associate Professor of Math and Computer Science at Ursinus College, 2022-Present
-
-* Assistant Professor (Visiting) of Math and Computer Science at Ursinus College, 2020-2022
+* Faculty of Mathematics and Computer Science at Ursinus College, 2020-Present
+  * Associate Professor, 2022-Present
+  * Assistant Professor (Visiting), 2020-2022
 
 * Instructor (Part-Time) of Computer Science and Engineering at Syracuse University, 2020-2020
 
@@ -50,7 +50,7 @@ Education
 Selected Non-Faculty Professional Appointments
 ======
 * Educational Consultant, 2020-Present
-  * Pennsylvania Training and Technical Assistance Network (PATTAN), in collaboration with the Lancaster-Lebanon Intermediate Unit, Delaware County Intermediate Unit, and Chester County Intermediate Unit
+  * Pennsylvania Training and Technical Assistance Network (PATTAN), in collaboration with the Lancaster-Lebanon Intermediate Unit, Delaware County Intermediate Unit, Chester County Intermediate Unit, and Pennsylvania Department of Education
   * Delaware Department of Education
   
 * Visiting Research Scientist at Drexel University College of Engineering, 2019-Present
