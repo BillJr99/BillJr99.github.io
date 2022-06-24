@@ -9,6 +9,7 @@ location: 'Harrisburg, PA'
 comments: true
 tags:
   - education
+  - computingcareerpathways
 ---
 
 [PATTAN](https://www.pattan.net/) Computer Science for All Summit
