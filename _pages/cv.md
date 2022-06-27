@@ -20,13 +20,13 @@ Selected Faculty Appointments
   * Associate Professor, 2022-Present
   * Assistant Professor (Visiting), 2020-2022
 
-* Instructor (Part-Time) of Computer Science and Engineering at Syracuse University, 2020-2020
+* Instructor (Part-Time / Visiting) of Computer Science and Engineering at Syracuse University, 2020-2020
 
 * Associate Department Head of Undergraduate Affairs in the Department of Computer Science at Drexel University, 2014-2019
   * Associate Department Head, 2015-2019
   * Director of Undergraduate Affairs, 2014-2015
 
-* Lecturer (Visiting) of Computer and Information Science at the University of Pennsylvania, 2011-2013
+* Lecturer (Part-Time / Visiting) of Computer and Information Science at the University of Pennsylvania, 2011-2013
 
 * Teaching Faculty of Computer Science at Drexel University College of Engineering and College of Computing and Informatics, 2008-2019
   * Teaching Professor (full), 2017-2019
