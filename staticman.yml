@@ -85,8 +85,8 @@ comments:
   # secret is (!) ENCRYPTED; encrypt with https://api.staticman.net/v2/encrypt/YOUR_SECRET_HERE
   reCaptcha:
     enabled: true
-    siteKey: "6LeNfMUUAAAAAAtn6wzFnUvsBlGKP8D3__bdzKsu"
-    secret: "gflNDHP7AZCjHbTD2z0ysX2qVHT/OEsVxb4zI1yldk9e6rXpxA/jCn6bDufVjle0SIsflXp4HHHaVG2Pt7tYgTpyXPQdsQIKCRJa8wRFbwtli7O4d3TgEgC66v5dbfWcEp6QCx6ct+vITpdnewZHrCTE9MmSqD3BQzwgJcQedP4=" 
+    siteKey: "6LdWZjMgAAAAAF0U6NCN6qN6xmYlTfIqUcl5ttG7"
+    secret: "i10Lm0B+uc30mtb9z8ju+UVqIk07TUAfHq8hoJj+wPwsL90pu+8lrp0a/PEcg7kej8vk+OBA6qtAeWkmG4sYswYFbvLLKkadB5w4W17FoxyxQT6duLFrHX4iyKmGvRgIl0VqH/lQNoInSGScyG6PzOpMaa19oDLM+hU3NmR6m1U="  
 
   # List of transformations to apply to any of the fields supplied. Keys are
   # the name of the field and values are possible transformation types.

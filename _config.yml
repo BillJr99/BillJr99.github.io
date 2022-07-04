@@ -56,7 +56,7 @@ staticman:
   reCaptcha:
     enabled: true
     siteKey: "6LdWZjMgAAAAAF0U6NCN6qN6xmYlTfIqUcl5ttG7"
-    secret: "k5F/ZrKV2fsNuaMSKJ4kaUghxjX/0J9CNSt3HCrxQbh1OHIn9dT3SGsxsYRBZ5Bfq8Yy5y6qgs3N9rOEvGNG32bfsyS+Un2hWwePAMz0gQIBV86lz9w24ZuzUiKfYSTgY/xsLsdBqwOrC2s6VdVd4epVVySM7pmbl+t8JXCyISw="   
+    secret: "i10Lm0B+uc30mtb9z8ju+UVqIk07TUAfHq8hoJj+wPwsL90pu+8lrp0a/PEcg7kej8vk+OBA6qtAeWkmG4sYswYFbvLLKkadB5w4W17FoxyxQT6duLFrHX4iyKmGvRgIl0VqH/lQNoInSGScyG6PzOpMaa19oDLM+hU3NmR6m1U="   
   
   transforms:
     email                : "md5"
