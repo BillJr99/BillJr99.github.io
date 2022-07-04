@@ -106,4 +106,6 @@ That's it!  You can now use VarIOT blocks to send data to the VarIOT gateway.  T
   * `Label`: temp
   * `Value`: 55
   
-That should do it!  When you view your gateway dashboard on the server, you should see this value appear.
+That should do it!  When you view your gateway dashboard on the server, you should see this value appear.  Here is the code:
+
+![Finished Blocks for the VarIOT micro:bit integration test program](https://github.com/billjr99/variot-test/raw/master/.github/makecode/blocks.png)
