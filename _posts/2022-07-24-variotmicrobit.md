@@ -56,11 +56,11 @@ I connected the Rx pin of the WiFi module to P0 of the micro:bit, the Tx pin to 
 Following these diagrams, I wired my WiFi module to the micro:bit as follows:
 
 <div style="text-align:center;">
-![Finished WiFi to micro:bit breadboard wiring figure 1](/files/media/2022-07-04-variotmicrobit/fig1.jpg)
-![Finished WiFi to micro:bit breadboard wiring figure 2](/files/media/2022-07-04-variotmicrobit/fig2.jpg)
-![Finished WiFi to micro:bit breadboard wiring figure 3](/files/media/2022-07-04-variotmicrobit/fig3.jpg)
-![Finished WiFi to micro:bit breadboard wiring figure 4](/files/media/2022-07-04-variotmicrobit/fig4.jpg)
-![Finished WiFi to micro:bit breadboard wiring figure 5](/files/media/2022-07-04-variotmicrobit/fig5.jpg)
+<img src="/files/media/2022-07-04-variotmicrobit/fig1.jpg" alt="Finished WiFi to micro:bit breadboard wiring figure 1">
+<img src="/files/media/2022-07-04-variotmicrobit/fig2.jpg" alt="Finished WiFi to micro:bit breadboard wiring figure 2">
+<img src="/files/media/2022-07-04-variotmicrobit/fig3.jpg" alt="Finished WiFi to micro:bit breadboard wiring figure 3">
+<img src="/files/media/2022-07-04-variotmicrobit/fig4.jpg" alt="Finished WiFi to micro:bit breadboard wiring figure 4">
+<img src="/files/media/2022-07-04-variotmicrobit/fig5.jpg" alt="Finished WiFi to micro:bit breadboard wiring figure 5">
 </div>
 
 ## Writing the micro:bit Program
