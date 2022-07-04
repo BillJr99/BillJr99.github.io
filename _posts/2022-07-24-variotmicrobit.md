@@ -22,6 +22,8 @@ I edited the `~/thingsboard-gateway/thingsboard-gateway/thingsboard_gateway/conf
 
 ThingsBoard provides [an article](https://thingsboard.io/docs/iot-gateway/getting-started/) describing how to configure the gateway and, specifically, how to [configure RESTful access](https://thingsboard.io/docs/iot-gateway/config/rest/).  You can add your own endpoints here following the template provided in the `~/thingsboard-gateway/thingsboard-gateway/thingsboard_gateway/config/rest.json` file. 
 
+One thing that is required is to change the host name from `127.0.0.1` to `0.0.0.0` so that the endpoints are available from the outside world.  I did not enable SSL, since I don't have SSL built into the code of the HTTP extension driver.  For this reason, I'm also not using a username or password, since these would be sent in clear text, but these are prototyping practices only (and not for production use!).
+
 ### Connecting to a VPN
 If needed, you can VPN to the ThingsBoard server by running: `sudo openconnect -u <your user name> -b <vpn server name>` on your Gateway Raspberry Pi.  This will allow your gateway to connect to a server that is behind a VPN.
 
