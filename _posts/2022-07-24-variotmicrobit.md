@@ -47,7 +47,7 @@ I used a breadboard, jumper wires, and an ESP8266 WiFi Module to do this, as wel
 * [Jumper Cables](https://smile.amazon.com/dp/B07GD2BWPY?psc=1&ref=ppx_yo2ov_dt_b_product_details)
 * [Microbit Breakout Board](https://smile.amazon.com/Edge-Connector-Breakout-Board-Micro/dp/B082Z6H5LB/ref=sr_1_4?crid=994DJZFDCISO&keywords=microbit+breakout+board&qid=1656939978&s=industrial&sprefix=microbit+breakout+board%2Cindustrial%2C51&sr=1-4)
 
-I connected the Rx pin of the WiFi module to P0 of the micro:bit, the Tx pin to P1, VCC and CH_EN to the 3V pin for power, and ground to the ground pin, as shown in the diagrams of the wiring diagram and pinout (shown below):
+I connected the Rx pin of the WiFi module to P0 of the micro:bit, the Tx pin to P1, VCC and CH_EN to the 3V pin for power, and ground to the ground pin, as shown in the diagrams of the wiring diagram and pinout (shown below; image credit Alan Krantas via the [alankrantis/pxt-ESP8266_ThingSpeak](https://github.com/alankrantas/pxt-ESP8266_ThingSpeak) GitHub repository under an [MIT License](https://raw.githubusercontent.com/alankrantas/pxt-ESP8266_ThingSpeak/master/LICENSE)):
 
 ![Wiring diagram - Alan Krantas GitHub under an MIT License](https://user-images.githubusercontent.com/44191076/57862847-9c235980-782b-11e9-9588-3e7fe76342ee.png)
 
