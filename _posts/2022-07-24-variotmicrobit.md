@@ -55,11 +55,13 @@ I connected the Rx pin of the WiFi module to P0 of the micro:bit, the Tx pin to 
 
 Following these diagrams, I wired my WiFi module to the micro:bit as follows:
 
+<div style="text-align:center;">
 ![Finished WiFi to micro:bit breadboard wiring figure 1](/files/media/2022-07-04-variotmicrobit/fig1.jpg)
 ![Finished WiFi to micro:bit breadboard wiring figure 2](/files/media/2022-07-04-variotmicrobit/fig2.jpg)
 ![Finished WiFi to micro:bit breadboard wiring figure 3](/files/media/2022-07-04-variotmicrobit/fig3.jpg)
 ![Finished WiFi to micro:bit breadboard wiring figure 4](/files/media/2022-07-04-variotmicrobit/fig4.jpg)
 ![Finished WiFi to micro:bit breadboard wiring figure 5](/files/media/2022-07-04-variotmicrobit/fig5.jpg)
+</div>
 
 ## Writing the micro:bit Program
 Finally, we can import this extension into a micro:bit project.  To do this, create a micro:bit project at [makecode.microbit.org](https://makecode.microbit.org) and click the settings cog at the top right.  Choose `Extensions`, and search for VarIOT.  Alternatively, you can import this URL directly to import the extension from GitHub: [https://github.com/BillJr99/pxt-ESP8266_VarIOT](https://github.com/BillJr99/pxt-ESP8266_VarIOT).
