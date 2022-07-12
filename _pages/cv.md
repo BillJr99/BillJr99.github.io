@@ -76,6 +76,7 @@ Selected Professional Certifications and Membership
 * FAA Private Pilot (2005) with Instrument Rating (2006), Airplane Single Engine Land
 * Senior Member (2018) of the Institute for Electrical and Electronics Engineers (IEEE), 2005
 * Senior Member (2012) of the Association for Computing Machinery (ACM), 2004
+* Vice President (2022-Present) of the Computer Science Teachers Association Longwood, PA Chapter
 
 Selected Publications
 ======

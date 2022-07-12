@@ -11,6 +11,8 @@ When I'm not in the classroom, I work with students (especially at the undergrad
 
 As a graduate student, I was as an [NSF GK-12 Fellow](http://www.drexelgk12.com/), working with teachers to integrate concepts from our research into classroom activities that bridge STEM and the arts and humanities.  In my faculty role, I was a member of the Drexel University [Center for the Advancement of STEM Teaching and Learning Excellence (CASTLE)](https://drexel.edu/castle/), working to research, implement, and assess experiential pedagogy with colleagues from across the university.
 
+I am a member of the [Computer Science Teachers Association (CSTA)](https://csteachers.org), with collaborators at the [CSTA>>Philly](https://philly.csteachers.org/) and [Longwood](https://longwoodpa.csteachers.org/) chapters.
+
 # Publications
 <ul>{% for post in site.publications reversed %}
   {% if post.tags contains "education" %}
