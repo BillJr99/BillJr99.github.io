@@ -48,11 +48,12 @@ def extract_bits(ip_address, netmask_bits):
 It even provided me with an example on how to invoke this function:
 
 ```python
+# In this example, the function extracts the first 24 bits (corresponding to the first three octets) from the IP address "192.168.1.100" using a netmask of 24 bits. The resulting value is 192.
+
 ip_address = "192.168.1.100"
 netmask_bits = 24
 extracted_bits = extract_bits(ip_address, netmask_bits)
 print(extracted_bits)  # Output: 192
-In this example, the function extracts the first 24 bits (corresponding to the first three octets) from the IP address "192.168.1.100" using a netmask of 24 bits. The resulting value is 192.
 ```
 
 Pretty impressive, even if it is simply mining the Internet for text to synthesize as a response.  The problem is that it is not clear that this program is generating the correct output.  When I call this function according to the example it gave, I get `12625921` as the output.  Incidentally, that's `0b0b110000001010100000000001` in binary.  That does correspond to the first 24 bits of the address.  But the comment says to expect the output to be 192, which is not quite right.  Even still, it would be nice to report the network address in the typical `a.b.c.d` format, or at least as a list of octets, such as `[192, 168, 1, 0]`.  Perhaps this was the result of ambiguity in the question I posed to ChatGPT, but regardless, I'm curious as to whether we could continue to use ChatGPT prompts to finish this program.
