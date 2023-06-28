@@ -18,7 +18,7 @@ He is a Senior Member of the Association for Computing Machinery (ACM) and of th
 
 Aviation
 ======
-I am an instrument rated private pilot, having trained at Cross Keys Airport (17N) in Williamstown, NJ and at Flying W Airport (N14) in Medford, NJ. I have flown a Cessna 152 (N94294), some Cessna 172’s (N172MG, N64608, N739UG, N226CA, N54812, N805FW, N10DJ, N329SP, and N738YT), a Piper Arrow PA-28 (N2954R), a twin Piper Seneca PA-38 (N1380T), and a Cirrus SR20 (N391TD).
+I am an instrument rated private pilot, having trained at Cross Keys Airport (17N) in Williamstown, NJ and at Flying W Airport (N14) in Medford, NJ. I have flown a Cessna 152 (N94294), some Cessna 172’s (N172MG, N64608, N739UG, N226CA, N54812, N805FW, N10DJ, N329SP, and N738YT), a Piper Arrow PA-28 (N2954R), a twin Piper Seneca PA-38 (N1380T), and a Cirrus SR20 (N391TD).  I am also a Part 107 drone operator.
 
 Amateur Radio
 ======
