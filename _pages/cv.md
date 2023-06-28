@@ -69,6 +69,7 @@ Selected Awards
 
 Selected Professional Certifications and Membership
 ======
+* FAA Unmanned Aircraft General Certification for Part 107 Commercial Drone Operations, 2023
 * Pennsylvania Instructional I Teaching Certificate in Grades 7-12 Mathematics (2007) and Grades 7-12 Computer Science (2021)
 * Upsilon Pi Epsilon International Honor Society for the Computing Sciences, 2004
 * Security clearance at the level of SECRET, 2006
