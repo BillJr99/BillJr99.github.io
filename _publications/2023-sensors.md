@@ -20,6 +20,7 @@ tags:
   journal={IEEE Sensors Journal}, 
   author={Tajin, Md Abu Saleh and Hossain, Md Shakir and Mongan, William M. and Dandekar, Kapil R.}, 
   year={2023},
+  doi={10.1109/JSEN.2023.3342129},
   note={To Appear}
 } 
 ```
