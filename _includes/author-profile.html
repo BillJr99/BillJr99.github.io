@@ -128,6 +128,9 @@
       {% if author.goodreads %}
         <li><a href="https://www.goodreads.com/{{ author.goodreads }}"><i class="fab fa-fw fa-goodreads" aria-hidden="true"></i> Goodreads</a></li>
       {% endif %}
+      {% if author.kaggle %}
+        <li><a href="{{ author.kaggle }}"><i class="fab fa-fw fa-kaggle" aria-hidden="true"></i> Kaggle</a></li>
+      {% endif %}      
     </ul>
   </div>
 </div>
