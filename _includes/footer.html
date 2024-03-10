@@ -5,59 +5,22 @@
     {% if site.data.ui-text[site.locale].follow_label %}
       <li><strong>{{ site.data.ui-text[site.locale].follow_label }}</strong></li>
     {% endif %}
-    {% if site.author.twitter %}
-      <li><a href="https://twitter.com/{{ site.author.twitter }}"><i class="fab fa-twitter-square" aria-hidden="true"></i> Twitter/X</a></li>
+    {% if site.twitter.username %}
+      <li><a href="https://twitter.com/{{ site.twitter.username }}"><i class="fab fa-twitter-square" aria-hidden="true"></i> Twitter</a></li>
     {% endif %}
-    {% if site.author.facebook %}
-      <li><a href="https://facebook.com/{{ site.author.facebook }}"><i class="fab fa-facebook-square" aria-hidden="true"></i> Facebook</a></li>
+    {% if site.facebook.username %}
+      <li><a href="https://facebook.com/{{ site.facebook.username }}"><i class="fab fa-facebook-square" aria-hidden="true"></i> Facebook</a></li>
     {% endif %}
-    {% if site.author.bluesky %}
-      <li><a href="https://bsky.app/profile/{{ author.bluesky }}"><i class="fas fa-link" aria-hidden="true"></i> Bluesky</a></li>
-    {% endif %}    
     {% if site.author.github %}
       <li><a href="http://github.com/{{ site.author.github }}"><i class="fab fa-github" aria-hidden="true"></i> GitHub</a></li>
     {% endif %}
     {% if site.author.bitbucket %}
-      <!--<li><a href="http://bitbucket.org/{{ site.author.bitbucket }}/"><i class="fab fa-bitbucket" aria-hidden="true"></i> Bitbucket</a></li>-->
+      <li><a href="http://bitbucket.org/{{ site.author.bitbucket }}"><i class="fab fa-bitbucket" aria-hidden="true"></i> Bitbucket</a></li>
     {% endif %}
-    {% if site.author.scopus %}
-      <!--<li><a href="https://www.scopus.com/authid/detail.uri?authorId={{ site.author.scopus }}"><i class="fas fa-link" aria-hidden="true"></i> Scopus</a></li>-->
+    {% if site.atom_feed.hide != true %}
+    <li><a href="{% if site.atom_feed.path %}{{ site.atom_feed.path }}{% else %}{{ base_path }}/feed.xml{% endif %}"><i class="fa fa-fw fa-rss-square" aria-hidden="true"></i> {{ site.data.ui-text[site.locale].feed_label | default: "Feed" }}</a></li>
     {% endif %}
-    {% if site.author.webofscience %}
-      <!--<li><a href="https://publons.com/researcher/{{ site.author.webofscience }}/"><i class="fas fa-link" aria-hidden="true"></i> Publons WebOfScience</a></li>-->
-    {% endif %}
-    {% if site.author.ieeeauthor %}
-      <!--<li><a href="https://ieeexplore.ieee.org/author/{{ site.author.ieeeauthor }}"><i class="fas fa-link" aria-hidden="true"></i> IEEE Author Profile</a></li>-->
-    {% endif %}    
-    {% if site.author.acmauthor %}
-      <!--<li><a href="https://dl.acm.org/author_page.cfm?id={{ site.author.acmauthor }}"><i class="fas fa-link" aria-hidden="true"></i> ACM Author Profile</a></li>-->
-    {% endif %}  
-    {% if site.author.dblp %}
-    <!--<li><a href="https://dblp.uni-trier.de/pers/hd/{{ site.author.dblp }}.html"><i class="fas fa-link" aria-hidden="true"></i> DBLP</a></li>-->
-    {% endif %}  
-    {% if site.author.nih %}
-    <!--<li><a href="https://www.ncbi.nlm.nih.gov/myncbi/{{ site.author.nih }}/bibliography/public/"><i class="fas fa-link" aria-hidden="true"></i> NIH Bibliography</a></li>-->
-    {% endif %} 
-    {% if site.author.gitlab %}
-    <!--<li><a href="https://gitlab.com/{{ site.author.gitlab }}"><i class="fas fa-link" aria-hidden="true"></i> Gitlab</a></li>-->
-    {% endif %}  
-    {% if site.author.csauthors %}
-    <!--<li><a href="https://www.csauthors.net/{{ site.author.csauthors }}/"><i class="fas fa-link" aria-hidden="true"></i> CSAuthors Profile</a></li>-->
-    {% endif %} 
-    {% if site.author.wikidata %}
-    <!--<li><a href="https://www.wikidata.org/wiki/{{ site.author.wikidata }}"><i class="fas fa-link" aria-hidden="true"></i> Wikidata Profile</a></li>-->
-    {% endif %}
-    {% if site.author.fcccallsign %}
-    <!--<li><a href="http://www.hamqth.com/{{ site.author.fcccallsign }}"><i class="fas fa-link" aria-hidden="true"></i> HamQTH Profile</a></li>-->
-    {% endif %}
-    {% if site.author.fcccallsign %}
-    <!--<li><a href="http://qrzcq.com/call/{{ site.author.fcccallsign }}"><i class="fas fa-link" aria-hidden="true"></i> QRZCQ Profile</a></li>-->
-    {% endif %}  
-    {% if site.author.fcccallsign %}
-    <!--<li><a href="http://qrz.com/db/{{ site.author.fcccallsign }}"><i class="fas fa-link" aria-hidden="true"></i> QRZ Profile</a></li>-->
-    {% endif %}    
-    <li><a href="{% if site.atom_feed.path %}{{ site.atom_feed.path }}{% else %}{{ site.url }}/feed.xml{% endif %}"><i class="fa fa-fw fa-rss-square" aria-hidden="true"></i> {{ site.data.ui-text[site.locale].feed_label | default: "Feed" }}</a></li>
   </ul>
 </div>
 
-<div class="page__footer-copyright">&copy; {{ site.time | date: '%Y' }} {{ site.name | default: site.title }}. Any opinions I state on this site are my own and are neither affiliated with nor endorsed by any employer, institution, person, or organization.  Presentation of statements made by others (such as in page comments), references and/or links to such statements or content of others do not constitute my endorsement; these statements are solely affiliated with their respective authors.  {{ site.data.ui-text[site.locale].powered_by | default: "Powered by" }} <a href="http://jekyllrb.com" rel="nofollow">Jekyll</a> &amp; <a href="https://github.com/academicpages/academicpages.github.io">AcademicPages</a>, a fork of <a href="https://mademistakes.com/work/minimal-mistakes-jekyll-theme/" rel="nofollow">Minimal Mistakes</a>.</div>
+<div class="page__footer-copyright">&copy; {{ site.time | date: '%Y' }} {{ site.name | default: site.title }}. {{ site.data.ui-text[site.locale].powered_by | default: "Powered by" }} <a href="http://jekyllrb.com" rel="nofollow">Jekyll</a> &amp; <a href="https://github.com/academicpages/academicpages.github.io">AcademicPages</a>, a fork of <a href="https://mademistakes.com/work/minimal-mistakes-jekyll-theme/" rel="nofollow">Minimal Mistakes</a>.</div>
