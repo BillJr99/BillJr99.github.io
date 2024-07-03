@@ -12,7 +12,6 @@ redirect_from:
 My Full CV can be found [here](/files/CV.pdf)    
 View My Scholarly Activity using the left-hand or 'Follow' navigation menu.  
 View my [ORCID CV]({{ site.author.orcid }}/print)  
-View my [NCBI SciEncv](https://www.ncbi.nlm.nih.gov/sciencv/) Biosketches for the [NIH](https://www.ncbi.nlm.nih.gov/myncbi/william.mongan.1/cv/548372/) and the [NSF](https://www.ncbi.nlm.nih.gov/myncbi/william.mongan.1/cv/313815/)  
 View my [GitHub Resume](https://resume.github.io/?BillJr99)
 
 Selected Faculty Appointments
