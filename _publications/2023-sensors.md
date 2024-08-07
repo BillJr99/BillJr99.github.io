@@ -6,7 +6,7 @@ excerpt: 'IEEE Sensors Journal'
 date: '2023-12-03'
 venue: 'IEEE Sensors Journal'
 paperurl: 'https://ieeexplore.ieee.org/document/10364695'
-citation: "Md Abu Saleh Tajin, Md Shakir Hossain, William M. Mongan, and Kapil R. Dandekar. Passive UHF RFID-based Real-Time Intravenous Fluid Level Sensor. IEEE Sensors Journal, 2023"
+citation: "Md Abu Saleh Tajin, Md Shakir Hossain, William M. Mongan, and Kapil R. Dandekar. Passive UHF RFID-based Real-Time Intravenous Fluid Level Sensor. IEEE Sensors Journal, 2023."
 tags: 
   - smartfabrics
   
