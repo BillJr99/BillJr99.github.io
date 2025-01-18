@@ -35,7 +35,7 @@ You can find me on the airwaves through various ways:
 * HamsOverIP: Extension 101249
 * Hamshack Hotline: Extension 5501194
 * Amateur Wire: Extension 1434
-* Email: <my call sign>@winlink.org, <my call sign>@arrl.net
+* Email: my call sign@winlink.org, my call sign@arrl.net
 * Digital Modes including PSK31, Vara, JS8Call, FT4/FT8, and more
 * APRS and Digital Packet
 * And, of course analog voice on 70cm, 2M, 6M, 10M, 20M, 30M, 40M, 80M, and 160M, among others
