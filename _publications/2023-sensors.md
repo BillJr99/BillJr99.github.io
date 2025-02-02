@@ -12,6 +12,8 @@ tags:
   
 ---
 
+Download the paper [here](https://par.nsf.gov/servlets/purl/10559178)
+
 ## bibtex
 ```bibtex
 @article{
