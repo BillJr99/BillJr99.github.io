@@ -41,7 +41,7 @@ You can find me on the airwaves through various ways:
 * And, of course analog voice on 70cm, 2M, 6M, 10M, 20M, 30M, 40M, 80M, and 160M, among others
 
 <center>
-<div id="rigref-solar-widget"></div><script type="text/javascript">(function() {var a = document.createElement('a');var i = document.createElement('img');var s = document.getElementById('rigref-solar-widget');a.href = ('https://rigreference.com/solar');a.target = '_blank';i.src = ('https://rigreference.com/solar/img/wide');i.border = 0;a.appendChild(i);s.appendChild(a);})();</script>
+<a href="https://rigreference.com/solar" target="_blank"><img src="https://rigreference.com/solar/img/wide" border="0"></a>
 <a href="http://www.hamqsl.com/solar.html" title="Click to add Solar-Terrestrial Data to your website!"><img src="https://www.hamqsl.com/solargraph.php"></a> 
 </center>
 
