@@ -5,14 +5,14 @@
     {% if site.data.ui-text[site.locale].follow_label %}
       <li><strong>{{ site.data.ui-text[site.locale].follow_label }}</strong></li>
     {% endif %}
-    {% if site.twitter.username %}
-      <li><a href="https://twitter.com/{{ site.twitter.username }}"><i class="fab fa-twitter-square" aria-hidden="true"></i> Twitter/X</a></li>
+    {% if site.author.twitter %}
+      <li><a href="https://twitter.com/{{ site.author.twitter }}"><i class="fab fa-twitter-square" aria-hidden="true"></i> Twitter/X</a></li>
     {% endif %}
-    {% if site.facebook.username %}
-      <li><a href="https://facebook.com/{{ site.facebook.username }}"><i class="fab fa-facebook-square" aria-hidden="true"></i> Facebook</a></li>
+    {% if site.author.facebook %}
+      <li><a href="https://facebook.com/{{ site.author.facebook }}"><i class="fab fa-facebook-square" aria-hidden="true"></i> Facebook</a></li>
     {% endif %}
     {% if site.author.bluesky %}
-      <li><a href="https://bsky.app/profile/{{ author.bluesky }}"><i class="fab fa-link" aria-hidden="true"></i> Bluesky</a></li>
+      <li><a href="https://bsky.app/profile/{{ author.bluesky }}"><i class="fas fa-link" aria-hidden="true"></i> Bluesky</a></li>
     {% endif %}    
     {% if site.author.github %}
       <li><a href="http://github.com/{{ site.author.github }}"><i class="fab fa-github" aria-hidden="true"></i> GitHub</a></li>
