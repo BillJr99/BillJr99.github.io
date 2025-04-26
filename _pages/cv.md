@@ -16,6 +16,8 @@ View my [GitHub Resume](https://resume.github.io/?BillJr99)
 
 Selected Faculty Appointments
 ======
+* Co-Director, Teaching and Learning Institute at Ursinus College, 2025-Present
+
 * Faculty of Mathematics and Computer Science at Ursinus College, 2020-Present
   * Associate Professor, 2022-Present
   * Assistant Professor (Visiting), 2020-2022
