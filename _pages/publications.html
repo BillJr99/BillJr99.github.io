@@ -11,7 +11,7 @@ author_profile: true
 
 {% if site.author.dblp or site.author.csauthors %}
 BibTeX Records for most publications can be found on: {% if site.author.dblp %}
-[DBLP](https://dblp.uni-trier.de/pers/tb1/{{ site.author.dblp }}.bib) {% endif %}{% if site.author.csauthors %}[CSAuthors](https://www.csauthors.net/{{ site.author.csauthors }}/{{ site.author.csauthors }}.bib) {% endif %}
+<a href="https://dblp.uni-trier.de/pers/tb1/{{ site.author.dblp }}.bib">DBLP</a> {% endif %}{% if site.author.csauthors %}<a href="https://www.csauthors.net/{{ site.author.csauthors }}/{{ site.author.csauthors }}.bib">CSAuthors</a> {% endif %}
 {% endif %}
 
 {% include base_path %}
