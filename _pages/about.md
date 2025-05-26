@@ -30,7 +30,7 @@ You can find me on the airwaves through various ways:
 * AllStarLink: 62933
 * MCAR Mesh W3EX-PBX: Extension 215-3521
 * MCAR Mesh W1CLK-PBX: Extension 215-3700
-* AREDN Mesh Network: 2.4 GHz frequency band, channel -2/4, 10 MHz bandwidth, and 5.8 GHz band, channel 179/180, 10 MHz bandwidth
+* AREDN Mesh Network: 2.4 GHz frequency band, channel -2/4, 10 MHz bandwidth; 5.8 GHz band, channel 179/180, 10 MHz bandwidth; 900 MHz band, channel 5, 1 MHz bandwidth
 * AMPR 44net
 * HamsOverIP: Extension 101249
 * Hamshack Hotline: Extension 5501194
