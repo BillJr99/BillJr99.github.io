@@ -1,14 +1,14 @@
 {
   "basics": {
-    "name": "Your Sidebar Name",
-    "email": "none@example.org",
+    "name": "Bill Mongan",
+    "email": "billmongan+website@gmail.com",
     "phone": "",
-    "website": "https://academicpages.github.io",
-    "summary": "Currently employed at Red Brick University. Short biography for the left-hand sidebar",
+    "website": "https://www.billmongan.com",
+    "summary": "Currently employed at Ursinus College. Professor, Author, Machine Learning Researcher, Educational Consultant, and Scholar of Teaching and Learning; Host: digitalsignature.fm",
     "location": {
       "address": "",
       "postalCode": "",
-      "city": "Earth",
+      "city": "Philadelphia, PA",
       "countryCode": "US",
       "region": ""
     },
@@ -16,25 +16,35 @@
       {
         "network": "Google Scholar",
         "username": "",
-        "url": "https://scholar.google.com/citations?user=PS_CX0AAAAAJ"
+        "url": "https://scholar.google.com/citations?user=LJ1vhCcAAAAJ"
       },
       {
         "network": "ORCID",
         "username": "",
-        "url": "http://orcid.org/yourorcidurl"
+        "url": "https://orcid.org/0000-0002-4122-5156"
+      },
+      {
+        "network": "ResearchGate",
+        "username": "",
+        "url": "https://www.researchgate.net/profile/William_Mongan2"
       },
       {
         "network": "GitHub",
-        "username": "academicpages",
-        "url": "https://github.com/academicpages"
+        "username": "BillJr99",
+        "url": "https://github.com/BillJr99"
+      },
+      {
+        "network": "LinkedIn",
+        "username": "billmongan",
+        "url": "https://www.linkedin.com/in/billmongan"
       }
     ]
   },
   "work": [],
   "education": [
     {
-      "institution": "GitHub University",
-      "area": "Ph.D in Version Control Theory",
+      "institution": "Drexel University",
+      "area": "Ph.D in Electrical and Computer Engineering",
       "studyType": "",
       "startDate": "",
       "endDate": "2018",
@@ -42,20 +52,38 @@
       "courses": []
     },
     {
-      "institution": "GitHub University",
-      "area": "M.S. in Jekyll",
+      "institution": "Drexel University",
+      "area": "M.S. in Computer Science",
       "studyType": "",
       "startDate": "",
-      "endDate": "2014",
+      "endDate": "2008",
       "gpa": null,
       "courses": []
     },
     {
-      "institution": "GitHub University",
-      "area": "B.S. in GitHub",
+      "institution": "Drexel University",
+      "area": "M.S. in Science of Instruction",
       "studyType": "",
       "startDate": "",
-      "endDate": "2012",
+      "endDate": "2008",
+      "gpa": null,
+      "courses": []
+    },
+    {
+      "institution": "Drexel University",
+      "area": "B.S. in Computer Science",
+      "studyType": "",
+      "startDate": "",
+      "endDate": "2005",
+      "gpa": null,
+      "courses": []
+    },
+    {
+      "institution": "Drexel University ACIN Program and Drexel University",
+      "area": "Technical Writer and Research Assistant",
+      "studyType": "",
+      "startDate": "",
+      "endDate": "2001",
       "gpa": null,
       "courses": []
     }
@@ -66,87 +94,780 @@
   "references": [],
   "publications": [
     {
-      "name": "Paper Title Number 1",
-      "publisher": "Journal 1",
-      "releaseDate": "2009-10-01",
-      "website": "http://academicpages.github.io/files/paper1.pdf",
-      "summary": "This paper is about the number 1. The number 2 is left for future work."
+      "name": "Towards a Reference Model for Intelligent Agent Systems",
+      "publisher": "Proceedings of the International Conference of Autonomous Agents and Multiagent Systems (AAMAS)",
+      "releaseDate": "2006-05-08",
+      "website": "https://dl.acm.org/authorize?N685685",
+      "summary": "Proceedings of the International Conference of Autonomous Agents and Multiagent Systems (AAMAS)"
     },
     {
-      "name": "Paper Title Number 2",
-      "publisher": "Journal 1",
-      "releaseDate": "2010-10-01",
-      "website": "http://academicpages.github.io/files/paper2.pdf",
-      "summary": "This paper is about the number 2. The number 3 is left for future work."
+      "name": "A Reference Model for Agent-Based Command and Control Systems",
+      "publisher": "Proceedings of the 25th Army Science Conference",
+      "releaseDate": "2006-11-01",
+      "website": "https://apps.dtic.mil/docs/citations/ADA481275",
+      "summary": "Proceedings of the 25th Army Science Conference"
     },
     {
-      "name": "Paper Title Number 3",
-      "publisher": "Journal 1",
-      "releaseDate": "2015-10-01",
-      "website": "http://academicpages.github.io/files/paper3.pdf",
-      "summary": "This paper is about the number 3. The number 4 is left for future work."
+      "name": "Dynamic Analysis of Agent Frameworks in Support of a Multiagent Systems Reference Model",
+      "publisher": "IADIS Proceedings of the International Conference Intelligent Systems and Agents (ISA)",
+      "releaseDate": "2007-07-03",
+      "website": "http://www.iadisportal.org/digital-library/dynamic-analysis-of-agent-frameworks-insupport-of-a-multiagent-systems-reference-model",
+      "summary": "IADIS Proceedings of the International Conference Intelligent Systems and Agents (ISA)"
     },
     {
-      "name": "Paper Title Number 4",
-      "publisher": "GitHub Journal of Bugs",
-      "releaseDate": "2024-02-17",
-      "website": "http://academicpages.github.io/files/paper3.pdf",
-      "summary": "This paper is about fixing template issue #693."
+      "name": "A Service-Based Web Portal for Integrated Reverse Engineering and Program Comprehension",
+      "publisher": "Drexel University",
+      "releaseDate": "2008-08-13",
+      "website": "/files/mongan-thesis.pdf",
+      "summary": "Masters Thesis"
+    },
+    {
+      "name": "A Cyber-Infrastructure for Supporting K-12 Engineering Education through Robotics",
+      "publisher": "The Proceedings of the Association for the Advancement of Artificial Intelligence (AAAI) Education Track",
+      "releaseDate": "2008-01-01",
+      "website": "https://aaai.org/Library/Workshops/2008/ws08-02-013.php",
+      "summary": "The Proceedings of the Association for the Advancement of Artificial Intelligence (AAAI) Education Track"
+    },
+    {
+      "name": "Computer Aided Instruction as a Vehicle for Problem Solving: Scratch Programming Environment in the Middle Years Classroom",
+      "publisher": "Proceedings of the American Society for Engineering Education (ASEE) K-12 Track",
+      "releaseDate": "2008-01-01",
+      "website": "https://peer.asee.org/computer-aided-instruction-as-a-vehicle-for-problem-solving-scratch-boards-in-the-middle-years-classroom",
+      "summary": "Proceedings of the American Society for Engineering Education (ASEE) K-12 Track"
+    },
+    {
+      "name": "Re-engineering a Reverse Engineering Portal to a Distributed SOA",
+      "publisher": "IEEE Proceedings of the 16th International Conference on Program Comprehension (ICPC)",
+      "releaseDate": "2008-01-01",
+      "website": "https://ieeexplore.ieee.org/document/4556134",
+      "summary": "IEEE Proceedings of the 16th International Conference on Program Comprehension (ICPC)"
+    },
+    {
+      "name": "Development and Specification of a Reference Model for Agent-Based Systems",
+      "publisher": "IEEE Transactions on Systems Man and Cybernetics",
+      "releaseDate": "2009-09-05",
+      "website": "https://ieeexplore.ieee.org/document/4926156",
+      "summary": "IEEE Transactions on Systems Man and Cybernetics, Part C (Applications and Reviews)"
+    },
+    {
+      "name": "Developing an Agent Systems Reference Architecture",
+      "publisher": "the Proceedings of the 11th International Workshop on Agent Oriented Software Engineering",
+      "releaseDate": "2010-05-01",
+      "website": "https://apps.dtic.mil/dtic/tr/fulltext/u2/a549190.pdf",
+      "summary": "the Proceedings of the 11th International Workshop on Agent Oriented Software Engineering"
+    },
+    {
+      "name": "A Methodology for Developing an Agent Systems Reference Architecture",
+      "publisher": "Agent-Oriented Software Engineering XI",
+      "releaseDate": "2010-05-10",
+      "website": "https://apps.dtic.mil/dtic/tr/fulltext/u2/a559616.pdf",
+      "summary": "Agent-Oriented Software Engineering XI"
+    },
+    {
+      "name": "Development and Specification of a Reference Architecture for Agent-Based Systems",
+      "publisher": "IEEE Transactions on Human Machine Systems",
+      "releaseDate": "2013-11-13",
+      "website": "https://ieeexplore.ieee.org/document/6663695",
+      "summary": "IEEE Transactions on Human Machine Systems"
+    },
+    {
+      "name": "Wireless Heart and Respiration Monitoring for Infants through Passive RFID Tags",
+      "publisher": "IEEE International Conference on Biomedical and Health Informatics (BHI)",
+      "releaseDate": "2016-02-01",
+      "website": "https://web.archive.org/web/20191124101106/http://www.shrenikvora.com/Shrenik_Vora_BHI_16_2.pdf",
+      "summary": "IEEE International Conference on Biomedical and Health Informatics (BHI)"
+    },
+    {
+      "name": "A Multi-Disciplinary Framework for Continuous Biomedical Monitoring Using Low-Power Passive RFID-based Wireless Wearable Sensors",
+      "publisher": "Proceedings of the IEEE Smart Systems Workshop",
+      "releaseDate": "2016-05-01",
+      "website": "https://ieeexplore.ieee.org/document/7501674",
+      "summary": "Proceedings of the IEEE Smart Systems Workshop"
+    },
+    {
+      "name": "Real-Time Detection of Apnea via Signal Processing of Time-Series Properties of RFID-Based Smart Garments",
+      "publisher": "IEEE Signal Processing in Medicine and Biology (SPMB)",
+      "releaseDate": "2016-12-01",
+      "website": "https://ieeexplore.ieee.org/abstract/document/7846871",
+      "summary": "IEEE Signal Processing in Medicine and Biology (SPMB)"
+    },
+    {
+      "name": "On the Use of Knitted Antennas and Inductively Coupled RFID Tags for Wearable Applications",
+      "publisher": "IEEE Transactions on Biomedical Circuits and Systems",
+      "releaseDate": "2016-12-01",
+      "website": "https://ieeexplore.ieee.org/document/7458913",
+      "summary": "IEEE Transactions on Biomedical Circuits and Systems"
+    },
+    {
+      "name": "On the Use of Radio Frequency Identification for Continuous Biomedical Monitoring",
+      "publisher": "ACM/IEEE International Conference on Internet-of-Things Design and Implementation (IoTDI)",
+      "releaseDate": "2017-04-01",
+      "website": "https://dl.acm.org/authorize?N685674",
+      "summary": "ACM/IEEE International Conference on Internet-of-Things Design and Implementation (IoTDI)"
+    },
+    {
+      "name": "On Implementing an Unconventional Infant Vital Signs Monitor with Passive RFID Tags",
+      "publisher": "IEEE International Conference on RFID",
+      "releaseDate": "2017-05-01",
+      "website": "https://ieeexplore.ieee.org/document/7945586",
+      "summary": "IEEE International Conference on RFID"
+    },
+    {
+      "name": "Data Fusion of Single-Tag RFID Measurements for Respiratory Rate Monitoring",
+      "publisher": "IEEE Signal Processing in Medicine and Biology (SPMB)",
+      "releaseDate": "2017-12-01",
+      "website": "https://ieeexplore.ieee.org/document/8257028",
+      "summary": "IEEE Signal Processing in Medicine and Biology (SPMB)"
+    },
+    {
+      "name": "Predictive Analytics on Real-Time Biofeedback for Actionable Classification of Activity State",
+      "publisher": "Drexel University",
+      "releaseDate": "2018-08-08",
+      "website": "/files/mongan-dissertation.pdf",
+      "summary": "Ph.D. Dissertation"
+    },
+    {
+      "name": "Activity Segmentation Using Wearable Sensors for DVT/PE Risk Detection",
+      "publisher": "The First IEEE International Workshop on Integrated Smart Healthcare (WISH 2019) at IEEE COMPSAC",
+      "releaseDate": "2019-07-01",
+      "website": "https://ieeexplore.ieee.org/document/8754449/",
+      "summary": "The First IEEE International Workshop on Integrated Smart Healthcare (WISH 2019) at IEEE COMPSAC"
+    },
+    {
+      "name": "An Adaptive Search Algorithm for Detecting Respiratory Artifacts Using a Wireless Passive Wearable Device",
+      "publisher": "IEEE Signal Processing in Medicine and Biology",
+      "releaseDate": "2019-12-01",
+      "website": "https://ieeexplore.ieee.org/document/9037861",
+      "summary": "IEEE Signal Processing in Medicine and Biology"
+    },
+    {
+      "name": "Ensemble Learning Approach via Kalman Filtering for a Passive Wearable Respiratory Monitor",
+      "publisher": "IEEE Transactions on Biomedical and Health Informatics",
+      "releaseDate": "2019-05-01",
+      "website": "https://ieeexplore.ieee.org/document/8416727",
+      "summary": "IEEE Transactions on Biomedical and Health Informatics"
+    },
+    {
+      "name": "Fusion Learning on Multiple-Tag RFID Measurements for Respiratory Rate Monitoring",
+      "publisher": "IEEE International Conference on Bioinformatics and Biomedical Engineering (BIBE)",
+      "releaseDate": "2020-10-26",
+      "website": "https://ieeexplore.ieee.org/abstract/document/9288084",
+      "summary": "IEEE International Conference on Bioinformatics and Biomedical Engineering (BIBE)"
+    },
+    {
+      "name": "Passive RFID-based Diaper Moisture Sensor",
+      "publisher": "IEEE Sensors Journal",
+      "releaseDate": "2020-10-31",
+      "website": "https://ieeexplore.ieee.org/document/9186098",
+      "summary": "IEEE Sensors Journal"
+    },
+    {
+      "name": "Channel Emulation for the Characterization of Wearable RFID Antennas",
+      "publisher": "IEEE Wireless and Microwave Technology Conference (WAMICON)",
+      "releaseDate": "2021-04-21",
+      "website": "https://par.nsf.gov/servlets/purl/10226439",
+      "summary": "IEEE Wireless and Microwave Technology Conference (WAMICON)"
+    },
+    {
+      "name": "UHF RFID Channel Emulation Testbed for Wireless IoT Systems",
+      "publisher": "IEEE Access Journal",
+      "releaseDate": "2021-05-03",
+      "website": "https://ieeexplore.ieee.org/document/9423960",
+      "summary": "IEEE Access Journal"
+    },
+    {
+      "name": "An Adaptively Parameterized Algorithm Estimating Respiratory Rate from a Passive Wearable RFID Smart Garment",
+      "publisher": "IEEE Conference on Computers, Software, and Applications (COMPSAC)",
+      "releaseDate": "2021-07-16",
+      "website": "https://doi.ieeecomputersociety.org/10.1109/COMPSAC51774.2021.00110",
+      "summary": "IEEE Conference on Computers, Software, and Applications (COMPSAC)"
+    },
+    {
+      "name": "Wearable Smart Garment Devices for Passive Biomedical Monitoring",
+      "publisher": "Biomedical Signal Processing: Innovation and Applications",
+      "releaseDate": "2021-04-01",
+      "website": "https://doi.org/10.1007/978-3-030-67494-6_4",
+      "summary": "Biomedical Signal Processing: Innovation and Applications"
+    },
+    {
+      "name": "Energy-Effcient Respiratory Anomaly Detection in Premature Newborn Infants",
+      "publisher": "MDPI Electronics Journal - Neuromorphic Sensing and Computing Systems",
+      "releaseDate": "2022-02-17",
+      "website": "https://www.mdpi.com/2079-9292/11/5/682",
+      "summary": "MDPI Electronics Journal - Neuromorphic Sensing and Computing Systems"
+    },
+    {
+      "name": "Passive UHF RFID-based Real-Time Intravenous Fluid Level Sensor",
+      "publisher": "IEEE Sensors Journal",
+      "releaseDate": "2023-12-03",
+      "website": "https://ieeexplore.ieee.org/document/10364695",
+      "summary": "IEEE Sensors Journal"
     }
   ],
   "presentations": [
     {
-      "name": "Talk 1 on Relevant Topic in Your Field",
-      "event": "UC San Francisco, Department of Testing",
+      "name": "REportal: A Web-Based Reverse Engineering Portal",
+      "event": "REportal: A Web-Based Reverse Engineering Portal. Drexel University Research Day",
+      "date": "2003-01-01",
+      "location": "Philadelphia, PA",
+      "description": ""
+    },
+    {
+      "name": "GK-12: Engineering as a Contextual Vehicle for Science and Mathematics Education Poster",
+      "event": "GK-12: Engineering as a Contextual Vehicle for Science and Mathematics Education Poster. NSF GK-12 Annual Meeting, Washington DC and Drexel Research (RISC) Day",
+      "date": "2007-01-01",
+      "location": "Washington, DC and Philadelphia, PA",
+      "description": ""
+    },
+    {
+      "name": "Dynamic Analysis of Agent Frameworks in Support of a Multiagent Systems Reference Model",
+      "event": "IADIS Proceedings of the International Conference Intelligent Systems and Agents (ISA)",
+      "date": "2007-01-01",
+      "location": "Lisbon, Portugal",
+      "description": ""
+    },
+    {
+      "name": "A Service-Based Web Portal for Integrated Reverse Engineering and Program Comprehension",
+      "event": "Drexel University",
+      "date": "2008-08-13",
+      "location": "Philadelphia, PA",
+      "description": ""
+    },
+    {
+      "name": "Re-engineering a Reverse Engineering Portal to a Distributed SOA",
+      "event": "IEEE Proceedings of the 16th International Conference on Program Comprehension (ICPC)",
+      "date": "2008-01-01",
+      "location": "Amsterdam, Netherlands",
+      "description": ""
+    },
+    {
+      "name": "Circuit Design with Breadboards, Microcontrollers, and FPGAs",
+      "event": "Circuit Design with Breadboards, Microcontrollers, and FPGAs. Drexel University Math and Computer Science (MCS) Society Talk.",
+      "date": "2008-11-01",
+      "location": "Philadelphia, PA",
+      "description": ""
+    },
+    {
+      "name": "Computer Organization Workshop",
+      "event": "Computer Organization Workshop. The Pennsylvania Governors Schools of Excellence: Information, Society and Technology.",
+      "date": "2008-06-01",
+      "location": "Philadelphia, PA",
+      "description": ""
+    },
+    {
+      "name": "Certification and standards for computing education in Pennsylvania",
+      "event": "Certification and standards for computing education in Pennsylvania. Invited Panelist with Dougherty, J.P., Griffin, J., Pirmann, T., and Powell, R. Panel presentation submitted to The Twenty-fifth Annual Consortium for Computing Science in Colleges (CCSC) Eastern Conference, Villanova University",
+      "date": "2009-10-30",
+      "location": "Radnor, PA",
+      "description": ""
+    },
+    {
+      "name": "How the PC Starts its Day: From Boot Code to Boot Viruses",
+      "event": "How the PC Starts its Day: From Boot Code to Boot Viruses. Drexel University Math and Computer Science (MCS) Society Talk.",
+      "date": "2009-02-01",
+      "location": "Philadelphia, PA",
+      "description": ""
+    },
+    {
+      "name": "Version Control Systems",
+      "event": "Version Control Systems. Drexel University Math and Computer Science (MCS) Society Talk.",
+      "date": "2010-07-01",
+      "location": "Philadelphia, PA",
+      "description": ""
+    },
+    {
+      "name": "Networking Applications, Protocols, and Cryptography with Java",
+      "event": "Networking Applications, Protocols, and Cryptography with Java. Google CS4HS Workshop at the University of Pennsylvania.",
+      "date": "2011-08-01",
+      "location": "Philadelphia, PA",
+      "description": ""
+    },
+    {
+      "name": "Mobile Application Development with Web Services",
+      "event": "Mobile Application Development with Web Services. Google CS4HS Workshop at the University of Pennsylvania.",
+      "date": "2012-08-01",
+      "location": "Philadelphia, PA",
+      "description": ""
+    },
+    {
+      "name": "Linux Kernel Vulnerabilities",
+      "event": "Linux Kernel Vulnerabilities. Drexel University Math and Computer Science (MCS) Society Talk.",
       "date": "2012-03-01",
-      "location": "San Francisco, CA, USA",
+      "location": "Philadelphia, PA",
       "description": ""
     },
     {
-      "name": "Tutorial 1 on Relevant Topic in Your Field",
-      "event": "UC-Berkeley Institute for Testing Science",
-      "date": "2013-03-01",
-      "location": "Berkeley, CA, USA",
+      "name": "Networking Applications, Protocols, and Cryptography",
+      "event": "Networking Applications, Protocols, and Cryptography. Computing Tapestry Workshop at the University of Pennsylvania.",
+      "date": "2012-07-01",
+      "location": "Philadelphia, PA",
       "description": ""
     },
     {
-      "name": "Talk 2 on Relevant Topic in Your Field",
-      "event": "London School of Testing",
-      "date": "2014-02-01",
-      "location": "London, UK",
+      "name": "An Integrated Introduction to Network Protocols and Cryptography to High School Students",
+      "event": "An Integrated Introduction to Network Protocols and Cryptography to High School Students. Poster Presentation at ACM SIGCSE",
+      "date": "2012-03-01",
+      "location": "Raleigh, NC",
       "description": ""
     },
     {
-      "name": "Conference Proceeding talk 3 on Relevant Topic in Your Field",
-      "event": "Testing Institute of America 2014 Annual Conference",
-      "date": "2014-03-01",
-      "location": "Los Angeles, CA, USA",
+      "name": "Internet Protocols and Cryptography",
+      "event": "Internet Protocols and Cryptography. Reboot Renew REThink Workshop at Drexel University.",
+      "date": "2013-07-01",
+      "location": "Philadelphia, PA",
+      "description": ""
+    },
+    {
+      "name": "A Software Framework for Monitoring and Performing Analytics on Real Time Medical Device Data",
+      "event": "A Software Framework for Monitoring and Performing Analytics on Real Time Medical Device Data. American Society for Engineering Education Poster with Rachel M. Goeken, Kapil Dandekar, Timothy Kurzweg, Genevieve Dion, and Adam K. Fontecchio.",
+      "date": "2014-11-01",
+      "location": "Swarthmore, PA",
+      "description": ""
+    },
+    {
+      "name": "Learning Real-World Skills while Majoring in Computer Science",
+      "event": "Learning Real-World Skills while Majoring in Computer Science. GETT: Girls Exploring Tomorrows Technology with Jeff Popyack, Suzanne Hanbicki, and Hannah Pinkos.",
+      "date": "2014-04-01",
+      "location": "King of Prussia, PA",
+      "description": ""
+    },
+    {
+      "name": "What Is/Are CS Principles? Philadelphia Science Festival with Jeff Popyack and Omar Ali, School District of Philadelphia",
+      "event": "What Is/Are CS Principles? Philadelphia Science Festival with Jeff Popyack and Omar Ali, School District of Philadelphia.",
+      "date": "2014-04-01",
+      "location": "Philadelphia, PA",
+      "description": ""
+    },
+    {
+      "name": "Big Data, Big Deal; Welcome to the Twitterverse",
+      "event": "Big Data, Big Deal; Welcome to the Twitterverse. Reboot, REThink, Refresh with Jeff Popyack.",
+      "date": "2014-07-01",
+      "location": "Philadelphia, PA",
+      "description": ""
+    },
+    {
+      "name": "Maternity Smart Fabric Bellyband to Monitor Uterine Activity and Assess Fetal Well-Being",
+      "event": "Maternity Smart Fabric Bellyband to Monitor Uterine Activity and Assess Fetal Well-Being. Wearable Technology in Healthcare Society (WATCH) Conference with Kapil Dandekar, Genevieve Dion, Adam Fontecchio, Timothy Kurzweg, and Owen Montgomery, MD.",
+      "date": "2014-07-01",
+      "location": "Indianapolis, IN",
+      "description": ""
+    },
+    {
+      "name": "Big Data is Everywhere: Bridging Computing Disciplines and Society",
+      "event": "Big Data is Everywhere: Bridging Computing Disciplines and Society. Webinar for Drexel University with Jeff Popyack.",
+      "date": "2014-06-01",
+      "location": "Philadelphia, PA",
+      "description": ""
+    },
+    {
+      "name": "Marconi: The Master of Wireless",
+      "event": "Marconi: The Master of Wireless. Bellyband Demonstration at Drexel University.",
+      "date": "2014-10-01",
+      "location": "Philadelphia, PA",
+      "description": ""
+    },
+    {
+      "name": "Wearable Smart Textiles Based on Programmable and Automated Knitting Technology for Biomedical and Sensor Actuation Applications",
+      "event": "Wearable Smart Textiles Based on Programmable and Automated Knitting Technology for Biomedical and Sensor Actuation Applications. BIO International Convention with Kapil R. Dandekar, Genevieve Dion, Adam Fontecchio, Tim Kurzweg, Owen Montgomery, V.K. Narayan.",
+      "date": "2015-06-01",
+      "location": "Philadelphia, PA",
+      "description": ""
+    },
+    {
+      "name": "Statistical Analytics of Wearable Passive RFID-based Biomedical Textile Monitors for Real-Time State Classification",
+      "event": "Statistical Analytics of Wearable Passive RFID-based Biomedical Textile Monitors for Real-Time State Classification. IEEE Signal Processing in Medicine and Biology (SPMB) Symposium Poster with Kapil Dandekar, Genevieve Dion, Tim Kurzweg, and Adam Fontecchio.",
+      "date": "2015-12-01",
+      "location": "Philadelphia, PA",
+      "description": ""
+    },
+    {
+      "name": "Feedback at Scale - Automatically Generated Feedback for CS Student Work: Best Practices",
+      "event": "Feedback at Scale - Automatically Generated Feedback for CS Student Work: Best Practices. SIGCSE Birds-of-a-Feather Session with Bruce W. Char, Jeffrey L. Popyack, and Jeremy Johnson.",
+      "date": "2015-03-01",
+      "location": "Kansas City, MO",
+      "description": ""
+    },
+    {
+      "name": "Raspberry HadooPI: A Low-Cost, Hands-On Laboratory in Big Data and Analytics",
+      "event": "Raspberry HadooPI: A Low-Cost, Hands-On Laboratory in Big Data and Analytics. SIGCSE 2015 Poster with Ken Fox and Jeffrey L. Popyack. Kansas City, MO.  Also presented at Drexel University Research Day 2015",
+      "date": "2015-03-01",
+      "location": "Kansas City, MO and Philadelphia, PA",
+      "description": ""
+    },
+    {
+      "name": "A Panel Discussion on Computer Science Education",
+      "event": "A Panel Discussion on Computer Science Education. Computer Science Teachers Association Fall Symposium.",
+      "date": "2016-11-01",
+      "location": "Radnor, PA",
+      "description": ""
+    },
+    {
+      "name": "Using BigData for Learning about a Slice of Parallel Computation in Several Courses",
+      "event": "Using BigData for Learning about a Slice of Parallel Computation in Several Courses. NSF/TCPP Workshop on Parallel and Distributed Computing Education (EduPar-16) Poster with Bruce Char and Jeffrey Popyack.",
+      "date": "2016-05-01",
+      "location": "Chicago, IL",
+      "description": ""
+    },
+    {
+      "name": "Pixels, Post-Its and CS Principles",
+      "event": "Pixels, Post-Its and CS Principles. SIGCSE Poster with Jeffrey L. Popyack.",
+      "date": "2016-03-01",
+      "location": "Memphis, TN",
+      "description": ""
+    },
+    {
+      "name": "A Multi-Disciplinary Framework for Continuous Biomedical Monitoring Using Low-Power Passive RFID-based Wireless Wearable Sensors",
+      "event": "Proceedings of the IEEE Smart Systems Workshop",
+      "date": "2016-05-01",
+      "location": "St. Louis, MO",
+      "description": ""
+    },
+    {
+      "name": "Real-Time Detection of Apnea via Signal Processing of Time-Series Properties of RFID-Based Smart Garments",
+      "event": "IEEE Signal Processing in Medicine and Biology (SPMB)",
+      "date": "2016-12-01",
+      "location": "Philadelphia, PA",
+      "description": ""
+    },
+    {
+      "name": "Wearable Technology Advances Health for Mothers and Babies",
+      "event": "Wearable Technology Advances Health for Mothers and Babies. Yale Tech Summit presentation with Owen Montgomery. New Haven, CT. Also presented to Teva in Frazer, PA",
+      "date": "2016-10-01",
+      "location": "New Haven, CT and Frazer, PA",
+      "description": ""
+    },
+    {
+      "name": "Integrating Active Learning in the STEM Classroom (Inaugural Event)",
+      "event": "Integrating Active Learning in the STEM Classroom (Inaugural Event). Pedagogical Readiness Oversight for Future Educators in STEM Subjects (PROFESS) at Drexel University.",
+      "date": "2017-04-01",
+      "location": "Philadelphia, PA",
+      "description": ""
+    },
+    {
+      "name": "On the Use of Radio Frequency Identification for Continuous Biomedical Monitoring",
+      "event": "ACM/IEEE International Conference on Internet-of-Things Design and Implementation (IoTDI)",
+      "date": "2017-04-01",
+      "location": "Pittsburgh, PA",
+      "description": ""
+    },
+    {
+      "name": "National Council of Women in Information Technology (NCWIT), Invited Faculty",
+      "event": "National Council of Women in Information Technology (NCWIT), Invited Faculty.",
+      "date": "2017-05-01",
+      "location": "Tuscon, AZ",
+      "description": ""
+    },
+    {
+      "name": "Data Fusion of Single-Tag RFID Measurements for Respiratory Rate Monitoring",
+      "event": "IEEE Signal Processing in Medicine and Biology (SPMB)",
+      "date": "2017-12-01",
+      "location": "Philadelphia, PA",
+      "description": ""
+    },
+    {
+      "name": "Predictive Analytics on Real-Time Biofeedback for Actionable Classification of Activity State",
+      "event": "Drexel University",
+      "date": "2018-08-08",
+      "location": "",
+      "description": ""
+    },
+    {
+      "name": "Contextualizing Principles of Computer Science",
+      "event": "Contextualizing Principles of Computer Science. CASTLE Pedagogical Happy Hour. Philadelphia, PA. CASTLE Summit at Drexel University. Faculty Panelist.",
+      "date": "2018-05-01",
+      "location": "Philadelphia, PA",
+      "description": ""
+    },
+    {
+      "name": "Post-It Pandemonium: Teaching Image Representation and Compression with an \"Unplugged\" Activity",
+      "event": "Post-It Pandemonium: Teaching Image Representation and Compression with an \"Unplugged\" Activity. CS4Philly Workshop Activity with Jeffrey L. Popyack.",
+      "date": "2018-12-01",
+      "location": "Philadelphia, PA",
+      "description": ""
+    },
+    {
+      "name": "A Wearable Biomedical Monitoring System Enabled by the Internet-of-Things",
+      "event": "A Wearable Biomedical Monitoring System Enabled by the Internet-of-Things. NSF Connections in Smart Health (CSH) Workshop with Kapil R. Dandekar, Genevieve Dion, Adam Fontecchio, Timothy Kurzweg.",
+      "date": "2018-09-01",
+      "location": "Charlottesville, VA",
+      "description": ""
+    },
+    {
+      "name": "MapReduce Parallelism across the Curriculum: an Interim Report",
+      "event": "MapReduce Parallelism across the Curriculum: an Interim Report. 8th NSF/TCPP Workshop on Parallel and Distributed Computing Education (EduPar-18) with Bruce Char and Jeffrey Popyack.",
+      "date": "2018-05-01",
+      "location": "Vancouver, BC, Canada",
+      "description": ""
+    },
+    {
+      "name": "REThink CS @ Drexel: Bridging Connections in Philadelphia with a Research Experiences for Teachers Site.",
+      "event": "NSF EEC Grantees Conference with Jeffrey L. Popyack",
+      "date": "2019-10-21",
+      "location": "Washington, DC",
+      "description": ""
+    },
+    {
+      "name": "Post-It Pandemonium: Teaching Image Representation and Compression with an Unplugged Activity",
+      "event": "Post-It Pandemonium: Teaching Image Representation and Compression with an Unplugged Activity. ACM SIGCSE Nifty Assignment with Jeffrey L. Popyack.",
+      "date": "2019-02-01",
+      "location": "Minneapolis, MN",
+      "description": ""
+    },
+    {
+      "name": "Using GitHub Classroom",
+      "event": "Using GitHub Classroom at the CSTA Spring Symposium",
+      "date": "2020-04-04",
+      "location": "Philadelphia, PA",
+      "description": ""
+    },
+    {
+      "name": "Teaching AP Computer Science A",
+      "event": "AP Computer Science Workshop for the Delaware Department of Education",
+      "date": "2020-09-17",
+      "location": "Newark, DE",
+      "description": ""
+    },
+    {
+      "name": "Grades 7-12 CS4All Bootcamp",
+      "event": "Computer Science Bootcamp for Teachers in Grades 7-12 at Pennsylvania Training and Technical Assistance Network (PATTAN) Computer Science for All Summit under a PASmart grant from the Pennsylvania Department of Education",
+      "date": "2020-06-24",
+      "location": "Harrisburg, PA",
+      "description": ""
+    },
+    {
+      "name": "Energy Effcient Detection of Respiratory Anomaly using Spiking Neural Networks",
+      "event": "IBM-IEEE AI Compute Symposium (AICS) 2021",
+      "date": "2021-10-14",
+      "location": "Philadelphia, PA",
+      "description": ""
+    },
+    {
+      "name": "Using Replit in the Classroom",
+      "event": "Using Replit in the Classroom at the CSTA Spring Symposium",
+      "date": "2021-03-20",
+      "location": "Philadelphia, PA",
+      "description": ""
+    },
+    {
+      "name": "Expanding Pathways and Access to the Computing Workforce from K-20",
+      "event": "Moderator at Pennsylvania Training and Technical Assistance Network (PATTAN) Remake Learning Days Monthly Meetup under a PASmart grant from the Pennsylvania Department of Education",
+      "date": "2022-05-18",
+      "location": "Harrisburg, PA",
+      "description": ""
+    },
+    {
+      "name": "CS4AllPA Summit Panel",
+      "event": "Computing Pathways for K-12 Students Panel at Pennsylvania Training and Technical Assistance Network (PATTAN) Computer Science for All Summit under a PASmart grant from the Pennsylvania Department of Education, June 22-23, 2022",
+      "date": "2022-06-22",
+      "location": "Harrisburg, PA",
+      "description": ""
+    },
+    {
+      "name": "Introducing Computing Concepts through Multidisciplinary No-Code and Low-Code Platforms",
+      "event": "Lunch and Learn Booth at the Pennsylvania Training and Technical Assistance Network (PATTAN) Computer Science for All Summit under a PASmart grant from the Pennsylvania Department of Education, June 22-23, 2022",
+      "date": "2022-06-22",
+      "location": "Harrisburg, PA",
+      "description": ""
+    },
+    {
+      "name": "Equitable CS Education for Broader Workforce Preparation through Design Thinking",
+      "event": "Pennsylvania Training and Technical Assistance Network (PATTAN) Computer Science for All Summit under a PASmart grant from the Pennsylvania Department of Education, June 22-23, 2022",
+      "date": "2022-06-22",
+      "location": "Harrisburg, PA",
       "description": ""
     }
   ],
   "teaching": [
     {
-      "course": "Teaching experience 1",
-      "institution": "University 1, Department",
-      "date": "2014-01-01",
-      "role": "Undergraduate course",
+      "course": "2005-2006 Courses Taught",
+      "institution": "Drexel University Department of Computer Science",
+      "date": "2005-09-01",
+      "role": "Course",
       "description": ""
     },
     {
-      "course": "Teaching experience 2",
-      "institution": "University 1, Department",
-      "date": "2015-01-01",
-      "role": "Workshop",
+      "course": "2006-2007 Courses Taught",
+      "institution": "Drexel University Department of Computer Science",
+      "date": "2006-09-01",
+      "role": "Course",
+      "description": ""
+    },
+    {
+      "course": "2007-2008 Courses Taught",
+      "institution": "Drexel University Department of Computer Science",
+      "date": "2007-09-01",
+      "role": "Course",
+      "description": ""
+    },
+    {
+      "course": "2008-2009 Courses Taught",
+      "institution": "Drexel University Department of Computer Science",
+      "date": "2008-09-01",
+      "role": "Course",
+      "description": ""
+    },
+    {
+      "course": "2009-2010 Courses Taught",
+      "institution": "Drexel University Department of Computer Science",
+      "date": "2009-09-01",
+      "role": "Course",
+      "description": ""
+    },
+    {
+      "course": "2010-2011 Courses Taught",
+      "institution": "Drexel University Department of Computer Science",
+      "date": "2010-09-01",
+      "role": "Course",
+      "description": ""
+    },
+    {
+      "course": "2011-2012 Courses Taught",
+      "institution": "Drexel University Department of Computer Science",
+      "date": "2011-09-01",
+      "role": "Course",
+      "description": ""
+    },
+    {
+      "course": "2012-2013 Courses Taught",
+      "institution": "Drexel University Department of Computer Science",
+      "date": "2012-09-01",
+      "role": "Course",
+      "description": ""
+    },
+    {
+      "course": "2013-2014 Courses Taught",
+      "institution": "Drexel University Department of Computer Science",
+      "date": "2013-09-01",
+      "role": "Course",
+      "description": ""
+    },
+    {
+      "course": "2014-2015 Courses Taught",
+      "institution": "Drexel University Department of Computer Science",
+      "date": "2014-09-01",
+      "role": "Course",
+      "description": ""
+    },
+    {
+      "course": "2015-2016 Courses Taught",
+      "institution": "Drexel University Department of Computer Science",
+      "date": "2015-09-01",
+      "role": "Course",
+      "description": ""
+    },
+    {
+      "course": "2016-2017 Courses Taught",
+      "institution": "Drexel University Department of Computer Science",
+      "date": "2016-09-01",
+      "role": "Course",
+      "description": ""
+    },
+    {
+      "course": "2017-2018 Courses Taught",
+      "institution": "Drexel University Department of Computer Science",
+      "date": "2017-09-01",
+      "role": "Course",
+      "description": ""
+    },
+    {
+      "course": "2018-2019 Courses Taught",
+      "institution": "Drexel University Department of Computer Science",
+      "date": "2018-09-01",
+      "role": "Course",
+      "description": ""
+    },
+    {
+      "course": "2019-2020 Courses Taught",
+      "institution": "Syracuse University Department of Computer Science and Engineering (Part-Time Instructor)",
+      "date": "2020-03-16",
+      "role": "Course",
+      "description": ""
+    },
+    {
+      "course": "2011-2012 Courses Taught",
+      "institution": "University of Pennsylvania Department of Computer and Information Science (Visiting)",
+      "date": "2012-01-01",
+      "role": "Course",
+      "description": ""
+    },
+    {
+      "course": "2012-2013 Courses Taught",
+      "institution": "University of Pennsylvania Department of Computer and Information Science (Visiting)",
+      "date": "2013-01-01",
+      "role": "Course",
+      "description": ""
+    },
+    {
+      "course": "2020-2021 Courses Taught",
+      "institution": "Ursinus College Department of Mathematics and Computer Science",
+      "date": "2020-09-07",
+      "role": "Course",
+      "description": ""
+    },
+    {
+      "course": "2021-2022 Courses Taught",
+      "institution": "Ursinus College Department of Mathematics and Computer Science",
+      "date": "2021-08-22",
+      "role": "Course",
+      "description": ""
+    },
+    {
+      "course": "2022-2023 Courses Taught",
+      "institution": "Ursinus College Department of Mathematics and Computer Science",
+      "date": "2022-05-30",
+      "role": "Course",
+      "description": ""
+    },
+    {
+      "course": "2023-2024 Courses Taught",
+      "institution": "Ursinus College Department of Mathematics and Computer Science",
+      "date": "2023-08-03",
+      "role": "Course",
+      "description": ""
+    },
+    {
+      "course": "2024-2025 Courses Taught",
+      "institution": "Ursinus College Department of Mathematics and Computer Science",
+      "date": "2024-08-20",
+      "role": "Course",
       "description": ""
     }
   ],
   "portfolio": [
     {
-      "name": "Portfolio item number 1",
+      "name": "Agent Systems Reference Model (ASRM)",
       "category": "portfolio",
       "date": "",
       "url": "",
-      "description": "Short description of portfolio item number 1<br/><img src='/images/500x300.png'>"
+      "description": "The Agent Systems Reference Model (ASRM)"
+    },
+    {
+      "name": "Computing Career Pathways",
+      "category": "portfolio",
+      "date": "",
+      "url": "",
+      "description": "Exploring the Breadth of Computing Careers and Pathways"
+    },
+    {
+      "name": "Education Research and Engagement",
+      "category": "portfolio",
+      "date": "",
+      "url": "",
+      "description": "Education Research and Engagement"
+    },
+    {
+      "name": "Software Engineering Research",
+      "category": "portfolio",
+      "date": "",
+      "url": "",
+      "description": "Software Engineering Research"
+    },
+    {
+      "name": "Passive Wearable Smart Garment Devices",
+      "category": "portfolio",
+      "date": "",
+      "url": "",
+      "description": "Using Radio Frequency Identification to enable functional wearable devices"
     }
   ]
 }
