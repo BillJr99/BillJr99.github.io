@@ -160,6 +160,9 @@
       <li><a href="https://www.zhihu.com/people/{{ author.zhihu }}"><i class="fab fa-fw fa-zhihu icon-pad-right" aria-hidden="true"></i>Zhihu</a></li>
       {% endif %}     
 
+      {% if author.digsigyoutube %}
+        <li><a href="https://www.youtube.com/@{{ author.digsigyoutube }}"><i class="fab fa-fw fa-youtube icon-pad-right" aria-hidden="true"></i>Digital Signature YouTube</a></li>
+      {% endif %}
       {% if site.author.webofscience %}
       <li><a href="https://publons.com/researcher/{{ site.author.webofscience }}/"><i class="fas fa-link" aria-hidden="true"></i> Publons WebOfScience</a></li>
       {% endif %}
