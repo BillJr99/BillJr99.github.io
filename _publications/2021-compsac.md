@@ -1,6 +1,7 @@
 ---
 title: "An Adaptively Parameterized Algorithm Estimating Respiratory Rate from a Passive Wearable RFID Smart Garment"
 collection: publications
+category: conferences
 permalink: /publication/compsac2021
 excerpt: 'IEEE Conference on Computers, Software, and Applications (COMPSAC)'
 date: '2021-07-16'

@@ -1,6 +1,7 @@
 ---
 title: "Passive UHF RFID-based Real-Time Intravenous Fluid Level Sensor"
 collection: publications
+category: manuscripts
 permalink: /publication/sensors2023
 excerpt: 'IEEE Sensors Journal'
 date: '2023-12-03'

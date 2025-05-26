@@ -9,13 +9,13 @@
 # Basic Site Settings
 locale                   : "en-US"
 site_theme               : "default"
-title                    : "Your Name / Site Title"
+title                    : "William M. Mongan, Ph.D."
 title_separator          : "-"
-name                     : &name "Your Name"
-description              : &description "personal description"
-url                      : https://academicpages.github.io # the base hostname & protocol for your site e.g. "https://[your GitHub username].github.io" or if you already have some other page hosted on Github then use "https://[your GitHub username].github.io/[Your Repo Name]"
+name                     : &name "William M. Mongan"
+description              : &description "Homepage of Dr. Bill Mongan"
+url                      : https://www.billmongan.com # the base hostname & protocol for your site e.g. "https://[your GitHub username].github.io" or if you already have some other page hosted on Github then use "https://[your GitHub username].github.io/[Your Repo Name]"
 baseurl                  : "" # the subpath of your site, e.g. "/blog"
-repository               : "academicpages/academicpages.github.io"
+repository               : "BillJr99/BillJr99.github.io"
 
 # Site Author - The following control what appear as part of the author content on the side bar.
 #               If a field is blank the icon and link will not appear, otherwise it will be shown.
@@ -23,58 +23,71 @@ repository               : "academicpages/academicpages.github.io"
 author:
   # Biographic information
   avatar           : "profile.png"
-  name             : "Your Sidebar Name"
+  name             : "Bill Mongan"
   pronouns         : # example: "she/her"  
-  bio              : "Short biography for the left-hand sidebar"
-  location         : "Earth"
-  employer         : "Red Brick University"
+  bio              : "Professor, Author, Machine Learning Researcher, Educational Consultant, and Scholar of Teaching and Learning; Host: digitalsignature.fm"
+  location         : "Philadelphia, PA"
+  employer         : "Ursinus College"
   uri              : # URL
-  email            : "none@example.org" 
+  email            : "billmongan@gmail.com"
 
   # Academic websites
-  academia         : # URL
+  academia         : "https://ursinus.academia.edu/WilliamMongan" # URL
   arxiv            : # URL - Update with the correct link to your profile
-  googlescholar    : "https://scholar.google.com/citations?user=PS_CX0AAAAAJ"
+  googlescholar    : "https://scholar.google.com/citations?user=LJ1vhCcAAAAJ"
   impactstory      : # URL
-  orcid            : "http://orcid.org/yourorcidurl"
+  orcid            : "https://orcid.org/0000-0002-4122-5156"
   semantic         : # URL
-  pubmed           : "https://www.ncbi.nlm.nih.gov/pubmed/?term=john+snow"
-  researchgate     : # URL
+  pubmed           : "https://www.ncbi.nlm.nih.gov/pubmed/?term=william+mongan"
+  researchgate     : "https://www.researchgate.net/profile/William_Mongan2" # example: "https://www.researchgate.net/profile/yourprofile"
   scopus           : # URL
 
   # Repositories and software development
-  bitbucket        : # Username - Update with your username on the site
+  bitbucket        : "%7Bb9224bee-f1ad-48e8-b84a-5c0437f256cc%7D" # Username - Update with your username on the site
   codepen          : # Username
   dribbble         : # Username
-  github           : "academicpages"
-  kaggle           : # Username  
+  github           : "BillJr99"
+  kaggle           : "billmongan" # Username  
   stackoverflow    : # User number or user number and name (i.e., use "1" or "1/jeff-atwood")    
 
   # Social media
-  bluesky          : "bsky.app" # Replace this with you Bluesky username
-  facebook         : # Username
+  bluesky          : "billmongan.com" # Replace this with you Bluesky username
+  facebook         : "william.mongan.33646" # Username
   flickr           : # Username
   foursquare       : # Username
   goodreads        : # Username
   google_plus      : # Username
   keybase          : # Username
-  instagram        : # Username
+  instagram        : "BillJr99" # Username
   lastfm           : # Username
-  linkedin         : # Username
+  linkedin         : "billmongan" # Username
   mastodon         : # URL
   medium           : # URL
   pinterest        : # Username
   soundcloud       : # Username
-  steam            : # Username
+  steam            : "BillJr99" # Username
   telegram         : # URL
   tumblr           : # Username
-  twitter          : # Username for X / Twitter
+  twitter          : "BillJr99" # Username for X / Twitter
   vine             : # Username
   weibo            : # Username
   wikipedia        : # Username
   xing             : # Username
-  youtube          : # Username
+  youtube          : "UClCvaFMya1mJ6XGJVQIhZpw"
+  digsigyoutube    : "UCObsLp_psNjYK7Q39TBlM9g"
   zhihu            : # Username
+  
+  officephone      : "610-409-3268"
+  scopus           : "16234159500"
+  webofscience     : "F-7544-2018"
+  ieeeauthor       : "38093739800"
+  acmauthor        : "81375612574"
+  gitlab           : "BillJr99"
+  dblp             : "m/Mongan:William_M="
+  nih              : "william.mongan.1"
+  csauthors        : "william-m-mongan"
+  wikidata         : "Q55240888"
+  fcccallsign      : "W1CLK"  
 
 # Publication Category - The following the list of publication categories and their headings
 publication_category:
@@ -84,7 +97,9 @@ publication_category:
     title: 'Journal Articles'    
   conferences:
     title: 'Conference Papers'
-
+  theses:
+    title: 'Thesis Papers and Dissertations'
+    
 # Site Settings
 teaser                   :  # filename of teaser fallback teaser image placed in /images/, .e.g. "500x300.png"
 breadcrumbs              : false # true, false (default)
@@ -102,22 +117,34 @@ comments:
     appid                :
     num_posts            : # 5 (default)
     colorscheme          : # "light" (default), "dark"
+    
 staticman:
-  allowedFields          : ['name', 'email', 'url', 'message']
-  branch                 : "gh-pages" # "master", "gh-pages"
+  allowedFields          : ['name', 'email', 'message'] # 'url'
+  branch                 : "master" # "master", "gh-pages"
   commitMessage          : "New comment."
   filename               : comment-{@timestamp}
   format                 : "yml"
   moderation             : true
   path                   : "_data/comments/{options.slug}"
   requiredFields         : ['name', 'email', 'message']
-  transforms:
-    email                : "md5"
-  generatedFields:
-    date:
-      type               : "date"
-      options:
-        format           : "iso8601" # "iso8601" (default), "timestamp-seconds", "timestamp-milliseconds"
+  
+  akismet:
+    enabled: true
+    site: "billmongan.com"
+    apiKey: "7dc45587bd49"
+    author: "name"
+    authorEmail: "email"
+    authorUrl: "website"
+    content: "message"
+    
+  # Must comment out all sub-keys i.e. siteKey, secret if enabled is false
+  # https://www.google.com/recaptcha/admin
+  # secret is (!) ENCRYPTED; encrypt with https://api.staticman.net/v2/encrypt/YOUR_SECRET_HERE
+  reCaptcha:
+    enabled: true
+    siteKey: "6LcOnsIgAAAAAMxPQwAuvy1jdsyED7sfz5FbNwh7"
+    secret: "TgsA08dRW1qqjBZBm5wDJ+04RIsszZS7CZ2C4ZnacQvuBdH907wHq2N+2fnmNtL23zYie8+zfIhmVtrMZMh9PIt6j9XlQDkMaeYbWFiCKtsxkfMMYgP0hb4qrp0mXO8JLg9PsTwbKZqgR+LHdVAAF8HnpW2c8KJKj9lFhAyRDBw="   
+        
 atom_feed:
   hide                   : false     # change to true to hide the RSS feed in the footer
   path                   : # blank (default) uses feed.xml
@@ -226,7 +253,9 @@ collections:
   talks:
     output: true
     permalink: /:collection/:path/
-
+  software:
+    output: true
+    permalink: /:collection/:path/  
 
 # These settings control how pages and collections are included in the site
 defaults:
@@ -283,7 +312,15 @@ defaults:
       layout: talk
       author_profile: true
       share: true
-
+  # _software
+  - scope:
+      path: ""
+      type: software
+    values:
+      layout: single
+      author_profile: true
+      share: true
+      comment: true   
 
 # Sass/SCSS
 sass:

@@ -1,6 +1,7 @@
 ---
 title: "Predictive Analytics on Real-Time Biofeedback for Actionable Classification of Activity State"
 collection: publications
+category: theses
 permalink: /publication/dissertation
 excerpt: 'Ph.D. Dissertation'
 date: '2018-08-08'

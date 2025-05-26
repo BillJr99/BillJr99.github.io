@@ -1,49 +1,67 @@
 ---
 permalink: /
-title: "Academic Pages is a ready-to-fork GitHub Pages template for academic personal websites"
+title: "William M. Mongan, Ph.D."
+excerpt: "About Me"
 author_profile: true
 redirect_from: 
   - /about/
   - /about.html
 ---
 
-This is the front page of a website that is powered by the [Academic Pages template](https://github.com/academicpages/academicpages.github.io) and hosted on GitHub pages. [GitHub pages](https://pages.github.com) is a free service in which websites are built and hosted from code and data stored in a GitHub repository, automatically updating when a new commit is made to the repository. This template was forked from the [Minimal Mistakes Jekyll Theme](https://mmistakes.github.io/minimal-mistakes/) created by Michael Rose, and then extended to support the kinds of content that academics have: publications, talks, teaching, a portfolio, blog posts, and a dynamically-generated CV. You can fork [this template](https://github.com/academicpages/academicpages.github.io) right now, modify the configuration and markdown files, add your own PDFs and other content, and have your own site for free, with no ads!
+Bill holds the Ph.D. in Electrical and Computer Engineering from Drexel University since 2018, the M.Sc. in Science of Instruction at the Drexel School of Education since 2008, the M.Sc. in Computer Science since 2008, and the B.Sc. in Computer Science since 2005. His research interests include machine learning of passive RF wearable systems for biomedical classification, service-oriented architectures, and program comprehension through software engineering. As the founder and principal investigator of the Human-Machine Intelligent Systems (HMIS) Lab, Bill's research blends artificial intelligence and machine learning for human good. Bill is enthusiastically active in computer science education and engineering education outreach: he holds a teaching certification in Pennsylvania for Grades 7-12 Mathematics and Grades 7-12 Computer Science, has taught, volunteered, developed experiential curriculum connected to STEM research projects, and served as mentor and judge at hackathon events with students in grades 5 through 12. He has served on school board and county STEM, educational technology, and grant-writing committees, as well as in an educational consulting role with County Intermediate Units and State Departments of Education.  He is a member of the [Computer Science Teachers Association (CSTA)](https://csteachers.org), with collaborators at the [CSTA>>Philly](https://philly.csteachers.org/) chapter and board service (since 2022) as Vice President of the the [Longwood](https://longwoodpa.csteachers.org/) chapter, a co-lead of the Expanding Computing Educational Pathways (ECEP) Alliance for Pennsylvania, a member of the board of the Innovative Technology Action Group (ITAG) of Chester County, PA, and a member of the board of managers for the Jim Fisher Memorial Digital Network Association since 2024.
 
-A data-driven personal website
+Bill was appointed as Teaching Professor (2008-2019) and Associate Department Head for Undergraduate Affairs (2014-15 through 2019) of Computer Science in the College of Computing and Informatics at Drexel University, teaching the systems track and the new architecture track courses for the Department of Computer Science, including Operating Systems, Concurrent Programming, and Systems Architecture. Here, he blended his research and experiential education interests by fusing undergraduate as well as graduate education with classroom and extracurricular research initiatives. In these roles, he was a recipient of the 2014 College of Computing and Informatics Award for Teaching Excellence and the 2019 College of Computing and Informatics Award for Faculty Leadership. 
+
+Bill [joined the faculty](https://www.ursinus.edu/live/profiles/5313-william-mongan) of the [Math and Computer Science Department](https://www.ursinus.edu/academics/mathematics-and-computer-science/) at [Ursinus College](https://www.ursinus.edu) as an Assistant Professor (visiting) in Fall, 2020, was elevated to Associate Professor in Fall, 2022, and received tenure in Summer, 2025.  At Ursinus, he is the Founder and Principal Investigator of the [Human-Machine Intelligent Systems Lab](http://www.hmislab.org), and the host of the [Digital Signature Podcast](https://www.digitalsignature.fm).  He has served as a co-Director of the College's Teaching and Learning Institute (TLI) since 2025.
+
+He is a Senior Member of the Association for Computing Machinery (ACM) and of the Institute of Electrical and Electronics Engineers (IEEE).
+
+Aviation
 ======
-Like many other Jekyll-based GitHub Pages templates, Academic Pages makes you separate the website's content from its form. The content & metadata of your website are in structured markdown files, while various other files constitute the theme, specifying how to transform that content & metadata into HTML pages. You keep these various markdown (.md), YAML (.yml), HTML, and CSS files in a public GitHub repository. Each time you commit and push an update to the repository, the [GitHub pages](https://pages.github.com/) service creates static HTML pages based on these files, which are hosted on GitHub's servers free of charge.
+I am an instrument rated private pilot, having trained at Cross Keys Airport (17N) in Williamstown, NJ and at Flying W Airport (N14) in Medford, NJ. I have flown a Cessna 152 (N94294), some Cessna 172’s (N172MG, N64608, N739UG, N226CA, N54812, N805FW, N10DJ, N329SP, and N738YT), a Piper Arrow PA-28 (N2954R), a twin Piper Seneca PA-38 (N1380T), and a Cirrus SR20 (N391TD).  I am also a Part 107 drone operator.
 
-Many of the features of dynamic content management systems (like Wordpress) can be achieved in this fashion, using a fraction of the computational resources and with far less vulnerability to hacking and DDoSing. You can also modify the theme to your heart's content without touching the content of your site. If you get to a point where you've broken something in Jekyll/HTML/CSS beyond repair, your markdown files describing your talks, publications, etc. are safe. You can rollback the changes or even delete the repository and start over - just be sure to save the markdown files! Finally, you can also write scripts that process the structured data on the site, such as [this one](https://github.com/academicpages/academicpages.github.io/blob/master/talkmap.ipynb) that analyzes metadata in pages about talks to display [a map of every location you've given a talk](https://academicpages.github.io/talkmap.html).
-
-Getting started
+Amateur Radio
 ======
-1. Register a GitHub account if you don't have one and confirm your e-mail (required!)
-1. Fork [this template](https://github.com/academicpages/academicpages.github.io) by clicking the "Use this template" button in the top right. 
-1. Go to the repository's settings (rightmost item in the tabs that start with "Code", should be below "Unwatch"). Rename the repository "[your GitHub username].github.io", which will also be your website's URL.
-1. Set site-wide configuration and create content & metadata (see below -- also see [this set of diffs](http://archive.is/3TPas) showing what files were changed to set up [an example site](https://getorg-testacct.github.io) for a user with the username "getorg-testacct")
-1. Upload any files (like PDFs, .zip files, etc.) to the files/ directory. They will appear at https://[your GitHub username].github.io/files/example.pdf.  
-1. Check status by going to the repository settings, in the "GitHub pages" section
+I am an Amateur Extra radio operator, licensed since 2017, with callsign {{ site.author.fcccallsign }}.  I am active with the [Montgomery County, PA ARES/RACES group (MCAR)](https://aa3e.org/), and in particular with the [AREDN mesh networking group](https://www.arednmesh.org/).  We are working to build out a peer-to-peer, self-healing mesh network that runs the TCP/IP stack over-the-air for emergency communications purposes.  I serve on the board of managers of the [Jim Fisher (AJ3DI/SK) Memorial Digital Network Association (JFMDNA)](https://www.jfmdna.org/), which aims to engage digital natives in amateur radio and mesh networking through this authentic and tech-centric application.  I enjoy working on mesh projects, including deploying digital networks over DMR through the mesh, expanding telephone access to the mesh through PBX, and analog-to-digital cross modes using AllStarLink.  I include various howto guides and notes I've taken while learning about various projects via the blog posts on this site.
 
-Site-wide configuration
-------
-The main configuration file for the site is in the base directory in [_config.yml](https://github.com/academicpages/academicpages.github.io/blob/master/_config.yml), which defines the content in the sidebars and other site-wide features. You will need to replace the default variables with ones about yourself and your site's github repository. The configuration file for the top menu is in [_data/navigation.yml](https://github.com/academicpages/academicpages.github.io/blob/master/_data/navigation.yml). For example, if you don't have a portfolio or blog posts, you can remove those items from that navigation.yml file to remove them from the header. 
+You can find me on the airwaves through various ways:
 
-Create content & metadata
-------
-For site content, there is one markdown file for each type of content, which are stored in directories like _publications, _talks, _posts, _teaching, or _pages. For example, each talk is a markdown file in the [_talks directory](https://github.com/academicpages/academicpages.github.io/tree/master/_talks). At the top of each markdown file is structured data in YAML about the talk, which the theme will parse to do lots of cool stuff. The same structured data about a talk is used to generate the list of talks on the [Talks page](https://academicpages.github.io/talks), each [individual page](https://academicpages.github.io/talks/2012-03-01-talk-1) for specific talks, the talks section for the [CV page](https://academicpages.github.io/cv), and the [map of places you've given a talk](https://academicpages.github.io/talkmap.html) (if you run this [python file](https://github.com/academicpages/academicpages.github.io/blob/master/talkmap.py) or [Jupyter notebook](https://github.com/academicpages/academicpages.github.io/blob/master/talkmap.ipynb), which creates the HTML for the map based on the contents of the _talks directory).
+* EchoLink: W1CLK (929783)
+* AllStarLink: 62933
+* MCAR Mesh W3EX-PBX: Extension 215-3521
+* MCAR Mesh W1CLK-PBX: Extension 215-3700
+* AREDN Mesh Network: 2.4 GHz frequency band, channel -2/4, 10 MHz bandwidth, and 5.8 GHz band, channel 179/180, 10 MHz bandwidth
+* AMPR 44net
+* HamsOverIP: Extension 101249
+* Hamshack Hotline: Extension 5501194
+* Amateur Wire: Extension 1434
+* Email: my call sign@winlink.org, my call sign@arrl.net
+* Digital Modes including PSK31, Vara, JS8Call, FT4/FT8, and more
+* APRS and Digital Packet
+* And, of course analog voice on 70cm, 2M, 6M, 10M, 20M, 30M, 40M, 80M, and 160M, among others
 
-**Markdown generator**
+<center>
+<a href="https://rigreference.com/solar" target="_blank"><img src="https://rigreference.com/solar/img/wide" border="0"></a>
+<a href="http://www.hamqsl.com/solar.html" title="Click to add Solar-Terrestrial Data to your website!"><img src="https://www.hamqsl.com/solargraph.php"></a> 
+<br><br>
+<h3>WNG704 NOAA Weather Hibernia Park, PA Stream</h3>
+<iframe width="325px" height="245px" src="https://api.broadcastify.com/embed/player/?key=04430f44-e676-11ef-9e04-0e98d5b32039&html5=1&stats=1&feedId=44541">Your browser does not support iFrames.</iframe>
+</center>
 
-The repository includes [a set of Jupyter notebooks](https://github.com/academicpages/academicpages.github.io/tree/master/markdown_generator
-) that converts a CSV containing structured data about talks or presentations into individual markdown files that will be properly formatted for the Academic Pages template. The sample CSVs in that directory are the ones I used to create my own personal website at stuartgeiger.com. My usual workflow is that I keep a spreadsheet of my publications and talks, then run the code in these notebooks to generate the markdown files, then commit and push them to the GitHub repository.
+Contact Me
+======
+Download my [GnuPGP RSA Public Key](/files/gpg.pub)
 
-How to edit your site's GitHub repository
-------
-Many people use a git client to create files on their local computer and then push them to GitHub's servers. If you are not familiar with git, you can directly edit these configuration and markdown files directly in the github.com interface. Navigate to a file (like [this one](https://github.com/academicpages/academicpages.github.io/blob/master/_talks/2012-03-01-talk-1.md) and click the pencil icon in the top right of the content preview (to the right of the "Raw | Blame | History" buttons). You can delete a file by clicking the trashcan icon to the right of the pencil icon. You can also create new files or upload files by navigating to a directory and clicking the "Create new file" or "Upload files" buttons. 
+| Office Location: {{ site.author.office }} |
+Phone: {{site.author.officephone}} |
 
-Example: editing a markdown file for a talk
-![Editing a markdown file for a talk](/images/editing-talk.png)
-
-For more info
-------
-More info about configuring Academic Pages can be found in [the guide](https://academicpages.github.io/markdown/), the [growing wiki](https://github.com/academicpages/academicpages.github.io/wiki), and you can always [ask a question on GitHub](https://github.com/academicpages/academicpages.github.io/discussions). The [guides for the Minimal Mistakes theme](https://mmistakes.github.io/minimal-mistakes/docs/configuration/) (which this theme was forked from) might also be helpful.
+My Tentative Availability
+======
+Please use my [Calendly](https://calendly.com/billmongan) page to schedule a meeting with me below.  If you are a student in my class, please feel free to use my [Cal.com](https://cal.com/billmongan) page instead, as this reserves additional time during my office hours!
+<br>
+<!-- Calendly inline widget begin -->
+<div class="calendly-inline-widget" data-url="https://calendly.com/billmongan/30min" style="min-width:320px;height:790px;"></div>
+<script type="text/javascript" src="https://assets.calendly.com/assets/external/widget.js"></script>
+<!-- Calendly inline widget end -->
+<br>
+<iframe src="https://calendar.google.com/calendar/embed?height=600&amp;wkst=1&amp;bgcolor=%23ffffff&amp;ctz=America%2FNew_York&amp;src=billmongan%40gmail.com&amp;color=%234285F4&amp;showTitle=0&amp;showCalendars=0" style="border-width:0" width="800" height="600" frameborder="0" scrolling="no"></iframe>

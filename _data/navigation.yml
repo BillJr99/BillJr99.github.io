@@ -19,6 +19,9 @@ main:
     
   - title: "Portfolio"
     url: /portfolio/
+    
+  - title: "Software"
+    url: /software/    
         
   - title: "Blog Posts"
     url: /year-archive/
@@ -26,8 +29,8 @@ main:
   - title: "CV"
     url: /cv/
     
-  # - title: "CV"
-  #   url: /cv-json/
+#  - title: "Digital Signature Podcast"
+#    url: https://www.digitalsignature.fm
     
-  - title: "Guide"
-    url: /markdown/
+#  - title: "Guide"
+#    url: /markdown/

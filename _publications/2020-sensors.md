@@ -1,6 +1,7 @@
 ---
 title: "Passive RFID-based Diaper Moisture Sensor"
 collection: publications
+category: manuscripts
 permalink: /publication/sensors2020
 excerpt: 'IEEE Sensors Journal'
 date: '2020-10-31'

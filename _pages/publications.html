@@ -9,6 +9,11 @@ author_profile: true
   <div class="wordwrap">You can also find my articles on <a href="{{site.author.googlescholar}}">my Google Scholar profile</a>.</div>
 {% endif %}
 
+{% if site.author.dblp or site.author.csauthors %}
+BibTeX Records for most publications can be found on: {% if site.author.dblp %}
+[DBLP](https://dblp.uni-trier.de/pers/tb1/{{ site.author.dblp }}.bib) {% endif %}{% if site.author.csauthors %}[CSAuthors](https://www.csauthors.net/{{ site.author.csauthors }}/{{ site.author.csauthors }}.bib) {% endif %}
+{% endif %}
+
 {% include base_path %}
 
 <!-- New style rendering if publication categories are defined -->

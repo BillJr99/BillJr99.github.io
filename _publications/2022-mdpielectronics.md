@@ -1,6 +1,7 @@
 ---
 title: "Energy-Effcient Respiratory Anomaly Detection in Premature Newborn Infants"
 collection: publications
+category: manuscripts
 permalink: /publication/electronics2022
 excerpt: 'MDPI Electronics Journal - Neuromorphic Sensing and Computing Systems'
 date: '2022-02-17'

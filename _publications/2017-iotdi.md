@@ -1,6 +1,7 @@
 ---
 title: 'On the Use of Radio Frequency Identification for Continuous Biomedical Monitoring'
 collection: publications
+category: conferences
 permalink: /publication/iotdi2017
 excerpt: 'ACM/IEEE International Conference on Internet-of-Things Design and Implementation (IoTDI)'
 date: '2017-04-01'

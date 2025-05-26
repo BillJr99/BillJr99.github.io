@@ -1,6 +1,7 @@
 ---
 title: 'Towards a Reference Model for Intelligent Agent Systems'
 collection: publications
+category: conferences
 permalink: /publication/aamas2006
 excerpt: 'Proceedings of the International Conference of Autonomous Agents and Multiagent Systems (AAMAS)'
 date: '2006-05-08'

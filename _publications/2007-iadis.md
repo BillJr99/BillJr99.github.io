@@ -1,6 +1,7 @@
 ---
 title: 'Dynamic Analysis of Agent Frameworks in Support of a Multiagent Systems Reference Model'
 collection: publications
+category: conferences
 permalink: /publication/iadis2007
 excerpt: 'IADIS Proceedings of the International Conference Intelligent Systems and Agents (ISA)'
 date: '2007-07-03'

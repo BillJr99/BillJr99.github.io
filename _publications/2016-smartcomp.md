@@ -1,6 +1,7 @@
 ---
 title: 'A Multi-Disciplinary Framework for Continuous Biomedical Monitoring Using Low-Power Passive RFID-based Wireless Wearable Sensors'
 collection: publications
+category: conferences
 permalink: /publication/smartcomp2016
 excerpt: 'Proceedings of the IEEE Smart Systems Workshop'
 date: '2016-05-01'

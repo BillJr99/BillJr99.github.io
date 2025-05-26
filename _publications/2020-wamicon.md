@@ -1,6 +1,7 @@
 ---
 title: "Channel Emulation for the Characterization of Wearable RFID Antennas"
 collection: publications
+category: conferences
 permalink: /publication/wamicon2020
 excerpt: 'IEEE Wireless and Microwave Technology Conference (WAMICON)'
 date: '2021-04-21'
