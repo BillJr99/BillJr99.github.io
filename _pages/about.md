@@ -33,7 +33,6 @@ You can find me on the airwaves through various ways:
 * AREDN Mesh Network: 2.4 GHz frequency band, channel -2/4, 10 MHz bandwidth; 5.8 GHz band, channel 179/180, 10 MHz bandwidth; 900 MHz HaLow band, channel 5, 1 MHz bandwidth
 * AMPR 44net
 * HamsOverIP: Extension 101249
-* Hamshack Hotline: Extension 5501194
 * Amateur Wire: Extension 1434
 * NZSIP: Extension 62122
 * Email: my call sign@winlink.org, my call sign@arrl.net
