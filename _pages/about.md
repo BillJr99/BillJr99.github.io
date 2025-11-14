@@ -35,6 +35,7 @@ You can find me on the airwaves through various ways:
 * HamsOverIP: Extension 101249
 * Amateur Wire: Extension 1434
 * NZSIP: Extension 62122
+* Freestar Everywhere: Extension 10020
 * Email: my call sign@winlink.org, my call sign@arrl.net
 * Digital Modes including PSK31, Vara, JS8Call, FT4/FT8, and more
 * APRS and Digital Packet
