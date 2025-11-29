@@ -41,6 +41,8 @@ You can find me on the airwaves through various ways:
 * APRS and Digital Packet
 * And, of course analog voice on 70cm, 2M, 6M, 10M, 20M, 30M, 40M, 80M, and 160M, among others
 
+I am also registered on GMRS as callsign WSKN786.
+
 <center>
 <a href="https://rigreference.com/solar" target="_blank"><img src="https://rigreference.com/solar/img/wide" border="0"></a>
 <a href="http://www.hamqsl.com/solar.html" title="Click to add Solar-Terrestrial Data to your website!"><img src="https://www.hamqsl.com/solargraph.php"></a> 
