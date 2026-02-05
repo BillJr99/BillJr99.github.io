@@ -9,7 +9,7 @@ tags:
   - software
 ---
 
-[ClusterNav](/files/clusternav.jar) is a GXL abstract visualizer for software dependency graphs. This tool requires the [Grappa](http://www.research.att.com/~john/Grappa/) package from [GraphViz](http://www.graphviz.org/), as well as the standard [xalan](https://xml.apache.org/xalan-j/) XML library.
+[ClusterNav](/files/clusternav.jar) is a GXL abstract visualizer for software dependency graphs. This tool requires the [Grappa](https://web.archive.org/web/20151110121653/http://www2.research.att.com/~john/Grappa/) package from [GraphViz](http://www.graphviz.org/), as well as the standard [xalan](https://xml.apache.org/xalan-j/) XML library.
 
 This software package allows one to "drill into" clusters identified by Bunch.  Bunch uses hueristic search to automatically generate clusters of software relationships, which can then be expanded or contracted by ClusterNav to visualize the software design at varying levels of abstraction and detail.
 
