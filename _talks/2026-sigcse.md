@@ -18,7 +18,7 @@ With Christopher Tralie
 
 This work is licensed under a Creative Commons Attribution International 4.0 License.
 
-More information is available [https://sigcse2026.sigcse.org/details/sigcse-ts-2026-demos/4/The-Ursinus-WebIDE-A-Serverless-Browser-Based-Development-Environment-for-Student-Pr](here).  Access the presentation materials [https://dl.acm.org/doi/10.1145/3770761.3777114](here).
+More information is available [here](https://sigcse2026.sigcse.org/details/sigcse-ts-2026-demos/4/The-Ursinus-WebIDE-A-Serverless-Browser-Based-Development-Environment-for-Student-Pr).  Access the presentation materials [here](https://dl.acm.org/doi/10.1145/3770761.3777114).
 
 Visit the Ursinus-WebIDE at [https://www.billmongan.com/Ursinus-WebIDE](https://www.billmongan.com/Ursinus-WebIDE)!
 
