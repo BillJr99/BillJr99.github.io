@@ -1,6 +1,7 @@
 name: Scrape Talk Locations
 
 on:
+  workflow_dispatch:
   push:
     paths:
       - '_talks/**'

@@ -1,6 +1,7 @@
 name: Update CV JSON
 
 on:
+  workflow_dispatch:
   push:
     paths:
       - '_pages/cv.md'
