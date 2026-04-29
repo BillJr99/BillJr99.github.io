@@ -1,4 +1,4 @@
-name: Scrape Talk Locations
+name: Update CV JSON
 
 on:
   push:
