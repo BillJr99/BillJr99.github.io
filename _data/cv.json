@@ -37,6 +37,11 @@
         "network": "LinkedIn",
         "username": "billmongan",
         "url": "https://www.linkedin.com/in/billmongan"
+      },
+      {
+        "network": "Twitter",
+        "username": "BillJr99",
+        "url": "https://twitter.com/BillJr99"
       }
     ]
   },
@@ -302,6 +307,13 @@
       "releaseDate": "2023-12-03",
       "website": "https://ieeexplore.ieee.org/document/10364695",
       "summary": "IEEE Sensors Journal"
+    },
+    {
+      "name": "Instructional Judgment, Not Just Correctness: Evaluating AI-Generated Feedback on Student Mathematical Thinking",
+      "publisher": "Society for Information Technology and Teacher Education",
+      "releaseDate": "2026-03-25",
+      "website": "https://www.learntechlib.org/primary/p/2129322/",
+      "summary": "Society for Information Technology and Teacher Education"
     }
   ],
   "presentations": [
@@ -675,6 +687,13 @@
       "date": "2022-06-22",
       "location": "Harrisburg, PA",
       "description": ""
+    },
+    {
+      "name": "The Ursinus WebIDE: A Serverless Browser-Based Development Environment for Student Practice and Rapid Instructor Exercise Development",
+      "event": "ACM Special Interest Group in Computer Science Education (SIGCSE) Symposium 2026",
+      "date": "2025-11-10",
+      "location": "St. Louis, MO",
+      "description": ""
     }
   ],
   "teaching": [
@@ -829,6 +848,13 @@
       "course": "2024-2025 Courses Taught",
       "institution": "Ursinus College Department of Mathematics and Computer Science",
       "date": "2024-08-20",
+      "role": "Course",
+      "description": ""
+    },
+    {
+      "course": "2025-2026 Courses Taught",
+      "institution": "Ursinus College Department of Mathematics and Computer Science",
+      "date": "2025-08-23",
       "role": "Course",
       "description": ""
     }
