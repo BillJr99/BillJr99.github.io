@@ -4,6 +4,9 @@ on:
   push:
     paths:
       - '_pages/cv.md'
+      - '_publications/**'
+      - '_talks/**'
+      - 'files/CV.pdf'
 
 jobs:
   build:
