@@ -1,5 +1,5 @@
 ---
-title: 'A Knowledge Base That Travels: Obsidian, GitHub Sync, and Cross-Platform AI Context'
+title: 'A Personal AI Knowledge Base: Obsidian, GitHub Sync, and Cross-Platform AI Context'
 date: 2026-05-02
 permalink: /posts/2026/05/obsidian-ai-vault/
 tags:
