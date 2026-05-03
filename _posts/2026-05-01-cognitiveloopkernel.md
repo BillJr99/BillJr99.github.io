@@ -304,6 +304,10 @@ CLK considers the project "done" when `.clk/state/done.md` exists. By convention
 
 CLK is designed to be customized at every layer. Editing `.clk/prompts/` changes individual agent behavior without touching harness code. Editing `.clk/config/agents.json` rebinds specific agents to specific providers, for example routing the `engineer` agent to `claude` while keeping `researcher` on a local `ollama` model. Adding new YAML files to `.clk/config/workflows/` introduces new execution modes, accessible via `clk run --workflow NAME` or `/run workflow_name` in the TUI. Project-wide parameters including the supervise cycle cap, the recovery pass limit, the maximum dynamic role count, and the file-action batch limit are all configurable via `clk configure --set key=value`, which updates `clk.config.json` in place.
 
+## pi.dev Extension
+
+CLK exposes `/clk <idea>` and `/clk-abort` commands if run with `pi -e pi-extension/src/index.ts` which starts a similar dispatch loop as that described here for the standalone tool.
+
 ## Summary
 
 The Cognitive Loop Kernel addresses a practical gap in the current landscape of agentic development tools: the need for a local-first, inspectable, provider-agnostic harness that can assemble a project-specific multi-agent team, execute real file operations under safety constraints, iterate toward completion through structured loops, and maintain a complete, human-readable audit trail throughout. By treating the workflow definition, agent roster, blackboard contents, and git history as first-class project artifacts, CLK makes the behavior of the multi-agent system legible and modifiable without requiring changes to the harness itself. The source is available on [GitHub](https://github.com/BillJr99/CognitiveLoopKernel) under the MIT License.
