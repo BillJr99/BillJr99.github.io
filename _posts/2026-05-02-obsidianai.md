@@ -11,7 +11,7 @@ tags:
 ---
  
 For the past year I have been building a knowledge management system with a specific design constraint in mind: every AI system I work with, whether a cloud-hosted assistant, a local agentic coding tool, or an automated GitHub Action, should be able to read the same authoritative description of who I am, what I am working on, and how I want to interact. More importantly, those systems should be able to write back into the knowledge base and have their work appear seamlessly in Obsidian on my local machine the next time I open the app. The proliferation of capable AI tools in 2025-2026 made both sides of this problem, reading and writing, tractable in a way they had not been before. This post documents the architecture I settled on: an Obsidian vault hosted on GitHub, synchronized via the Gitless Sync plugin, structured around three canonical files that any AI system can read and act on, and organized into a curated wiki that agents can query, extend, and maintain across platforms.
- 
+
 ## Motivation: Context as a First-Class Artifact
  
 The practical problem is straightforward. Suppose you work with five or six AI tools on a regular basis: a web-based assistant with a custom instructions field, a local agentic coding CLI with a project context file, a GitHub-hosted agent that runs on repository events, and a few others. Each of these tools has its own mechanism for persistent context, and none of them are the same. You end up with five slightly different versions of your professional profile, your project list, and your working preferences, stored in five incompatible formats in five different places. When something changes, such as a new role, a new project, or a preference update, you update one and forget the others.
