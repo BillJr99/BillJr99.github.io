@@ -272,5 +272,7 @@ content apply here. The redaction system is a partial mitigation, but the approp
  the deployment context.
 
 The setup cost is low for Windows users who want full functionality. Python, Tesseract for OCR, an Anthropic API key
-for VLM descriptions if desired, and the package from the repository (https://github.com/BillJr99/OSScreenObserver).
+for VLM descriptions if desired, and the package from the repository ([https://github.com/BillJr99/OSScreenObserver](https://github.com/BillJr99/OSScreenObserver)).
 The mock mode means you can explore the API and the web inspector without any platform-specific setup at all.
+
+What OSScreenObserver ultimately provides is a bridge between the textual nature of large language models and the inherently visual, event-driven world of desktop applications. Rather than forcing agents to reason about pixel coordinates or raw images, the accessibility tree, OCR output, and ASCII spatial sketches give them structured, token-efficient representations of the desktop that align naturally with how LLMs process information. An agent that can read the UI as text, act on it through typed tool calls, and receive structured feedback about what changed is operating in a modality much closer to its native one — and that alignment is what makes reliable agentic desktop interaction tractable rather than brittle.
