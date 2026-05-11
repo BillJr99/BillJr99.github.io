@@ -10,7 +10,7 @@ tags:
  - python
 ---
 
-I have been building a tool that solves a specific problem: most AI agents, whether a
+Most AI agents, whether a
 large language model assistant running locally or a cloud-hosted agentic framework, have no reliable way to see or
 interact with the desktop applications running on the machine they are supposed to be helping with. They can read
 files, call APIs, and run shell commands, but they cannot observe that a dialog box appeared, that a form field is
@@ -54,6 +54,7 @@ The architecture follows a principle that turns out to matter a great deal in pr
 simultaneously on both the REST API and the MCP server, backed by shared logic. There is no divergence between what
 you can do from a browser and what an agent can do over MCP.
 
+```
 ┌─────────────────────────────────────────────────────────────────────────┐
 │  main.py                                                                │
 │  ┌──────────────────────┐      ┌───────────────────────────────────┐    │
@@ -72,6 +73,7 @@ you can do from a browser and what an agent can do over MCP.
 │                                  ├──── ocr (Tesseract)                  │
 │                                  └──── vlm (Claude Vision)              │
 └─────────────────────────────────────────────────────────────────────────┘
+```
 
 The `ScreenObserver` facade sits below both interfaces and provides three types of observation: the accessibility
 element tree (structured JSON that describes every visible UI element, its role, name, value, bounds, and parent-child
@@ -131,33 +133,20 @@ desktop:
 
 The tool surface covers observation and interaction:
 
-┌────────────────────────┬──────────────────────────────────────────────────────────┐
-│          Tool          │                       Description                        │
-├────────────────────────┼──────────────────────────────────────────────────────────┤
-│ list_windows           │ Enumerate all visible top-level windows                  │
-├────────────────────────┼──────────────────────────────────────────────────────────┤
-│ get_window_structure   │ Full accessibility element tree as JSON                  │
-├────────────────────────┼──────────────────────────────────────────────────────────┤
-│ get_screen_description │ Prose description (accessibility / ocr / vlm / combined) │
-├────────────────────────┼──────────────────────────────────────────────────────────┤
-│ get_screen_sketch      │ ASCII spatial layout diagram                             │
-├────────────────────────┼──────────────────────────────────────────────────────────┤
-│ get_screenshot         │ Screenshot as base64 PNG                                 │
-├────────────────────────┼──────────────────────────────────────────────────────────┤
-│ get_full_screenshot    │ Screenshot + ASCII sketch in one call                    │
-├────────────────────────┼──────────────────────────────────────────────────────────┤
-│ get_visible_areas      │ Visible non-occluded bounding boxes for a window         │
-├────────────────────────┼──────────────────────────────────────────────────────────┤
-│ bring_to_foreground    │ Raise a window above others                              │
-├────────────────────────┼──────────────────────────────────────────────────────────┤
-│ click_at               │ Click at pixel coordinates                               │
-├────────────────────────┼──────────────────────────────────────────────────────────┤
-│ type_text              │ Type text into the focused element                       │
-├────────────────────────┼──────────────────────────────────────────────────────────┤
-│ press_key              │ Press a key combination                                  │
-├────────────────────────┼──────────────────────────────────────────────────────────┤
-│ scroll                 │ Scroll the mouse wheel at an optional screen position    │
-└────────────────────────┴──────────────────────────────────────────────────────────┘
+| Tool | Description |
+|---|---|
+| `list_windows` | Enumerate all visible top-level windows |
+| `get_window_structure` | Full accessibility element tree as JSON |
+| `get_screen_description` | Prose description (accessibility / ocr / vlm / combined) |
+| `get_screen_sketch` | ASCII spatial layout diagram |
+| `get_screenshot` | Screenshot as base64 PNG |
+| `get_full_screenshot` | Screenshot + ASCII sketch in one call |
+| `get_visible_areas` | Visible non-occluded bounding boxes for a window |
+| `bring_to_foreground` | Raise a window above others |
+| `click_at` | Click at pixel coordinates |
+| `type_text` | Type text into the focused element |
+| `press_key` | Press a key combination |
+| `scroll` | Scroll the mouse wheel at an optional screen position |
 
 The get_full_screenshot tool is particularly useful for agentic workflows because it combines a screenshot with an
 ASCII sketch in a single call, giving the agent both a pixel-level image and a token-efficient structural
