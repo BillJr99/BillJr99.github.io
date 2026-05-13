@@ -9,7 +9,7 @@ tags:
   - software
 ---
 
-The Ursinus WebIDE is a browser-based integrated development environment developed with [Christopher Tralie](https://www.ursinus.edu/live/profiles/4502-christopher-tralie) to provide low-stakes, frequently-assigned coding practice for students across the entire CS curriculum.  All code execution runs client-side inside the student's browser, so the system requires no server infrastructure beyond static web hosting — making it free to operate and freely accessible to anyone on the internet.  No software installation is required beyond an off-the-shelf web browser, supporting equity across operating systems and lower-end devices such as Chromebooks.
+The Ursinus WebIDE is a browser-based integrated development environment developed with [Christopher Tralie](https://www.ctralie.com/) to provide low-stakes, frequently-assigned coding practice for students across the entire CS curriculum.  All code execution runs client-side inside the student's browser, so the system requires no server infrastructure beyond static web hosting — making it free to operate and freely accessible to anyone on the internet.  No software installation is required beyond an off-the-shelf web browser, supporting equity across operating systems and lower-end devices such as Chromebooks.
 
 A demonstration of the system was presented at SIGCSE TS 2026 (55th ACM Technical Symposium on Computer Science Education) in St. Louis, MO.  The full demo page is available here:
 
