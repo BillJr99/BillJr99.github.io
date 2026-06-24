@@ -1,0 +1,542 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Code Archive Viewer</title>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.min.js"></script>
+  <link  rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/atom-one-dark.min.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/languages/java.min.js"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+  <style>
+    /* ── Design tokens ──────────────────────────────────────────── */
+    :root {
+      --bg:           #0d1117;
+      --surface:      #161b22;
+      --surface2:     #21262d;
+      --border:       #30363d;
+      --border-hi:    #58a6ff;
+      --text:         #e6edf3;
+      --text-muted:   #8b949e;
+      --accent:       #58a6ff;
+      --accent2:      #3fb950;
+      --accent3:      #f78166;
+      --radius:       6px;
+      --font-ui:      'DM Sans', sans-serif;
+      --font-mono:    'JetBrains Mono', monospace;
+      --gutter-w:     3rem;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: var(--font-ui);
+      font-size: 14px;
+      line-height: 1.6;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 2rem 1rem;
+    }
+
+    /* ── Page header ────────────────────────────────────────────── */
+    .page-header {
+      width: 100%;
+      max-width: 960px;
+      margin-bottom: 0.6rem;
+      display: flex;
+      align-items: baseline;
+      gap: 0.75rem;
+      flex-wrap: wrap;
+    }
+    .course-tag {
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--accent);
+      background: rgba(88,166,255,0.1);
+      border: 1px solid rgba(88,166,255,0.25);
+      border-radius: 3px;
+      padding: 2px 7px;
+      flex-shrink: 0;
+    }
+    .page-header h1 {
+      font-size: 1rem;
+      font-weight: 500;
+      color: var(--text-muted);
+    }
+    .page-header h1 strong { color: var(--text); font-weight: 600; }
+
+    /* ── Viewer shell ────────────────────────────────────────────── */
+    .viewer {
+      width: 100%;
+      max-width: 960px;
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+    }
+
+    /* ── Toolbar ────────────────────────────────────────────────── */
+    .toolbar {
+      background: var(--surface2);
+      border-bottom: 1px solid var(--border);
+      padding: 0 0.75rem;
+      height: 38px;
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+    }
+    .dot { width: 10px; height: 10px; border-radius: 50%; flex-shrink: 0; }
+    .dot-red   { background: #ff5f57; }
+    .dot-amber { background: #febc2e; }
+    .dot-green { background: #28c840; }
+
+    .origin {
+      font-family: var(--font-mono);
+      font-size: 11px;
+      color: var(--text-muted);
+      flex: 1;
+      overflow: hidden;
+      white-space: nowrap;
+      text-overflow: ellipsis;
+    }
+    .origin span { color: var(--text); }
+
+    .dl-btn {
+      display: flex;
+      align-items: center;
+      gap: 5px;
+      font-family: var(--font-ui);
+      font-size: 12px;
+      font-weight: 500;
+      color: var(--text);
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 3px 10px;
+      cursor: pointer;
+      text-decoration: none;
+      transition: border-color .15s, background .15s;
+      flex-shrink: 0;
+    }
+    .dl-btn:hover { border-color: var(--border-hi); background: var(--surface2); }
+
+    /* ── Tab row ────────────────────────────────────────────────── */
+    .tab-row {
+      display: flex;
+      overflow-x: auto;
+      background: var(--bg);
+      border-bottom: 1px solid var(--border);
+      scrollbar-width: none;
+    }
+    .tab-row::-webkit-scrollbar { display: none; }
+
+    .tab {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      padding: 0 14px;
+      height: 36px;
+      font-family: var(--font-mono);
+      font-size: 12px;
+      color: var(--text-muted);
+      background: var(--bg);
+      border-right: 1px solid var(--border);
+      cursor: pointer;
+      white-space: nowrap;
+      flex-shrink: 0;
+      transition: color .15s, background .15s;
+    }
+    .tab:hover { color: var(--text); background: var(--surface); }
+    .tab.active {
+      color: var(--text);
+      background: var(--surface);
+      border-bottom: 2px solid var(--accent);
+    }
+
+    /* ── Code panels ────────────────────────────────────────────── */
+    .panels { background: var(--surface); }
+    .panel  { display: none; }
+    .panel.active { display: block; }
+
+    /*
+     * Line-number gutter via CSS counters.
+     *
+     * Each source line is wrapped in <span class="line">…</span>.
+     * We use display:block so each span occupies its own line, then
+     * set font-size/line-height here and nowhere else so there is
+     * exactly one line of vertical rhythm per span — no extra gaps.
+     *
+     * The ::before pseudo-element draws the gutter number and the
+     * separator bar without adding any vertical space.
+     */
+    .panel pre {
+      margin: 0;
+      overflow-x: auto;
+      counter-reset: line;
+    }
+
+    /* Strip hljs defaults that fight our layout */
+    .panel pre code.hljs {
+      background: var(--surface) !important;
+      font-family: var(--font-mono) !important;
+      font-size: 13px !important;
+      line-height: 1.55 !important;   /* single-spaced rhythm */
+      padding: 1rem 0 !important;     /* top/bottom breathing room; sides via .line */
+      display: block;
+      tab-size: 4;
+    }
+
+    .panel pre code .line {
+      display: block;
+      position: relative;
+      padding-left: calc(var(--gutter-w) + 1.25rem);
+      padding-right: 1.25rem;
+      min-height: 1.55em;             /* matches line-height above */
+      /* No additional margin/padding that would create double-spacing */
+    }
+
+    .panel pre code .line::before {
+      counter-increment: line;
+      content: counter(line);
+      position: absolute;
+      left: 0;
+      width: var(--gutter-w);
+      top: 0;
+      bottom: 0;
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+      padding-right: 0.6rem;
+      color: var(--text-muted);
+      opacity: 0.4;
+      font-size: 11px;
+      user-select: none;
+      border-right: 1px solid var(--border);
+    }
+
+    /* ── Loading / error states ─────────────────────────────────── */
+    .status {
+      padding: 3rem 1.5rem;
+      text-align: center;
+      color: var(--text-muted);
+      font-size: 13px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 0.75rem;
+    }
+    .status.error { color: var(--accent3); }
+
+    .spinner {
+      width: 28px; height: 28px;
+      border: 2px solid var(--border);
+      border-top-color: var(--accent);
+      border-radius: 50%;
+      animation: spin .7s linear infinite;
+    }
+    @keyframes spin { to { transform: rotate(360deg); } }
+
+    /* ── Footer bar ─────────────────────────────────────────────── */
+    .viewer-footer {
+      background: var(--surface2);
+      border-top: 1px solid var(--border);
+      padding: 0.35rem 0.85rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      font-size: 11px;
+      color: var(--text-muted);
+    }
+    .badge       { display: flex; align-items: center; gap: 5px; }
+    .badge-dot   { width: 6px; height: 6px; border-radius: 50%; background: var(--accent2); }
+
+    /* ── Usage hint (shown when no zip param given) ──────────────── */
+    .hint {
+      width: 100%;
+      max-width: 960px;
+      margin-top: 2rem;
+      padding: 1.5rem;
+      border: 1px dashed var(--border);
+      border-radius: var(--radius);
+      font-size: 13px;
+      color: var(--text-muted);
+      line-height: 1.8;
+    }
+    .hint h2 { font-size: 14px; font-weight: 600; color: var(--text); margin-bottom: 0.5rem; }
+    .hint code {
+      font-family: var(--font-mono);
+      font-size: 12px;
+      background: var(--surface2);
+      border: 1px solid var(--border);
+      border-radius: 3px;
+      padding: 1px 6px;
+      color: var(--accent);
+    }
+    .hint .example-url {
+      display: block;
+      margin-top: 0.75rem;
+      font-family: var(--font-mono);
+      font-size: 11.5px;
+      word-break: break-all;
+      color: var(--text);
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 0.6rem 0.85rem;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="page-header">
+    <span class="course-tag" id="course-tag">Code Archive Viewer</span>
+    <h1 id="page-title"><strong>Archive Viewer</strong></h1>
+  </div>
+
+  <div class="viewer" id="viewer">
+    <div class="toolbar">
+      <span class="dot dot-red"></span>
+      <span class="dot dot-amber"></span>
+      <span class="dot dot-green"></span>
+      <span class="origin" id="origin-label">—</span>
+      <a class="dl-btn" id="dl-btn" href="#" download style="display:none">
+        <svg width="12" height="12" viewBox="0 0 16 16" fill="currentColor">
+          <path d="M2.75 14a.75.75 0 0 1 0-1.5h10.5a.75.75 0 0 1 0 1.5H2.75ZM8 1.25a.75.75 0 0 1 .75.75v7.19l2.72-2.72a.75.75 0 1 1 1.06 1.06l-4 4a.75.75 0 0 1-1.06 0l-4-4A.75.75 0 0 1 4.53 6.47L7.25 9.19V2a.75.75 0 0 1 .75-.75Z"/>
+        </svg>
+        Download .zip
+      </a>
+    </div>
+
+    <div class="tab-row"  id="tab-row"></div>
+    <div class="panels"   id="panels">
+      <div class="status" id="status">
+        <div class="spinner"></div>
+        Waiting…
+      </div>
+    </div>
+
+    <div class="viewer-footer">
+      <span class="badge"><span class="badge-dot"></span>Read-only preview</span>
+      <span id="footer-info">—</span>
+    </div>
+  </div>
+
+  <!-- Shown only when no ?zip= param is present -->
+  <div class="hint" id="hint" style="display:none">
+    <h2>Usage</h2>
+    Pass the URL of any zip archive as the <code>zip</code> query parameter,
+    and optionally a display title via <code>title</code>:
+    <span class="example-url">viewer.html?zip=https://raw.githubusercontent.com/BillJr99/Ursinus-CS173/gh-pages/files/replit/JavaInheritanceExample.zip&amp;title=Java+Inheritance+Example</span>
+    <span class="example-url">viewer.html?zip=https://raw.githubusercontent.com/BillJr99/Ursinus-CS173/gh-pages/files/replit/JavaBinarySearchExample.zip</span>
+    The <code>zip</code> parameter accepts any publicly accessible URL.
+    Source files (<code>.java</code>, <code>.py</code>, <code>.js</code>,
+    <code>.html</code>, <code>.xml</code>, <code>.txt</code>, <code>.md</code>)
+    are extracted and rendered with syntax highlighting; binary files such as
+    <code>.class</code> are silently omitted.
+  </div>
+
+<script>
+(function () {
+  "use strict";
+
+  /* ── Query-param helpers ──────────────────────────────────────── */
+  const params   = new URLSearchParams(window.location.search);
+  const zipUrl   = params.get("zip")   || "";
+  const zipTitle = params.get("title") || "";
+
+  const statusEl   = document.getElementById("status");
+  const tabRowEl   = document.getElementById("tab-row");
+  const panelsEl   = document.getElementById("panels");
+  const footerEl   = document.getElementById("footer-info");
+  const originEl   = document.getElementById("origin-label");
+  const dlBtn      = document.getElementById("dl-btn");
+  const hintEl     = document.getElementById("hint");
+  const titleEl    = document.getElementById("page-title");
+
+  /* ── No param: show usage hint ───────────────────────────────── */
+  if (!zipUrl) {
+    statusEl.innerHTML = "No <code style='font-family:var(--font-mono);font-size:12px'>?zip=</code> parameter supplied.";
+    footerEl.textContent = "—";
+    hintEl.style.display = "block";
+    return;
+  }
+
+  /* ── Derive display title from URL if not supplied ───────────── */
+  function titleFromUrl(url) {
+    const seg = url.split("/").pop().replace(/\.zip$/i, "");
+    // Insert spaces before capital letters in CamelCase identifiers
+    return seg.replace(/([a-z])([A-Z])/g, "$1 $2");
+  }
+
+  const displayTitle = zipTitle || titleFromUrl(zipUrl);
+  document.title = `Code Viewer — ${displayTitle}`;
+  titleEl.innerHTML = `<strong>${displayTitle}</strong>`;
+
+  /* Annotate origin label */
+  originEl.textContent = zipUrl;
+
+  /* Wire download button */
+  dlBtn.href = zipUrl;
+  dlBtn.style.display = "flex";
+  // Use filename for download attribute
+  dlBtn.download = zipUrl.split("/").pop();
+
+  /* ── File-type helpers ───────────────────────────────────────── */
+  const SOURCE_EXTS = new Set([
+    ".java", ".py", ".js", ".ts", ".html", ".htm",
+    ".css", ".xml", ".json", ".txt", ".md", ".c",
+    ".cpp", ".h", ".cs", ".rb", ".go", ".rs", ".sh"
+  ]);
+
+  function extOf(name) {
+    const i = name.lastIndexOf(".");
+    return i >= 0 ? name.slice(i).toLowerCase() : "";
+  }
+
+  function iconFor(name) {
+    const e = extOf(name);
+    if (e === ".java")              return "☕";
+    if ([".py"].includes(e))        return "🐍";
+    if ([".js",".ts"].includes(e))  return "⬡";
+    if ([".html",".htm"].includes(e)) return "🌐";
+    if (e === ".css")               return "🎨";
+    if ([".md"].includes(e))        return "📝";
+    if (e === ".xml")               return "📋";
+    return "📄";
+  }
+
+  function langFor(name) {
+    const map = {
+      ".java":"java", ".py":"python", ".js":"javascript",
+      ".ts":"typescript", ".html":"html", ".htm":"html",
+      ".css":"css", ".xml":"xml", ".json":"json",
+      ".md":"markdown", ".c":"c", ".cpp":"cpp",
+      ".h":"cpp", ".cs":"csharp", ".rb":"ruby",
+      ".go":"go", ".rs":"rust", ".sh":"bash"
+    };
+    return map[extOf(name)] || "plaintext";
+  }
+
+  /* ── Tab / panel management ──────────────────────────────────── */
+  function activateTab(id) {
+    document.querySelectorAll(".tab")
+      .forEach(t => t.classList.toggle("active", t.dataset.id === id));
+    document.querySelectorAll(".panel")
+      .forEach(p => p.classList.toggle("active", p.dataset.id === id));
+  }
+
+  /*
+   * Wrap each source line in <span class="line">…</span>.
+   *
+   * We split on \n and rejoin WITHOUT any separator — the
+   * display:block on .line handles newlines visually.
+   * This eliminates the extra blank line that appeared when the
+   * browser rendered the literal \n between adjacent block spans.
+   */
+  function wrapLines(highlighted) {
+    const lines = highlighted.split("\n");
+    // Trim a single trailing blank line that split() creates when
+    // the source ends with \n (which virtually all source files do).
+    if (lines.length && lines[lines.length - 1] === "") lines.pop();
+    return lines
+      .map(l => `<span class="line">${l}</span>`)
+      .join("");          // ← no separator; block display does the work
+  }
+
+  /* ── Main fetch & render ─────────────────────────────────────── */
+  (async () => {
+    try {
+      statusEl.innerHTML = '<div class="spinner"></div>Fetching archive…';
+
+      const resp = await fetch(zipUrl);
+      if (!resp.ok) throw new Error(`HTTP ${resp.status} — ${resp.statusText}`);
+
+      const buf = await resp.arrayBuffer();
+
+      statusEl.innerHTML = '<div class="spinner"></div>Extracting files…';
+
+      const zip = await JSZip.loadAsync(buf);
+
+      const entries = Object.entries(zip.files)
+        .filter(([name, f]) => !f.dir && SOURCE_EXTS.has(extOf(name)))
+        .sort(([a], [b]) => {
+          // Heuristic: bring likely entry-points to the front
+          const priority = n => {
+            const s = n.toLowerCase();
+            if (s.includes("main")) return 0;
+            if (s.includes("index")) return 1;
+            return 2;
+          };
+          const pa = priority(a), pb = priority(b);
+          if (pa !== pb) return pa - pb;
+          return a.localeCompare(b);
+        });
+
+      if (!entries.length) {
+        statusEl.className = "status error";
+        statusEl.innerHTML = "⚠ No renderable source files found in this archive.";
+        footerEl.textContent = "0 files";
+        return;
+      }
+
+      statusEl.remove();
+
+      let firstId = null;
+
+      for (const [fullName, fileObj] of entries) {
+        const shortName = fullName.split("/").pop();
+        const id        = fullName.replace(/[^a-z0-9]/gi, "_");
+        if (!firstId) firstId = id;
+
+        const content     = await fileObj.async("string");
+        const lang        = langFor(shortName);
+        const highlighted = hljs.highlight(content, { language: lang }).value;
+
+        /* Tab */
+        const tab = document.createElement("div");
+        tab.className  = "tab";
+        tab.dataset.id = id;
+        tab.innerHTML  = `${iconFor(shortName)}&thinsp;${shortName}`;
+        tab.addEventListener("click", () => activateTab(id));
+        tabRowEl.appendChild(tab);
+
+        /* Panel */
+        const panel = document.createElement("div");
+        panel.className  = "panel";
+        panel.dataset.id = id;
+        panel.innerHTML  =
+          `<pre><code class="hljs language-${lang}">${wrapLines(highlighted)}</code></pre>`;
+        panelsEl.appendChild(panel);
+      }
+
+      activateTab(firstId);
+
+      const kb = (buf.byteLength / 1024).toFixed(1);
+      footerEl.textContent =
+        `${entries.length} file${entries.length !== 1 ? "s" : ""} · ${kb} KB`;
+
+    } catch (err) {
+      statusEl.className = "status error";
+      statusEl.innerHTML =
+        `⚠ Could not load archive.<br>` +
+        `<small style="font-family:var(--font-mono);opacity:.75">${err.message}</small>`;
+      footerEl.textContent = "Error";
+      console.error("[archive-viewer]", err);
+    }
+  })();
+
+}());
+</script>
+</body>
+</html>

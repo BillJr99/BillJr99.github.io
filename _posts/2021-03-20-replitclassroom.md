@@ -23,7 +23,15 @@ This adds the jar to your classpath along with the current project directory, so
 
 Here is an example project \[[^2]\] that computes a value and its modular inverse from prime number inputs:
 
-<iframe height="600px" width="100%" src="https://repl.it/@BillJr99/MiniCrypto?lite=true" scrolling="no" frameborder="no" allowtransparency="true" allowfullscreen="true" sandbox="allow-forms allow-pointer-lock allow-popups allow-same-origin allow-scripts allow-modals"></iframe> 
+<iframe
+  height="600px"
+  width="100%"
+  src="https://www.billmongan.com/assets/code-viewer.html?zip=https%3A%2F%2Fraw.githubusercontent.com%2FBillJr99%2FBillJr99.github.io%2Fmaster%2Ffiles%2Freplit%2FMiniCrypto.zip&title=Mini%20Crypto"
+  scrolling="yes"
+  frameborder="no"
+  allowfullscreen="true"
+  sandbox="allow-scripts allow-same-origin">
+</iframe>
 
 ### Database Access
 
@@ -35,7 +43,15 @@ While we're at it, Replit provides a key/value data store to each project that w
 
 I have encapsulated these web calls \[[^3]\] into a class called `ReplDb` that are provided in the following example project:
 
-<iframe height="600px" width="100%" src="https://repl.it/@BillJr99/MiniCryptoDb?lite=true" scrolling="no" frameborder="no" allowtransparency="true" allowfullscreen="true" sandbox="allow-forms allow-pointer-lock allow-popups allow-same-origin allow-scripts allow-modals"></iframe> 
+<iframe
+  height="600px"
+  width="100%"
+  src="https://www.billmongan.com/assets/code-viewer.html?zip=https%3A%2F%2Fraw.githubusercontent.com%2FBillJr99%2FBillJr99.github.io%2Fmaster%2Ffiles%2Freplit%2FMiniCryptoDb.zip&title=Mini%20Crypto%20Db"
+  scrolling="yes"
+  frameborder="no"
+  allowfullscreen="true"
+  sandbox="allow-scripts allow-same-origin">
+</iframe>
 
 ## Version Control
 
@@ -65,13 +81,29 @@ Replit supports graphical displays through the browser!  You can download Robert
 
 Here is an example project demonstrating this \[[^5]\].
 
-<iframe height="600px" width="100%" src="https://repl.it/@BillJr99/StdDrawPrincetonExample?lite=true" scrolling="no" frameborder="no" allowtransparency="true" allowfullscreen="true" sandbox="allow-forms allow-pointer-lock allow-popups allow-same-origin allow-scripts allow-modals"></iframe> 
+<iframe
+  height="600px"
+  width="100%"
+  src="https://www.billmongan.com/assets/code-viewer.html?zip=https%3A%2F%2Fraw.githubusercontent.com%2FBillJr99%2FBillJr99.github.io%2Fmaster%2Ffiles%2Freplit%2FStdDrawPrincetonExample.zip&title=Std%20Draw%20Princeton%20Example"
+  scrolling="yes"
+  frameborder="no"
+  allowfullscreen="true"
+  sandbox="allow-scripts allow-same-origin">
+</iframe>
 
 ### Animations
 
 You can use animations with this library as well!  It's a little slow through the browser, but you can clear the screen and draw lines iteratively to create fun animations.  Here's an example:
 
-<iframe height="600px" width="100%" src="https://repl.it/@BillJr99/GraphDemo?lite=true" scrolling="no" frameborder="no" allowtransparency="true" allowfullscreen="true" sandbox="allow-forms allow-pointer-lock allow-popups allow-same-origin allow-scripts allow-modals"></iframe> 
+<iframe
+  height="600px"
+  width="100%"
+  src="https://www.billmongan.com/assets/code-viewer.html?zip=https%3A%2F%2Fraw.githubusercontent.com%2FBillJr99%2FBillJr99.github.io%2Fmaster%2Ffiles%2Freplit%2FGraphDemo.zip&title=Graph%20Demo"
+  scrolling="yes"
+  frameborder="no"
+  allowfullscreen="true"
+  sandbox="allow-scripts allow-same-origin">
+</iframe>
 
 ## Unit Testing
 
@@ -106,7 +138,15 @@ Finally, click Run Tests under the checkmark menu for a report.  I have not foun
 
 Here is a quick example project demonstrating how to create and run a unit test:
 
-<iframe height="600px" width="100%" src="https://repl.it/@BillJr99/JUnitExample?lite=true" scrolling="no" frameborder="no" allowtransparency="true" allowfullscreen="true" sandbox="allow-forms allow-pointer-lock allow-popups allow-same-origin allow-scripts allow-modals"></iframe> 
+<iframe
+  height="600px"
+  width="100%"
+  src="https://www.billmongan.com/assets/code-viewer.html?zip=https%3A%2F%2Fraw.githubusercontent.com%2FBillJr99%2FBillJr99.github.io%2Fmaster%2Ffiles%2Freplit%2FJUnitExample.zip&title=JUnit%20Example"
+  scrolling="yes"
+  frameborder="no"
+  allowfullscreen="true"
+  sandbox="allow-scripts allow-same-origin">
+</iframe>
 
 If you are using a custom `.replit` file with external libraries, you can add this jar to your `CLASSPATH` in your `.replit` project: `/run_dir/junit-4.12.jar`.
 
@@ -123,13 +163,21 @@ Another often overlooked feature is project sharing functionality.  Click the "S
 ![]({{ site.baseurl }}/files/media/2021-03-20-replitclassroom/share.png)
 
 ## Embedding Replit into POGIL Style Activities
-In my classes, I use a [POGIL](https://cspogil.org/Home) style method to facilitate class discussion.  Instead of lecture notes, each class features some guiding questions, as well as some examples or materials to spark some curiosity and discussion.  As you have seen in this article, I also embed Replit project examples that students can view, fork, modify, and share with me from within the activity page.  You can do this by embedding an `iframe` in your web pages with a `src` tag indicating your Replit project URL (with `?lite=true` at the end of the URL), as follows:
+In my classes, I use a [POGIL](https://cspogil.org/Home) style method to facilitate class discussion.  Instead of lecture notes, each class features some guiding questions, as well as some examples or materials to spark some curiosity and discussion.  As you have seen in this article, I also embed code project examples that students can view and download from within the activity page.  You can do this by embedding an `iframe` in your web pages with a `src` tag pointing to a `code-viewer.html` page with a `zip` parameter referencing your project archive, as follows:
 
 ```
-<iframe height="600px" width="100%" src="https://repl.it/@BillJr99/MiniCrypto?lite=true" scrolling="no" frameborder="no" allowtransparency="true" allowfullscreen="true" sandbox="allow-forms allow-pointer-lock allow-popups allow-same-origin allow-scripts allow-modals"></iframe> 
+<iframe
+  height="600px"
+  width="100%"
+  src="https://www.billmongan.com/assets/code-viewer.html?zip=https%3A%2F%2Fraw.githubusercontent.com%2FBillJr99%2FBillJr99.github.io%2Fmaster%2Ffiles%2Freplit%2FMiniCrypto.zip&title=Mini%20Crypto"
+  scrolling="yes"
+  frameborder="no"
+  allowfullscreen="true"
+  sandbox="allow-scripts allow-same-origin">
+</iframe>
 ```
 
-There is a button at the top right of the frame to open the example in a new browser tab.  Here is an [example lesson](https://www.billmongan.com/Ursinus-CS173/Activities/Conditionals3).
+There is a button at the top right of the frame to download the project archive.  Here is an [example lesson](https://www.billmongan.com/Ursinus-CS173/Activities/Conditionals3).
 
 ## Integrating Replit with GitHub Classroom
 
