@@ -65,6 +65,11 @@ var addressPoints = [
     -75.1635262
   ],
   [
+    "Kill the Robots? A Panel Discussion on the Risk of AI Extinction<br />Ursinus College Discussion Panel; Collegeville, PA",
+    40.1854712,
+    -75.4512163
+  ],
+  [
     "Introducing Computing Concepts through Multidisciplinary No-Code and Low-Code Platforms<br />Lunch and Learn Booth at the Pennsylvania Training and Technical Assistance Network (PATTAN) Computer Science for All Summit under a PASmart grant from the Pennsylvania Department of Education, June 22-23, 2022; Harrisburg, PA",
     40.2663107,
     -76.8861122
@@ -83,10 +88,5 @@ var addressPoints = [
     "A Multi-Disciplinary Framework for Continuous Biomedical Monitoring Using Low-Power Passive RFID-based Wireless Wearable Sensors<br />Proceedings of the IEEE Smart Systems Workshop; St. Louis, MO",
     38.6254063,
     -90.190009
-  ],
-  [
-    "On the Use of Radio Frequency Identification for Continuous Biomedical Monitoring<br />ACM/IEEE International Conference on Internet-of-Things Design and Implementation (IoTDI); Pittsburgh, PA",
-    40.4406968,
-    -80.0025666
   ]
 ];
