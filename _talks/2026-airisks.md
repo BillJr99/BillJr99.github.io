@@ -1,9 +1,9 @@
 ---
 title: 'Kill the Robots? A Panel Discussion on the Risk of AI Extinction'
 collection: talks
-permalink: /talk/teachin2026
+permalink: /talk/airisks2026
 date: '2026-09-30'
-venue: 'Ursinus College Teach-In Discussion Panel'
+venue: 'Ursinus College Discussion Panel'
 type: talk
 location: 'Collegeville, PA'
 comments: true
