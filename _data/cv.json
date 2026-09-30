@@ -696,17 +696,17 @@
       "description": ""
     },
     {
-      "name": "The Ursinus WebIDE: A Serverless Browser-Based Development Environment for Student Practice and Rapid Instructor Exercise Development",
-      "event": "ACM Special Interest Group in Computer Science Education (SIGCSE) Symposium 2026",
-      "date": "2025-11-10",
-      "location": "St. Louis, MO",
-      "description": ""
-    },
-    {
       "name": "Kill the Robots? A Panel Discussion on the Risk of AI Extinction",
       "event": "Ursinus College Discussion Panel",
       "date": "2026-09-30",
       "location": "Collegeville, PA",
+      "description": ""
+    },
+    {
+      "name": "The Ursinus WebIDE: A Serverless Browser-Based Development Environment for Student Practice and Rapid Instructor Exercise Development",
+      "event": "ACM Special Interest Group in Computer Science Education (SIGCSE) Symposium 2026",
+      "date": "2025-11-10",
+      "location": "St. Louis, MO",
       "description": ""
     }
   ],
