@@ -11,9 +11,11 @@ tags:
  - security
 ---
 
-I now run seven coding agents side by side on a small always-on Ubuntu server: Claude Code, Codex, Antigravity, Grok Build, Hermes, GitHub Copilot, and OpenCode. [Herdr](https://herdr.dev/) keeps them organized, one labelled tab per agent, and brings them back after a reboot. They all share one [mcpproxy](/posts/2026/05/mcpproxy/) instance for tools. One of those tools talks to a service that needs a personal API key, and only one agent ever holds that key. The other six can see the tool, but they can't authenticate to the service behind it.
+I now run nine coding agents side by side on a small always-on Ubuntu server: Claude Code, Codex, Antigravity, Grok Build, Hermes, GitHub Copilot, two separate copies of OpenCode, and pi. [Herdr](https://herdr.dev/) keeps them organized, one labelled tab per agent, and brings them back after a reboot. Most of them share one [mcpproxy](/posts/2026/05/mcpproxy/) instance for tools. One of those tools talks to a service that needs a personal API key, and only one agent ever holds that key: a deliberately fenced-in OpenCode. The other agents can see the tool, but they can't authenticate to the service behind it. When they need that service, they hand the task to that OpenCode through Herdr.
 
-This post walks through the whole build from a bare server: installing and signing in to each agent, wiring them into Herdr, making the setup survive a reboot, adding mobile access, running mcpproxy, and finally scoping an MCP credential to a single agent by sending it as a request header instead of storing it in the proxy. Everything here is generic. Substitute your own user, paths, endpoints, and keys, and never paste real credentials into a config file you might share or commit.
+The second OpenCode and pi are the general-purpose half of the setup. Neither holds that key or any other private credential. Both get their models from llmproxy, a small OpenAI-compatible router I run in Docker on the same machine, and both fill in their model lists automatically from it.
+
+This post walks through the whole build from a bare server: installing and signing in to each agent, wiring them into Herdr, running a second, fully isolated OpenCode and pi against llmproxy, making the setup survive a reboot, adding mobile access, running mcpproxy, and finally scoping an MCP credential to a single agent by sending it as a request header instead of storing it in the proxy. Everything here is generic. Substitute your own user, paths, endpoints, and keys, and never paste real credentials into a config file you might share or commit.
 
 ## The server
 
@@ -48,7 +50,19 @@ Here is what I installed, and what to know about each one.
 
 **GitHub Copilot CLI** installs `copilot` and signs in with your GitHub account.
 
-**OpenCode** is the open, provider-agnostic agent in the group. Instead of a vendor subscription, I connect it to an OpenAI-compatible endpoint of my choosing. I use OpenCode V2, which installs under `~/.opencode/bin`. It's also the agent that ends up holding the scoped credential later in this post.
+**OpenCode** is the open, provider-agnostic agent in the group. Instead of a vendor subscription, I connect it to an OpenAI-compatible endpoint of my choosing. I use OpenCode V2, which installs under `~/.opencode/bin`. One install serves two tabs: a scoped copy that ends up holding the credential later in this post, and a general-purpose copy that runs with its own separate configuration.
+
+**pi** is a small, extensible coding agent. I install the standalone Linux release from its GitHub releases page and check the archive against the release's `SHA256SUMS` before unpacking it. The binary doesn't need Node.js to run, but `pi install npm:...` shells out to `npm` to fetch packages, so install Node.js and npm from your distribution first if you plan to add npm extensions (I do, below).
+
+```bash
+mkdir -p ~/.local/share/pi-standalone/VERSION
+sha256sum -c --ignore-missing SHA256SUMS      # in the download directory
+tar xzf pi-linux-x64.tar.gz -C ~/.local/share/pi-standalone/VERSION
+ln -s ~/.local/share/pi-standalone/VERSION/pi/pi ~/.local/bin/pi
+pi --version
+```
+
+pi also has an official install script that manages its own runtime and updates; either route works.
 
 After installing, make the PATH change permanent instead of exporting it in one shell. Adjust the directories to wherever your installers actually put things:
 
@@ -68,6 +82,7 @@ agy --version
 grok --version
 copilot --version
 opencode --version
+pi --version
 hermes --help
 ```
 
@@ -123,10 +138,11 @@ herdr integration install hermes
 herdr integration install copilot
 mkdir -p ~/.config/opencode
 herdr integration install opencode
+herdr integration install pi
 herdr integration status
 ```
 
-Note that Antigravity's integration identifier is `antigravity-cli`, not `agy`. Integrations add hooks or plugins to each agent's own configuration so Herdr can report the agent's status and session identity. If you've already customized an agent's settings, look at what the integration changes before applying it.
+Note that Antigravity's integration identifier is `antigravity-cli`, not `agy`. pi's integration is an extension under `~/.pi/agent/extensions`, which pi loads automatically. Integrations add hooks or plugins to each agent's own configuration so Herdr can report the agent's status and session identity. If you've already customized an agent's settings, look at what the integration changes before applying it.
 
 ## One tab per agent, one directory per agent
 
@@ -141,17 +157,19 @@ From an ordinary shell, create a labelled tab for each agent and start the agent
 ```bash
 (
   set -e
-  for agent in claude codex agy grok hermes copilot opencode; do
+  for agent in claude codex agy grok hermes copilot opencode-scoped opencode pi; do
     mkdir -p "$HOME/agents/$agent"
     response=$(herdr tab create \
       --cwd "$HOME/agents/$agent" --label "$agent" --no-focus)
     pane=$(printf '%s' "$response" | jq -er '.result.root_pane.pane_id')
-    herdr pane run "$pane" "$agent"
+    herdr pane run "$pane" "${agent%-scoped}"
   done
 )
 ```
 
-Run that loop exactly once. Rerunning it creates duplicate tabs, and the startup launcher described below depends on each label being unique. The OpenCode tab starts here without its private environment file; once OpenCode is configured below, exit it and start it again with the same wrapper command the launcher uses.
+Run that loop exactly once. Rerunning it creates duplicate tabs, and the startup launcher described below depends on each label being unique. The label is what tells the two OpenCodes apart: `opencode-scoped` is the one that will hold the private environment file, and plain `opencode` is the general-purpose copy (a short label leaves more room in the tab bar). Both start here as ordinary OpenCode sessions. Once each is configured below, exit it and start it again with the same command the launcher uses.
+
+If you're adding the new tabs to an existing setup instead, create only the missing ones with `herdr tab create`, and rename an existing tab with `herdr tab rename <tab-id> <label>` rather than closing and recreating it.
 
 Separate directories matter more than I expected. Most of these CLIs decide what "resume the latest conversation" means relative to the current directory, and several ask you to trust a workspace before they'll touch it. One directory per agent keeps those histories and trust decisions apart, and keeps one agent's scratch files out of another's way.
 
@@ -170,7 +188,7 @@ Send each agent a short prompt after setting it up so it has a conversation on r
 
 ## Configuring OpenCode for an OpenAI-compatible provider
 
-OpenCode's configuration is global, at `~/.config/opencode/opencode.jsonc`, even though I launch it from its own workspace directory. I point it at an OpenAI-compatible endpoint. The API key stays in an environment file, and the config only refers to it by name:
+This section configures the scoped copy, the one in the `opencode-scoped` tab. OpenCode's configuration is global, at `~/.config/opencode/opencode.jsonc`, even though I launch it from its own workspace directory. I point it at an OpenAI-compatible endpoint. The API key stays in an environment file, and the config only refers to it by name:
 
 ```jsonc
 {
@@ -212,7 +230,7 @@ nano ~/.config/opencode/service.env
 For now it holds `MYPROVIDER_API_KEY=...`. It gains a second key in the credential-scoping section. A quick test that sources the file the same way Herdr will, without printing the key:
 
 ```bash
-cd ~/agents/opencode
+cd ~/agents/opencode-scoped
 /bin/bash -c '
   set -a; source "$HOME/.config/opencode/service.env"; set +a
   test -n "$MYPROVIDER_API_KEY" && echo "MYPROVIDER_API_KEY=set" || echo "MYPROVIDER_API_KEY=MISSING"
@@ -221,6 +239,100 @@ cd ~/agents/opencode
 ```
 
 If the model answers `PROVIDER_OK`, the provider path works.
+
+## A second, general-purpose OpenCode on llmproxy
+
+I wanted an OpenCode I could point at any model without dragging along the scoped copy's private environment, MCP connection, or credentials. Running a second copy from the same binary is easy. Keeping it from reading the first copy's configuration took one more step.
+
+OpenCode always loads its global config from `~/.config/opencode`. Pointing `OPENCODE_CONFIG_DIR` somewhere else only adds a source on top of it (`opencode debug config` lists every source it loaded), so the scoped copy's provider and MCP headers would still show up. What does work is giving the second copy its own XDG base directories. OpenCode then keeps its config, its stored credentials and session database, its state, and its plugin and model caches under a separate root, and never sees the first copy's files:
+
+```bash
+root="$HOME/.local/opencode-general"
+mkdir -p "$root"/{config,data,state,cache}/opencode
+chmod 700 "$root"
+```
+
+The second copy needs a few more things in its own config directory:
+
+- Its own copy of Herdr's OpenCode integration files. `herdr integration install opencode` always writes to `~/.config/opencode`, so I copy the files it installed there (`plugins/`, `herdr-opencode/`, `herdr-tui-session.js`, `tui.jsonc`, and `cli.json`) into `$root/config/opencode/`. Without them, Herdr can't report this tab's state. Re-copy them after a Herdr update changes the integration.
+- An `opencode.jsonc` with llmproxy as the only provider:
+
+```jsonc
+{
+  "$schema": "https://opencode.ai/config.json",
+  "model": "llmproxy/default",
+  "providers": {
+    "llmproxy": {
+      "name": "llmproxy (local)",
+      "package": "@opencode/ai/providers/openai-compatible",
+      "settings": {
+        "baseURL": "http://127.0.0.1:8080/v1",
+        "apiKey": "llmproxy-no-key-required"
+      },
+      "models": {
+        "default": {
+          "modelID": "llmproxy/flagship__free",
+          "name": "llmproxy flagship free (default)",
+          "capabilities": { "tools": true, "input": ["text"], "output": ["text"] }
+        }
+      }
+    }
+  }
+}
+```
+
+My llmproxy listens only on loopback and doesn't ask clients for a key, so the `apiKey` is just a placeholder that llmproxy ignores. The `default` entry gives this copy a fixed starting model: llmproxy's free flagship route. There's no `mcp` block, so this copy has no tools beyond its own.
+
+Listing several thousand models by hand isn't practical, so I let a plugin do it. [opencode-auto-models](https://github.com/BillJr99/opencode-auto-models) calls the provider's `GET /v1/models` at startup and adds every model it reports, keeping manual entries like `default` as overrides. Install it with the same environment the tab uses, so it lands in the second copy's config:
+
+```bash
+cd ~/agents/opencode
+env XDG_CONFIG_HOME="$root/config" XDG_DATA_HOME="$root/data"     XDG_STATE_HOME="$root/state" XDG_CACHE_HOME="$root/cache"     opencode plugin add github:BillJr99/opencode-auto-models
+```
+
+The plugin caches the model list and refreshes it in the background, so a model added to llmproxy shows up on the next start. The discovered models appear a moment after OpenCode starts, which is fine in the interactive tab. A one-shot `opencode run --model ...` that names a discovered model immediately can still report it as unavailable, so I test with the default model:
+
+```bash
+cd ~/agents/opencode
+env XDG_CONFIG_HOME="$root/config" XDG_DATA_HOME="$root/data"     XDG_STATE_HOME="$root/state" XDG_CACHE_HOME="$root/cache"     opencode run --standalone "Reply with exactly: LLMPROXY_OK"
+```
+
+One side effect of moving `XDG_CONFIG_HOME`: other tools that OpenCode runs look there too. GitHub CLI is the one I noticed, since it keeps its login under `~/.config/gh`. Setting `GH_CONFIG_DIR="$HOME/.config/gh"` in the same launch command keeps `gh` signed in. Git still reads `~/.gitconfig`, so it's unaffected.
+
+## pi on llmproxy
+
+pi gets the same treatment through an extension. [pi-openai-compat](https://www.npmjs.com/package/@billjr99/pi-openai-compat) registers OpenAI-compatible endpoints as pi providers, fetches their model lists, and puts the models in pi's own `/model` picker. It has an llmproxy template built in:
+
+```bash
+pi install npm:@billjr99/pi-openai-compat
+```
+
+Inside pi, `/compat-login` walks through choosing llmproxy and fetching its models. You can also write the extension's config directly, which is what I did. With an empty `cachedModels` list, the extension fetches the catalog on the next session start, and a `null` key sends no `Authorization` header at all. In `~/.config/pi-openai-compat/config.json`, mode `0600`:
+
+```json
+{
+  "previousModel": null,
+  "providers": {
+    "llmproxy": {
+      "displayName": "llmproxy (local)",
+      "baseUrl": "http://localhost:8080/v1",
+      "apiKey": null,
+      "cachedModels": []
+    }
+  }
+}
+```
+
+The default model goes in pi's own settings, `~/.pi/agent/settings.json`, so pi starts on the same free flagship route as the general OpenCode:
+
+```json
+{
+  "defaultProvider": "llmproxy",
+  "defaultModel": "llmproxy/flagship__free"
+}
+```
+
+`/compat-refresh` refetches the list later, and `/model` shows everything llmproxy offers.
 
 ## Mobile access
 
@@ -312,17 +424,24 @@ The launcher reads a JSON file of commands, `~/.config/herdr/agent-startup.json`
                  "fresh":  ["hermes"] },
     "copilot": { "resume": ["copilot", "--continue", "--remote"],
                  "fresh":  ["copilot", "--remote"] },
-    "opencode": {
+    "opencode-scoped": {
       "resume": ["/bin/bash", "-c",
         "set -a; source \"$HOME/.config/opencode/service.env\"; set +a; exec opencode --standalone"],
       "fresh":  ["/bin/bash", "-c",
         "set -a; source \"$HOME/.config/opencode/service.env\"; set +a; exec opencode --standalone"]
-    }
+    },
+    "opencode": {
+      "resume": ["/bin/bash", "-c",
+        "R=$HOME/.local/opencode-general; exec env XDG_CONFIG_HOME=$R/config XDG_DATA_HOME=$R/data XDG_STATE_HOME=$R/state XDG_CACHE_HOME=$R/cache GH_CONFIG_DIR=$HOME/.config/gh opencode --standalone --continue"],
+      "fresh":  ["/bin/bash", "-c",
+        "R=$HOME/.local/opencode-general; exec env XDG_CONFIG_HOME=$R/config XDG_DATA_HOME=$R/data XDG_STATE_HOME=$R/state XDG_CACHE_HOME=$R/cache GH_CONFIG_DIR=$HOME/.config/gh opencode --standalone"]
+    },
+    "pi": { "resume": ["pi", "--continue"], "fresh": ["pi"] }
   }
 }
 ```
 
-Hermes gets `--no-restore-cwd` so it doesn't jump back to an old conversation's directory. The OpenCode entry differs from the rest because it sources its private environment file before starting, which matters in the credential section below.
+Hermes gets `--no-restore-cwd` so it doesn't jump back to an old conversation's directory. The two OpenCode entries differ from the rest, and from each other. The scoped one sources its private environment file before starting, which matters in the credential section below. The general one sources nothing and instead points OpenCode at its own XDG directories, so it never reads the scoped copy's config. Each tab gets its own working directory from its label, so the two OpenCodes keep separate histories under `~/agents/opencode-scoped` and `~/agents/opencode`.
 
 The launcher itself, `~/.config/herdr/agent-startup.py`, has two modes. In `boot` mode it waits for Herdr's tabs to appear, matches each configured agent to exactly one tab by label, skips any pane that already reports a running agent, and submits a command that re-invokes the script in `agent` mode inside each remaining pane. In `agent` mode it changes into that agent's workspace, runs the resume command, and falls back to the fresh command once if resume exits with an error. A normal exit or an interrupt leaves you at a shell instead of retrying.
 
@@ -452,6 +571,8 @@ TimeoutStartSec=90
 ExecStartPost=/usr/bin/python3 %h/.config/herdr/agent-startup.py boot --apply
 ```
 
+Adding a tab later follows the same order: create the labelled tab first, then add its entry to `agent-startup.json`. The launcher refuses to plan a boot when a configured label has no tab, so editing the JSON first would block every agent at the next reboot, not just the new one. To start a newly added agent without rebooting, exit whatever is in its pane and run `python3 ~/.config/herdr/agent-startup.py agent <label>` there.
+
 Before enabling anything, do a dry run. Without `--apply`, the launcher only prints `would launch` or `skip` for each tab:
 
 ```bash
@@ -509,7 +630,7 @@ That keeps keys away from the model. It doesn't keep them away from other client
 
 ## Scoping a credential to one agent
 
-The service in question has a personal API key and holds data that six general-purpose agents have no reason to touch. I want exactly one agent to be able to use it, and the others to see a tool that fails to authenticate.
+The service in question has a personal API key and holds data that the general-purpose agents have no reason to touch. I want exactly one agent to be able to use it, and the others to see a tool that fails to authenticate.
 
 ### Let the caller supply the key
 
@@ -537,7 +658,7 @@ Now the proxy has no credential of its own for this service. A request authentic
 
 ### Give the key to one agent only
 
-Add the service key to OpenCode's private environment file, next to the provider key:
+Add the service key to the scoped OpenCode's private environment file, next to the provider key:
 
 ```dotenv
 MYPROVIDER_API_KEY=...
@@ -563,9 +684,15 @@ Then add an `mcp` block to `opencode.jsonc` that registers mcpproxy as a remote 
 
 As with the provider key, the `{env:...}` substitution means the config file names the variable but contains no secret.
 
-The last piece is OpenCode's launch command in `agent-startup.json`. Herdr starts OpenCode through a small Bash wrapper that sources `service.env` with `set -a` (so every assignment is exported) and then `exec`s OpenCode. The variable exists in OpenCode's process and its children, and nowhere else. None of the other six launch commands source that file, so none of those agents ever has `SERVICE_API_KEY` in its environment. They can still list and call the tool through mcpproxy, but without the header the call has no key and the service rejects it.
+The last piece is OpenCode's launch command in `agent-startup.json`. Herdr starts OpenCode through a small Bash wrapper that sources `service.env` with `set -a` (so every assignment is exported) and then `exec`s OpenCode. The variable exists in OpenCode's process and its children, and nowhere else. None of the other launch commands source that file, including the general-purpose OpenCode's, so none of those agents ever has `SERVICE_API_KEY` in its environment. They can still list and call the tool through mcpproxy, but without the header the call has no key and the service rejects it.
 
 Two side effects follow from this. Because OpenCode's children inherit the variable, shell commands that OpenCode runs can use the key too, so a script it writes against the same API works without extra setup. And because `exec` replaces the wrapper shell, no extra Bash process sits around holding a copy of the environment.
+
+### Delegating instead of sharing the key
+
+Usually another agent doesn't need the key at all. It needs the result. My Hermes agent handles requests that touch this service by writing a narrow prompt and sending it to the scoped OpenCode with `herdr agent prompt`, waiting for the reply, and reading it back with `herdr agent read`. Hermes never holds the credential, and the scoped OpenCode still only does what the MCP provider exposes.
+
+With two OpenCodes running, the delegation has to find the right one. `herdr agent list` reports both as `opencode`, so matching on the agent type would sometimes pick the general copy, which has no key. My helper looks up the tab labelled `opencode-scoped` with `herdr tab list`, then takes the OpenCode agent in that tab. Pane and tab IDs change across reboots, so it resolves them fresh on every call, and it refuses to send anything if that OpenCode is already busy.
 
 ### Turning the tool on for another agent
 
@@ -582,8 +709,8 @@ grep -q '^SERVICE_API_URL=.' ~/.config/mcpproxy/.env \
 grep -q '^SERVICE_API_KEY=.' ~/.config/mcpproxy/.env \
   && echo 'WARNING: fallback key present' || echo 'fallback key absent'
 
-# OpenCode, launched the same way Herdr launches it, can reach the proxy.
-cd ~/agents/opencode
+# The scoped OpenCode, launched the same way Herdr launches it, can reach the proxy.
+cd ~/agents/opencode-scoped
 /bin/bash -c '
   set -a; source "$HOME/.config/opencode/service.env"; set +a
   test -n "$SERVICE_API_KEY" && echo "SERVICE_API_KEY=set"
@@ -591,7 +718,7 @@ cd ~/agents/opencode
 '
 ```
 
-Inside the OpenCode tab, `/mcps` should show mcpproxy connected. A read-only tool call against the service then confirms that the header made it through and the service accepted it.
+Inside the `opencode-scoped` tab, `/mcps` should show mcpproxy connected. A read-only tool call against the service then confirms that the header made it through and the service accepted it.
 
 ### What this does and doesn't protect against
 
@@ -599,9 +726,9 @@ Inside the OpenCode tab, `/mcps` should show mcpproxy connected. A read-only too
 
 This is least privilege by process environment on a single-user machine. It is not a hard security boundary, and I don't treat it as one.
 
-It keeps the key out of six agents' environments, so they can't use it by accident and can't leak it through a tool that dumps environment variables. It keeps the key out of the proxy's configuration, so the proxy can't hand it to whoever connects. And the key never appears in a tool schema the model can read.
+It keeps the key out of the other agents' environments, so they can't use it by accident and can't leak it through a tool that dumps environment variables. It keeps the key out of the proxy's configuration, so the proxy can't hand it to whoever connects. And the key never appears in a tool schema the model can read.
 
-It does not stop a determined process running as the same Unix user. Any agent with shell access could, in principle, read `~/.config/opencode/service.env` directly. The header also travels over plain HTTP, which is acceptable only because the proxy listens on loopback. If I needed isolation from the other agents themselves, I would run them as separate Unix users or in separate containers. For my purpose, keeping a sensitive tool out of reach of agents that have no business using it, process scoping is enough.
+It does not stop a determined process running as the same Unix user. Any agent with shell access could, in principle, read `~/.config/opencode/service.env` directly. The same goes for the general-purpose OpenCode: separate XDG directories keep it from loading the scoped copy's config by accident, but they're not a permission boundary. The header also travels over plain HTTP, which is acceptable only because the proxy listens on loopback. If I needed isolation from the other agents themselves, I would run them as separate Unix users or in separate containers. For my purpose, keeping a sensitive tool out of reach of agents that have no business using it, process scoping is enough.
 
 One more layer helps when a service returns personal information. My provider for that service pseudonymizes personal identifiers before they reach the model, using an HMAC keyed by a stable secret that lives only on the proxy side. That secret isn't a credential for the service, so it can sit in the proxy's `.env` without widening access. It has to stay stable, though, or the pseudonyms change from one session to the next.
 
@@ -612,15 +739,17 @@ mcpproxy isn't the only container on the box. A few other self-hosted services g
 - **SearXNG**, a metasearch engine. Out of the box it only serves HTML, so I enabled JSON output in its `settings.yml` (adding `json` alongside `html` under `search.formats`), which lets tools call it as a search API.
 - **Firecrawl**, which scrapes pages and returns clean Markdown. I run its Docker Compose stack pinned to a specific release, with reduced worker counts so it shares the machine politely with everything else. Its self-hosted API has no authentication, which is one more reason it stays on loopback.
 - **Camofox**, a browser automation service with a small HTTP API, built from the upstream source.
-- **llmproxy**, a small OpenAI-compatible LLM proxy of my own, with an admin page for its provider settings.
+- **llmproxy**, a small OpenAI-compatible LLM proxy of my own, with an admin page for its provider settings. It routes requests across many upstream providers and publishes the result as one `/v1/models` list, including tiered routes such as a free flagship tier. The general OpenCode and pi both use it as their only provider.
 
 These all follow the same pattern as mcpproxy. Each publishes its ports on `127.0.0.1` only, so nothing outside the machine can reach them, and from another computer I use an SSH tunnel. They also share the private `agent-services` Docker network, where containers reach each other by name (an mcpproxy provider can call `http://searxng:8080` directly, for example) without any extra published ports. Most use `--restart unless-stopped` or `--restart always`, so Docker brings them back after a reboot. Firecrawl's Compose stack is the exception in my setup; I start it by hand when I need it.
 
-None of these are wired into the agents automatically. An agent reaches one only through a tool I've written for it in mcpproxy or by calling it directly, which is the same choke point the credential scoping above relies on.
+Apart from llmproxy's role as a model provider, none of these are wired into the agents automatically. An agent reaches one only through a tool I've written for it in mcpproxy or by calling it directly, which is the same choke point the credential scoping above relies on.
 
 ## Day-to-day notes
 
 After a reboot, Herdr and OpenCode are often up before Docker has finished starting mcpproxy. On my machine the proxy takes about a minute. If `/mcps` shows the proxy disconnected right after boot, wait and check again before assuming something broke.
+
+With two OpenCodes running, check which one you're talking to before changing anything. Each tab's working directory (`herdr agent list` shows it) tells them apart, and so does the model name in OpenCode's status line. To restart one, exit it in its tab and run `python3 ~/.config/herdr/agent-startup.py agent <label>` in the same pane. A restart is how either copy picks up a change to its config or environment file, since both read them only at startup.
 
 If an OpenCode tab reports `opencode: not found`, the launcher's `path` is missing OpenCode's install directory. Using the absolute binary path in the launch command avoids depending on `.bashrc` at all.
 
@@ -639,6 +768,8 @@ Finally, keep every environment file at mode `0600`, keep them out of version co
 - [Hermes Agent installation](https://hermes-agent.nousresearch.com/docs/getting-started/installation) and [web dashboard](https://hermes-agent.nousresearch.com/docs/user-guide/features/web-dashboard)
 - [GitHub Copilot CLI installation](https://docs.github.com/en/copilot/how-tos/copilot-cli/set-up-copilot-cli/install-copilot-cli) and [remote steering](https://docs.github.com/en/copilot/how-tos/copilot-cli/use-copilot-cli/steer-remotely)
 - [OpenCode V2 configuration](https://opencode.ai/v2/docs/config/), [providers](https://opencode.ai/v2/docs/providers/), and [MCP servers](https://opencode.ai/v2/docs/mcp-servers/)
+- [opencode-auto-models](https://github.com/BillJr99/opencode-auto-models)
+- [pi](https://github.com/badlogic/pi-mono) and [pi-openai-compat](https://www.npmjs.com/package/@billjr99/pi-openai-compat)
 - [Docker Engine on Ubuntu](https://docs.docker.com/engine/install/ubuntu/)
 - [SearXNG container installation](https://docs.searxng.org/admin/installation-docker.html) and [search settings](https://docs.searxng.org/admin/settings/settings_search.html)
 - [Firecrawl self-hosting guide](https://docs.firecrawl.dev/contributing/self-host)
