@@ -636,4 +636,7 @@ Finally, keep every environment file at mode `0600`, keep them out of version co
 - [GitHub Copilot CLI installation](https://docs.github.com/en/copilot/how-tos/copilot-cli/set-up-copilot-cli/install-copilot-cli) and [remote steering](https://docs.github.com/en/copilot/how-tos/copilot-cli/use-copilot-cli/steer-remotely)
 - [OpenCode V2 configuration](https://opencode.ai/v2/docs/config/), [providers](https://opencode.ai/v2/docs/providers/), and [MCP servers](https://opencode.ai/v2/docs/mcp-servers/)
 - [Docker Engine on Ubuntu](https://docs.docker.com/engine/install/ubuntu/)
+- [SearXNG container installation](https://docs.searxng.org/admin/installation-docker.html) and [search settings](https://docs.searxng.org/admin/settings/settings_search.html)
+- [Firecrawl self-hosting guide](https://docs.firecrawl.dev/contributing/self-host)
+- [Camofox Browser](https://github.com/jo-inc/camofox-browser)
 - [mcpproxy on GitHub](https://github.com/BillJr99/mcpproxy) and the [earlier post](/posts/2026/05/mcpproxy/) describing it
