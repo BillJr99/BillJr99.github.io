@@ -48,7 +48,7 @@ Here is what I installed, and what to know about each one.
 
 **GitHub Copilot CLI** installs `copilot` and signs in with your GitHub account.
 
-**OpenCode** is the open, provider-agnostic agent in the group, and it's the one I point at an OpenAI-compatible endpoint of my choosing rather than a vendor subscription. I use OpenCode V2, which installs under `~/.opencode/bin`. It's also the agent that ends up holding the scoped credential later in this post.
+**OpenCode** is the open, provider-agnostic agent in the group. Instead of a vendor subscription, I connect it to an OpenAI-compatible endpoint of my choosing. I use OpenCode V2, which installs under `~/.opencode/bin`. It's also the agent that ends up holding the scoped credential later in this post.
 
 After installing, make the PATH change permanent instead of exporting it in one shell. Adjust the directories to wherever your installers actually put things:
 
@@ -73,7 +73,7 @@ hermes --help
 
 ### A CPU quirk with Antigravity
 
-On my machine, which has an older AMD processor, `agy --version` aborted immediately with `CRNGT failed` from inside BoringCrypto. The cause is the CPU's hardware random number instruction (RDRAND), which BoringSSL checks and rejects on some processors. Masking that instruction through an OpenSSL capability variable fixed it:
+On my machine, `agy --version` aborted immediately with `CRNGT failed` from inside BoringCrypto. The cause is the CPU's hardware random number instruction (RDRAND), which BoringSSL checks and rejects on some processors. Masking that instruction through an OpenSSL capability variable fixed it:
 
 ```bash
 OPENSSL_ia32cap='~0x4000000000000000' agy --version
@@ -590,6 +590,8 @@ cd ~/agents/opencode
 Inside the OpenCode tab, `/mcps` should show mcpproxy connected. A read-only tool call against the service then confirms that the header made it through and the service accepted it.
 
 ### What this does and doesn't protect against
+
+> **A disclaimer before relying on this.** Confining a credential to one Herdr environment does not completely isolate it. The key can still leak: OpenCode, or a script it runs, could print it, write it to a file, or include it in a log that another agent later reads. The other agents can also reach it indirectly, because any agent with a shell can start OpenCode with the same wrapper command, or use `herdr pane run` to type a request into OpenCode's tab and let OpenCode make the call on its behalf. What this setup does give me is a meaningful layer of protection. I can define exactly which functionality the service exposes through an MCP provider, and that provider acts as a partial firewall: the other agents see a tool that refuses to authenticate, rather than an open path to the service and its data.
 
 This is least privilege by process environment on a single-user machine. It is not a hard security boundary, and I don't treat it as one.
 
