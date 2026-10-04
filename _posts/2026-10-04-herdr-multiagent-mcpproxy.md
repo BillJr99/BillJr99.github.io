@@ -601,6 +601,19 @@ It does not stop a determined process running as the same Unix user. Any agent w
 
 One more layer helps when a service returns personal information. My provider for that service pseudonymizes personal identifiers before they reach the model, using an HMAC keyed by a stable secret that lives only on the proxy side. That secret isn't a credential for the service, so it can sit in the proxy's `.env` without widening access. It has to stay stable, though, or the pseudonyms change from one session to the next.
 
+## Other services on the same network
+
+mcpproxy isn't the only container on the box. A few other self-hosted services give the agents and mcpproxy providers capabilities that would otherwise mean calling a third-party API:
+
+- **SearXNG**, a metasearch engine. Out of the box it only serves HTML, so I enabled JSON output in its `settings.yml` (adding `json` alongside `html` under `search.formats`), which lets tools call it as a search API.
+- **Firecrawl**, which scrapes pages and returns clean Markdown. I run its Docker Compose stack pinned to a specific release, with reduced worker counts so it shares the machine politely with everything else. Its self-hosted API has no authentication, which is one more reason it stays on loopback.
+- **Camofox**, a browser automation service with a small HTTP API, built from the upstream source.
+- **llmproxy**, a small OpenAI-compatible LLM proxy of my own, with an admin page for its provider settings.
+
+These all follow the same pattern as mcpproxy. Each publishes its ports on `127.0.0.1` only, so nothing outside the machine can reach them, and from another computer I use an SSH tunnel. They also share the private `agent-services` Docker network, where containers reach each other by name (an mcpproxy provider can call `http://searxng:8080` directly, for example) without any extra published ports. Most use `--restart unless-stopped` or `--restart always`, so Docker brings them back after a reboot. Firecrawl's Compose stack is the exception in my setup; I start it by hand when I need it.
+
+None of these are wired into the agents automatically. An agent reaches one only through a tool I've written for it in mcpproxy or by calling it directly, which is the same choke point the credential scoping above relies on.
+
 ## Day-to-day notes
 
 After a reboot, Herdr and OpenCode are often up before Docker has finished starting mcpproxy. On my machine the proxy takes about a minute. If `/mcps` shows the proxy disconnected right after boot, wait and check again before assuming something broke.
