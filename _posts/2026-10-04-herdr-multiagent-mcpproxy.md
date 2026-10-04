@@ -52,7 +52,11 @@ Here is what I installed, and what to know about each one.
 
 **OpenCode** is the open, provider-agnostic agent in the group. Instead of a vendor subscription, I connect it to an OpenAI-compatible endpoint of my choosing. I use OpenCode V2, which installs under `~/.opencode/bin`. One install serves two tabs: a scoped copy that ends up holding the credential later in this post, and a general-purpose copy that runs with its own separate configuration.
 
-**pi** is a small, extensible coding agent. I install the standalone Linux release from its GitHub releases page and check the archive against the release's `SHA256SUMS` before unpacking it. The binary doesn't need Node.js to run, but `pi install npm:...` shells out to `npm` to fetch packages, so install Node.js and npm from your distribution first if you plan to add npm extensions (I do, below).
+**pi** is a small, extensible coding agent. I install the standalone Linux release from its GitHub releases page and check the archive against the release's `SHA256SUMS` before unpacking it. The binary doesn't need Node.js to run, but `pi install npm:...` shells out to `npm` to fetch packages. I add an npm extension below, so install Node.js and npm first. Ubuntu's own packages are enough (they gave me Node 22 and npm 9):
+
+```bash
+sudo apt install -y nodejs npm
+```
 
 ```bash
 mkdir -p ~/.local/share/pi-standalone/VERSION
@@ -301,13 +305,13 @@ One side effect of moving `XDG_CONFIG_HOME`: other tools that OpenCode runs look
 
 ## pi on llmproxy
 
-pi gets the same treatment through an extension. [pi-openai-compat](https://www.npmjs.com/package/@billjr99/pi-openai-compat) registers OpenAI-compatible endpoints as pi providers, fetches their model lists, and puts the models in pi's own `/model` picker. It has an llmproxy template built in:
+pi gets the same treatment through an extension, which is why it needs npm. [pi-openai-compat](https://www.npmjs.com/package/@billjr99/pi-openai-compat) registers OpenAI-compatible endpoints as pi providers, fetches their model lists, and puts the models in pi's own `/model` picker. It has an llmproxy template built in:
 
 ```bash
 pi install npm:@billjr99/pi-openai-compat
 ```
 
-Inside pi, `/compat-login` walks through choosing llmproxy and fetching its models. You can also write the extension's config directly, which is what I did. With an empty `cachedModels` list, the extension fetches the catalog on the next session start, and a `null` key sends no `Authorization` header at all. In `~/.config/pi-openai-compat/config.json`, mode `0600`:
+Inside pi, `/compat-login` walks through choosing llmproxy and fetching its models. You can also write the extension's config directly, which is what I did. With an empty `cachedModels` list, the extension fetches the catalog on the next session start, and a `null` key sends no `Authorization` header at all. Keep the base URL spelled exactly as the extension's llmproxy template has it, `http://localhost:8080/v1`; a different spelling of the same address gets a one-time notice that the provider is out of date. In `~/.config/pi-openai-compat/config.json`, mode `0600`:
 
 ```json
 {
@@ -323,16 +327,25 @@ Inside pi, `/compat-login` walks through choosing llmproxy and fetching its mode
 }
 ```
 
-The default model goes in pi's own settings, `~/.pi/agent/settings.json`, so pi starts on the same free flagship route as the general OpenCode:
+The default model goes in pi's own settings, `~/.pi/agent/settings.json`, so pi starts on the same free flagship route as the general OpenCode. The extension registers each provider under a `compat-` prefix, so the provider name here is `compat-llmproxy`, not `llmproxy`. `pi install` adds the `packages` entry itself:
 
 ```json
 {
-  "defaultProvider": "llmproxy",
-  "defaultModel": "llmproxy/flagship__free"
+  "defaultProvider": "compat-llmproxy",
+  "defaultModel": "llmproxy/flagship__free",
+  "packages": ["npm:@billjr99/pi-openai-compat"]
 }
 ```
 
-`/compat-refresh` refetches the list later, and `/model` shows everything llmproxy offers.
+There's one ordering catch. Until the extension has a cached model list, it registers the provider only when a session starts, which is too late for `pi --list-models` or print mode. Start pi once interactively to fill the cache. After that, both work from the command line:
+
+```bash
+cd ~/agents/pi
+pi --list-models flagship__free
+pi --no-session -p "Reply with exactly: PI_OK"
+```
+
+In the pi tab, the startup notice reads `OpenAI-compat: llmproxy (local) available in /model`, and the footer shows `llmproxy/flagship__free`. `/compat-refresh` refetches the list later, and `/model` shows everything llmproxy offers.
 
 ## Mobile access
 
