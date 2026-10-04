@@ -567,6 +567,10 @@ The last piece is OpenCode's launch command in `agent-startup.json`. Herdr start
 
 Two side effects follow from this. Because OpenCode's children inherit the variable, shell commands that OpenCode runs can use the key too, so a script it writes against the same API works without extra setup. And because `exec` replaces the wrapper shell, no extra Bash process sits around holding a copy of the environment.
 
+### Turning the tool on for another agent
+
+Another agent registering the tool isn't a mistake, and it doesn't need to be removed. Hermes, for instance, can keep the tool in its MCP include list. Those calls fail only because no key reaches the proxy, and there are two ways to change that. Setting `SERVICE_API_KEY` in mcpproxy's own `.env` turns the tool on for every client at once, which is the right choice if the service isn't sensitive after all. To enable it for one more agent, give that agent its own environment variable and have its MCP client forward it as the `X-MCPProxy-Service-Key` header, the same way OpenCode does. Either way it's a configuration change, not a code change, and the provider YAML stays the same.
+
 ### Checking it without printing the key
 
 I verify each layer without echoing secrets to the terminal:
