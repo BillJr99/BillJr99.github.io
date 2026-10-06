@@ -3,6 +3,8 @@ name: Update CV JSON
 on:
   workflow_dispatch:
   push:
+    branches:
+      - master
     paths:
       - '_pages/cv.md'
       - '_publications/**'
