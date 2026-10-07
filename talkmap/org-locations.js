@@ -88,5 +88,100 @@ var addressPoints = [
     "A Multi-Disciplinary Framework for Continuous Biomedical Monitoring Using Low-Power Passive RFID-based Wireless Wearable Sensors<br />Proceedings of the IEEE Smart Systems Workshop; St. Louis, MO",
     38.6254063,
     -90.190009
+  ],
+  [
+    "Computer Organization Workshop<br />Computer Organization Workshop. The Pennsylvania Governors Schools of Excellence: Information, Society and Technology.; Philadelphia, PA",
+    39.9527237,
+    -75.1635262
+  ],
+  [
+    "Marconi: The Master of Wireless<br />Marconi: The Master of Wireless. Bellyband Demonstration at Drexel University.; Philadelphia, PA",
+    39.9527237,
+    -75.1635262
+  ],
+  [
+    "Wearable Smart Textiles Based on Programmable and Automated Knitting Technology for Biomedical and Sensor Actuation Applications<br />Wearable Smart Textiles Based on Programmable and Automated Knitting Technology for Biomedical and Sensor Actuation Applications. BIO International Convention with Kapil R. Dandekar, Genevieve Dion, Adam Fontecchio, Tim Kurzweg, Owen Montgomery, V.K. Narayan.; Philadelphia, PA",
+    39.9527237,
+    -75.1635262
+  ],
+  [
+    "CS4AllPA Summit Panel<br />Computing Pathways for K-12 Students Panel at Pennsylvania Training and Technical Assistance Network (PATTAN) Computer Science for All Summit under a PASmart grant from the Pennsylvania Department of Education, June 22-23, 2022; Harrisburg, PA",
+    40.2663107,
+    -76.8861122
+  ],
+  [
+    "Integrating Active Learning in the STEM Classroom (Inaugural Event)<br />Integrating Active Learning in the STEM Classroom (Inaugural Event). Pedagogical Readiness Oversight for Future Educators in STEM Subjects (PROFESS) at Drexel University.; Philadelphia, PA",
+    39.9527237,
+    -75.1635262
+  ],
+  [
+    "Networking Applications, Protocols, and Cryptography with Java<br />Networking Applications, Protocols, and Cryptography with Java. Google CS4HS Workshop at the University of Pennsylvania.; Philadelphia, PA",
+    39.9527237,
+    -75.1635262
+  ],
+  [
+    "Contextualizing Principles of Computer Science<br />Contextualizing Principles of Computer Science. CASTLE Pedagogical Happy Hour. Philadelphia, PA. CASTLE Summit at Drexel University. Faculty Panelist.; Philadelphia, PA",
+    39.9527237,
+    -75.1635262
+  ],
+  [
+    "Post-It Pandemonium: Teaching Image Representation and Compression with an \"Unplugged\" Activity<br />Post-It Pandemonium: Teaching Image Representation and Compression with an \"Unplugged\" Activity. CS4Philly Workshop Activity with Jeffrey L. Popyack.; Philadelphia, PA",
+    39.9527237,
+    -75.1635262
+  ],
+  [
+    "Maternity Smart Fabric Bellyband to Monitor Uterine Activity and Assess Fetal Well-Being<br />Maternity Smart Fabric Bellyband to Monitor Uterine Activity and Assess Fetal Well-Being. Wearable Technology in Healthcare Society (WATCH) Conference with Kapil Dandekar, Genevieve Dion, Adam Fontecchio, Timothy Kurzweg, and Owen Montgomery, MD.; Indianapolis, IN",
+    39.7683331,
+    -86.1583502
+  ],
+  [
+    "Expanding Pathways and Access to the Computing Workforce from K-20<br />Moderator at Pennsylvania Training and Technical Assistance Network (PATTAN) Remake Learning Days Monthly Meetup under a PASmart grant from the Pennsylvania Department of Education; Harrisburg, PA",
+    40.2663107,
+    -76.8861122
+  ],
+  [
+    "Big Data, Big Deal; Welcome to the Twitterverse<br />Big Data, Big Deal; Welcome to the Twitterverse. Reboot, REThink, Refresh with Jeff Popyack.; Philadelphia, PA",
+    39.9527237,
+    -75.1635262
+  ],
+  [
+    "Feedback at Scale - Automatically Generated Feedback for CS Student Work: Best Practices<br />Feedback at Scale - Automatically Generated Feedback for CS Student Work: Best Practices. SIGCSE Birds-of-a-Feather Session with Bruce W. Char, Jeffrey L. Popyack, and Jeremy Johnson.; Kansas City, MO",
+    39.100105,
+    -94.5781416
+  ],
+  [
+    "Networking Applications, Protocols, and Cryptography<br />Networking Applications, Protocols, and Cryptography. Computing Tapestry Workshop at the University of Pennsylvania.; Philadelphia, PA",
+    39.9527237,
+    -75.1635262
+  ],
+  [
+    "Big Data is Everywhere: Bridging Computing Disciplines and Society<br />Big Data is Everywhere: Bridging Computing Disciplines and Society. Webinar for Drexel University with Jeff Popyack.; Philadelphia, PA",
+    39.9527237,
+    -75.1635262
+  ],
+  [
+    "The Ursinus WebIDE: A Serverless Browser-Based Development Environment for Student Practice and Rapid Instructor Exercise Development<br />ACM Special Interest Group in Computer Science Education (SIGCSE) Symposium 2026; St. Louis, MO",
+    38.6254063,
+    -90.190009
+  ],
+  [
+    "REThink CS @ Drexel: Bridging Connections in Philadelphia with a Research Experiences for Teachers Site.<br />NSF EEC Grantees Conference with Jeffrey L. Popyack; Washington, DC",
+    38.8950982,
+    -77.0363849
+  ],
+  [
+    "A Wearable Biomedical Monitoring System Enabled by the Internet-of-Things<br />A Wearable Biomedical Monitoring System Enabled by the Internet-of-Things. NSF Connections in Smart Health (CSH) Workshop with Kapil R. Dandekar, Genevieve Dion, Adam Fontecchio, Timothy Kurzweg.; Charlottesville, VA",
+    38.029306,
+    -78.4766781
+  ],
+  [
+    "Pop, The Question Podcast (S3-E19)<br />Pop, The Question Podcast, Penoni Honors College, Drexel University; Philadelphia, PA",
+    39.9527237,
+    -75.1635262
+  ],
+  [
+    "How the PC Starts its Day: From Boot Code to Boot Viruses<br />How the PC Starts its Day: From Boot Code to Boot Viruses. Drexel University Math and Computer Science (MCS) Society Talk.; Philadelphia, PA",
+    39.9527237,
+    -75.1635262
   ]
 ];
