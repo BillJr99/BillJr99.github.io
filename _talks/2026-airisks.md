@@ -12,3 +12,5 @@ tags:
 ---
 
 With Shai Karp, Anthony Nadler, Aubrey Paris, Ann Karreth, and Johannes Karreth
+
+Listen to the panel on the Parlee Center's Nontechnically Speaking podcast: [https://open.spotify.com/episode/0MfDMq6AOBbPuN7CIq7KsL](https://open.spotify.com/episode/0MfDMq6AOBbPuN7CIq7KsL)
