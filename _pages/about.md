@@ -48,7 +48,7 @@ I am also registered on GMRS as callsign WSKN786.
 <a href="http://www.hamqsl.com/solar.html" title="Click to add Solar-Terrestrial Data to your website!"><img src="https://www.hamqsl.com/solargraph.php"></a> 
 <br><br>
 <h3>WNG704 NOAA Weather Hibernia Park, PA Stream</h3>
-<iframe width="325px" height="245px" src="https://api.broadcastify.com/embed/player/?key=04430f44-e676-11ef-9e04-0e98d5b32039&html5=1&stats=1&feedId=44541">Your browser does not support iFrames.</iframe>
+<a href="https://wxradio.org/PA-HiberniaPark-WNG704" target="_blank">Listen to the WNG704 stream on wxradio.org</a>
 </center>
 
 Contact Me
