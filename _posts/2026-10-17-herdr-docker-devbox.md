@@ -268,11 +268,7 @@ This was the part I had to learn the most about to get right.
 - A *user namespace* is the clever one. Inside it, a process can appear to be root and have capabilities such as "may mount," but only over things that belong to that namespace. That's how an ordinary user can create the other namespaces without being a real administrator.
 - IPC and UTS namespaces isolate shared-memory objects and the hostname.
 
-Codex uses bubblewrap on Linux to sandbox the commands it runs. This limits what the model's commands can touch. It also means that Codex needs to be able to create those namespaces inside our container.
-
-### Why only Codex, and where else it could apply
-
-In this setup Codex is the only agent whose sandbox depends on bubblewrap, so it is the only one that needs the wider seccomp profile. I didn't turn on sandboxing for the others because the container, the separate UIDs, and the broker already keep them away from the host drives and from each other. Some of them could use it, though. Claude Code has an optional sandbox mode that, on Linux, relies on bubblewrap and `socat` (a relay that passes network traffic between the sandbox and a filtering proxy). Neither `bwrap` nor `socat` is in this image's package list, so enabling that mode would mean installing both and accepting the same widened profile. I haven't tried it, so check each agent's current documentation before relying on this.
+Codex uses bubblewrap on Linux to sandbox the commands it runs. This limits what the model's commands can touch. It also means that Codex needs to be able to create those namespaces inside our container. In this setup Codex is the only agent whose sandbox depends on bubblewrap, so it is the only one that needs the wider seccomp profile. I didn't turn on sandboxing for the others because the container, the separate UIDs, and the broker already keep them away from the host drives and from each other. Some of them could use it, though. Claude Code has an optional sandbox mode that, on Linux, relies on bubblewrap and `socat` (a relay that passes network traffic between the sandbox and a filtering proxy). Neither `bwrap` nor `socat` is in this image's package list, so enabling that mode would mean installing both and accepting the same widened profile. I haven't tried it, so check each agent's current documentation before relying on this.
 
 ### The problem
 
