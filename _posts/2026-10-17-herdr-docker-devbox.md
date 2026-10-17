@@ -12,43 +12,23 @@ tags:
  - opencode
 ---
 
-Coding agents are useful because they can read your files and run commands. That is also what makes them a little uncomfortable to run on a machine with real data on it. A model can misread an instruction, or a file it opens can contain instructions of its own, and an agent running as you can do anything you can do. When I run several agents at once, the question gets bigger: each one wants access to the same drives, and I would like them to cooperate without all of them being able to see everything.
+Coding agents are useful because they can read your files and run commands. That also makes them risky to run on a machine with real data on it. A model can misread an instruction, or a file it opens can contain instructions of its own, and an agent running as you can do anything you can do. I run several agents at once, and each one wants access to the same drives. I'd like them to cooperate without all of them being able to see everything.
 
 This post describes a setup I built to deal with that. Everything runs in a single Docker container. Seven agents (Claude Code, Codex, Antigravity, Grok, OpenCode, pi, and Qwen Code) each get their own Linux user, their own home directory, and a terminal tab managed by [Herdr](https://herdr.dev/). None of them can see my Windows drives. When one needs a file, it asks a small broker program, and the request sits there until I approve it, either on a web page or by typing a six-digit code into Claude from my phone. Every file in the project is at the bottom of this post, so you can build it yourself.
 
-I'll go through it in the order I'd want it explained to me: first the ideas you need (containers, users, permissions, sandboxes), then how to build and run it, then how each piece works and why I made the choices I did. If you already know Docker and Linux permissions, skip ahead to "The approval broker."
+This is experimental. I built it for my own setup, so it may not be appropriate or secure enough for general use, and it has had limited testing. Please don't rely on it in production; read it as a reference for the decisions and tradeoffs I made for my use case.
+
+I'll go through it in the order I'd want it explained to me: first the ideas you need (containers, users, permissions, sandboxes), then how to build and run it, then how each piece works and why I made the choices I did. If you already know Docker and Linux permissions, skip ahead to "Protecting the host drives."
 
 If you've read my [earlier post on Herdr and per-agent MCP credentials](/posts/2026/10/herdr-multiagent-mcpproxy/), this is a different approach to a related problem. That post fenced agents apart on a server by giving each its own credentials. This one puts them in a container and puts a human approval step between them and the host.
 
 ## What we're building
 
-Here is the whole picture. The sections after this one fill it in.
+Everything runs in one Docker container. The host drives are mounted inside a folder that only root can open, so the agents never touch them directly. When an agent needs something on the host, it runs a command called `hostctl`, which talks to a broker running as root. The broker records the request and waits. You approve or deny it, either on a web page or from the Claude session with a one-time code. Everything the agents need to keep (sign-ins, settings, passwords) lives in a Docker volume, so rebuilding the image doesn't make you sign in to everything again.
 
-```text
- Windows host (WSL2)                      one Docker container
- -------------------                      ------------------------------------------
-  C:\  D:\  X:\  (drives)                  root: controller + approval broker (trusted)
-        |                                    |  web dashboard :8090   <--- you, in a browser
-        | bind mounts                        |  unix socket (agent.sock)
-        v                                    |
-  /host-private/{c,d,x}  (root only, 0700)   |   Herdr (one tab per agent) + ttyd terminal
-                                             |
-                                             |   claude  codex  agy  grok  opencode  pi  qwen
-                                             |   (each its own UID, no root, no capabilities)
-                                             |
-  state volume  --------------------->  /state  (logins, workspaces, passwords, audit log)
-```
+## Background you'll need
 
-There are four ideas to take from this:
-
-1. The agents never touch the drives directly. The drives are mounted inside a folder that only root can open.
-2. Agents talk to a broker, which runs as root, through a command called `hostctl`. The broker records the request and waits.
-3. You approve or deny each request. You can do that on a web page, or from the Claude session using a one-time code.
-4. Everything the agents need to keep (sign-ins, settings, passwords) lives in a Docker volume, so rebuilding the image doesn't make you sign in to everything again.
-
-## A short tour of the ideas underneath
-
-I want this to be readable if you've never run Docker, so here are the pieces I'll keep referring to. Skip any you already know.
+These are the pieces I'll keep referring to, explained for someone who has never run Docker. Skip any you already know.
 
 ### Containers, images, and volumes
 
@@ -60,7 +40,7 @@ A container's file system is thrown away when the container is removed. A *volum
 
 Linux decides who may read a file by looking at the numeric ID of the user running the program (the UID) and the permission bits on the file. A file with mode `0600` can be read and written by its owner and nobody else. A folder with mode `0700` can only be entered by its owner. Root (UID 0) can ignore these rules.
 
-This is the main trick in the project. If every agent ran as the same user, they could all read each other's files, including each other's login tokens. Instead, each agent gets its own UID (21001 through 21007), and its own home directory, which is private to it. A different agent running as a different UID simply gets "permission denied" when it tries to look inside. And because none of them is root, none of them can open the folder where the Windows drives are mounted.
+If every agent ran as the same user, they could all read each other's files, including each other's login tokens. Instead, each agent gets its own UID (21001 through 21007), and its own home directory, which is private to it. A different agent running as a different UID simply gets "permission denied" when it tries to look inside. And because none of them is root, none of them can open the folder where the Windows drives are mounted.
 
 ### Capabilities and `no_new_privs`
 
@@ -76,14 +56,14 @@ We'll spend a whole section on these later, because the container needs a specia
 
 ## What you need before you start
 
-- A Windows machine with WSL2 and an Ubuntu distribution, or a Linux machine. The scripts assume WSL, where your Windows drives appear at `/mnt/c`, `/mnt/d`, and so on.
+- A Windows machine with WSL2 and an Ubuntu distribution, or a Linux machine. The scripts assume WSL, where your Windows drives appear under `/mnt`, such as `/mnt/c`.
 - Docker, reachable from inside WSL (Docker Desktop with WSL integration turned on, or Docker Engine installed in the distribution). Check with `docker info`.
 - Python 3 and `bash` in WSL, plus the `mountpoint` command (part of `util-linux`, normally already there).
 - An authenticator app on your phone, such as the one you already use for your accounts. You'll add one entry to it.
 - Accounts for whichever agents you plan to use. You don't have to use all seven. Each agent signs in on its own the first time you open it.
 - Optionally, an [Open WebUI](https://openwebui.com/) server with an API key, if you want OpenCode, pi, and Qwen Code to use your own models by default.
 
-The project is set up for three drives: C, D, and X. That's what my machine has. If yours has different drives, the places to edit are: the `for drive in c d x` loop and the three `--mount` lines in `run.sh`, the `mkdir` line in the Dockerfile that creates `/host-private/c`, `/d`, and `/x`, and the drive lists in `devbox.py` (search for `'c', 'd', 'x'`). If you only want one drive, make those lists shorter and the startup check will stop insisting on the others. You can also set `"require_mounts": false` in a config override, described later, if you'd rather it not check.
+The project is set up for one host drive, C, which is all I needed. To add more, extend the same places: the `for drive in c` loop and the `--mount` line in `run.sh`, the `mkdir` line in the Dockerfile that creates `/host-private/c`, and the drive lists in `devbox.py` (search for `('c',)`). The startup check then requires every drive you list. You can also set `"require_mounts": false` in a config override, described later, if you'd rather it not check.
 
 ## Building it
 
@@ -97,11 +77,11 @@ bash build.sh
 
 `build.sh` does three things. First it runs `prepare-seccomp.py`, which creates the seccomp profile file the container will use. I explain what that profile is later; the short version is that it's Docker's standard profile with six extra permissions that bubblewrap needs. The script downloads Docker's upstream profile once and keeps a copy named `default.json` next to itself, so later builds don't need the network for that. If `herdr-seccomp.json` already exists, the script leaves it alone, which means you can hand-edit that file and it won't be overwritten.
 
-Second, `build.sh` runs `docker build`. That installs the operating system packages, Node.js, the seven agents (at pinned versions), Herdr, and the `pi-openai-compat` extension, and then writes the application itself into the image. The application is one Python program, `devbox.py`, embedded in the Dockerfile as a here-document so the whole project stays a single file you can read top to bottom.
+Second, `build.sh` runs `docker build`. That installs the operating system packages, Node.js, the seven agents (at the versions the Dockerfile specifies), Herdr, and the `pi-openai-compat` extension, and then writes the application itself into the image. The application is one Python program, `devbox.py`, embedded in the Dockerfile as a here-document so the whole project stays a single file you can read top to bottom.
 
 Third, it runs the project's self-test inside the freshly built image. The build itself also runs the tests, so a failing test stops you from ending up with a broken image.
 
-The pinned versions are `ARG` lines near the top of the Dockerfile. I pin them because agent CLIs change quickly, and I'd like a rebuild next month to give me the same system. To upgrade one agent, change its version number and rebuild.
+The agent versions are set by `ARG` lines near the top of the Dockerfile. Agent CLIs change quickly, and I'd like a rebuild next month to give me the same system. To upgrade one agent, change its version number and rebuild.
 
 ## Running it
 
@@ -151,17 +131,17 @@ All agents run from their own folder, `/state/agents/<name>/workspace`, which is
 
 ## Protecting the host drives
 
-This is the core of the project, so let's follow one request all the way through.
+Here is one request, followed from start to finish.
 
-When the container starts, the Windows drives are bind-mounted at `/host-private/c`, `/host-private/d`, and `/host-private/x`. The parent folder, `/host-private`, is owned by root with mode `0700`. That means only root can even walk into it. No agent is root, so no agent can look at a single file on those drives. This is a plain file permission, not a clever trick, and the self-test checks it by starting a process as each agent's UID and confirming that it gets "permission denied."
+When the container starts, the host drives are bind-mounted under `/host-private`, one folder per drive, such as `/host-private/c`. The parent folder, `/host-private`, is owned by root with mode `0700`. That means only root can even walk into it. No agent is root, so no agent can look at a single file on those drives. This is a plain file permission, not a clever trick, and the self-test checks it by starting a process as each agent's UID and confirming that it gets "permission denied."
 
-An agent that needs a host file runs `hostctl`:
+When an agent needs to modify files on the host, it runs `hostctl`:
 
 ```bash
 hostctl list c Users
-hostctl read d projects/example.txt
-hostctl search x projects "literal text"
-hostctl write d projects/example.txt --file ./proposed.txt
+hostctl read c projects/example.txt
+hostctl search c projects "literal text"
+hostctl write c projects/example.txt --file ./proposed.txt
 ```
 
 `hostctl` is a tiny client. It sends a JSON message over the Unix socket to the broker, which is a root-owned part of the same Python program. The broker:
@@ -170,7 +150,7 @@ hostctl write d projects/example.txt --file ./proposed.txt
 2. Checks that the drive is one of the allowed ones and that the path is a plain relative path. It refuses `..`, absolute paths, backslashes, colons, control characters, and Windows device names like `CON` and `NUL`.
 3. Creates a request record, saves it in memory with a random ID and a timeout (ten minutes by default), writes an entry to a SQLite audit log, and tells the agent the request is pending.
 
-Notice what hasn't happened yet: the broker has not touched the file. Not a read, not a stat. The self-test has a check for this, because it's an easy rule to break accidentally.
+At this point the broker has not touched the file, not even to read it or check that it exists. The self-test checks for this, because it's an easy rule to break by accident.
 
 The agent's `hostctl` command now waits, polling once a second. When you approve the request, the broker finally does the work. Reading a file opens it without following symbolic links, walks the path one folder at a time with no link-following, and refuses to cross onto a different file system than the drive. A symbolic link is a file that points somewhere else, and an agent that could plant one could try to trick the broker into reading `/etc/passwd`; these precautions are about that attack. The broker also compares the file's identity before and after the read, and rejects the result if the file changed underneath it.
 
@@ -186,13 +166,13 @@ A write is the riskiest operation, so it has more care. When you approve a write
 
 The agent never sees the old contents. The web page also has an optional "show diff first" button, which reads the current file and shows you the difference before you decide. A write is one approval, with that diff as an extra step you can use if you want to look.
 
-The rename in step 5 is the best you can do portably, but I should be honest that there is no way to make it perfectly safe against another program editing the same file at the same instant, particularly on Windows drives and network shares. The recheck in step 4 narrows the window; it doesn't close it.
+The rename in step 5 is the best you can do portably, but it can't be made perfectly safe against another program editing the same file at the same instant, particularly on Windows drives and network shares. The recheck in step 4 narrows the window; it doesn't close it.
 
 ### Limits
 
 By default there are no limits on file size, number of search results, or number of files searched in one request. I wanted large projects to just work. If you'd rather cap them, there are four settings (`max_file_bytes`, `max_entries`, `search_max_files`, `search_max_bytes`), where `0` means unlimited and any positive number is a cap. Keep in mind that "unlimited" means the broker loads a whole file into memory when you approve a read of it.
 
-## Approving requests: two routes
+## Approving Requests via a web frontend or via an agent with a TOTP code
 
 You can approve through either route, and whichever you use first wins. A second decision on the same request gets a "no longer pending" error.
 
@@ -239,7 +219,7 @@ def code(secret_base32, counter):
     number = struct.unpack('>I', digest[offset:offset + 4])[0] & 0x7fffffff
     return '%06d' % (number % 1000000)
 
-print(code('JBSWY3DPEHPK3PXP', int(time.time() // 30)))   # JBSWY3DPEHPK3PXP is a well-known example secret
+print(code('JBSWY3DPEHPK3PXP', int(time.time() // 30)))   # JBSWY3DPEHPK3PXP is a well-known example secret, don't use it in production!
 ```
 
 `int(time.time() // 30)` is the "counter": it increases by one every thirty seconds. The code runs HMAC-SHA1 on that counter using the secret as the key, takes four bytes from a spot chosen by the last byte of the result ("dynamic truncation"), and keeps the last six decimal digits. The broker accepts the code for the previous, current, or next time slot to allow for clocks that are slightly off, and then refuses to ever accept an earlier or equal slot again.
@@ -256,9 +236,9 @@ Approving from Claude only helps if Claude knows there is something to approve. 
 
 A few details keep this from becoming a problem. Paths and search text come from agents, so control characters are replaced and long text is cut off before it goes into the message; an agent can't smuggle terminal escape codes or fake instructions into Claude's prompt that way. Messages are batched, so one agent making fifty requests produces one notification rather than fifty. If the notification fails, the request still goes through; the broker logs the error and moves on. And when a request gets decided on the web page, or times out, Claude gets a one-line note so it doesn't ask me about something already closed.
 
-### Not asking twice
+### Approving Workflows
 
-Each agent has its own "may I run this command?" prompt, and those would make the whole thing tedious: I'd approve running `hostctl read`, and then approve the read itself. Since the broker is the real gate, I told each agent to run `hostctl list`, `read`, `search`, `write`, and `pending` without asking. The devbox writes that into each agent's own configuration at every start, using whatever mechanism that agent has (Claude's managed settings, Codex's rules files, Qwen's and Antigravity's settings, Grok's config file, and OpenCode's permission block). The commands that relay your decision, `approve`, `preview`, and `deny`, are deliberately left out, so those still ask. The files are merged, not overwritten, so settings you've added yourself survive, and a file that can't be parsed is left alone with a logged warning.
+Each agent has its own "may I run this command?" prompt, which became tedious: I'd approve running `hostctl read`, and then approve the read itself. Since the broker is the real gate, I told each agent to run `hostctl list`, `read`, `search`, `write`, and `pending` without asking. The devbox writes that into each agent's own configuration at every start, using whatever mechanism that agent has (Claude's managed settings, Codex's rules files, Qwen's and Antigravity's settings, Grok's config file, and OpenCode's permission block). The commands that relay your decision, `approve`, `preview`, and `deny`, are deliberately left out, so those still ask. The files are merged, not overwritten, so settings you've added yourself survive, and a file that can't be parsed is left alone with a logged warning.
 
 ## Agents working together
 
@@ -272,11 +252,11 @@ teamctl read codex                  # last 100 lines of codex's terminal
 
 `status` shows names and states only. `prompt` types a task into another agent's terminal, and Claude Code asks me before running it, since the broker doesn't gate it. `read` shows what is on another agent's screen, which could include something sensitive, so it goes through the broker like a file read: it creates a request, and I approve it on the web page or with a code in the Claude session, the same as a host file. Nothing is read until I do.
 
-I should say clearly what this does and doesn't separate. Agents can't read each other's files, but if I ask Claude to relay something one agent saw to another, I've handed it over myself. Approving a read puts that content into the requesting agent's context, and it can mention it to anyone it talks to. The approval step controls new access, not what happens after.
+To be clear about what this separates: Agents can't read each other's files, but if I ask Claude to relay something one agent saw to another, I've handed it over myself. Approving a read puts that content into the requesting agent's context, and it can mention it to anyone it talks to. The approval step controls new access, not what happens after.
 
 ## Bubblewrap, and why the container needs a custom seccomp profile
 
-This is the least obvious part of the project, and the one I had to learn the most to get right.
+This was the part I had to learn the most about to get right.
 
 ### What bubblewrap does
 
@@ -288,7 +268,11 @@ This is the least obvious part of the project, and the one I had to learn the mo
 - A *user namespace* is the clever one. Inside it, a process can appear to be root and have capabilities such as "may mount," but only over things that belong to that namespace. That's how an ordinary user can create the other namespaces without being a real administrator.
 - IPC and UTS namespaces isolate shared-memory objects and the hostname.
 
-Codex uses bubblewrap on Linux to sandbox the commands it runs. That's a good thing, since it limits what the model's commands can touch. It also means that Codex needs to be able to create those namespaces inside our container.
+Codex uses bubblewrap on Linux to sandbox the commands it runs. This limits what the model's commands can touch. It also means that Codex needs to be able to create those namespaces inside our container.
+
+### Why only Codex, and where else it could apply
+
+In this setup Codex is the only agent whose sandbox depends on bubblewrap, so it is the only one that needs the wider seccomp profile. I didn't turn on sandboxing for the others because the container, the separate UIDs, and the broker already keep them away from the host drives and from each other. Some of them could use it, though. Claude Code has an optional sandbox mode that, on Linux, relies on bubblewrap and `socat` (a relay that passes network traffic between the sandbox and a filtering proxy). Neither `bwrap` nor `socat` is in this image's package list, so enabling that mode would mean installing both and accepting the same widened profile. I haven't tried it, so check each agent's current documentation before relying on this.
 
 ### The problem
 
@@ -296,9 +280,9 @@ Docker, by default, applies a *seccomp profile* to every container. Seccomp is a
 
 So by default, bubblewrap inside a container fails with an error along the lines of "Creating new namespace failed: Operation not permitted." The usual fixes are to run the container with `--privileged` or add `SYS_ADMIN`, both of which hand the container far more power than I want to give a box full of coding agents.
 
-### The narrower fix
+### Composing the seccomp Configuration
 
-`prepare-seccomp.py` takes Docker's own default profile, keeps all of its rules, and adds exceptions for only the system calls bubblewrap needs:
+`prepare-seccomp.py` takes Docker's own default profile (the [`default.json` in the Moby profiles repository](https://github.com/moby/profiles/blob/main/seccomp/default.json), which it downloads), keeps all of its rules, and adds exceptions for only the system calls bubblewrap needs:
 
 - `clone` is allowed when the flags don't ask for a new cgroup namespace. The profile checks the first argument against a bit mask.
 - `unshare` is allowed only when the flags request some combination of user, mount, PID, network, IPC, and UTS namespaces (plus a System V semaphore flag), and nothing else.
@@ -316,7 +300,7 @@ That reads as: allow `clone` when the cgroup-namespace bit in argument 0 is zero
 
 The script also refuses to continue if the upstream profile already contains an explicit deny for one of these calls, because that would mean my assumptions about the profile are wrong and it deserves a human look.
 
-### What you're trading
+### My Tradeoff
 
 This does widen the kernel surface exposed to every process in the container, not just Codex. A user namespace inside the container gives processes a kind of local "root" inside their own namespace, and the kernel code that handles that has had bugs. Several other protections still apply: the agents have no real capabilities, the container runs with `no-new-privileges`, and the kernel still checks capability and ownership rules for these calls. But I wouldn't call the result a security certification, and neither does the script; it says to test the profile in a disposable container before pointing it at drives you care about. If you don't use Codex, you can skip the custom profile and run with Docker's default instead, but Codex's bubblewrap sandbox then can't create its namespaces. You can also change how Codex launches with `launch_commands` in the config.
 
@@ -330,7 +314,7 @@ I run my own [Open WebUI](https://openwebui.com/) server for open-weight models,
 
 For the URL, you can give the site's address (the devbox appends `/api`), or a URL already ending in `/api` or `/v1` which is used as typed.
 
-Two model-discovery plugins mean you aren't limited to the single model you picked: [opencode-auto-models](https://github.com/BillJr99/opencode-auto-models), which asks the endpoint for its model list and adds all of them, and [pi-openai-compat](https://www.npmjs.com/package/@billjr99/pi-openai-compat) for pi. The pi extension is installed into the image at build time. The OpenCode plugin is added to its configuration as a pinned git commit, and OpenCode downloads it with `git` the first time it starts. That first start needs network access, and the result is cached in the volume after that. The menu in `run.sh` therefore only chooses what each agent starts on. Every model on the server is available from inside the agents.
+Two model-discovery plugins mean you aren't limited to the single model you picked: [opencode-auto-models](https://github.com/BillJr99/opencode-auto-models), which asks the endpoint for its model list and adds all of them, and [pi-openai-compat](https://www.npmjs.com/package/@billjr99/pi-openai-compat) for pi. The pi extension is installed into the image at build time. The OpenCode plugin is added to its configuration at a specific git commit, and OpenCode downloads it with `git` the first time it starts. That first start needs network access, and the result is cached in the volume after that. The menu in `run.sh` therefore only chooses what each agent starts on. Every model on the server is available from inside the agents.
 
 The part I care about most is that this setup doesn't fight you when you add things. If you add another provider to OpenCode, or log in to something with `/connect`, or add a provider to pi with `/compat-login`, it stays. Each configuration file is merged, not replaced: the devbox sets only the keys it owns (the permission rules, the Open WebUI provider's address and key, and the default model if you haven't chosen another one) and leaves the rest of the file alone. If you set a different default model yourself, the devbox respects that.
 
@@ -397,7 +381,7 @@ One story from while I was building it: I used HTML comment markers (`<!-- -->`)
 
 ## Limits of this design
 
-Nothing here is perfect isolation, and I'd rather you know where the edges are.
+Nothing here is perfect isolation. These are the edges as I know them.
 
 - Containers share the host's kernel. A kernel bug could cross the boundary, and the widened seccomp profile exposes a bit more of the kernel to every process in the container.
 - The root broker and controller are trusted. A bug in `devbox.py` is a bug in the security boundary, which is the reason the whole thing is a single file you can read.
@@ -405,11 +389,11 @@ Nothing here is perfect isolation, and I'd rather you know where the edges are.
 - The phone route puts a one-time code in front of Claude. It's good against mistakes and unattended approvals, and weaker than the web page against a determined hostile agent.
 - Windows drive and network-share behavior (permissions, symbolic links, atomic renames) varies. Test with files you can afford to lose before trusting it with anything else.
 - API keys in the Open WebUI integration are stored in the agents' own private configuration files, in the volume. They're protected from other agents, not from someone with access to the Docker host.
-- I built this against the agent versions pinned in the Dockerfile. Agent CLIs change quickly, and the configuration formats the devbox writes are the first thing a new release is likely to break.
+- I built this against the agent versions set in the Dockerfile. Agent CLIs change quickly, and the configuration formats the devbox writes are the first thing a new release is likely to break.
 
 ## Troubleshooting
 
-**`run.sh` says a drive isn't mounted.** The script checks that `/mnt/c`, `/mnt/d`, and `/mnt/x` are real mount points. Run `findmnt -M /mnt/x`. If a drive isn't mounted in WSL, mount it first, or remove that drive from the lists described earlier.
+**`run.sh` says a drive isn't mounted.** The script checks that each host drive is a real mount point under `/mnt` in WSL. Run `findmnt -M /mnt/c` (or the drive it named). If a drive isn't mounted in WSL, mount it first, or remove that drive from the lists described earlier.
 
 **Bubblewrap or Codex says it can't create a namespace.** Make sure the container started with the custom profile: `docker inspect herdr-devbox` should show the `seccomp=` path to your `herdr-seccomp.json` under the security options.
 
@@ -421,11 +405,11 @@ Nothing here is perfect isolation, and I'd rather you know where the edges are.
 
 **You edited a configuration file and the devbox complained.** Files the devbox merges into must be valid JSON (or TOML for Grok). If one can't be parsed, the devbox leaves it alone and logs a warning, which is safe, but it means its own settings aren't applied to that file until you fix it.
 
-## Where to go from here
+## Next Steps
 
 The same shape works for other things. The broker pattern (an untrusted client asks, a trusted process checks and waits for a person, then acts) fits any capability you'd like an agent to use but not hold, such as a deploy key or a database connection. The one-time-code idea is also reusable: it's about forty lines, and it lets a person authorize something from a device that has no direct access to the machine.
 
-If you try this, I'd like to hear what breaks. The files follow.
+A last word of caution: this is experimental and shouldn't be relied on in production. I built it for my own use case, so it may not be appropriate or secure enough for general-purpose use. Treat it as a reference for the decisions and tradeoffs I made, and test it with files you can afford to lose.
 
 ## References
 
@@ -461,14 +445,12 @@ The image and the whole application: the broker, launcher, self-tests, and defau
 #   docker build --pull -t herdr-devbox .
 # CHECK (synthetic fixtures only, no host mounts):
 #   docker run --rm herdr-devbox self-test
-# RUN from WSL, after confirming /mnt/x is the actual network share:
-#   findmnt -M /mnt/x
+# RUN from WSL, after confirming /mnt/c is the actual drive mount:
+#   findmnt -M /mnt/c
 #   docker run -it --name herdr-devbox \
 #     --security-opt no-new-privileges=true \
 #     --mount type=volume,src=herdr-devbox-state,dst=/state \
 #     --mount type=bind,src=/mnt/c,dst=/host-private/c \
-#     --mount type=bind,src=/mnt/d,dst=/host-private/d \
-#     --mount type=bind,src=/mnt/x,dst=/host-private/x \
 #     --add-host=host.docker.internal:host-gateway \
 #     -p 127.0.0.1:8090:8090 -p 127.0.0.1:4096:4096 \
 #     -e OPENWEBUI_URL=https://YOUR-WEBUI-HOST \
@@ -573,7 +555,7 @@ RUN npm install --global --omit=dev --ignore-scripts \
     && test -f /usr/local/lib/node_modules/@billjr99/pi-openai-compat/index.ts
 RUN install -d -m 0755 /opt/devbox /state /run/devbox \
     && install -d -m 0700 /host-private /host-private/secrets \
-    && mkdir /host-private/c /host-private/d /host-private/x \
+    && mkdir /host-private/c \
     && for pair in claude:21001 codex:21002 agy:21003 grok:21004 opencode:21005 pi:21006 qwen:21007; do \
         agent_name="${pair%:*}"; agent_uid="${pair#*:}"; \
         groupadd --gid "$agent_uid" "$agent_name"; \
@@ -1120,8 +1102,8 @@ def native_start(name):
 
 
 def canonical(drive, path):
-    if drive not in ('c', 'd', 'x'):
-        raise ValueError('Drive must be c, d, or x')
+    if drive not in ('c',):
+        raise ValueError('Drive must be c')
     if not isinstance(path, str) or len(path) > 4096:
         raise ValueError('Invalid path')
     if '\\' in path or ':' in path or '\x00' in path or path.startswith('/'):
@@ -1794,7 +1776,7 @@ def cli(mode, argv):
                 p.add_argument('code', help='Six-digit code typed by the human; never reuse or guess')
         for op in ('list', 'read', 'search', 'write'):
             p = sub.add_parser(op)
-            p.add_argument('drive', choices=('c', 'd', 'x'))
+            p.add_argument('drive', choices=('c',))
             p.add_argument('path')
             if op == 'search':
                 p.add_argument('query')
@@ -1876,7 +1858,7 @@ def initialize():
     if DRIVES.stat().st_uid != 0 or stat.S_IMODE(DRIVES.stat().st_mode) != 0o700:
         raise PermissionError('Drive mount parent must be root-owned mode 0700')
     if CFG['require_mounts']:
-        for name in ('c', 'd', 'x'):
+        for name in ('c',):
             if not os.path.ismount(DRIVES / name):
                 raise ValueError(f'{name}: is not a mounted drive; startup refused')
     config = ('onboarding = false\n[terminal]\ndefault_shell = "/usr/local/bin/devbox-pane"\n'
@@ -2113,7 +2095,7 @@ class SecurityTests(unittest.IsolatedAsyncioTestCase):
         self.root.chmod(0o755)
         d.STATE, d.RUN, d.DRIVES = [self.root / n for n in ('state', 'run', 'host-private')]
         d.DRIVES.mkdir(mode=0o700)
-        for drive in ('c', 'd', 'x'):
+        for drive in ('c',):
             (d.DRIVES / drive).mkdir()
         (d.DRIVES / 'c/secret.txt').write_text('PRIVATE HOST CONTENT\n')
         d.PANES = {}
@@ -3177,7 +3159,7 @@ docker image inspect "$image" >/dev/null 2>&1 || {
   exit 1
 }
 
-for drive in c d x; do
+for drive in c; do
   if ! mountpoint -q "/mnt/$drive"; then
     printf 'Missing drive mount: /mnt/%s. Mount the actual drive/share in WSL first.\n' "$drive" >&2
     exit 1
@@ -3362,8 +3344,6 @@ docker run -d --restart unless-stopped --name "$container" \
   --security-opt seccomp="$script_dir/herdr-seccomp.json" \
   --mount "type=volume,src=$state_volume,dst=/state" \
   --mount type=bind,src=/mnt/c,dst=/host-private/c \
-  --mount type=bind,src=/mnt/d,dst=/host-private/d \
-  --mount type=bind,src=/mnt/x,dst=/host-private/x \
   --add-host=host.docker.internal:host-gateway \
   -p "$bind:8090:8090" \
   -p "$bind:4096:4096" \
