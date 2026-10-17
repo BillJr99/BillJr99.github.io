@@ -270,7 +270,7 @@ This was the part I had to learn the most about to get right.
 
 Codex uses bubblewrap on Linux to sandbox the commands it runs. This limits what the model's commands can touch. It also means that Codex needs to be able to create those namespaces inside our container. In this setup Codex is the only agent whose sandbox depends on bubblewrap, so it is the only one that needs the wider seccomp profile. I didn't turn on sandboxing for the others because the container, the separate UIDs, and the broker already keep them away from the host drives and from each other. Some of them could use it, though. Claude Code has an optional sandbox mode that, on Linux, relies on bubblewrap and `socat` (a relay that passes network traffic between the sandbox and a filtering proxy). Neither `bwrap` nor `socat` is in this image's package list, so enabling that mode would mean installing both and accepting the same widened profile. I haven't tried it, so check each agent's current documentation before relying on this.
 
-### The problem
+### Configuring a Custom Seccomp Policy
 
 Docker, by default, applies a *seccomp profile* to every container. Seccomp is a kernel feature that filters the system calls a process may make. Docker's default profile allows most of what normal programs need and blocks a number of calls that create namespaces or mount file systems, unless the container has the `SYS_ADMIN` capability. Those blocks are there because namespaces and mounts have historically been a rich source of kernel bugs, and a container that can create them has more of the kernel exposed to it.
 
@@ -312,7 +312,7 @@ For the URL, you can give the site's address (the devbox appends `/api`), or a U
 
 Two model-discovery plugins mean you aren't limited to the single model you picked: [opencode-auto-models](https://github.com/BillJr99/opencode-auto-models), which asks the endpoint for its model list and adds all of them, and [pi-openai-compat](https://www.npmjs.com/package/@billjr99/pi-openai-compat) for pi. The pi extension is installed into the image at build time. The OpenCode plugin is added to its configuration at a specific git commit, and OpenCode downloads it with `git` the first time it starts. That first start needs network access, and the result is cached in the volume after that. The menu in `run.sh` therefore only chooses what each agent starts on. Every model on the server is available from inside the agents.
 
-The part I care about most is that this setup doesn't fight you when you add things. If you add another provider to OpenCode, or log in to something with `/connect`, or add a provider to pi with `/compat-login`, it stays. Each configuration file is merged, not replaced: the devbox sets only the keys it owns (the permission rules, the Open WebUI provider's address and key, and the default model if you haven't chosen another one) and leaves the rest of the file alone. If you set a different default model yourself, the devbox respects that.
+If you add another provider to OpenCode, or log in to something with `/connect`, or add a provider to pi with `/compat-login`, it stays. Each configuration file is merged, not replaced: the devbox sets only the keys it owns (the permission rules, the Open WebUI provider's address and key, and the default model if you haven't chosen another one) and leaves the rest of the file alone. If you set a different default model yourself, the devbox respects that.
 
 ## What persists, and where
 
