@@ -1,5 +1,5 @@
 ---
-title: 'A Herdr Devbox: Running Several Coding Agents in One Container, With You Approving Every Host Access'
+title: 'A Herdr Docker Devbox: Running Several Coding Agents in One Container with Approval-Based Host Access'
 date: 2026-10-17
 permalink: /posts/2026/10/herdr-docker-devbox/
 tags:
@@ -407,7 +407,7 @@ Nothing here is perfect isolation, and I'd rather you know where the edges are.
 - API keys in the Open WebUI integration are stored in the agents' own private configuration files, in the volume. They're protected from other agents, not from someone with access to the Docker host.
 - I built this against the agent versions pinned in the Dockerfile. Agent CLIs change quickly, and the configuration formats the devbox writes are the first thing a new release is likely to break.
 
-## When something goes wrong
+## Troubleshooting
 
 **`run.sh` says a drive isn't mounted.** The script checks that `/mnt/c`, `/mnt/d`, and `/mnt/x` are real mount points. Run `findmnt -M /mnt/x`. If a drive isn't mounted in WSL, mount it first, or remove that drive from the lists described earlier.
 
