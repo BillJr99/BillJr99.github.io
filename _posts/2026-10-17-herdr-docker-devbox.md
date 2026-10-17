@@ -314,9 +314,9 @@ Two model-discovery plugins mean you aren't limited to the single model you pick
 
 If you add another provider to OpenCode, or log in to something with `/connect`, or add a provider to pi with `/compat-login`, it stays. Each configuration file is merged, not replaced: the devbox sets only the keys it owns (the permission rules, the Open WebUI provider's address and key, and the default model if you haven't chosen another one) and leaves the rest of the file alone. If you set a different default model yourself, the devbox respects that.
 
-## What persists, and where
+## Persisting Agent State
 
-Everything that matters lives in the Docker volume named `herdr-devbox-state`, mounted at `/state`:
+Agent state and configuration lives in the Docker volume named `herdr-devbox-state`, mounted at `/state`:
 
 | What | Where |
 |---|---|
