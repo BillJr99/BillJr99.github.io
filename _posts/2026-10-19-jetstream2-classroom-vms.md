@@ -199,7 +199,16 @@ docker run -it --rm -u "$(id -u):$(id -g)" \
   ghcr.io/anomalyco/opencode:latest
 ```
 
-This is a simplified excerpt. If a VM already has root-owned directories from an earlier launcher, `sudo chown -R ubuntu:ubuntu ~/.opencode-container-home` repairs it. Because every setup step is safe to repeat, rerunning the whole install on every VM is also how I roll out a launcher change. Since the image uses the `:latest` tag, VMs set up at different times can end up with different OpenCode builds. Pin a tag or digest if every student needs the same version.
+The VMs also get [herdr](https://herdr.dev/), a terminal multiplexer for coding agents. Its sidebar shows whether each agent is working, blocked, or idle. I install it with herdr's official installer, which verifies the release checksum, and then register its OpenCode integration as the `ubuntu` user:
+
+```bash
+curl -fsSL https://herdr.dev/install.sh | sudo sh   # check herdr.dev for the current installer URL
+herdr integration install opencode
+```
+
+The integration writes herdr's OpenCode plugin files into `~/.config/opencode`. The launcher already mounts that directory into the container, so OpenCode loads the plugin. The plugin reports to herdr only when `HERDR_ENV`, `HERDR_SOCKET_PATH`, and `HERDR_PANE_ID` are set and the herdr socket is reachable. When a student starts `opencode` inside a herdr pane, the launcher forwards those variables and mounts the socket's directory (normally `~/.config/herdr`) at the same path. Outside herdr, the launcher passes nothing extra.
+
+The launcher excerpt above is simplified. Since the image uses the `:latest` tag, VMs set up at different times can end up with different OpenCode builds. Pin a tag or digest if every student needs the same version.
 
 Students log out and back in once so the Docker group change takes effect. They then run `opencode` and use `/connect` to configure a model provider. I put no model credentials on the VMs.
 
