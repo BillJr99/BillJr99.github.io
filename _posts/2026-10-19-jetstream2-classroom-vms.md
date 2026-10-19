@@ -36,7 +36,7 @@ An Explore project lasts 12 months. Unspent credits expire when it ends.
 
 ## Exchange credits for Jetstream2 time
 
-I did not expect this step. An approved allocation holds generic ACCESS credits, not Jetstream2 time, so you must exchange them for a specific resource before you can launch anything.
+An approved allocation holds generic ACCESS credits, not Jetstream2 time, so you must exchange them for a specific resource before you can launch anything.
 
 Open the approved project and go to **Credits + Resources**. Choose **Add a resource to your exchange** and select **Indiana Jetstream2 CPU**. On Jetstream2, one ACCESS credit equals one service unit (SU). I sized my request with this formula:
 
@@ -113,7 +113,7 @@ My script wraps the OpenStack commands below and adds a preview mode, a CSV of r
 
 ### Create a VM with your key
 
-Register your public key as an OpenStack keypair. At first boot, cloud-init installs it for the `ubuntu` user:
+Register your public key as an OpenStack keypair. I used the key I already had, `~/.ssh/id_rsa.pub`. According to the [`openstack keypair create` documentation](https://docs.openstack.org/python-openstackclient/pike/cli/command-objects/keypair.html), `--public-key` names the public key file to add, so the command uploads that key to OpenStack under a name you choose. Without `--public-key`, it creates a private key instead, which it prints to the console unless you pass `--private-key` with a filename. That is not what we want here. At first boot, cloud-init installs the key for the `ubuntu` user:
 
 ```bash
 openstack keypair create --public-key ~/.ssh/id_rsa.pub class-admin-key
