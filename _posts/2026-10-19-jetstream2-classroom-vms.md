@@ -227,13 +227,3 @@ done
 ```
 
 For each stage, I preview first, then run on one VM, then run on all of them.
-
-## Lessons learned
-
-- **Do not add students to the allocation.** Every member of an allocation can manage and delete everyone else's resources. Provision the VMs yourself and give each student SSH access to their own machine only.
-- **The shared `ubuntu` account has passwordless `sudo` and Docker access, which is effectively root.** This is acceptable because each VM belongs to one student. A student could still remove my key, and the instance console in Horizon is the recovery path.
-- **Set the credential expiration deliberately.** A credential that expires the same day produces the most confusing failure.
-- **Stale or unsourced credentials produce errors such as `Missing value auth-url required for auth plugin password`.** Open a fresh terminal, source the right file, and do not run it under `sudo`.
-- **At the end of the term, collect student work first.** Then shelve the VMs to stop charges, or delete them along with their volumes and floating IPs. Let the application credential expire, or delete it in Horizon, and file the allocation's final report.
-
-The student key files, and any CSV that maps students to VMs and addresses, are student data. Keep them out of any public repository.
