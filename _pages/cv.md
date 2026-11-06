@@ -62,6 +62,14 @@ Selected Non-Faculty Professional Appointments
 
 * IT Consultant and Software Developer, 1998-2005
 
+Selected Board Appointments
+======
+* Advisory Board Member, Jumpstart Philadelphia CS for All Research-Practitioner Partnership (RPP), 2025-Present
+* Advisory Council Member, Montgomery County Council on Artificial Intelligence for the Public Good, 2025-Present
+* Board of Managers Member, Jim Fisher Memorial Digital Network Association (JFMDNA), 2024-Present
+* Board Member, Innovative Technology Action Group (ITAG) for the Chester County Economic Development Council (CCEDC), 2024-Present
+* Vice President, Computer Science Teachers Association Longwood Chapter, 2022-Present
+
 Selected Awards
 ======
 * Faculty Leadership Award, Drexel University College of Computing and Informatics, 2019
