@@ -74,7 +74,7 @@ pi also has an official install script that manages its own runtime and updates;
 
 **Mistral Vibe** installs the `vibe` command and signs in with a Mistral account. Its free plan is enough for drafting and first-pass reviews.
 
-**Meta Muse** installs the `muse` command with `curl -fsSL https://dev.meta.ai/install.sh | bash`, which puts a small launcher in `~/.local/bin` that downloads the agent itself and checks it against a published checksum. It signs in with a Meta account through a device code. Its shell sandbox uses unprivileged user namespaces, which Ubuntu's AppArmor policy blocks by default, so every command failed until I started it with `--disable-sandbox`. I keep its approval prompts on instead (`--approval-mode on-request`), so it still asks before anything risky.
+**Meta Muse** installs the `muse` command with Meta's install script, which puts a small launcher in `~/.local/bin` that downloads the agent itself and checks it against a published checksum. It signs in with a Meta account through a device code. Its shell sandbox uses unprivileged user namespaces, which Ubuntu's AppArmor policy blocks by default, so every command failed until I started it with `--disable-sandbox`. I keep its approval prompts on instead (`--approval-mode on-request`), so it still asks before anything risky.
 
 After installing, make the PATH change permanent instead of exporting it in one shell. Adjust the directories to wherever your installers actually put things:
 
