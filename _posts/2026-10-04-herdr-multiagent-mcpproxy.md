@@ -11,7 +11,7 @@ tags:
  - security
 ---
 
-I now run twelve coding agents side by side on a small always-on Ubuntu server: Claude Code, Codex, Antigravity, Grok Build, Hermes, GitHub Copilot, two separate copies of OpenCode, pi, Oh My Pi, Kiro, and Mistral Vibe. [Herdr](https://herdr.dev/) keeps them organized, one labelled tab per agent, and brings them back after a reboot. Most of them share one [mcpproxy](/posts/2026/05/mcpproxy/) instance for tools. One of those tools talks to a service that needs a personal API key, and only one agent ever holds that key: a deliberately fenced-in OpenCode. The other agents can see the tool, but they can't authenticate to the service behind it. When they need that service, they hand the task to that OpenCode through Herdr.
+I now run thirteen coding agents side by side on a small always-on Ubuntu server: Claude Code, Codex, Antigravity, Grok Build, Hermes, GitHub Copilot, two separate copies of OpenCode, pi, Oh My Pi, Kiro, Mistral Vibe, and Meta Muse. [Herdr](https://herdr.dev/) keeps them organized, one labelled tab per agent, and brings them back after a reboot. Most of them share one [mcpproxy](/posts/2026/05/mcpproxy/) instance for tools. One of those tools talks to a service that needs a personal API key, and only one agent ever holds that key: a deliberately fenced-in OpenCode. The other agents can see the tool, but they can't authenticate to the service behind it. When they need that service, they hand the task to that OpenCode through Herdr.
 
 The second OpenCode and pi are the general-purpose half of the setup. Neither holds that key or any other private credential. Both get their models from llmproxy, a small OpenAI-compatible router I run in Docker on the same machine, and both fill in their model lists automatically from it.
 
@@ -74,6 +74,8 @@ pi also has an official install script that manages its own runtime and updates;
 
 **Mistral Vibe** installs the `vibe` command and signs in with a Mistral account. Its free plan is enough for drafting and first-pass reviews.
 
+**Meta Muse** installs the `muse` command with `curl -fsSL https://dev.meta.ai/install.sh | bash`, which puts a small launcher in `~/.local/bin` that downloads the agent itself and checks it against a published checksum. It signs in with a Meta account through a device code. Its shell sandbox uses unprivileged user namespaces, which Ubuntu's AppArmor policy blocks by default, so every command failed until I started it with `--disable-sandbox`. I keep its approval prompts on instead (`--approval-mode on-request`), so it still asks before anything risky.
+
 After installing, make the PATH change permanent instead of exporting it in one shell. Adjust the directories to wherever your installers actually put things:
 
 ```bash
@@ -96,6 +98,7 @@ pi --version
 omp --version
 kiro-cli --version
 vibe --version
+muse --version
 hermes --help
 ```
 
@@ -136,6 +139,7 @@ hermes
 copilot
 kiro-cli login
 vibe
+muse login
 ```
 
 If Hermes still needs a model provider afterwards, `hermes setup` (or just `hermes model`) reopens that step. OpenCode, pi and Oh My Pi are the exceptions: they get configuration files instead of an interactive login, which I cover in their own sections below.
@@ -153,7 +157,7 @@ From an ordinary shell, create a labelled tab for each agent and start the agent
 ```bash
 (
   set -e
-  for agent in claude codex agy grok hermes copilot opencode-scoped opencode pi omp kiro vibe; do
+  for agent in claude codex agy grok hermes copilot opencode-scoped opencode pi omp kiro vibe muse; do
     mkdir -p "$HOME/agents/$agent"
     case "$agent" in
       opencode-scoped) mkdir -p "$HOME/.config/opencode" ;;   # Herdr's OpenCode integration needs this folder
@@ -163,6 +167,7 @@ From an ordinary shell, create a labelled tab for each agent and start the agent
     pane=$(printf '%s' "$response" | jq -er '.result.root_pane.pane_id')
     case "$agent" in
       kiro) cmd="kiro-cli chat" ;;
+      muse) cmd="muse --disable-sandbox --approval-mode on-request" ;;
       *)    cmd="${agent%-scoped}" ;;
     esac
     herdr pane run "$pane" "$cmd"
@@ -206,7 +211,7 @@ herdr integration install omp
 herdr integration status
 ```
 
-Note that Antigravity's integration identifier is `antigravity-cli`, not `agy`. pi's and Oh My Pi's integrations are extensions under `~/.pi/agent/extensions` and `~/.omp/agent/extensions`, which each loads automatically. Herdr has no integration for Kiro or Vibe yet, so their tabs work but report less status. The agents in the tab loop started before their integrations existed, so quit each one and start it again once this step is done; it picks up its hooks on the next launch. Integrations add hooks or plugins to each agent's own configuration so Herdr can report the agent's status and session identity. If you've already customized an agent's settings, look at what the integration changes before applying it.
+Note that Antigravity's integration identifier is `antigravity-cli`, not `agy`. pi's and Oh My Pi's integrations are extensions under `~/.pi/agent/extensions` and `~/.omp/agent/extensions`, which each loads automatically. Herdr has no integration for Kiro, Vibe or Muse yet, so their tabs work but report less status. The agents in the tab loop started before their integrations existed, so quit each one and start it again once this step is done; it picks up its hooks on the next launch. Integrations add hooks or plugins to each agent's own configuration so Herdr can report the agent's status and session identity. If you've already customized an agent's settings, look at what the integration changes before applying it.
 
 ## Configuring OpenCode for an OpenAI-compatible provider
 
@@ -390,7 +395,7 @@ Several agents also have their own remote-control modes, which give you the vend
 | Antigravity | `/remote-control on`, or launch with `--remote-control` | Printed URL in a mobile browser |
 | Copilot | `/remote on`, or launch with `--remote` | GitHub Mobile, under Copilot agent sessions |
 | Hermes | Its separate web dashboard and API gateway services | Browser or an OpenAI-compatible client |
-| Grok Build, OpenCode, pi, Oh My Pi, Kiro, Vibe | No native option that I've confirmed | HerdrGo |
+| Grok Build, OpenCode, pi, Oh My Pi, Kiro, Vibe, Muse | No native option that I've confirmed | HerdrGo |
 
 None of these require permission-bypass flags. A remote connection and a conversation are separate things, too: resuming a conversation after a reboot doesn't automatically restore its remote link, so you may need to re-enable it.
 
@@ -470,12 +475,14 @@ The launcher reads a JSON file of commands, `~/.config/herdr/agent-startup.json`
     "pi":    { "resume": ["pi", "--continue"],                     "fresh": ["pi"] },
     "omp":   { "resume": ["omp", "--continue"],                    "fresh": ["omp"] },
     "kiro":  { "resume": ["kiro-cli", "chat", "--resume"],         "fresh": ["kiro-cli", "chat"] },
-    "vibe":  { "resume": ["vibe", "--continue"],                   "fresh": ["vibe"] }
+    "vibe":  { "resume": ["vibe", "--continue"],                   "fresh": ["vibe"] },
+    "muse":  { "resume": ["muse", "resume", "--last", "--disable-sandbox", "--approval-mode", "on-request"],
+               "fresh":  ["muse", "--disable-sandbox", "--approval-mode", "on-request"] }
   }
 }
 ```
 
-Hermes gets `--no-restore-cwd` so it doesn't jump back to an old conversation's directory. The two OpenCode entries differ from the rest, and from each other. The scoped one sources its private environment file before starting, which matters in the credential section below. The general one sources nothing and instead points OpenCode at its own XDG directories, so it never reads the scoped copy's config. Each tab gets its own working directory from its label, so the two OpenCodes keep separate histories under `~/agents/opencode-scoped` and `~/agents/opencode`.
+Hermes gets `--no-restore-cwd` so it doesn't jump back to an old conversation's directory. Muse carries the sandbox and approval flags from its install notes on both commands, since the launcher starts it fresh whenever there is no earlier session to resume. The two OpenCode entries differ from the rest, and from each other. The scoped one sources its private environment file before starting, which matters in the credential section below. The general one sources nothing and instead points OpenCode at its own XDG directories, so it never reads the scoped copy's config. Each tab gets its own working directory from its label, so the two OpenCodes keep separate histories under `~/agents/opencode-scoped` and `~/agents/opencode`.
 
 The launcher itself, `~/.config/herdr/agent-startup.py`, has two modes. In `boot` mode it waits for Herdr's tabs to appear, matches each configured agent to exactly one tab by label, skips any pane that already reports a running agent, and submits a command that re-invokes the script in `agent` mode inside each remaining pane. In `agent` mode it changes into that agent's workspace, runs the resume command, and falls back to the fresh command once if resume exits with an error. A normal exit or an interrupt leaves you at a shell instead of retrying.
 
