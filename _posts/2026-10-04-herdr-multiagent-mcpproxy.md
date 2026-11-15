@@ -11,7 +11,7 @@ tags:
  - security
 ---
 
-I now run nine coding agents side by side on a small always-on Ubuntu server: Claude Code, Codex, Antigravity, Grok Build, Hermes, GitHub Copilot, two separate copies of OpenCode, and pi. [Herdr](https://herdr.dev/) keeps them organized, one labelled tab per agent, and brings them back after a reboot. Most of them share one [mcpproxy](/posts/2026/05/mcpproxy/) instance for tools. One of those tools talks to a service that needs a personal API key, and only one agent ever holds that key: a deliberately fenced-in OpenCode. The other agents can see the tool, but they can't authenticate to the service behind it. When they need that service, they hand the task to that OpenCode through Herdr.
+I now run twelve coding agents side by side on a small always-on Ubuntu server: Claude Code, Codex, Antigravity, Grok Build, Hermes, GitHub Copilot, two separate copies of OpenCode, pi, Oh My Pi, Kiro, and Mistral Vibe. [Herdr](https://herdr.dev/) keeps them organized, one labelled tab per agent, and brings them back after a reboot. Most of them share one [mcpproxy](/posts/2026/05/mcpproxy/) instance for tools. One of those tools talks to a service that needs a personal API key, and only one agent ever holds that key: a deliberately fenced-in OpenCode. The other agents can see the tool, but they can't authenticate to the service behind it. When they need that service, they hand the task to that OpenCode through Herdr.
 
 The second OpenCode and pi are the general-purpose half of the setup. Neither holds that key or any other private credential. Both get their models from llmproxy, a small OpenAI-compatible router I run in Docker on the same machine, and both fill in their model lists automatically from it.
 
@@ -68,6 +68,12 @@ pi --version
 
 pi also has an official install script that manages its own runtime and updates; either route works.
 
+**Oh My Pi** installs the `omp` command. Like pi, it signs in to nothing: I point it at llmproxy through the same OpenAI-compatible extension, so it uses the same free routes.
+
+**Kiro CLI** (Amazon) installs `kiro-cli`. You start a session with `kiro-cli chat`, and its free tier includes a monthly allowance of credits.
+
+**Mistral Vibe** installs the `vibe` command and signs in with a Mistral account. Its free plan is enough for drafting and first-pass reviews.
+
 After installing, make the PATH change permanent instead of exporting it in one shell. Adjust the directories to wherever your installers actually put things:
 
 ```bash
@@ -87,6 +93,9 @@ grok --version
 copilot --version
 opencode --version
 pi --version
+omp --version
+kiro-cli --version
+vibe --version
 hermes --help
 ```
 
@@ -125,28 +134,11 @@ agy
 grok
 hermes
 copilot
+kiro-cli login
+vibe
 ```
 
-If Hermes still needs a model provider afterwards, `hermes setup` (or just `hermes model`) reopens that step. OpenCode is the exception here: it gets a configuration file instead of an interactive login, which I cover in its own section below.
-
-## Herdr integrations
-
-First launch creates each agent's configuration directory, and Herdr's integrations need those directories to exist. Once they do, install an integration for each agent:
-
-```bash
-herdr integration install claude
-herdr integration install codex
-herdr integration install antigravity-cli
-herdr integration install grok
-herdr integration install hermes
-herdr integration install copilot
-mkdir -p ~/.config/opencode
-herdr integration install opencode
-herdr integration install pi
-herdr integration status
-```
-
-Note that Antigravity's integration identifier is `antigravity-cli`, not `agy`. pi's integration is an extension under `~/.pi/agent/extensions`, which pi loads automatically. Integrations add hooks or plugins to each agent's own configuration so Herdr can report the agent's status and session identity. If you've already customized an agent's settings, look at what the integration changes before applying it.
+If Hermes still needs a model provider afterwards, `hermes setup` (or just `hermes model`) reopens that step. OpenCode, pi and Oh My Pi are the exceptions: they get configuration files instead of an interactive login, which I cover in their own sections below.
 
 ## One tab per agent, one directory per agent
 
@@ -161,12 +153,19 @@ From an ordinary shell, create a labelled tab for each agent and start the agent
 ```bash
 (
   set -e
-  for agent in claude codex agy grok hermes copilot opencode-scoped opencode pi; do
+  for agent in claude codex agy grok hermes copilot opencode-scoped opencode pi omp kiro vibe; do
     mkdir -p "$HOME/agents/$agent"
+    case "$agent" in
+      opencode-scoped) mkdir -p "$HOME/.config/opencode" ;;   # Herdr's OpenCode integration needs this folder
+    esac
     response=$(herdr tab create \
       --cwd "$HOME/agents/$agent" --label "$agent" --no-focus)
     pane=$(printf '%s' "$response" | jq -er '.result.root_pane.pane_id')
-    herdr pane run "$pane" "${agent%-scoped}"
+    case "$agent" in
+      kiro) cmd="kiro-cli chat" ;;
+      *)    cmd="${agent%-scoped}" ;;
+    esac
+    herdr pane run "$pane" "$cmd"
   done
 )
 ```
@@ -189,6 +188,25 @@ A few Herdr keys cover most daily use:
 | See which agents are running or blocked | `herdr agent list` |
 
 Send each agent a short prompt after setting it up so it has a conversation on record to resume later, and detach rather than exiting the agents.
+
+## Herdr integrations
+
+First launch creates each agent's configuration directory, and Herdr's integrations need those directories to exist. The sign-ins and the tab loop above have created them all, including OpenCode's, so install an integration for each agent:
+
+```bash
+herdr integration install claude
+herdr integration install codex
+herdr integration install antigravity-cli
+herdr integration install grok
+herdr integration install hermes
+herdr integration install copilot
+herdr integration install opencode
+herdr integration install pi
+herdr integration install omp
+herdr integration status
+```
+
+Note that Antigravity's integration identifier is `antigravity-cli`, not `agy`. pi's and Oh My Pi's integrations are extensions under `~/.pi/agent/extensions` and `~/.omp/agent/extensions`, which each loads automatically. Herdr has no integration for Kiro or Vibe yet, so their tabs work but report less status. The agents in the tab loop started before their integrations existed, so quit each one and start it again once this step is done; it picks up its hooks on the next launch. Integrations add hooks or plugins to each agent's own configuration so Herdr can report the agent's status and session identity. If you've already customized an agent's settings, look at what the integration changes before applying it.
 
 ## Configuring OpenCode for an OpenAI-compatible provider
 
@@ -372,7 +390,7 @@ Several agents also have their own remote-control modes, which give you the vend
 | Antigravity | `/remote-control on`, or launch with `--remote-control` | Printed URL in a mobile browser |
 | Copilot | `/remote on`, or launch with `--remote` | GitHub Mobile, under Copilot agent sessions |
 | Hermes | Its separate web dashboard and API gateway services | Browser or an OpenAI-compatible client |
-| Grok Build, OpenCode | No native option that I've confirmed | HerdrGo |
+| Grok Build, OpenCode, pi, Oh My Pi, Kiro, Vibe | No native option that I've confirmed | HerdrGo |
 
 None of these require permission-bypass flags. A remote connection and a conversation are separate things, too: resuming a conversation after a reboot doesn't automatically restore its remote link, so you may need to re-enable it.
 
@@ -449,7 +467,10 @@ The launcher reads a JSON file of commands, `~/.config/herdr/agent-startup.json`
       "fresh":  ["/bin/bash", "-c",
         "R=$HOME/.local/opencode-general; exec env XDG_CONFIG_HOME=$R/config XDG_DATA_HOME=$R/data XDG_STATE_HOME=$R/state XDG_CACHE_HOME=$R/cache GH_CONFIG_DIR=$HOME/.config/gh opencode --standalone"]
     },
-    "pi": { "resume": ["pi", "--continue"], "fresh": ["pi"] }
+    "pi":    { "resume": ["pi", "--continue"],                     "fresh": ["pi"] },
+    "omp":   { "resume": ["omp", "--continue"],                    "fresh": ["omp"] },
+    "kiro":  { "resume": ["kiro-cli", "chat", "--resume"],         "fresh": ["kiro-cli", "chat"] },
+    "vibe":  { "resume": ["vibe", "--continue"],                   "fresh": ["vibe"] }
   }
 }
 ```
