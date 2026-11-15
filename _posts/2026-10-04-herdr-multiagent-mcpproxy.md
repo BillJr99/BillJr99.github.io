@@ -690,7 +690,7 @@ Both `api_url` and `api_key` become handler arguments. `api_url` always comes fr
 
 The trick is to set only the first. The proxy's `.env` gets the base URL, which isn't a secret, and leaves the key out entirely:
 
-```dotenv
+```bash
 SERVICE_API_URL=https://service.example.com
 # SERVICE_API_KEY stays unset here.
 ```
@@ -701,7 +701,7 @@ Now the proxy has no credential of its own for this service. A request authentic
 
 Add the service key to the scoped OpenCode's private environment file, next to the provider key:
 
-```dotenv
+```bash
 MYPROVIDER_API_KEY=...
 SERVICE_API_KEY=...
 ```
