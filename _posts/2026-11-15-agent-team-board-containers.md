@@ -26,7 +26,7 @@ I route work through a small wrapper around Herdr's commands instead of letting 
 
 The last one matters most.  When an agent stops to ask permission, it is saying that a person should decide.  If the supervisor could answer for it, no person would be deciding at all.
 
-The wrapper also does the routing.  Public, non-sensitive work goes to the agents on free plans first, and the agents I pay for, which have usage limits, get the hard problems.  When an agent's usage readout passes 95 percent of its allowance, or it reports a rate-limit error, the wrapper sets that agent aside until its usage resets.  Without that rule a busy afternoon quietly runs every paid plan to its limit.
+The wrapper also does the routing.  Public, non-sensitive work goes to the agents on free plans first, and the agents I pay for, which have usage limits, get the hard problems.  When an agent's usage readout passes 95 percent of its allowance, or it reports a rate-limit error, the wrapper sets that agent aside until its usage resets.  Without that rule, a busy afternoon can run every paid plan to its limit.
 
 ## The person stays in the loop
 
@@ -74,7 +74,7 @@ kanban move release-notes-tool review --note "review requested"
 kanban report                               # waiting on me, blocked, done, in progress
 ```
 
-Three rules turned the folder into a habit instead of a chore:
+Three rules make the board work:
 
 - **Every agent works the board.**  Whenever an agent is idle or finishes a task, it lists its own cards and carries them forward without being asked.  A card waits only if it is waiting on me for a real decision.
 - **Agents update cards as they go, not at the end.**  A note after each commit or test run is what makes a handoff possible when the session ends unexpectedly.
@@ -97,7 +97,7 @@ ssh "$host" "docker image rm ubuntu:24.04"     # remove the image this run pulle
 
 An agent that installs the wrong package, runs code it does not understand, or fills a disk damages nothing that outlives the run.  The container is a boundary the agent cannot talk its way out of, and the cleanup is part of the run instead of something someone has to remember.  The same three properties keep showing up: the container gives isolation, the copied-back results and logs give observability, and nothing being permanent gives reversibility.
 
-## Guard rails, honestly labeled
+## Guard rails for well-meaning agents
 
 A few commands do damage that is hard to undo, so the agents' shells find small wrappers for them first on their `PATH`: `rm`, `rsync --delete`, and `sudo`.  Inside an agent's tab, each wrapper refuses and tells the agent to ask me; after I approve, the agent reruns the command with an explicit approval variable set.
 
@@ -111,7 +111,7 @@ fi
 exec /usr/bin/sudo "$@"
 ```
 
-These are guard rails for cooperating agents, not a security boundary.  An agent determined to get around one could call the real program by its full path.  What they catch is the far more common case: an agent that means well, is in a hurry, and would otherwise delete the wrong folder or reach for root to fix a permissions error.  Each refusal turns into a question in the agent's reply, which is exactly where I want it.
+These are guard rails for cooperating agents, not a security boundary.  An agent determined to get around one could call the real program by its full path.  What they catch is the far more common case: an agent that means well, is in a hurry, and would otherwise delete the wrong folder or reach for root to fix a permissions error.  Each refusal turns into a question in the agent's reply, so the decision comes to me.
 
 ## Working rules every agent follows
 
@@ -136,13 +136,13 @@ cp new-version.sh script.sh.new && mv script.sh.new script.sh
 
 **One job at a time on a shared resource.**  Jobs that use the same slow or fragile resource, such as a single build machine or a shared disk, take a lock and run one after another, with a generous wait instead of a short timeout that fails the job.
 
-**Done means shown, not said.**  A card moves to done only when its **State** line names the evidence: the commit, the file, the test result, or the page that now loads.  An agent's summary that it finished is not the same as a check that it did.
+**A finished job points to its evidence.**  A card moves to done only when its **State** line names the proof: the commit, the file, the test result, or the page that now loads.  An agent's report that it finished does not count until something on the card confirms it.
 
 **Approvals belong to a person.**  No agent answers another agent's approval prompt, completes a task in the tracker, or turns on an approve-everything mode without being asked.  An agent that is unsure asks in its reply, and the question lands on my phone.
 
 ## If I were starting over
 
-I would set up the job board and the throwaway containers before adding a fourth agent, not after a dozen.  The supervisor is the exciting part, but it only became trustworthy once every job left a written trail that another agent could pick up, and once every experiment ran somewhere it could not hurt anything.
+I would set up the job board and the throwaway containers before adding a fourth agent, not after a dozen.  The supervisor gets the attention, but it only became trustworthy once every job left a written trail that another agent could pick up, and once every experiment ran somewhere it could not hurt anything.
 
 ## Resources
 
