@@ -10,7 +10,7 @@ tags:
  - security
 ---
 
-Once more than a dozen coding agents were installed and running side by side under [Herdr](https://herdr.dev/), as I describe in [Herding Agents](/posts/2026/10/herdr-multiagent-mcpproxy/), running them stopped being the hard part.  The hard part became running them *together*: deciding which agent does which job, making sure a job survives when one agent hands it to another, and keeping experiments away from anything that matters.  Three things made that work for me: one agent that supervises the others, a shared job board that any agent can pick up from, and throwaway containers for anything risky.  The post ends with the mistakes that taught me each one.
+Once more than a dozen coding agents were installed and running side by side under [Herdr](https://herdr.dev/), as I describe in [Herding Agents](/posts/2026/10/herdr-multiagent-mcpproxy/), running them stopped being the hard part.  The hard part became running them *together*: deciding which agent does which job, making sure a job survives when one agent hands it to another, and keeping experiments away from anything that matters.  Three things made that work for me: one agent that supervises the others, a shared job board that any agent can pick up from, and throwaway containers for anything risky.  The post ends with the working rules that keep the whole arrangement safe.
 
 ## One agent supervises the rest
 
@@ -113,24 +113,32 @@ exec /usr/bin/sudo "$@"
 
 These are guard rails for cooperating agents, not a security boundary.  An agent determined to get around one could call the real program by its full path.  What they catch is the far more common case: an agent that means well, is in a hurry, and would otherwise delete the wrong folder or reach for root to fix a permissions error.  Each refusal turns into a question in the agent's reply, which is exactly where I want it.
 
-## What went wrong, and what I changed
+## Working rules every agent follows
 
-Most of the setup above exists because something went wrong first.
+A few rules, written once in the instructions every agent reads, prevent most of the ways a well-meaning agent causes damage.
 
-**Overwriting a shell script that queued jobs were running.**  Several long jobs were waiting on a lock inside a shell script when I copied an updated version of that script over the old file.  Bash reads a script a piece at a time as it runs, so when those jobs woke up they kept reading from the same byte offset in the *new*, longer file, and ran fragments of lines.  Nothing was damaged that time, but the jobs did nothing useful.  The fix is to install scripts by writing a new file and renaming it over the old one; a running shell keeps reading the old file, and new runs get the new one.
+**Git commands are free; deletion asks.**  Agents may use git as much as they like, including `git rm`, `git restore`, and `git clean`, because everything git touches can be recovered from the history.  Plain `rm`, `rsync --delete`, and `sudo` go through the guard rails above and wait for a person.  When an agent wants a file out of the way, the default is to move it into a scratch folder instead of deleting it; the scratch folder is the recycle bin.
+
+**Back up before overwriting, and check nothing changed.**  Before an agent writes over a file it copied earlier, it keeps a backup and confirms the file still matches the copy it started from.  If someone edited the file in the meantime, the agent stops instead of overwriting their work.
+
+**Scripts fail closed.**  Every script an agent writes starts with `set -u`, checks that each input it depends on exists, and stops when one is missing, instead of carrying on with an empty variable.  A copy or a cleanup that guesses is far more dangerous than one that refuses.
+
+```bash
+set -u
+[ -d "$SRC" ] || { echo "missing $SRC"; exit 1; }
+```
+
+**Replace, never overwrite in place.**  A script or a configuration file that something may be reading right now is installed by writing a new file and renaming it over the old one.  Anything already running keeps the old version, and the next run gets the new one.
 
 ```bash
 cp new-version.sh script.sh.new && mv script.sh.new script.sh
 ```
 
-**A copy that found no folder copied everything.**  A script meant to copy one folder looked the folder up, got back an empty string, and ran `cp -a "$D/." dest/`.  With `D` empty, that is `cp -a "/." dest/`: the whole filesystem, which filled the disk before anyone noticed.  The fix is to fail closed: `set -u`, check that every source exists before copying, and stop if anything is missing.
+**One job at a time on a shared resource.**  Jobs that use the same slow or fragile resource, such as a single build machine or a shared disk, take a lock and run one after another, with a generous wait instead of a short timeout that fails the job.
 
-```bash
-set -u
-[ -d "$D" ] || { echo "missing $D"; exit 1; }
-```
+**Done means shown, not said.**  A card moves to done only when its **State** line names the evidence: the commit, the file, the test result, or the page that now loads.  An agent's summary that it finished is not the same as a check that it did.
 
-**A summary is not a check.**  More than once an agent reported a job finished when one step had quietly failed: a pull that timed out, a commit the sandbox would not allow.  The job board helped here too.  A card's **State** line has to name the commit, the file, or the test result, and a claim that cannot point to one does not move the card to done.
+**Approvals belong to a person.**  No agent answers another agent's approval prompt, completes a task in the tracker, or turns on an approve-everything mode without being asked.  An agent that is unsure asks in its reply, and the question lands on my phone.
 
 ## If I were starting over
 
