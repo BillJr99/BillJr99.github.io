@@ -10,11 +10,11 @@ tags:
  - security
 ---
 
-Once more than a dozen coding agents were installed and running side by side under [Herdr](https://herdr.dev/), as I describe in [Herding Agents](/posts/2026/10/herdr-multiagent-mcpproxy/), running them stopped being the hard part.  The hard part became running them *together*: deciding which agent does which job, making sure a job survives when one agent hands it to another, and keeping experiments away from anything that matters.  Three things made that work for me: one agent that supervises the others, a shared job board that any agent can pick up from, and throwaway containers for anything risky.  The post ends with the working rules that keep the whole arrangement safe.
+Once more than a dozen coding agents were installed and running side by side under [Herdr](https://herdr.dev/), as I describe in [Herding Agents](/posts/2026/10/herdr-multiagent-mcpproxy/), the work shifted from running them to coordinating them: deciding which agent does which job, making sure a job survives when one agent hands it to another, and keeping experiments away from anything that matters.  I rely on three things for that: one agent that supervises the others, a shared job board that any agent can pick up from, and throwaway containers for anything risky.  The post ends with the working rules that keep the whole arrangement safe.
 
 ## One agent supervises the rest
 
-Every agent runs in its own labelled Herdr tab, with its own working folder, on a small always-on server.  Herdr recognizes each agent, so it can report each tab's state: working, done, idle, or blocked waiting for a person.  It also has a command line that can read a tab's screen and type into it.  That is enough for one agent to supervise the others.
+Every agent runs in its own labelled Herdr tab, with its own working folder, on a small always-on server.  Herdr recognizes each agent, so it can report each tab's state: working, done, idle, or blocked waiting for a person.  It also has a command line that can read a tab's screen and type into it, so one agent can use it to supervise the others.
 
 The supervising agent reads a task, decides which agent should do each part, and hands each part over by typing a prompt into that agent's tab.  It then watches the tab's state and reads the reply.  This is the supervisor pattern from the multi-agent literature, except that the sub-agents are full coding agents instead of function calls, and the "roster" is the list of tab labels.
 
@@ -24,7 +24,7 @@ I route work through a small wrapper around Herdr's commands instead of letting 
 - typing over text that someone has already typed at the computer;
 - answering an approval prompt.
 
-The last one matters most.  When an agent stops to ask permission, it is saying that a person should decide.  If the supervisor could answer for it, no person would be deciding at all.
+An approval prompt is an agent saying that a person should decide, so a supervisor that answered it would take that decision away from the person.
 
 The wrapper also does the routing.  Public, non-sensitive work goes to the agents on free plans first, and the agents I pay for, which have usage limits, get the hard problems.  When an agent's usage readout passes 95 percent of its allowance, or it reports a rate-limit error, the wrapper sets that agent aside until its usage resets.  Without that rule, a busy afternoon can run every paid plan to its limit.
 
@@ -41,9 +41,9 @@ The recording below is made with demo data: a made-up computer and made-up tasks
 
 ## A job board any agent can pick up
 
-The supervisor solved "who does what."  It did not solve "what was I in the middle of."  An agent's context fills up, a session restarts, a job waits overnight for my approval, and the next agent to touch the work starts from nothing.
+The supervisor decides who does what, but it does not keep track of where each job stands.  An agent's context fills up, a session restarts, a job waits overnight for my approval, and the next agent to touch the work starts from nothing.
 
-The fix is a shared job board: a folder named `kanban` on the server, with one short Markdown card per job.  A card is a handoff note that outlives any one session:
+To keep that state, I use a shared job board: a folder named `kanban` on the server, with one short Markdown card per job.  A card is a handoff note that outlives any one session:
 
 ```markdown
 ---
@@ -61,9 +61,9 @@ links: ["branch release-notes", "worktree ~/work/release-notes"]
 ## Log          Dated lines the tool appends as the work moves.
 ```
 
-The statuses are `backlog`, `doing`, `blocked`, `waiting-on-me`, `review`, and `done`.  The **Next step** line does most of the work.  When it is exact, a different agent can open the card and continue without reading anything else.
+The statuses are `backlog`, `doing`, `blocked`, `waiting-on-me`, `review`, and `done`.  When the **Next step** line names the exact next action, a different agent can open the card and continue without reading anything else.
 
-Every change goes through a small command-line tool, and the folder is a git repository, so each new card, note, and status change becomes a commit.  The board's history is its own audit trail.  The tool is short; these are the commands every agent uses:
+Every change goes through a small command-line tool, and the folder is a git repository, so each new card, note, and status change becomes a commit, and the history serves as an audit trail.  The tool is short; these are the commands every agent uses:
 
 ```bash
 kanban list --mine                          # my open cards, with their next steps
@@ -80,11 +80,11 @@ Three rules make the board work:
 - **Agents update cards as they go, not at the end.**  A note after each commit or test run is what makes a handoff possible when the session ends unexpectedly.
 - **Done is reported, then removed.**  Each evening one agent sends me a short digest: what is waiting on me, what is blocked, and what finished.  The cards it reports as done are then removed from the board, and they stay in the git history.
 
-I also keep a task list in a project tracker, and a scheduled job connects the two.  A task I add there becomes a card with an owner, and the task moves between the tracker's lists as its card moves.  The one thing the job may not do on its own is mark a task complete.  It asks me first, for the same reason the supervisor may not answer approvals.
+I also keep a task list in a project tracker, and a scheduled job connects the two.  A task I add there becomes a card with an owner, and the task moves between the tracker's lists as its card moves.  The job may not mark a task complete on its own; it asks me first, for the same reason the supervisor may not answer approvals.
 
 ## Throwaway containers for anything risky
 
-The agents live on one server, and I want that server boring.  So every build, test, experiment, and exploration runs in a throwaway Docker container on a second machine.  The pattern is always the same: copy in the folder the job needs, run the command, copy the results back, and delete the container, its image, and its volumes.
+I want the server the agents live on to stay predictable, so every build, test, experiment, and exploration runs in a throwaway Docker container on a second machine.  The pattern is always the same: copy in the folder the job needs, run the command, copy the results back, and delete the container, its image, and its volumes.
 
 ```bash
 host=docker-host                          # the second machine
@@ -95,7 +95,7 @@ rsync -a "$host:~/runs/$run/src/out/" ./out/   # results come back
 ssh "$host" "docker image rm ubuntu:24.04"     # remove the image this run pulled
 ```
 
-An agent that installs the wrong package, runs code it does not understand, or fills a disk damages nothing that outlives the run.  The container is a boundary the agent cannot talk its way out of, and the cleanup is part of the run instead of something someone has to remember.  The same three properties keep showing up: the container gives isolation, the copied-back results and logs give observability, and nothing being permanent gives reversibility.
+An agent that installs the wrong package, runs code it does not understand, or fills a disk damages nothing that outlives the run.  The container is a boundary the system enforces rather than one the agent is asked to respect, and the cleanup is part of the run instead of something someone has to remember.  The container provides isolation, the copied-back results and logs provide observability, and because nothing in it is permanent, every run is reversible.
 
 ## Guard rails for well-meaning agents
 
@@ -111,7 +111,7 @@ fi
 exec /usr/bin/sudo "$@"
 ```
 
-These are guard rails for cooperating agents, not a security boundary.  An agent determined to get around one could call the real program by its full path.  What they catch is the far more common case: an agent that means well, is in a hurry, and would otherwise delete the wrong folder or reach for root to fix a permissions error.  Each refusal turns into a question in the agent's reply, so the decision comes to me.
+These are guard rails for cooperating agents, not a security boundary.  An agent determined to get around one could call the real program by its full path.  They catch the more common case: an agent that means well, is in a hurry, and would otherwise delete the wrong folder or reach for root to fix a permissions error.  Each refusal turns into a question in the agent's reply, so the decision comes to me.
 
 ## Working rules every agent follows
 
@@ -142,7 +142,7 @@ cp new-version.sh script.sh.new && mv script.sh.new script.sh
 
 ## If I were starting over
 
-I would set up the job board and the throwaway containers before adding a fourth agent, not after a dozen.  The supervisor gets the attention, but it only became trustworthy once every job left a written trail that another agent could pick up, and once every experiment ran somewhere it could not hurt anything.
+I would set up the job board and the throwaway containers before adding a fourth agent.  The supervisor became trustworthy only after every job left a written trail that another agent could pick up, and every experiment ran somewhere it could not hurt anything.
 
 ## Resources
 
