@@ -14,9 +14,9 @@ tags:
 
 One package supports both opencode generations. On opencode v1 the plugin fills each provider's model list through the configuration hook, and on opencode v2 it publishes the same inventory through v2's provider interface. Each runtime's loader calls only its own entry point, so no version detection is needed, and both entry points share one discovery core for fetching, retries, caching, credentials, filters and logging. As a result, a provider configured the same way receives the same models on either version.
 
-The plugin is hosted on GitHub:
+The plugin is a fork of [vitkuz573/opencode-auto-models](https://github.com/vitkuz573/opencode-auto-models) by Vitaly Kuzyaev, which is released under the MIT license; the fork keeps that license and its copyright notice. My fork is hosted on GitHub:
 
-[opencode-auto-models](https://github.com/BillJr99/opencode-auto-models)
+[opencode-auto-models](https://github.com/BillJr99/opencode-auto-models) | [original by vitkuz573](https://github.com/vitkuz573/opencode-auto-models)
 
 ## Features
 
