@@ -21,11 +21,13 @@ A typical session runs like this: the teacher opens the create-instance page and
 
 The client is a static front end (Jekyll/HTML/CSS/vanilla JavaScript) that can be deployed to GitHub Pages or any static host, which keeps it easy to run for a single class or a whole event. All picture data, instance state, and live updates come from a companion back-end service it talks to over a REST API and a WebSocket realtime channel.
 
-[PixelPandemonium Client (source on GitHub)](https://github.com/BillJr99/PixelPandemonium_Client)
+[PixelPandemonium Client (source on GitHub)](https://github.com/BillJr99/PixelPandemonium_Client) | [PixelPandemonium Server (source on GitHub)](https://github.com/BillJr99/PixelPandemonium_Server)
+
+> **Note:** Pixel Pandemonium is experimental software provided as-is under the MIT license, with no warranty of any kind, and is not intended for production use.
 
 ## Architecture
 
-Pixel Pandemonium is a two-part system: this public client and a companion server (a separate, private project). The client holds no game logic of its own — it is a thin, deployable front end that renders the grid, captures pixel submissions, and subscribes to live updates. Everything stateful lives on the server.
+Pixel Pandemonium is a two-part system: this public client and a companion server ([PixelPandemonium Server](https://github.com/BillJr99/PixelPandemonium_Server), a separate open-source project). The client holds no game logic of its own — it is a thin, deployable front end that renders the grid, captures pixel submissions, and subscribes to live updates. Everything stateful lives on the server.
 
 The server is a Node.js application that exposes a REST API for the instance lifecycle (creating an instance, validating a join code, submitting pixels, retrieving the full set of submissions for replay, and administrative reset/inspection) and serves the picture catalog and custom-picture uploads. Submitted pixels are persisted in a lightweight SQLite database so that an instance can be replayed at any time, even after a break. Realtime updates are delivered through a publish/subscribe channel — one channel per instance — so that as each student submits a pixel, every connected viewer sees it appear without polling. The same server can be deployed either as a traditional long-running Node service or as a serverless Cloudflare Worker backed by a managed database, which makes it inexpensive to host for a one-off event.
 
